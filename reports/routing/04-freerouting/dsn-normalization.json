@@ -1,0 +1,11 @@
+{
+  "raw_sha256": "92bba04b32a9ecf403e0496ac1b1e6040fec18c125cc650969d5d494dd82b2e6",
+  "routing_dsn_sha256": "f296fae01cd92cd85e1ec7ec1220e67597df36d229764ba5b2c7d0618860bfbf",
+  "changes": [
+    "Classify two inner layers as power",
+    "Explicit outer-layer-only autoroute settings with front horizontal/back vertical",
+    "Raise unused SMD-specific clearance exception from 37.5 to 150 um"
+  ],
+  "native_board_unchanged": true,
+  "settings_placement": "After layer declarations, before boundary/planes; required by v2.5.0 Structure parser conditional"
+}

@@ -1,0 +1,66 @@
+= First routed tracks -- clocks and reset
+:toc:
+:toclevels: 2
+
+This pass follows the plan in `docs/261106-12 Where Andrew's brief meets this board.adoc`.
+The footprints were already placed and checked. This pass routes the first group
+of signals: the CPU clock, the UART clock, and the reset network.
+
+
+== What was routed
+
+The six nets in Group 1 are:
+
+[cols="1,2,3",options="header"]
+|===
+|Net |Nodes |Description
+
+|`/CLK`
+|`Y1:8` -> `U1:6`
+|4.0 MHz oscillator output to Z80 CPU clock input.
+
+|`/CLK_UART`
+|`Y2:5` -> `U5:16`
+|1.8432 MHz oscillator output to 16C550 UART clock input.
+
+|`/~{RESET}`
+|`U7:4` -> `U1:26`
+|Active-low reset output from Schmitt inverter U7 to Z80 CPU reset.
+
+|`/SW_RESET`
+|`SW1:1` -> `R2:2`
+|Tactile pushbutton reset switch to current limiting resistor R2.
+
+|`/RESET_RC`
+|`R2:1`, `R1:2`, `C1:1`, `U7:1`
+|Reset pull-up (R1), timing/filter capacitor (C1), and Schmitt trigger inverter input (U7 pin 1).
+
+|`/RESET_H`
+|`U7:2`, `U7:3`, `U5:35`, `U4:35`
+|Active-high reset output from U7 pin 2 feeding U7 pin 3 (inverter cascade), 16C550 UART reset (pin 35), and 82C55 PIO reset (pin 35).
+|===
+
+
+== Routing implementation
+
+The routing was performed using a Manhattan maze router script written for this board:
+`tools/route_netgroup.py`.
+
+* **Rules**: JLCPCB 4-layer defaults. Track width 0.15 mm, clearance 0.15 mm, via 0.70 mm with 0.30 mm drill. Power netclass pads (`+5V`, `GND`) enforce 0.30 mm clearance.
+* **Grid**: 0.10 mm step resolution.
+* **Layers**: F.Cu predominantly horizontal, B.Cu predominantly vertical.
+* **Multi-pin nets**: Routed via progressive Steiner tree expansion matching layers at connection taps.
+* **Planes**: Inner layers In1.Cu (`GND`) and In2.Cu (`+5V`) were refilled with thermal reliefs around the new via barrels.
+
+
+== DRC verification
+
+Checked with `kicad-cli pcb drc --schematic-parity`:
+
+* **0 clearance violations**
+* **0 shorting items**
+* **0 hole clearance violations**
+* **0 dangling tracks**
+* **0 schematic parity issues**
+* Unconnected items dropped from 138 down to 127.
+* Total track segments and vias on the board: 80.

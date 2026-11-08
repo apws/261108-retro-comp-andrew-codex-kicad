@@ -1,0 +1,116 @@
+{
+  "status": "validated",
+  "group": "group6",
+  "attempt": 3,
+  "candidate": "reports/routing/02-codex-router/group6/attempt-03/Z80_Simple_Computer.kicad_pcb",
+  "utc": "2026-11-08T14:59:25.938921+00:00",
+  "failure": null,
+  "runtime_seconds": 20.52,
+  "input_board_sha256": "b803bb3a149a53d2d0931fa0bcc6eead6b7c47f752de5ee904ad7031bfd14275",
+  "output_board_sha256": "f3fb5bd6fb0a3d134fde9b22de66b38671fd27311031aa3f613c0a3a9e3a737b",
+  "schematic_sha256": "f1a08e28cb32247addfa76974c82c4940699d3d99bdccb88e09733b92f3c4991",
+  "settings_sha256": "e417b80f3a6edb662368f41d6b662231b4ab1264cf40ef54e9e5343878e8d285",
+  "planner_sha256": "4fab152c8096a9064260d9c3c1373a11bb66eb06e76c35c4f72d2775a3ee9816",
+  "wrapper_sha256": "5681b3ef6694997d8a51775b3c8122e761570a5d1fa1002a8a78d622cc2d20bf",
+  "shared_geometry_and_writer_sha256": "02ed95ca09d8907d411115073883fb553409c88281384010cd189fd1d2bd4518",
+  "configuration": {
+    "via_cost": 3000,
+    "bend_cost": 180,
+    "straight_cost": 100,
+    "diagonal_cost": 146,
+    "nonpreferred_axis_extra_cost": 25,
+    "grid_mm": 0.1
+  },
+  "route_order": [
+    "/A14",
+    "/A12",
+    "/A3",
+    "/A4",
+    "/A5",
+    "/A6",
+    "/A8",
+    "/A9",
+    "/A10",
+    "/A11",
+    "/A13"
+  ],
+  "net_results": [
+    {
+      "net": "/A14",
+      "pads": 3,
+      "expanded_states": 2696695,
+      "seconds": 1.511
+    },
+    {
+      "net": "/A12",
+      "pads": 3,
+      "expanded_states": 1749923,
+      "seconds": 1.148
+    },
+    {
+      "net": "/A3",
+      "pads": 3,
+      "expanded_states": 1896516,
+      "seconds": 1.224
+    },
+    {
+      "net": "/A4",
+      "pads": 3,
+      "expanded_states": 2869840,
+      "seconds": 1.459
+    },
+    {
+      "net": "/A5",
+      "pads": 3,
+      "expanded_states": 1425371,
+      "seconds": 1.078
+    },
+    {
+      "net": "/A6",
+      "pads": 3,
+      "expanded_states": 1539868,
+      "seconds": 1.108
+    },
+    {
+      "net": "/A8",
+      "pads": 3,
+      "expanded_states": 3446297,
+      "seconds": 1.533
+    },
+    {
+      "net": "/A9",
+      "pads": 3,
+      "expanded_states": 4139388,
+      "seconds": 1.71
+    },
+    {
+      "net": "/A10",
+      "pads": 3,
+      "expanded_states": 3155015,
+      "seconds": 1.504
+    },
+    {
+      "net": "/A11",
+      "pads": 3,
+      "expanded_states": 4902628,
+      "seconds": 2.015
+    },
+    {
+      "net": "/A13",
+      "pads": 3,
+      "expanded_states": 3891568,
+      "seconds": 1.809
+    }
+  ],
+  "violations": 0,
+  "parity_issues": 0,
+  "target_net_unconnected_items": 0,
+  "remaining_unconnected_items": 25,
+  "track_segments": 664,
+  "vias": 120,
+  "track_length_mm": 4398.378,
+  "layer_lengths_mm": {
+    "F.Cu": 2265.152,
+    "B.Cu": 2133.226
+  }
+}

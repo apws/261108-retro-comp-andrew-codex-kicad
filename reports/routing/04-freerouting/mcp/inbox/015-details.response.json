@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 17,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"status\": 200,\n  \"contentType\": \"application/json\",\n  \"body\": {\n    \"id\": \"1ce98439-f1e8-4306-8baf-bf7583881638\",\n    \"session_id\": \"76cd5532-3ea9-409f-afd4-8346f5ab9bbf\",\n    \"short_name\": \"1CE984\",\n    \"name\": \"Andrew Z80 local MCP comparison\",\n    \"state\": \"COMPLETED\",\n    \"stage\": \"IDLE\",\n    \"current_pass\": 1,\n    \"started_at\": \"2026-11-08T15:27:27.588008077Z\",\n    \"finished_at\": \"2026-11-08T15:27:27.821967321Z\",\n    \"duration_seconds\": 0.233,\n    \"statistics\": {\n      \"total_nets\": 2,\n      \"unrouted_connections\": 0,\n      \"clearance_violations\": 0,\n      \"normalized_score\": 1000.0\n    },\n    \"resource_usage\": {\n      \"cpu_time_seconds\": 0.0,\n      \"peak_memory_mb\": 0.0\n    }\n  }\n}"
+      }
+    ],
+    "isError": false
+  }
+}

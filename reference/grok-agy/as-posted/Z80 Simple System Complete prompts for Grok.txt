@@ -1,0 +1,40 @@
+You are an electronic engineer and implementing a simple Z80 computer project for educational purposes
+
+You use KiCAD 9.0 and FreeRouting applications exclusively so add them to the project sandbox
+
+analyze this Z80 simple computer http://www.z80.info/gfx/z80test.gif and substitute a 27C256 EPROM for the 27C512 EPROM and update schematic
+
+analyze this Z80 simple computer http://www.z80.info/z80_mp.htm
+
+analyze this Z80 simple computer https://github.com/lynchaj/duodyne/tree/main/!Development/FirstZ80%20V1.0
+
+create Z80 computer system in KiCAD including schematic and PCB layout with traces based on three systems above using their best aspects
+
+PCB should not exceed 100 mm by 160 mm in size and use only through-hole components for ease of construction by students
+
+generate a detailed design with complete fully-wired schematic, double-sided PCB, and CSV BOM
+
+revise schematic for clarity
+
+create KiCAD project file .kicad_pro 
+
+create KiCAD schematic file .kicad_sch 
+
+create KiCAD PCB layout file .kicad_pcb
+
+create the standard library symbols ( 62256 , 27C256 , 8255 , 16C550 / PC16550D , MAX232 , 74HCT14 , 74HCT32 ) with each symbol in a separate library
+
+generate netlist and assign footprints to components and update schematic
+
+create detailed photo-realistic images of schematic (without overlay of networks or net labels) and final PCB layout
+
+write an expanded monitor ROM in Z80 assembler source code listing for TASM
+
+include debugging features in monitor ROM and Intel Hex format memory loading and saving
+
+expand monitor ROM features
+
+write thorough documentation capturing all hardware and software design decisions including theory of operations and methodologies with table of contents
+
+make the files available for download in zip file, save in project library, and provide link
+

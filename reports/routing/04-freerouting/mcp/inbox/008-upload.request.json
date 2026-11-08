@@ -1,0 +1,10 @@
+{
+  "method": "tools/call",
+  "params": {
+    "name": "upload_job_input_from_local_file",
+    "arguments": {
+      "jobId": "1ce98439-f1e8-4306-8baf-bf7583881638",
+      "filePath": "/home/falken/_/wrk/ver/261108-retro-comp-andrew-codex-kicad/reports/routing/04-freerouting/Z80_Simple_Computer.dsn"
+    }
+  }
+}

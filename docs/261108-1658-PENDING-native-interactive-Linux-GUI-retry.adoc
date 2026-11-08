@@ -1,0 +1,29 @@
+= Variant 3 retry from the Linux GUI app
+:title: {docname}
+:revdate: 2026-11-08
+
+== Result
+
+Falken reopened this project conversation in the Linux ChatGPT/Codex GUI app and requested another attempt at native interactive KiCad routing. Native control is still unavailable in this session, so variant 3 remains pending. No routing or board edits were performed.
+
+== Observed access
+
+The computer-use inventory returned no native apps. It exposed the ChatGPT in-app browser and Codex MCP Apps, both with empty tab lists. A documented optional native window-listing call failed with `cua.listWindows is not a function`. The documented native computer object was also unavailable. Browser access therefore does not establish access to KiCad's desktop window.
+
+A new plugin-directory search for KiCad returned no results. Searches for computer use returned unrelated integrations and no suitable native-control connection. These searches do not establish that no third-party KiCad bridge exists.
+
+== Documented platform limitation
+
+The https://learn.chatgpt.com/docs/linux/linux-app#compatibility-and-limitations[official Linux app documentation], checked on 2026-11-08, states that Computer Use is available on macOS and Windows and is not yet available in the Linux preview. This is consistent with the session observations. The https://learn.chatgpt.com/docs/computer-use[Computer Use setup documentation] describes app access on supported platforms.
+
+No global settings, software installations or permissions were changed. A future attempt needs an available native-control surface or a verified bridge to the native KiCad router. No availability date is established here.
+
+== Preserved input
+
+The SHA-256 of link:../layouts/03-kicad-interactive/Z80_Simple_Computer.kicad_pcb[the prepared variant 3 board] still matches link:../checkpoints/01-codex-placed-unrouted/Z80_Simple_Computer.kicad_pcb[the common placed/unrouted checkpoint]:
+
+----
+d054435baa298386f48a8b6e87d258052015624434147a24220acc5e8c61ad23
+----
+
+The existing link:261108-1613-PENDING-native-interactive.adoc[preparation note and routing setup] and link:../reports/routing/03-kicad-interactive/route-worksheet.csv[routing worksheet] remain applicable. No new DRC run or route-quality result is claimed for this access check.

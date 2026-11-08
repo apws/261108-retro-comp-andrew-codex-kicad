@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 5,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"status\": 200,\n  \"contentType\": \"application/json\",\n  \"body\": {\n    \"id\": \"76cd5532-3ea9-409f-afd4-8346f5ab9bbf\",\n    \"user_id\": \"93a39d31-0a6d-40d2-afd7-c3fbebe61e8a\",\n    \"host\": \"codex-kicad-comparison/1.0\"\n  }\n}"
+      }
+    ],
+    "isError": false
+  }
+}

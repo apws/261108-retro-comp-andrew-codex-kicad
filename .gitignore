@@ -1,0 +1,18 @@
+# Downloaded routing engine and task-local caches are reproducible inputs.
+tools/.cache/
+__pycache__/
+*.py[cod]
+reports/routing/*/cache/
+
+# KiCad window state and transient locks are specific to each workstation.
+*.kicad_prl
+*.lck
+~*.lck
+*-backups/
+
+# Owned process IDs and engine runtime profiles are not experiment evidence.
+reports/routing/04-freerouting/mcp/owned-pid
+reports/routing/04-freerouting/server-state/
+reports/routing/04-freerouting/cli-state/
+reports/routing/04-freerouting/cli-control/state/
+reports/routing/04-freerouting/setup-attempts/*/state/

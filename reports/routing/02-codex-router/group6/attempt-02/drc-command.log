@@ -1,0 +1,16 @@
+Found 0 violations
+Found 27 unconnected items
+Found 0 schematic parity issues
+Saved DRC Report to /home/falken/_/wrk/ver/261108-retro-comp-andrew-codex-kicad/reports/routing/02-codex-router/group6/attempt-02/drc.json
+15:58:48: Debug: Adding duplicate image handler for 'PNG file'
+15:58:48: Debug: Adding duplicate image handler for 'JPEG file'
+15:58:48: Debug: Adding duplicate image handler for 'TIFF file'
+15:58:48: Debug: Adding duplicate image handler for 'GIF file'
+15:58:48: Debug: Adding duplicate image handler for 'PNM file'
+15:58:48: Debug: Adding duplicate image handler for 'PCX file'
+15:58:48: Debug: Adding duplicate image handler for 'IFF file'
+15:58:48: Debug: Adding duplicate image handler for 'Windows icon file'
+15:58:48: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:58:48: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:58:48: Debug: Adding duplicate image handler for 'TGA file'
+15:58:48: Debug: Adding duplicate image handler for 'XPM file'

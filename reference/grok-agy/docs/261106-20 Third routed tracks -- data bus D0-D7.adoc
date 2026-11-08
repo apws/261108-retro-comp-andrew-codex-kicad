@@ -1,0 +1,75 @@
+= Third routed tracks -- data bus D0-D7
+:toc:
+:toclevels: 2
+
+This pass routes the third signal group: the 8-bit bidirectional data bus
+(`D0` through `D7`) linking all five major digital chips on the board.
+
+
+== What was routed
+
+Each data bit connects five dual-in-line packages in parallel across the board:
+
+* `U5`: 16C550 UART (leftmost chip, X ≈ 37 mm)
+* `U1`: Z80 CPU (X ≈ 56 mm)
+* `U2`: 32K SRAM (X ≈ 74–90 mm)
+* `U3`: 32K ROM (X ≈ 93–108 mm)
+* `U4`: 82C55 PIO (rightmost DIP, X ≈ 149 mm)
+
+[cols="1,2,2",options="header"]
+|===
+|Net |Nodes (Left to Right) |Description
+
+|`/D0`
+|`U5:1` -> `U1:14` -> `U2:11` -> `U3:11` -> `U4:34`
+|Data bit 0 trunk
+
+|`/D1`
+|`U5:2` -> `U1:15` -> `U2:12` -> `U3:12` -> `U4:33`
+|Data bit 1 trunk
+
+|`/D2`
+|`U5:3` -> `U1:12` -> `U2:13` -> `U3:13` -> `U4:32`
+|Data bit 2 trunk
+
+|`/D3`
+|`U5:4` -> `U1:8` -> `U2:15` -> `U3:15` -> `U4:31`
+|Data bit 3 trunk
+
+|`/D4`
+|`U5:5` -> `U1:7` -> `U2:16` -> `U3:16` -> `U4:30`
+|Data bit 4 trunk
+
+|`/D5`
+|`U5:6` -> `U1:9` -> `U2:17` -> `U3:17` -> `U4:29`
+|Data bit 5 trunk
+
+|`/D6`
+|`U5:7` -> `U1:10` -> `U2:18` -> `U3:18` -> `U4:28`
+|Data bit 6 trunk
+
+|`/D7`
+|`U5:8` -> `U1:13` -> `U2:19` -> `U3:19` -> `U4:27`
+|Data bit 7 trunk
+|===
+
+
+== Routing topology & enhancements
+
+* **Dual-grid obstacle model**: `tools/route_netgroup.py` was enhanced with separate pad and track obstacle grids. Newly routed tracks permanently reserve their clearance zones and cannot be unmasked or grazed by subsequent nets.
+* **X-coordinate sorting**: Multi-pin nodes are sorted left-to-right (`X` order), allowing the Steiner tree expansion to build a continuous horizontal backbone across the board.
+* **Layers**: Horizontal bus spans run on `F.Cu` with vertical escape stubs and layer transitions on `B.Cu`.
+* **Planes**: Inner layers In1.Cu (`GND`) and In2.Cu (`+5V`) were refilled with thermal relief connections maintained.
+
+
+== DRC verification
+
+Checked with `kicad-cli pcb drc --schematic-parity`:
+
+* **0 clearance violations**
+* **0 shorting items**
+* **0 hole clearance violations**
+* **0 dangling tracks**
+* **0 schematic parity issues**
+* Unconnected items dropped from 113 down to **81** (32 pad connections completed).
+* Total tracks and vias on the board: **648**.

@@ -1,0 +1,30 @@
+= Recovery: verified project state after conversation confusion
+:title: {docname}
+:revdate: 2026-11-08
+:toc:
+
+== Corrected stopping point
+
+The Codex schematic and the fresh Eurocard placement already exist. The assistant's later statement that no schematic or placement had been generated was incorrect: it relied on the visible main conversation without inspecting the newer files.
+
+* Documentation convention: new `docs/` notes use `YYMMDD-HHMM` followed by a descriptive title. This is recorded in the root README and already applied to the existing notes.
+* Authoritative circuit: link:../design/Z80_Simple_Computer.kicad_pro[design project] and link:../design/Z80_Simple_Computer.kicad_sch[schematic].
+* Schematic milestone: link:261108-1438-SCHEMATIC-base.adoc[14:38 schematic handover]. Its stored reports record zero ERC errors/warnings and a connectivity audit of all 301 pins on 38 components. Three UART input straps intentionally differ from the inherited circuit.
+* Placement milestone: link:261108-1500-PLACEMENT-checkpoint.adoc[15:00 placement handover]. The first experiment has a fresh 160 x 100 mm four-layer Eurocard with filled ground and +5 V inner planes.
+* Working board: link:../layouts/01-reused-agy-router/Z80_Simple_Computer.kicad_pcb[placed PCB].
+* Common routing input: link:../checkpoints/01-codex-placed-unrouted/checkpoint.json[checkpoint manifest]. No signal tracks or vias; 138 expected unconnected items. The stored placement report records zero geometry/silkscreen findings and zero schematic-parity issues.
+* Other layout experiments are scaffolded; their routing has not begun.
+
+During this recovery, SHA-256 hashes of all five files listed in the checkpoint manifest were independently checked and matched. The current authoritative schematic and first experiment's working PCB also match the checkpoint's respective hashes. ERC and DRC were not rerun during this recovery; their results above come from the saved milestone reports. No design files were regenerated or overwritten.
+
+== Exact next design step
+
+Continue from the existing placement, after retaining any outstanding human review comments. Adapt the attributed AGY router for the first experiment, auditing its obstacle geometry for the rotated footprints. Begin with clocks and reset, refill zones, and check native DRC and schematic parity before routing subsequent net groups. Preserve the common unrouted checkpoint.
+
+Do not restart the schematic or placement merely because the currently visible conversation omits their implementation exchanges.
+
+== Conversation findings and limits
+
+The saved main session inspected during recovery has ID `01a1ba8f-b27f-75b3-a0a8-6f961ec183d6`, titled with the `261108-1049` Andrew/KiCad request. Its available transcript jumps from the original plan exchange to the later confusion; it does not contain the intervening timestamp-rule, schematic, and placement discussion.
+
+The https://learn.chatgpt.com/docs/developer-commands?surface=cli[official command documentation] describes `/btw` / `/side` as an ephemeral side chat, separate from the main transcript. This is a possible explanation for missing implementation messages, not proof of exactly what happened in this session. The missing transcript has not been recovered. The newer project artifacts, timestamped milestone notes, and matching checkpoint establish the recoverable design state independently.

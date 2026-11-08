@@ -1,0 +1,63 @@
+= The board plan, and the public repository
+:toc:
+:toclevels: 2
+
+This is the chat after
+`261104-00 Chat transcript -- fitting the symbols inside the frame.adoc`.
+Tool output is left out.
+Speakers are Petr and the assistant.
+
+
+== What was still uncommitted
+
+*Petr:* Is it all committed?
+
+*Assistant:* No. One commit only, `258d611`. The fitted sheet, the generator change, and the notes and screenshots that had moved under `docs/` were still uncommitted.
+
+
+== The readme, then the board KiCad saved
+
+*Petr:* The PCB file is still the original bad one, as the notes say. It has to be recreated step by step, the same way as the schematic, which now looks better. That work has to be steered from the board he actually wants: size, layers, placement. Put that note in `readme.adoc`, and add the Asciidoctor.js CSS and JS notes for previewing the `.adoc` files. Then commit everything.
+
+*Assistant:* `readme.adoc` says the schematic is the rebuilt sheet, the project board was still the posted file that does not open, and the next work is one checked step at a time. It also says how to preview the notes in Chrome with Asciidoctor.js Live Preview, using `asciidoctorjs-crx-mixworx.css` and `asciidoctorjs-crx-mixworx.js`. Committed as `f3f275f`.
+
+*Petr:* Commit the new changes.
+
+*Assistant:* KiCad had saved a board file that opens. Commit `a4ea8ff` keeps that file: 33 footprints, no outline, no tracks. The challenge PDF moved to `as-posted/`. KiCad's `.history` snapshots stay ignored.
+
+*Petr:* That file is only a recreated board, updated from the schematic.
+
+*Assistant:* Yes. Not a repair of the posted file. The posted copy stays in `as-posted/`. The readme was corrected and committed as `a173aaf`.
+
+
+== The plan, and the questions
+
+*Petr:* Is `build_schematic.py` supposed to be the way to edit from here? He expected it was only the assistant's step-by-step method. The assistant never asked, and was hard to pause. The footprints are on the board. What is the recommended way to lay it out, if there are no required positions for connectors or parts, and the trial may be some size of his choosing, routed on four layers? It is not his schematic, so he cannot say more. The sheet is still A2 and the symbols look small. If they fit, A4 or US Letter would be better. Write a plan in `docs/` for placement and routing. Would FreeRouting be used? Are there skills for that?
+
+*Assistant:* The script is not the editor. Running it again would replace KiCad edits. The footprints are the update from the schematic, piled on each other, not a layout. A4 would make the same symbols look larger, but they have to be moved closer first. The recommendation in the plan was a two-layer board near 180 by 120 mm, placed in the same groups as the sheet, routed by hand in KiCad. Four layers only if two layers became a mess. The schematic has no +5V connector, so the plan assumed a 2-pin header unless he said otherwise. FreeRouting is not installed, and there is no skill here that designs a board by running it. The plan is `docs/261104-01 Plan -- placing and routing the board.adoc`. It was not committed yet.
+
+*Petr:* Can the assistant ask, from those decision points?
+
+*Assistant:* Yes. Eight questions, and the answers:
+
+* Schematic paper: A4 landscape.
+* Copper: four layers from the start.
+* Board size: Eurocard, 160 by 100 mm.
+* Connectors: DE9 on a short edge, PIO headers on a long edge, reset where a finger can reach it.
+* Power: a screw terminal for +5V and GND.
+* Mounting: four corner M3 holes.
+* DE9 shell: leave it unconnected.
+* Routing: KiCad's interactive router, after the placement has been looked at.
+
+*Petr, before that was written up:* Commit, and try to push a public repository under his GitHub account `apws`. Is there access?
+
+*Assistant:* Yes. Logged in as `apws`. The decisions were written into the plan. Commit `bdffe49`. The public repository is https://github.com/apws/261103-reto-comp-andrew-grok-kicad[`apws/261103-reto-comp-andrew-grok-kicad`]. `master` was pushed.
+
+
+== The first page step, not finished
+
+*Petr:* Proceed by the plan.
+
+*Assistant:* Step one only: the schematic page. A4 cannot hold these symbols. A DIP-40 symbol is about 100 mm tall, so two of them do not fit on a 210 mm page, and one row of the five large chips does not fit across 297 mm. The plan says to stop at A3 in that case. The generator was run once to put the same nets on A3. The netlist matched and ERC was clean, but the plot was not accepted: the reset capacitor hangs off the bottom, and the power units of the two logic chips sit in the title block. That pass stopped there. It is not a finished sheet.
+
+*Petr:* The context is nearly full. Write only a transcript of this chat into `docs/`, then commit everything and push. Nothing else.

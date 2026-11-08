@@ -1,0 +1,71 @@
+= 3D models for the footprints
+:toc:
+:toclevels: 2
+
+The 3D view reads the footprint on the board, not the schematic symbol.
+The schematic was not given a model path. A symbol only stores the
+footprint name. Update PCB from Schematic copies that name, the
+reference, the value, and the nets. It does not copy a STEP file.
+
+
+== Where the files are
+
+Thirteen models, from the KiCad packages3D repository at tag 10.0.7,
+are in `libs/kicad-packages3D-10.0.7/`, next to the project, the
+schematic, and the board. The set is the DIP-14, DIP-16, DIP-28 and
+DIP-40 packages, both oscillators, the disc and radial capacitors, the
+axial resistors, the push switch, the pin headers, the DE9 shell, and
+the screw terminal. About 4 MB.
+
+The four mounting holes have no 3D model in the official footprint.
+Nothing was invented for them. Their 3D Models list stays empty.
+
+
+== Why the path stayed red
+
+Each footprint was published with
+
+`${KICAD10_3DMODEL_DIR}/Package_DIP.3dshapes/DIP-40_W15.24mm.step`
+
+and the same shape for the other twelve files. That name is KiCad's
+own path for the stock 3D library. On this machine there is no stock
+library, so the viewer marked every model "file not found".
+
+Configure Paths showed that same default name. A value typed there is
+not relative to this project. The value that was tried,
+`libs/kicad-packages3D-10.0.7.`, also has a trailing dot, so it does
+not name the `libs` folder that sits beside the board file. KiCad reads
+Configure Paths at startup, and a wrong value there cannot see a folder
+the project files never mention.
+
+The project files do mention `libs` for symbols and footprints, through
+`${KIPRJMOD}` in the library tables. The 3D lines did not, until this
+change. `${KIPRJMOD}` is the directory that holds
+`Z80_Simple_Computer.kicad_pro`.
+
+
+== What the files say now
+
+The board and the vendored footprints now say, for example,
+
+`${KIPRJMOD}/libs/kicad-packages3D-10.0.7/Package_DIP.3dshapes/DIP-40_W15.24mm.step`
+
+Thirty-four model lines on the board, and one line in each of the
+thirteen library footprints, use that prefix. Each of those thirteen
+STEP files is present. The 3D viewer uses the path stored in
+`Z80_Simple_Computer.kicad_pcb`. It does not look up the library file
+again until you run Update Footprints from Library. That command is
+safe now, because the library footprints use the same path, and it is
+not required.
+
+Leave Configure Paths as it is. This board no longer depends on
+`KICAD10_3DMODEL_DIR`.
+
+
+== Seeing them
+
+Close the board without saving if it is already open, so an old copy
+does not write the prefs variable back. Open the project again, open
+the board, and open the 3D viewer. The 3D Models tab should show
+`${KIPRJMOD}/libs/kicad-packages3D-10.0.7/...`. The mounting holes stay
+as holes.

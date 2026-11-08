@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 9,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"status\": 200,\n  \"contentType\": \"application/json\",\n  \"body\": {\n    \"autorouter\": {\n      \"enabled\": true,\n      \"max_passes\": 30,\n      \"max_threads\": 1,\n      \"ignore_net_classes\": [\n        \"Power\"\n      ]\n    },\n    \"fanout\": {\n      \"enabled\": false\n    },\n    \"copper_to_edge_clearance_um\": 200.00,\n    \"hole_clearance_um\": 200.00,\n    \"clearance_tolerance_um\": 0.00,\n    \"plane_nets\": [\n      \"GND\",\n      \"+5V\"\n    ],\n    \"strict_drc\": true,\n    \"job_timeout\": \"00:05:00\",\n    \"validation_warnings\": [],\n    \"automatic_neckdown\": false,\n    \"optimizer\": {\n      \"enabled\": true,\n      \"max_passes\": 10,\n      \"max_threads\": 1\n    },\n    \"scoring\": {},\n    \"router_scoring\": {},\n    \"optimizer_scoring\": {},\n    \"max_threads\": 1,\n    \"layers\": [\n      {\n        \"routable\": true,\n        \"preferred_direction_trace_cost\": 1.00,\n        \"undesired_direction_trace_cost\": 1.00\n      },\n      {\n        \"routable\": true,\n        \"preferred_direction_trace_cost\": 1.00,\n        \"undesired_direction_trace_cost\": 1.00\n      },\n      {\n        \"routable\": true,\n        \"preferred_direction_trace_cost\": 1.00,\n        \"undesired_direction_trace_cost\": 1.00\n      },\n      {\n        \"routable\": true,\n        \"preferred_direction_trace_cost\": 1.00,\n        \"undesired_direction_trace_cost\": 1.00\n      },\n      {\n        \"routable\": true,\n        \"preferred_direction_trace_cost\": 1.00,\n        \"undesired_direction_trace_cost\": 1.00\n      },\n      {\n        \"routable\": true,\n        \"preferred_direction_trace_cost\": 1.00,\n        \"undesired_direction_trace_cost\": 1.00\n      },\n      {\n        \"routable\": true,\n        \"preferred_direction_trace_cost\": 1.00,\n        \"undesired_direction_trace_cost\": 1.00\n      },\n      {\n        \"routable\": true,\n        \"preferred_direction_trace_cost\": 1.00,\n        \"undesired_direction_trace_cost\": 1.00\n      }\n    ]\n  }\n}"
+      }
+    ],
+    "isError": false
+  }
+}

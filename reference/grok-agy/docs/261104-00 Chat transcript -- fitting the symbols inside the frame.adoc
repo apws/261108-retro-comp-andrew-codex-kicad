@@ -1,0 +1,68 @@
+= Fitting the symbols inside the frame
+:toc:
+:toclevels: 2
+
+This is the chat after `261103-a-guide-for-andrew.adoc`.
+That guide stops when the sheet first checked out.
+What follows is only about how the drawing sits on the paper.
+The circuit was not changed.
+Tool output is left out.
+Speakers are Petr and the assistant.
+
+
+== The labels, and the red frame
+
+*Petr:* Thanks. This is better. But parts of the schematic overlap the paper border. Is this supposed to be netlist-connected, by symbolic links? There are no visible traces here, right? He attached a screenshot of the open sheet. The blue note in the top-left corner crosses the red frame, and the charge-pump capacitors on the right sit past it. That screenshot is `images/261103-2328 first schematic -- Screenshot_20261103_232820.png`.
+
+*Petr, before that had been answered:* If placing the lines nicely is difficult, but the netlist is okay, it is probably not so critical. Visually, recreating that simple schematic with lines would be nicer. As he said, not critical.
+
+*Assistant:* Yes. The chips are connected by net labels, not by lines drawn across the sheet. A label such as `A0` or `/RD` on two pins is the same net. That is what the netlist is checking, and those nets do meet: the address and data buses, the chip selects, and the reset chain.
+
+What you can see as a line is only local. A pin gets a short stub out to its label. A few things are actually drawn: the reset resistor and capacitor, the supply symbols, and the little ground rail on the UART. There is no copper yet. Traces appear only after a board exists and is routed, and this board is still the old file that does not open.
+
+The parts sitting on the red sheet frame are real. Pulling everything inside the border, and drawing the buses as lines the way the GIF does, would only change how the sheet looks. The netlist would stay the same. You said that is not critical, so the sheet was left as it was.
+
+*Petr:* Well, please only then move the parts better on the sheet to fit.
+
+The assistant started that, and did not answer again before the session broke off. From the outside it looked stuck.
+
+
+== KiCad was open
+
+*Petr:* Excuse me. He had opened the sheet in KiCad. If that is not a problem, he had closed it.
+
+*Petr:* Only now he had closed KiCad entirely.
+
+*Petr:* Please pause and say what the problem was. Was something still locked by KiCad? Is it so hard only to place the symbols closer, so they fit inside? He saved a shot of that wait as `images/261103-0004 very hard for grok only to relayout the sheet QQQ -- Screenshot_20261104_000429.png`.
+
+He then asked to continue, and asked again when the reply had still not come back.
+
+*Assistant:* Nothing is locked. KiCad is closed, and the sheet on disk is already the moved one. Reopen `Z80_Simple_Computer.kicad_sch`.
+
+The lock was only the editor holding the file. While the schematic was open, KiCad kept `~Z80_Simple_Computer.kicad_sch.lck`. Writing the file then would have been thrown away the next time that window saved. Closing the sheet released that lock. The project window staying open after that was not what held the parts in place.
+
+Sliding the symbols is not electrically hard. This sheet is joined by net names, not by long wires, so a part can move without the nets changing. That checked out: same 102 nets, same 33 parts, names included. The electrical rules check is still clean, 0 errors and 0 warnings.
+
+What was awkward was fitting the paper, not the circuit. Only three things hung outside the red frame.
+
+* The blue note at the top left. With no alignment set, KiCad anchors that text at its center, so a note placed near the corner drew leftward off the page. It is now anchored at its bottom-left corner, inside the frame.
+* The three charge-pump capacitors beside the MAX232, which sat past the right edge.
+* The reset switch, whose ground symbol just touched that same edge.
+
+Pushing the whole right-hand side left by the same amount would have dropped the reset capacitor on top of an OR gate. So the parts that were already inside stayed put. The MAX232, its capacitors, and the DE9 connector moved left together by 25 mm, and the switch moved left by 10 mm. A plot of the page shows all the ink inside the frame.
+
+The positions live in `tools/build_schematic.py`, which rewrote the sheet. The guide already says this: if you drag a part in KiCad and then run that script, the script wins.
+
+
+== The router, and which lock remained
+
+*Petr:* Thanks. He had also lost the internet here and reset the router. That was the gap of a few minutes. He had also seen that, after he closed the schematic, a lock was still there until he closed the whole project.
+
+*Assistant:* The router reset did not lose anything. The moved sheet was already written, and it is the file on disk.
+
+What he saw is normal KiCad behavior. Closing the schematic editor removes `~Z80_Simple_Computer.kicad_sch.lck`. The project window keeps `~Z80_Simple_Computer.kicad_pro.lck` until that window closes too. The sheet was rewritten after the schematic lock was gone and before the project was quit, and quitting did not put the old sheet back.
+
+
+== Where that leaves the project
+
+The drawing fits the A2 frame. The connections are the ones in the guide. The board file is still the posted one. It does not open, and it is not routed.

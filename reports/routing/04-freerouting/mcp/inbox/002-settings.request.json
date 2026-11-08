@@ -1,0 +1,7 @@
+{
+  "method": "tools/call",
+  "params": {
+    "name": "get_effective_settings",
+    "arguments": {}
+  }
+}

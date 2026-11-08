@@ -1,0 +1,76 @@
+= PLAN: One circuit, several PCB implementations
+:title: {docname}
+:author: Falken and Ari / Codex
+:revdate: 2026-11-08
+:toc:
+:sectnums:
+
+== Agreed organization
+
+Maintain one authoritative circuit under `design/` and a separate ordinary KiCad project under each layout experiment. This supplements link:261108-1419-PLAN.adoc[the Z80 and future-module experiment plan].
+
+Each experiment contains a synchronized schematic snapshot with its own project settings and, once placement begins, its own board. The snapshots are generated inputs; circuit edits belong in `design/`. Existing reference files remain under `reference/`.
+
+Use the same basename, `Z80_Simple_Computer`, in every project folder. This preserves the inherited schematic's project-instance naming and makes the project, schematic, and board filenames match. The folder identifies the experiment.
+
+[source,text]
+----
+design/
+  Z80_Simple_Computer.kicad_pro
+  Z80_Simple_Computer.kicad_sch
+  provenance.json
+libs/
+layouts/
+  01-reused-agy-router/
+  02-codex-router/
+  03-kicad-interactive/
+  04-freerouting/
+tools/sync_layouts.py
+reports/
+docs/
+reference/
+----
+
+Each layout folder receives `Z80_Simple_Computer.kicad_pro`, `Z80_Simple_Computer.kicad_sch`, library tables, a relative `libs` symlink, and `experiment.json`. Its future PCB is named `Z80_Simple_Computer.kicad_pcb`. Boards and fabrication outputs are created only when their implementation stage begins.
+
+The relative library links retain the vendored footprints' existing `${KIPRJMOD}/libs/...` model paths. When distributing this directory, preserve the relative links and include the root `libs/` directory, or materialize those links as ordinary directories.
+
+== Circuit ownership and synchronization
+
+. Edit and review the circuit in `design/`.
+. Run `python3 tools/sync_layouts.py --check` to inspect snapshot status.
+. Run `python3 tools/sync_layouts.py --sync` to update all unfrozen experiments, or add `--layout 01-reused-agy-router` to select one.
+. Schematic synchronization copies bytes without recreating symbol UUIDs. Reference and footprint associations are retained; subsequent circuit edits still need native schematic-to-PCB updates.
+. Record the source path, SHA-256, and snapshot timestamp in each experiment manifest.
+. Preserve the experiment's project settings and PCB on later syncs. A schematic change marks any existing board as needing a native update and verification.
+
+The script refuses to overwrite a locally edited schematic snapshot, refuses active KiCad lock files, and checks all selected destinations before writing. To resolve a divergent snapshot, review it and bring intentional circuit edits into `design/` first.
+
+Set `frozen` to `true` in an experiment's manifest to retain a historical input. A frozen snapshot may intentionally differ from the current circuit; its hash still identifies its actual input. To update it later, explicitly clear the flag. Project settings are seeded once and then belong to that experiment. Synchronization does not claim to propagate later netclass or rule changes: align those deliberately for each comparison.
+
+This starter synchronizer handles the current single schematic file. Before introducing child sheets, extend its manifest and copy checks to include the entire hierarchy. Do not silently leave stale child sheets in experiments.
+
+== Fair comparisons
+
+Compare routing algorithms from the same placed, unrouted native board, with the same circuit revision, footprint assignments, outline, stackup, keepouts, and applicable rules. Record the checkpoint hash and the starting project-settings hash in each routing report. Keep the checkpoint separate from each routed result.
+
+Placement experiments can use different starting placements, but must say so. Do not attribute changes caused by a different circuit, placement, track width, or clearance to the routing algorithm alone.
+
+The Grok/AGY result is historical reference evidence. The first Codex routing experiment reuses AGY's algorithm with attributed adaptations; it does not reuse their completed board as a new Codex design.
+
+Each implementation owns its stackup, rules, PCB, reports, and manufacturing outputs. For a future 51 x 51 mm module, four-layer and eight-layer physical implementations can use this same organization. Changes to packages, pin assignments, or connectivity require a recorded circuit revision or an explicitly defined circuit branch.
+
+== KiCad behavior and rationale
+
+The normal KiCad workflow uses matching project, schematic, and board names. Separate project folders retain ordinary editor navigation and independent board settings. KiCad 10 design variants are assembly variations on shared copper and outline; use separate board designs for different routing or board shapes.
+
+References consulted for the organization discussion:
+
+* https://docs.kicad.org/10.0/en/pcbnew/pcbnew.html[KiCad 10 PCB Editor: creating a board from a schematic].
+* https://docs.kicad.org/10.0/en/eeschema/eeschema.html#understanding-design-variants[KiCad 10 design variants].
+
+== Initial implementation status
+
+The authoritative schematic is initially an unchanged copy of the inherited Grok/AGY schematic, with provenance identifying it as an unaudited seed. It is not yet the independent Codex circuit capture promised by the larger experiment plan.
+
+Four experiment folders and a synchronization tool establish the working structure. No new PCB, placement, routing, or fabrication package is implied by that scaffold. The next design milestone is the source-GIF circuit audit, followed by schematic review and a fresh placement.

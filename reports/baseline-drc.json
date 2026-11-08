@@ -1,0 +1,2125 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-08T10:58:00",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.8",
+    "schematic_parity": [],
+    "source": "Z80_Simple_Computer.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Circle of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 49.64
+                    },
+                    "uuid": "555c7ea4-07c8-4fbc-b0fe-64fe1b5408c6"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 15.417,
+                        "y": 52.2
+                    },
+                    "uuid": "25faee69-487a-4d7e-a6b4-709d748e68ad"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 15.577,
+                        "y": 52.16
+                    },
+                    "uuid": "baff9e0f-7846-42f2-b07b-372fc131feb4"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 15.705,
+                        "y": 52.12
+                    },
+                    "uuid": "3eda0588-7471-47c9-bea4-413c5ced7e71"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 13.86,
+                        "y": 51.8
+                    },
+                    "uuid": "559d0874-77cb-4dfc-b91b-d693fdf4e995"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 13.86,
+                        "y": 51.84
+                    },
+                    "uuid": "a7091073-0f22-45f0-bd8e-ae248036f23d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 13.86,
+                        "y": 51.88
+                    },
+                    "uuid": "552d19db-dfe6-4090-8790-a43145816f4a"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 13.86,
+                        "y": 51.92
+                    },
+                    "uuid": "18811a38-f867-4494-9fa2-bdeab6a9f916"
+                },
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 16.077,
+                        "y": 51.96
+                    },
+                    "uuid": "d882ab42-b480-4f60-a84a-2d922ae4bdd7"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 13.86,
+                        "y": 51.64
+                    },
+                    "uuid": "7790d5cf-655e-4331-ad60-a5f90ca8bb89"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 13.86,
+                        "y": 51.68
+                    },
+                    "uuid": "8150217e-fe2f-4163-b44b-5cef88e1e067"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 13.86,
+                        "y": 51.72
+                    },
+                    "uuid": "da83f3f5-b098-4fcc-90c6-d93f88291c7e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 13.86,
+                        "y": 51.76
+                    },
+                    "uuid": "b2fbbc7d-2ef7-43c0-8cd2-e752ac7ef6b8"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 13.86,
+                        "y": 51.44
+                    },
+                    "uuid": "42cdc224-1ff8-4f71-bf79-da87fc8b3ba6"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 13.86,
+                        "y": 51.48
+                    },
+                    "uuid": "f42c21fc-d705-4e8e-92d3-4696adc1865c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 13.86,
+                        "y": 51.52
+                    },
+                    "uuid": "da611231-a0f7-4f4a-b680-a9e203a9a98f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 13.86,
+                        "y": 51.56
+                    },
+                    "uuid": "6ce90fb7-b927-4407-852b-1df34cc5d504"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 13.86,
+                        "y": 51.6
+                    },
+                    "uuid": "87eda327-c11f-4d50-aa3c-074820d03b03"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 13.86,
+                        "y": 51.36
+                    },
+                    "uuid": "626c41f3-de6b-4312-9d99-e7179f6cf4e8"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 13.86,
+                        "y": 51.4
+                    },
+                    "uuid": "318ce14e-edf2-4c74-a9e8-639be3074f81"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 13.86,
+                        "y": 51.28
+                    },
+                    "uuid": "113f43f1-229a-49b6-bb14-472b978357ac"
+                },
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 13.86,
+                        "y": 51.32
+                    },
+                    "uuid": "a9bc0919-0ef1-4f9e-93f1-171665439d09"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 13.86,
+                        "y": 51.24
+                    },
+                    "uuid": "6a025169-d078-4eda-aa0b-ffe0e49a7873"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 15.183,
+                        "y": 52.24
+                    },
+                    "uuid": "4fed7f72-a3f8-446b-99f4-1f683e9193c8"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 15.814,
+                        "y": 52.08
+                    },
+                    "uuid": "ce72e3c8-5173-4ced-a348-34b0a91972b5"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 15.911,
+                        "y": 52.04
+                    },
+                    "uuid": "72b73ea4-f60b-4776-82eb-b67a8445b980"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 15.998,
+                        "y": 52.0
+                    },
+                    "uuid": "492aa503-36e3-4241-aa81-6cab74f5f311"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 16.151,
+                        "y": 51.92
+                    },
+                    "uuid": "703cc17a-2a4b-4db4-a7a8-0cfc3d33514d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 16.219,
+                        "y": 51.88
+                    },
+                    "uuid": "9f5c5573-37fd-4088-8ffe-b0c8de3df1da"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 16.283,
+                        "y": 51.84
+                    },
+                    "uuid": "8571c8d7-4104-4050-80aa-407a5db954f4"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 16.343,
+                        "y": 51.8
+                    },
+                    "uuid": "92a43cee-debb-429c-89c1-26deaeff26f2"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 16.399,
+                        "y": 51.76
+                    },
+                    "uuid": "e42a2cf2-dd20-48b2-86b3-91db4d16050d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 16.453,
+                        "y": 51.72
+                    },
+                    "uuid": "70f8b193-a965-4c15-815c-ab5be33a45a4"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 16.504,
+                        "y": 51.68
+                    },
+                    "uuid": "615345e1-1b36-4d4e-8941-971bc7c0d86c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 16.552,
+                        "y": 51.64
+                    },
+                    "uuid": "18ef11fe-a46e-405e-9128-217100120a81"
+                },
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 16.599,
+                        "y": 51.6
+                    },
+                    "uuid": "6059035a-5571-4ce7-8741-fb9d91f5cf74"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 16.643,
+                        "y": 51.56
+                    },
+                    "uuid": "b7ce435c-debc-4781-bbe2-3480a93d1aba"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 16.836,
+                        "y": 51.36
+                    },
+                    "uuid": "acc79f34-3fe1-416b-ad9d-9f936225b5b6"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 16.87,
+                        "y": 51.32
+                    },
+                    "uuid": "b999879f-587e-4a8b-b38a-2b9a42386e86"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 16.903,
+                        "y": 51.28
+                    },
+                    "uuid": "372fa8c5-3746-41d3-8cb3-f7b6d0638038"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "Segment of C21 on F.Silkscreen",
+                    "pos": {
+                        "x": 16.935,
+                        "y": 51.24
+                    },
+                    "uuid": "f458d3cd-337a-4087-93cc-e3989ae6f3b6"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of U6",
+                    "pos": {
+                        "x": 23.01,
+                        "y": 38.78
+                    },
+                    "uuid": "7390d8af-6602-4d07-991a-9cba439c91fb"
+                },
+                {
+                    "description": "Segment of C7 on F.Silkscreen",
+                    "pos": {
+                        "x": 27.72,
+                        "y": 38.98
+                    },
+                    "uuid": "7ac1b30a-f526-4779-a03d-9a101944a7b5"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of U7",
+                    "pos": {
+                        "x": 115.41,
+                        "y": 40.05
+                    },
+                    "uuid": "4f2fb4d1-d5c3-4486-9821-122f40d68026"
+                },
+                {
+                    "description": "Segment of C8 on F.Silkscreen",
+                    "pos": {
+                        "x": 120.12,
+                        "y": 40.23
+                    },
+                    "uuid": "51e00dec-f572-4ae5-af7a-3d7102f34943"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of U4 on F.Silkscreen",
+                    "pos": {
+                        "x": 134.739999,
+                        "y": 75.47
+                    },
+                    "uuid": "398a52a3-af96-4268-9efc-16d9b3cf5a80"
+                },
+                {
+                    "description": "Reference field of C5",
+                    "pos": {
+                        "x": 146.5,
+                        "y": 75.15
+                    },
+                    "uuid": "78933e8b-42ca-4e98-ab7b-914ce1656f71"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of U8",
+                    "pos": {
+                        "x": 126.41,
+                        "y": 40.05
+                    },
+                    "uuid": "680e12fe-c7d9-4a10-8a46-35a53b0a7c3d"
+                },
+                {
+                    "description": "Segment of C9 on F.Silkscreen",
+                    "pos": {
+                        "x": 131.1,
+                        "y": 40.23
+                    },
+                    "uuid": "a1402b23-1566-4f39-b1b9-4fd5b33849a9"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of J5",
+                    "pos": {
+                        "x": 150.48,
+                        "y": 16.54
+                    },
+                    "uuid": "962a8695-fa4f-43d6-9e3c-d41c4737c017"
+                },
+                {
+                    "description": "Segment of C22 on F.Silkscreen",
+                    "pos": {
+                        "x": 150.29,
+                        "y": 15.626
+                    },
+                    "uuid": "e12db469-d79b-4ded-9032-76009f40fc45"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C22 on F.Silkscreen",
+                    "pos": {
+                        "x": 150.33,
+                        "y": 15.735
+                    },
+                    "uuid": "93d72e44-a4e3-4fe1-ac1b-7ceec90645aa"
+                },
+                {
+                    "description": "Reference field of J5",
+                    "pos": {
+                        "x": 150.48,
+                        "y": 16.54
+                    },
+                    "uuid": "962a8695-fa4f-43d6-9e3c-d41c4737c017"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Circle of C22 on F.Silkscreen",
+                    "pos": {
+                        "x": 147.85,
+                        "y": 16.54
+                    },
+                    "uuid": "570e51fd-a5b1-4a47-842c-dec91827faa0"
+                },
+                {
+                    "description": "Reference field of J5",
+                    "pos": {
+                        "x": 150.48,
+                        "y": 16.54
+                    },
+                    "uuid": "962a8695-fa4f-43d6-9e3c-d41c4737c017"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of J5",
+                    "pos": {
+                        "x": 150.48,
+                        "y": 16.54
+                    },
+                    "uuid": "962a8695-fa4f-43d6-9e3c-d41c4737c017"
+                },
+                {
+                    "description": "Segment of C22 on F.Silkscreen",
+                    "pos": {
+                        "x": 150.37,
+                        "y": 15.863
+                    },
+                    "uuid": "98c86b13-73e5-428b-8d53-3aaa2f2a3b12"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C22 on F.Silkscreen",
+                    "pos": {
+                        "x": 150.41,
+                        "y": 16.023
+                    },
+                    "uuid": "958b439d-d05c-4f12-b2ef-706955b3325e"
+                },
+                {
+                    "description": "Reference field of J5",
+                    "pos": {
+                        "x": 150.48,
+                        "y": 16.54
+                    },
+                    "uuid": "962a8695-fa4f-43d6-9e3c-d41c4737c017"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of J5",
+                    "pos": {
+                        "x": 150.48,
+                        "y": 16.54
+                    },
+                    "uuid": "962a8695-fa4f-43d6-9e3c-d41c4737c017"
+                },
+                {
+                    "description": "Segment of C22 on F.Silkscreen",
+                    "pos": {
+                        "x": 150.17,
+                        "y": 15.363
+                    },
+                    "uuid": "97846ab4-b2a9-4f5a-a212-2cc5cd5ca9fb"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of J5",
+                    "pos": {
+                        "x": 150.48,
+                        "y": 16.54
+                    },
+                    "uuid": "962a8695-fa4f-43d6-9e3c-d41c4737c017"
+                },
+                {
+                    "description": "Segment of C22 on F.Silkscreen",
+                    "pos": {
+                        "x": 150.21,
+                        "y": 15.442
+                    },
+                    "uuid": "b928e993-c5cb-4546-8c83-97b2cf8fa70f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of C22 on F.Silkscreen",
+                    "pos": {
+                        "x": 150.25,
+                        "y": 15.529
+                    },
+                    "uuid": "2a94d96c-4b8f-44f3-9a45-63e89ab4dd7d"
+                },
+                {
+                    "description": "Reference field of J5",
+                    "pos": {
+                        "x": 150.48,
+                        "y": 16.54
+                    },
+                    "uuid": "962a8695-fa4f-43d6-9e3c-d41c4737c017"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of J5",
+                    "pos": {
+                        "x": 150.48,
+                        "y": 16.54
+                    },
+                    "uuid": "962a8695-fa4f-43d6-9e3c-d41c4737c017"
+                },
+                {
+                    "description": "Segment of C22 on F.Silkscreen",
+                    "pos": {
+                        "x": 150.45,
+                        "y": 16.257
+                    },
+                    "uuid": "c231cb7f-0bb7-45ff-beff-b8794f046d70"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of C2",
+                    "pos": {
+                        "x": 55.78,
+                        "y": 75.15
+                    },
+                    "uuid": "a474afdc-e8c3-44a2-9eec-908525944939"
+                },
+                {
+                    "description": "PTH pad 20 [/~{IORQ}] of U1",
+                    "pos": {
+                        "x": 55.78,
+                        "y": 74.14
+                    },
+                    "uuid": "957caf46-a1b2-44a4-b5d2-8dbf94f52d2a"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of C24",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 51.88
+                    },
+                    "uuid": "25c06847-41da-4f2c-988e-ffa7a7b748d1"
+                },
+                {
+                    "description": "PTH pad 2 [/C2M] of C21",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 50.89
+                    },
+                    "uuid": "868348e1-918a-4e29-8ec7-b9a4f86341bd"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of U6",
+                    "pos": {
+                        "x": 23.01,
+                        "y": 38.78
+                    },
+                    "uuid": "7390d8af-6602-4d07-991a-9cba439c91fb"
+                },
+                {
+                    "description": "PTH pad 1 [+5V] of C7",
+                    "pos": {
+                        "x": 22.6,
+                        "y": 37.61
+                    },
+                    "uuid": "672ff573-5021-4537-9b8e-b245d06eb6bd"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of C20",
+                    "pos": {
+                        "x": 18.65,
+                        "y": 43.65
+                    },
+                    "uuid": "400bbc74-9d83-447f-ad20-ea1937927af1"
+                },
+                {
+                    "description": "PTH pad 2 [/VS_PLUS] of U6",
+                    "pos": {
+                        "x": 19.2,
+                        "y": 43.65
+                    },
+                    "uuid": "5a362d95-88f2-44df-baa1-86fd59a7545f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of C21",
+                    "pos": {
+                        "x": 18.65,
+                        "y": 49.64
+                    },
+                    "uuid": "738af587-e888-48c1-b67b-18e0e0a42e50"
+                },
+                {
+                    "description": "PTH pad 5 [/C2M] of U6",
+                    "pos": {
+                        "x": 19.2,
+                        "y": 51.27
+                    },
+                    "uuid": "1f732158-9809-4df6-81d3-1de9149d36b2"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of C21",
+                    "pos": {
+                        "x": 18.65,
+                        "y": 49.64
+                    },
+                    "uuid": "738af587-e888-48c1-b67b-18e0e0a42e50"
+                },
+                {
+                    "description": "PTH pad 4 [/C2P] of U6",
+                    "pos": {
+                        "x": 19.2,
+                        "y": 48.73
+                    },
+                    "uuid": "5d64fdfa-3ffe-4a8c-b70b-b3f397000e66"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of Y2",
+                    "pos": {
+                        "x": 44.799999,
+                        "y": 8.55
+                    },
+                    "uuid": "dea838de-4c9f-419b-be22-8f3724e969bf"
+                },
+                {
+                    "description": "PTH pad 2 [GND] of C11",
+                    "pos": {
+                        "x": 43.49,
+                        "y": 7.42
+                    },
+                    "uuid": "e7c8cc54-5103-40c0-93bf-595b11e04679"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of U8",
+                    "pos": {
+                        "x": 126.41,
+                        "y": 40.05
+                    },
+                    "uuid": "680e12fe-c7d9-4a10-8a46-35a53b0a7c3d"
+                },
+                {
+                    "description": "PTH pad 1 [+5V] of C9",
+                    "pos": {
+                        "x": 125.98,
+                        "y": 38.86
+                    },
+                    "uuid": "0c72db8b-e284-42e3-812e-3edf78c18016"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of J5",
+                    "pos": {
+                        "x": 150.48,
+                        "y": 16.54
+                    },
+                    "uuid": "962a8695-fa4f-43d6-9e3c-d41c4737c017"
+                },
+                {
+                    "description": "PTH pad 2 [GND] of C22",
+                    "pos": {
+                        "x": 149.1,
+                        "y": 16.54
+                    },
+                    "uuid": "b834ed32-afb7-4c43-bfcc-c52388373548"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of U7",
+                    "pos": {
+                        "x": 115.41,
+                        "y": 40.05
+                    },
+                    "uuid": "4f2fb4d1-d5c3-4486-9821-122f40d68026"
+                },
+                {
+                    "description": "PTH pad 1 [+5V] of C8",
+                    "pos": {
+                        "x": 115.0,
+                        "y": 38.86
+                    },
+                    "uuid": "9f871435-1099-42a4-b3f5-74e92c6c4370"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'MountingHole'",
+            "items": [
+                {
+                    "description": "Footprint H3",
+                    "pos": {
+                        "x": 5.0,
+                        "y": 95.0
+                    },
+                    "uuid": "01c3dba5-5c0c-4d29-85d7-7485aee84bc6"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Capacitor_THT'",
+            "items": [
+                {
+                    "description": "Footprint C11",
+                    "pos": {
+                        "x": 38.49,
+                        "y": 7.42
+                    },
+                    "uuid": "0672b5c8-8472-4dfc-b827-337a4fcc997e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Capacitor_THT'",
+            "items": [
+                {
+                    "description": "Footprint C2",
+                    "pos": {
+                        "x": 53.28,
+                        "y": 77.65
+                    },
+                    "uuid": "11f11d04-09f6-4faa-9613-8c542e17dd13"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Oscillator'",
+            "items": [
+                {
+                    "description": "Footprint Y2",
+                    "pos": {
+                        "x": 40.989999,
+                        "y": 19.81
+                    },
+                    "uuid": "13f4db84-1c46-4ebb-b058-97e8f77d4462"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Capacitor_THT'",
+            "items": [
+                {
+                    "description": "Footprint C3",
+                    "pos": {
+                        "x": 85.38,
+                        "y": 29.97
+                    },
+                    "uuid": "178bc1d6-484d-4a9b-af54-ff45721e0db1"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Oscillator'",
+            "items": [
+                {
+                    "description": "Footprint Y1",
+                    "pos": {
+                        "x": 8.379999,
+                        "y": 81.81
+                    },
+                    "uuid": "235722ab-abf1-4778-b4f5-4b7a8079e89a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Package_DIP'",
+            "items": [
+                {
+                    "description": "Footprint U7",
+                    "pos": {
+                        "x": 111.6,
+                        "y": 42.38
+                    },
+                    "uuid": "2672d63a-588c-45e5-a1bf-2b0eb2118de6"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Capacitor_THT'",
+            "items": [
+                {
+                    "description": "Footprint C10",
+                    "pos": {
+                        "x": 5.88,
+                        "y": 69.42
+                    },
+                    "uuid": "286c0e03-d73c-495f-8119-0a2d0adc9067"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Capacitor_THT'",
+            "items": [
+                {
+                    "description": "Footprint C4",
+                    "pos": {
+                        "x": 105.72,
+                        "y": 29.97
+                    },
+                    "uuid": "3237076f-5272-4bf9-b6b2-344066dd1a6a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Capacitor_THT'",
+            "items": [
+                {
+                    "description": "Footprint C7",
+                    "pos": {
+                        "x": 22.6,
+                        "y": 37.61
+                    },
+                    "uuid": "34defb89-331c-4dd0-bf18-f18de12b2b08"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Package_DIP'",
+            "items": [
+                {
+                    "description": "Footprint U2",
+                    "pos": {
+                        "x": 74.38,
+                        "y": 33.489999
+                    },
+                    "uuid": "3aebbaae-c2c2-4411-a0fa-b6a4941d76ff"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Button_Switch_THT'",
+            "items": [
+                {
+                    "description": "Footprint SW1",
+                    "pos": {
+                        "x": 14.75,
+                        "y": 13.75
+                    },
+                    "uuid": "3e35d2a2-c986-4c64-8989-22110d86144d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Connector_Dsub'",
+            "items": [
+                {
+                    "description": "Footprint J1",
+                    "pos": {
+                        "x": 7.78,
+                        "y": 55.54
+                    },
+                    "uuid": "47bc364c-4b39-4a23-8a51-f4ac551ccbb6"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Capacitor_THT'",
+            "items": [
+                {
+                    "description": "Footprint C23",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 36.42
+                    },
+                    "uuid": "49c09b5b-da5e-461c-ad84-1e3fb733ba84"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Resistor_THT'",
+            "items": [
+                {
+                    "description": "Footprint R2",
+                    "pos": {
+                        "x": 12.92,
+                        "y": 32.0
+                    },
+                    "uuid": "52d65d51-dd1f-4f29-b0b7-b0d689894a12"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'MountingHole'",
+            "items": [
+                {
+                    "description": "Footprint H1",
+                    "pos": {
+                        "x": 5.0,
+                        "y": 5.0
+                    },
+                    "uuid": "5978bd35-a465-4bc4-a86d-ee743fbb02fd"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Capacitor_THT'",
+            "items": [
+                {
+                    "description": "Footprint C5",
+                    "pos": {
+                        "x": 144.0,
+                        "y": 77.65
+                    },
+                    "uuid": "654adbfa-cc2b-45fd-8d77-b45ed92350b4"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'TerminalBlock_Phoenix'",
+            "items": [
+                {
+                    "description": "Footprint J5",
+                    "pos": {
+                        "x": 156.8,
+                        "y": 19.08
+                    },
+                    "uuid": "69c9894d-7bc3-46c4-b9b3-af1c119828ee"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Connector_PinHeader_2.54mm'",
+            "items": [
+                {
+                    "description": "Footprint J4",
+                    "pos": {
+                        "x": 142.0,
+                        "y": 3.109999
+                    },
+                    "uuid": "7859cdb1-9ba6-4484-992f-4d6e5cea87fd"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Package_DIP'",
+            "items": [
+                {
+                    "description": "Footprint U6",
+                    "pos": {
+                        "x": 19.2,
+                        "y": 41.11
+                    },
+                    "uuid": "7b380e81-9ba9-4eb5-9684-7697dc9779b1"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Capacitor_THT'",
+            "items": [
+                {
+                    "description": "Footprint C22",
+                    "pos": {
+                        "x": 146.6,
+                        "y": 16.54
+                    },
+                    "uuid": "83d57846-e5f8-42e2-a803-59c382c6c697"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Package_DIP'",
+            "items": [
+                {
+                    "description": "Footprint U8",
+                    "pos": {
+                        "x": 122.6,
+                        "y": 42.38
+                    },
+                    "uuid": "868ed254-8fb4-49f8-b7d8-546126348d02"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Package_DIP'",
+            "items": [
+                {
+                    "description": "Footprint U3",
+                    "pos": {
+                        "x": 92.979999,
+                        "y": 33.489999
+                    },
+                    "uuid": "973714ac-d90c-43cc-aae4-bcf004444649"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Capacitor_THT'",
+            "items": [
+                {
+                    "description": "Footprint C1",
+                    "pos": {
+                        "x": 26.75,
+                        "y": 18.0
+                    },
+                    "uuid": "98890c66-1d52-488e-b2a9-b8f15a776e15"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Capacitor_THT'",
+            "items": [
+                {
+                    "description": "Footprint C9",
+                    "pos": {
+                        "x": 125.98,
+                        "y": 38.86
+                    },
+                    "uuid": "9d1e0834-cd75-49b0-aebb-8a2631cc400e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'MountingHole'",
+            "items": [
+                {
+                    "description": "Footprint H4",
+                    "pos": {
+                        "x": 155.0,
+                        "y": 95.0
+                    },
+                    "uuid": "9f7834bd-a7a1-492c-b86b-cf8ca8588dea"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'MountingHole'",
+            "items": [
+                {
+                    "description": "Footprint H2",
+                    "pos": {
+                        "x": 155.0,
+                        "y": 5.0
+                    },
+                    "uuid": "9ff071f7-4f34-4db4-a086-4c050c5ebd73"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Capacitor_THT'",
+            "items": [
+                {
+                    "description": "Footprint C24",
+                    "pos": {
+                        "x": 13.65,
+                        "y": 55.63
+                    },
+                    "uuid": "a16fc59b-6fd9-4c77-8e2e-45e8a125b646"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Capacitor_THT'",
+            "items": [
+                {
+                    "description": "Footprint C6",
+                    "pos": {
+                        "x": 52.94,
+                        "y": 22.36
+                    },
+                    "uuid": "a3816b02-e38b-4c8b-9a17-5f5d11467067"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Connector_PinHeader_2.54mm'",
+            "items": [
+                {
+                    "description": "Footprint J3",
+                    "pos": {
+                        "x": 130.0,
+                        "y": 3.109999
+                    },
+                    "uuid": "cb351389-20ee-4a50-8846-499074b95c32"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Capacitor_THT'",
+            "items": [
+                {
+                    "description": "Footprint C21",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 48.39
+                    },
+                    "uuid": "ce2fca52-6b0e-4588-a4e5-340fc72d9295"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Capacitor_THT'",
+            "items": [
+                {
+                    "description": "Footprint C8",
+                    "pos": {
+                        "x": 115.0,
+                        "y": 38.86
+                    },
+                    "uuid": "d26fa07e-1457-487b-93b7-ed7b15b5d053"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Package_DIP'",
+            "items": [
+                {
+                    "description": "Footprint U5",
+                    "pos": {
+                        "x": 37.18,
+                        "y": 25.88
+                    },
+                    "uuid": "e55f5521-6845-418e-853f-67c91ece3d0c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Capacitor_THT'",
+            "items": [
+                {
+                    "description": "Footprint C20",
+                    "pos": {
+                        "x": 14.9,
+                        "y": 42.4
+                    },
+                    "uuid": "e7662f13-93b3-4b82-862e-12ab83a520ff"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Connector_PinHeader_2.54mm'",
+            "items": [
+                {
+                    "description": "Footprint J2",
+                    "pos": {
+                        "x": 118.0,
+                        "y": 3.109999
+                    },
+                    "uuid": "eb5478a1-9572-4ec6-9990-536ea4b58f45"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Package_DIP'",
+            "items": [
+                {
+                    "description": "Footprint U4",
+                    "pos": {
+                        "x": 133.579999,
+                        "y": 25.88
+                    },
+                    "uuid": "f2844127-61fa-489d-9fe9-4d5aa396fb55"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Package_DIP'",
+            "items": [
+                {
+                    "description": "Footprint U1",
+                    "pos": {
+                        "x": 55.78,
+                        "y": 25.88
+                    },
+                    "uuid": "f418f7b8-93eb-4c57-b445-c7d39fb90856"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Resistor_THT'",
+            "items": [
+                {
+                    "description": "Footprint R1",
+                    "pos": {
+                        "x": 12.92,
+                        "y": 26.0
+                    },
+                    "uuid": "fee048d2-36bc-4e5b-aed3-0b62f119a3b4"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 160.0,
+                        "y": 0.0
+                    },
+                    "uuid": "3d20a139-b8a5-483d-9b5b-1e5f1b80238c"
+                },
+                {
+                    "description": "Segment of J5 on F.Silkscreen",
+                    "pos": {
+                        "x": 151.48,
+                        "y": 11.34
+                    },
+                    "uuid": "06b88805-e186-4ccd-8e51-2d19411055bd"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 160.0,
+                        "y": 0.0
+                    },
+                    "uuid": "3d20a139-b8a5-483d-9b5b-1e5f1b80238c"
+                },
+                {
+                    "description": "Segment of J5 on F.Silkscreen",
+                    "pos": {
+                        "x": 161.52,
+                        "y": 21.74
+                    },
+                    "uuid": "267d3f74-a66c-45fe-997d-0c9a845c8b31"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        }
+    ]
+}

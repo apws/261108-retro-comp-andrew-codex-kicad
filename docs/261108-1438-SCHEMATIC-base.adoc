@@ -1,0 +1,97 @@
+= Schematic base: Codex capture, connectivity audit and review
+:title: {docname}
+:author: Falken and Ari / Codex
+:revdate: 2026-11-08
+:toc:
+:sectnums:
+
+== Result of this step
+
+The authoritative project under `design/` now contains a new A3 schematic drawing. It has 38 physical components, with every one of their 301 pins assigned to a net or explicitly marked no-connect. Four mounting holes have footprints and no electrical pins. The drawing uses labels for the address, data and peripheral buses, and direct wires for reset, selected decode connections, the MAX232 charge pump and the UART baud-clock loop.
+
+The schematic is the first implementation milestone. PCB placement and routing remain the next stages. The Grok/AGY schematic and completed PCB remain unchanged in `reference/grok-agy/`.
+
+* Native project: link:../design/Z80_Simple_Computer.kicad_pro[KiCad project].
+* Native schematic: link:../design/Z80_Simple_Computer.kicad_sch[editable schematic].
+* Preview: link:../output/schematic/Z80_Simple_Computer.svg[SVG] and link:../output/schematic/Z80_Simple_Computer.png[PNG].
+* Manufacturing component list: link:../output/schematic/BOM.csv[CSV BOM]. Mounting holes are excluded from the electrical BOM and remain present in the schematic and netlist.
+* Connectivity: link:../output/schematic/Z80_Simple_Computer.xml[KiCad-exported XML netlist].
+
+== Capture method and attribution
+
+`design/circuit.json` records physical pin numbers, intended nets, no-connects, functions, values and footprints. `tools/build_schematic.py` defines the sheet geometry, explicit wire paths and deterministic output. The part pinouts were checked against the stock symbols, the GIF and the component documentation listed below. The native exported netlist was then compared with the inherited circuit.
+
+Low-level symbol loading, inherited-symbol flattening, pin geometry and S-expression helpers were adapted from `reference/grok-agy/tools/build_schematic.py` into `tools/kicad_schematic.py`. This reuse is attributed in the helper file. The new circuit specification, drawing arrangement, explicit support wiring, deterministic generation and connectivity checks are Codex work. This is not a claim to have independently invented the source circuit or the serializer.
+
+The vendored symbols and footprints remain KiCad 10.0.7 resources. Native reading, ERC, netlist/BOM export and SVG plotting were performed with KiCad 10.0.8 on this machine. The built schematic embeds its symbol drawings; project library links still provide footprint and model resolution.
+
+== Circuit choices and source audit
+
+[cols="1,3",options="header"]
+|===
+|Block |Captured behavior
+|CPU
+|CMOS Z84C00, 4.0000 MHz canned oscillator, active-low reset. INT, NMI, WAIT and BUSREQ are held inactive. HALT, M1, RFSH and BUSACK are unused outputs marked no-connect. No interrupt controller is part of this base.
+|Memory
+|32 KiB ROM at `0000-7FFF`, 32 KiB RAM at `8000-FFFF`. `/ROMCS = /MREQ OR A15`; `/RAMCS = /MREQ OR NOT A15`. The reset-vector region therefore selects ROM.
+|27C256 substitution
+|Only A0-A14 reach the EPROM. Pin 1 is VPP and joins +5 V, rather than the 27C512's A15 connection. Pin 27 is A14. Pin 20 is `/CE`; pin 22 is `/OE` driven by `/RD`.
+|PIO
+|82C55A, polled operation, active-high reset. A0-A1 select its four registers. A7 low enables it during an I/O cycle, so `00-03` is a convenient base and other addresses mirror it. Three eight-pin headers expose PA, PB and PC; these headers have no supply or ground pin.
+|UART
+|The generic 16550 symbol is given the concrete through-hole value `TL16C550CN`, whose PDIP-40 pinout matches the capture. A0-A2 select registers. A7 high enables it during an I/O cycle, making `80-87` the convenient base with mirrors. CS0/CS1 are high; the alternate active-high read/write inputs and `/ADS` are low. The 1.8432 MHz oscillator drives XIN; BAUDOUT feeds RCLK. Interrupt and unused control outputs are no-connects.
+|UART input correction
+|Pin 36 `/CTS` is tied low, asserting clear-to-send. Pins 38 `/DCD` and 39 `/RI` are tied high, making them inactive. The inherited schematic marked these three inputs no-connect. These are the only exported connectivity differences from that baseline. They now have defined logic levels; this base provides no RTS/CTS cable flow control.
+|Reset
+|10 kohm pull-up, 1 uF timing capacitor, 10 ohm switch-discharge resistor and two 74HCT14 inversions. The first stage drives the active-high PIO/UART resets; the second drives the CPU's active-low reset. Logic polarity is checked; power-ramp and analog reset timing are not yet qualified.
+|Serial interface
+|MAX232 with two 1 uF flying capacitors, positive and negative reservoir capacitors, and a 1 uF supply capacitor. C24's positive terminal is grounded and its negative terminal joins VS-. The 100 nF bypass bank provides one part for each of eight ICs and two oscillators.
+|Connector convention
+|The existing female DE9 footprint and DTE signal assignments are retained: pin 2 receive, 3 transmit, 4 DTR, 5 ground, 6 DSR. This gender with those signal assignments must be identified when selecting the cable; it is not a claim of a standard male DTE connector. Unused DE9 pins are no-connects.
+|Supply and mechanics
+|External regulated +5 V on J5 pin 1, ground on pin 2. No onboard 9-15 V regulator. Four M3 mounting holes are included for the later Eurocard placement.
+|Logic symbol substitution
+|U7 uses the 74HC14 symbol with value 74HCT14; U8 uses the 74LS32 symbol with value 74HCT32. These are drawing/pinout substitutions. The intended physical parts are HCT devices.
+|===
+
+Compared with the inherited schematic, component values also now specify capacitor voltage ratings and the concrete UART type. No new physical components were added. The source GIF and the earlier Eurocard's additions remain distinguished; headers, mounting holes and the power inlet are additions to the GIF.
+
+== Verification
+
+* Native ERC: *zero errors and zero warnings*, with no check exclusions added. See link:../reports/schematic/erc.json[ERC report].
+* The native XML netlist matches the explicit pin specification for all 301 assigned/no-connect pins and all 38 components. This checks the actual KiCad interpretation of wires, labels, junctions and symbols.
+* Decoder and reset logic pass 32 combinations of `/MREQ`, `/IORQ`, A15, A7 and RESET_RC. The checks follow actual exported pin connections through the known inverter and OR-gate pinouts. See link:../reports/schematic/decoder-truth-table.json[truth-table cases].
+* Additional assertions check VPP, the baud-clock loop, UART input straps, negative reservoir polarity and serial receive/transmit connections.
+* Comparison with the inherited native netlist identifies exactly the three UART strap changes listed above. See link:../reports/schematic/connectivity-audit.json[connectivity audit].
+* Regenerating the sheet a second time produced identical bytes. Component and pin UUIDs are deterministic, and synchronization retains those bytes across experiments.
+* The exported A3 SVG was rendered and visually inspected. Fields, the supply names, support wiring and page frame were adjusted during review.
+
+These checks do not establish analog power-on reset behavior, complete bus timing margins, oscillator sourcing compatibility, signal integrity or working hardware. Selecting final ordering codes and qualifying timing belong to the next design reviews.
+
+== Reproduction and editing
+
+Run from the project root:
+
+[source,shell]
+----
+python3 tools/build_schematic.py --write
+kicad-cli sch export netlist --format kicadxml -o "$PWD/output/schematic/Z80_Simple_Computer.xml" "$PWD/design/Z80_Simple_Computer.kicad_sch"
+kicad-cli sch erc --exit-code-violations --format json -o "$PWD/reports/schematic/erc.json" "$PWD/design/Z80_Simple_Computer.kicad_sch"
+python3 tools/check_schematic.py
+kicad-cli sch export svg -o "$PWD/output/schematic/" "$PWD/design/Z80_Simple_Computer.kicad_sch"
+python3 tools/sync_layouts.py --sync
+python3 tools/sync_layouts.py --check
+----
+
+For the current generated capture, edit the pin specification and drawing script, then regenerate. The generator checks the previous generated hash before overwriting the authoritative sheet and refuses KiCad lock files. A review copy can instead be written with `--output PATH`.
+
+If switching to manual KiCad schematic editing, retain the `.kicad_sch` as the authoritative circuit and stop regeneration. Do not mix manual edits and generated overwrites. Layout synchronization continues to work from that file.
+
+Four experiment folders have been synchronized to this schematic version. Their existing project settings are preserved, and their board status remains `not-created`. The next implementation step is a fresh Eurocard placement in `01-reused-agy-router`, saved as a placed, unrouted checkpoint before routing begins.
+
+== Source documents
+
+* link:../reference/source/z80test.gif[Thomas Scherrer's original GIF], as referenced by Andrew: `http://www.z80.info/gfx/z80test.gif`.
+* https://www.microchip.com/content/dam/mchp/documents/OTH/ProductDocuments/DataSheets/doc0014.pdf[Microchip/Atmel AT27C256R datasheet], mode table and VPP read-mode connection.
+* https://www.ti.com/lit/ds/symlink/tl16c550c.pdf[TI TL16C550C datasheet], PDIP pin assignments, address strobe, alternate strobes and CTS behavior.
+* https://www.ti.com/lit/ds/symlink/max232.pdf[TI MAX232 datasheet], pin functions and typical charge-pump application.

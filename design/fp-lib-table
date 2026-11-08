@@ -1,0 +1,12 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Button_Switch_THT") (type "KiCad") (uri "${KIPRJMOD}/libs/kicad-footprints-10.0.7/Button_Switch_THT.pretty") (options "") (descr "KiCad 10.0.7"))
+  (lib (name "Capacitor_THT") (type "KiCad") (uri "${KIPRJMOD}/libs/kicad-footprints-10.0.7/Capacitor_THT.pretty") (options "") (descr "KiCad 10.0.7"))
+  (lib (name "Connector_Dsub") (type "KiCad") (uri "${KIPRJMOD}/libs/kicad-footprints-10.0.7/Connector_Dsub.pretty") (options "") (descr "KiCad 10.0.7"))
+  (lib (name "Connector_PinHeader_2.54mm") (type "KiCad") (uri "${KIPRJMOD}/libs/kicad-footprints-10.0.7/Connector_PinHeader_2.54mm.pretty") (options "") (descr "KiCad 10.0.7"))
+  (lib (name "MountingHole") (type "KiCad") (uri "${KIPRJMOD}/libs/kicad-footprints-10.0.7/MountingHole.pretty") (options "") (descr "KiCad 10.0.7"))
+  (lib (name "Oscillator") (type "KiCad") (uri "${KIPRJMOD}/libs/kicad-footprints-10.0.7/Oscillator.pretty") (options "") (descr "KiCad 10.0.7"))
+  (lib (name "TerminalBlock_Phoenix") (type "KiCad") (uri "${KIPRJMOD}/libs/kicad-footprints-10.0.7/TerminalBlock_Phoenix.pretty") (options "") (descr "KiCad 10.0.7"))
+  (lib (name "Package_DIP") (type "KiCad") (uri "${KIPRJMOD}/libs/kicad-footprints-10.0.7/Package_DIP.pretty") (options "") (descr "KiCad 10.0.7"))
+  (lib (name "Resistor_THT") (type "KiCad") (uri "${KIPRJMOD}/libs/kicad-footprints-10.0.7/Resistor_THT.pretty") (options "") (descr "KiCad 10.0.7"))
+)

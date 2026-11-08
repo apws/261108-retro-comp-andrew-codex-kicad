@@ -1,0 +1,100 @@
+{
+  "status": "rejected",
+  "transport": "cli",
+  "input_board_sha256": "d054435baa298386f48a8b6e87d258052015624434147a24220acc5e8c61ad23",
+  "session_sha256": "696e287161f6ce38aabfd16ac868ed81ba0f1cd25070902b917182635787e60b",
+  "board_sha256": "349e6cbda33ceda3371091ab0bd5fa520404e25f86229aec465645f406d4de7a",
+  "unchanged_placement": true,
+  "outer_signal_layers_only": true,
+  "bounded_position_restorations": [
+    {
+      "reference": "H2",
+      "import_delta_nm": [
+        -35,
+        0
+      ]
+    },
+    {
+      "reference": "C1",
+      "import_delta_nm": [
+        -46,
+        0
+      ]
+    },
+    {
+      "reference": "H4",
+      "import_delta_nm": [
+        -35,
+        0
+      ]
+    },
+    {
+      "reference": "H3",
+      "import_delta_nm": [
+        -35,
+        0
+      ]
+    },
+    {
+      "reference": "U7",
+      "import_delta_nm": [
+        0,
+        1
+      ]
+    },
+    {
+      "reference": "C24",
+      "import_delta_nm": [
+        -46,
+        0
+      ]
+    },
+    {
+      "reference": "C23",
+      "import_delta_nm": [
+        -46,
+        0
+      ]
+    },
+    {
+      "reference": "C21",
+      "import_delta_nm": [
+        -46,
+        0
+      ]
+    },
+    {
+      "reference": "H1",
+      "import_delta_nm": [
+        -35,
+        0
+      ]
+    },
+    {
+      "reference": "C22",
+      "import_delta_nm": [
+        -46,
+        0
+      ]
+    },
+    {
+      "reference": "C20",
+      "import_delta_nm": [
+        -46,
+        0
+      ]
+    }
+  ],
+  "no_added_power_routes": true,
+  "dimensions_match": true,
+  "violations": 0,
+  "unconnected_items": 6,
+  "parity_issues": 0,
+  "track_segments": 570,
+  "vias": 17,
+  "track_length_mm": 4753.299,
+  "layer_lengths_mm": {
+    "B.Cu": 2248.436,
+    "F.Cu": 2504.863
+  }
+}

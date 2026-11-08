@@ -1,0 +1,204 @@
+= Doing the Z80 sheet one step at a time
+:toc:
+:toclevels: 2
+
+This is the conversation about your posted KiCad files, written up so you
+can follow it without the tool chatter. Petr asked for it as a guide, not
+as a new design. The other note in this directory,
+`261103-what-went-wrong-and-how-to-do-it.adoc`, is the diagnosis of the
+files as you first posted them. Those files are kept in `as-posted/`.
+
+
+== What you posted
+
+You gave an assistant one prompt that asked for a complete Z80 computer:
+schematic, board, routing, a monitor ROM, a bill of materials, and the
+write-up, all at once. The source drawing is Thomas Scherrer's simple Z80
+system, the GIF at `http://www.z80.info/gfx/z80test.gif`.
+
+The three files that came back look like a KiCad project. They are not a
+circuit.
+
+* The schematic opens on a blank sheet. The parts are names only. There
+  are no symbol drawings, no pins, and no wires, so the netlist is empty.
+  A KiCad 6+ sheet has to carry the symbol drawings inside the file.
+  Pointing at a library name is not enough.
+* The board does not open. Four lines begin with `;`, which is not legal
+  in that file. Taking those lines out still leaves a board with no pads.
+* The project file itself is fine. It is not why the board fails.
+
+The useful lesson is the method, not a cleverer prompt. One pile of jobs
+gives you three files that name a computer. Nobody opened them.
+
+
+== How to work with the assistant
+
+Do it as a chat with an engineer, one checkable step at a time. After
+each step, open the file with KiCad, or with `kicad-cli` if you are on a
+machine that has it. Do not continue while the file you just wrote does
+not load.
+
+A step is small enough to say what "done" means. For this sheet, done
+meant: it opens, the parts are real library symbols, ERC reports no
+errors, and a netlist shows the buses you expect. It did not mean a
+routed board.
+
+If you use the desktop app rather than a terminal, the same rule holds.
+Save, open the schematic, run ERC from the Inspect menu, and look at the
+sheet before you ask for the next thing. When something fails, paste the
+message back and stop there. Do not ask the assistant to "just finish
+the PCB" on top of a sheet that has not been checked.
+
+The assistant on this job was told the same thing, and it still ran ahead
+for a while. The pause in the middle was to say where the work actually
+was. That is worth doing on your side too.
+
+
+== What we did first
+
+The posted files were copied to `as-posted/` before anything was
+overwritten. The diagnosis note describes those copies. The board in the
+project directory is still that posted board. It was not fixed and it was
+not routed.
+
+Symbols and footprints came from the official KiCad 10.0.7 libraries.
+The old GitHub `kicad-symbols` repository is the KiCad 5 library and is
+archived. The current libraries are on GitLab, tagged `10.0.7`:
+
+* https://gitlab.com/kicad/libraries/kicad-symbols
+* https://gitlab.com/kicad/libraries/kicad-footprints
+
+Only the parts this sheet uses were copied into `libs/`. The project
+files `sym-lib-table` and `fp-lib-table` point at those copies, so ERC
+can see them on a machine with no system libraries installed. The symbol
+drawings are also embedded in the schematic, which is what lets the sheet
+open at all.
+
+This was done with KiCad 10.0.7. A current KiCad 10 should open it. A
+much older KiCad may not.
+
+
+== The parts, and where the library does not have your name
+
+The GIF's names were kept as values wherever the 10.0.7 library uses a
+different symbol. Nothing here was drawn by hand.
+
+[cols="1,2,2",options="header"]
+|===
+| Ref | On the sheet | Why that symbol
+
+| U1
+| Value `Z84C00`, symbol `CPU:Z84C00xxP`
+| There is no plain `Z80` symbol. This is the CMOS part in a 40-pin DIP,
+  pin-compatible with the NMOS Z80 on the GIF.
+
+| U2
+| Value `62256`, symbol `Memory_RAM:HM62256BLP`
+| The GIF's 32K RAM. Data pins on this symbol are named Q0–Q7. They are
+  on the data bus.
+
+| U3
+| Value `27C256`, symbol `Memory_EPROM:27C256`
+| The GIF shows a 27C512. You had already asked for a 27C256. Pin 1 of a
+  27C256 is VPP, and it is tied to +5V. A15 does not go to the ROM. The
+  map stays ROM at `0000–7FFF` and RAM at `8000–FFFF`.
+
+| U4
+| `82C55A`
+| The PIO. Ports A, B, and C also land on J2, J3, and J4, so those nets
+  are real connector pins instead of a name hanging on one pin.
+
+| U5
+| Value `16C550`, symbol `Interface_UART:16550`
+| CS0 and CS1 are tied high. WR, RD, and /ADS are tied low, so only /WR
+  and /RD strobe the chip. /BAUDOUT is wired to RCLK.
+
+| U6
+| `MAX232`
+| Charge-pump capacitors follow the MAX232 datasheet.
+
+| U7
+| Value `74HCT14`, symbol `74xx:74HC14`
+| The library has no 74HCT14. Same pinout.
+
+| U8
+| Value `74HCT32`, symbol `74xx:74LS32`
+| The library has no 74HC32 or 74HCT32. Same pinout. The value is the
+  part you wanted; the drawing is the part the library has.
+
+| Y1, Y2
+| 4 MHz and 1.8432 MHz oscillator symbols
+| Full-can oscillators, the four real pins only.
+
+| J1
+| DE9 socket, wired as a DTE
+| Pin 2 RX, pin 3 TX, pin 4 DTR, pin 5 ground, pin 6 DSR. The footprint
+  also has a shell pad named `SH`. The symbol has no pin for it, so the
+  shell is not grounded. That is the one pad difference ERC does not
+  complain about, and it is worth a decision when the board is done.
+|===
+
+One KiCad 10 surprise, because it will bite a multi-unit part: a gate
+marked "not in the BOM" is dropped from the netlist entirely. U7 and U8
+looked connected and were not, until every unit was left in the BOM.
+KiCad still lists each chip once.
+
+The address decode matches the printed map, not a single chain of OR
+gates. RAM is selected when /MREQ is low and A15 is low. ROM is selected
+when /MREQ is low and A15 is high. The PIO answers an I/O cycle with A7
+low (use ports 00–03). The UART answers an I/O cycle with A7 high (use
+80–87). Reset is two Schmitt inverters. The 8255 RESET pin and the 16550
+MR pin are active high, so they take the first inversion. The Z80 /RESET
+pin takes the second.
+
+
+== How to check the sheet
+
+Open `Z80_Simple_Computer.kicad_pro`. The schematic is one A2 sheet.
+ERC on this machine, with KiCad 10.0.7, reports 0 errors and 0 warnings.
+
+From a terminal, the same check is:
+
+[source,shell]
+----
+kicad-cli sch erc --severity-all Z80_Simple_Computer.kicad_sch
+kicad-cli sch export netlist --format kicadsexpr -o /tmp/z80.net Z80_Simple_Computer.kicad_sch
+----
+
+Things worth spotting on the netlist, or with the highlight tool in the
+schematic editor:
+
+* U1 is present. The posted sheet had lost the processor.
+* U3 pin 1 is on +5V, not on A15.
+* A0–A14 and D0–D7 are common to the CPU, the RAM, and the ROM.
+* /RAMCS is only the RAM chip select. /ROMCS is only the ROM chip enable.
+* U5 pins WR, RD, and /ADS are on ground. /WR and /RD are on the Z80
+  strobes.
+
+The buses are mostly net labels rather than long wires across the sheet.
+That is normal for this kind of drawing, and it is what the netlist is
+checking. The 100 nF capacitors are one per IC, drawn in a row along the
+bottom, not tucked beside each chip. The sheet says so.
+
+The sheet can be regenerated with `python3 tools/build_schematic.py`.
+If you move a part in the editor and then run that script, the script
+wins. Either edit in KiCad and stop using the script, or change the
+script. Do not do both.
+
+
+== What this is not
+
+The board file still does not open. There is no routing, no monitor ROM,
+and no bill of materials. Those were the rest of the original prompt, and
+they are the wrong next prompt.
+
+A sensible next step is one of these, and then a check:
+
+. Make the posted board open, or throw it away and start a new empty
+  board from this schematic.
+. Update the board from the schematic and look at the footprints. Do not
+  route yet.
+. Only then place the parts. Through-hole, the footprints already named
+  on the sheet.
+
+Stop after each of those and look.

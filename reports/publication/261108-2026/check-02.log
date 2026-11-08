@@ -1,0 +1,83 @@
+20:29:42: Debug: Adding duplicate image handler for 'PNG file'
+20:29:42: Debug: Adding duplicate image handler for 'JPEG file'
+20:29:42: Debug: Adding duplicate image handler for 'TIFF file'
+20:29:42: Debug: Adding duplicate image handler for 'GIF file'
+20:29:42: Debug: Adding duplicate image handler for 'PNM file'
+20:29:42: Debug: Adding duplicate image handler for 'PCX file'
+20:29:42: Debug: Adding duplicate image handler for 'IFF file'
+20:29:42: Debug: Adding duplicate image handler for 'Windows icon file'
+20:29:42: Debug: Adding duplicate image handler for 'Windows cursor file'
+20:29:42: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+20:29:42: Debug: Adding duplicate image handler for 'TGA file'
+20:29:42: Debug: Adding duplicate image handler for 'XPM file'
+20:29:43: Debug: Adding duplicate image handler for 'PNG file'
+20:29:43: Debug: Adding duplicate image handler for 'JPEG file'
+20:29:43: Debug: Adding duplicate image handler for 'TIFF file'
+20:29:43: Debug: Adding duplicate image handler for 'GIF file'
+20:29:43: Debug: Adding duplicate image handler for 'PNM file'
+20:29:43: Debug: Adding duplicate image handler for 'PCX file'
+20:29:43: Debug: Adding duplicate image handler for 'IFF file'
+20:29:43: Debug: Adding duplicate image handler for 'Windows icon file'
+20:29:43: Debug: Adding duplicate image handler for 'Windows cursor file'
+20:29:43: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+20:29:43: Debug: Adding duplicate image handler for 'TGA file'
+20:29:43: Debug: Adding duplicate image handler for 'XPM file'
+{
+  "status": "routed-checks-pass",
+  "variant": "01-reused-agy-router",
+  "footprints": 38,
+  "checked_schematic_pins": 301,
+  "copper_layers": 4,
+  "board_size_mm": [
+    160,
+    100
+  ],
+  "filled_power_planes": 2,
+  "unchanged_placement": true,
+  "unchanged_project_rules": true,
+  "unchanged_schematic": true,
+  "preserved_checkpoint_hashes": true,
+  "drc_violations": 0,
+  "unconnected_items": 0,
+  "schematic_parity_issues": 0,
+  "erc_violations": 0,
+  "completed_groups": [
+    "group1",
+    "group2",
+    "group3",
+    "group4",
+    "group5",
+    "group6",
+    "group7"
+  ],
+  "group_runtime_seconds": 136.64,
+  "board_sha256": "563f82c9d30572d833fa4d84e3fd93e6de61c728e04e13624436fa6af3f0743c",
+  "schematic_sha256": "f1a08e28cb32247addfa76974c82c4940699d3d99bdccb88e09733b92f3c4991",
+  "settings_sha256": "e417b80f3a6edb662368f41d6b662231b4ab1264cf40ef54e9e5343878e8d285",
+  "current": {
+    "track_segments": 1200,
+    "vias": 212,
+    "track_length_mm": 5413.942,
+    "layer_lengths_mm": {
+      "F.Cu": 2832.631,
+      "B.Cu": 2581.312
+    }
+  },
+  "historical_reference": {
+    "track_segments": 1700,
+    "vias": 229,
+    "track_length_mm": 5036.484,
+    "layer_lengths_mm": {
+      "F.Cu": 3076.28,
+      "B.Cu": 1960.204
+    }
+  },
+  "reference_drc_violations": {
+    "silk_overlap": 54,
+    "silk_over_copper": 10,
+    "silk_edge_clearance": 2
+  },
+  "reference_unconnected_items": 0,
+  "reference_parity_issues": 0,
+  "scope": "Different placement and adapted router; not an isolated algorithm benchmark. Hardware untested."
+}

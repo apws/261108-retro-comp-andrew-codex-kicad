@@ -1,0 +1,54 @@
+2026-11-08 16:34:56.201 INFO   Freerouting v2.5.0 (build-date: 2026-10-05)
+WARNING: Final field userProfileSettings in class app.freerouting.settings.GlobalSettings has been mutated reflectively by class com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$2 in unnamed module @78186a70 (file:/home/falken/_/wrk/ver/261108-retro-comp-andrew-codex-kicad/tools/.cache/freerouting/freerouting-2.5.0.jar)
+WARNING: Use --enable-final-field-mutation=ALL-UNNAMED to avoid a warning
+WARNING: Mutating final fields will be blocked in a future release unless final field mutation is enabled
+2026-11-08 16:34:56.513 INFO   Hardware: 12 CPU cores, 413 CPU score, 7952 MB RAM
+2026-11-08 16:34:56.520 WARN   GUI is disabled and you don't have a console available, so the only feedback from Freerouting is in the log.
+2026-11-08 16:34:57.970 INFO   [51D64D\F9602A] Loading board file 'Z80_Simple_Computer.dsn'...
+2026-11-08 16:34:58.107 INFO   Applied drill-hole clearance override: 200.0 um (2000 board units), 16 hole keepouts reclassified.
+2026-11-08 16:34:58.137 INFO   [51D64D\F9602A] Job '51D64D\F9602A' started at 2026-11-08T15:34:58.136914734Z.
+2026-11-08 16:34:58.308 INFO   [51D64D\F9602A] Pipeline thread limits: autorouter pass is single-threaded, optimizer.max_threads=1.
+2026-11-08 16:34:58.481 INFO   [51D64D\F9602A] Auto-routing stage started on board 'eefdcc7234dc9d01e7d6fc5c364d5878' with baseline score 220.06 for 138 unrouted items.
+2026-11-08 16:35:12.452 INFO   [51D64D\F9602A] Auto-routing pass #1 on board 'eefdcc7234dc9d01e7d6fc5c364d5878' was completed in 13.89 seconds with score 805.83 (30 unrouted and 0 violations), using 13.53 CPU seconds and the job allocated 5.96 GB of memory so far.
+2026-11-08 16:35:18.044 INFO   [51D64D\F9602A] Auto-routing pass #2 on board 'e1e09c5be91338fe0cf141fa82ab4e98' was completed in 5.52 seconds with score 883.50 (18 unrouted and 0 violations), using 18.42 CPU seconds and the job allocated 8.60 GB of memory so far.
+2026-11-08 16:35:22.357 INFO   [51D64D\F9602A] Auto-routing pass #3 on board '80eebc2c7446414b82f77a8f94445388' was completed in 4.26 seconds with score 941.75 (9 unrouted and 0 violations), using 23.35 CPU seconds and the job allocated 11.15 GB of memory so far.
+2026-11-08 16:35:23.376 INFO   [51D64D\F9602A] Auto-routing pass #4 on board '8df22786dee41183e5bdbeb79df47a3d' was completed in 0.97 seconds with score 948.22 (8 unrouted and 0 violations), using 24.34 CPU seconds and the job allocated 11.68 GB of memory so far.
+2026-11-08 16:35:24.549 INFO   [51D64D\F9602A] Auto-routing pass #5 on board '3d070f5510433be7d682b64a0faec348' was completed in 1.12 seconds with score 948.22 (8 unrouted and 0 violations), using 25.33 CPU seconds and the job allocated 12.22 GB of memory so far.
+2026-11-08 16:35:25.678 INFO   [51D64D\F9602A] Auto-routing pass #6 on board '9918f735ac21de0d224ccc46e367951a' was completed in 1.07 seconds with score 954.69 (7 unrouted and 0 violations), using 26.32 CPU seconds and the job allocated 12.68 GB of memory so far.
+2026-11-08 16:35:26.548 INFO   [51D64D\F9602A] Auto-routing pass #7 on board '2e3514d33a0d90c4d55e5a71cf582505' was completed in 0.81 seconds with score 954.69 (7 unrouted and 0 violations), using 27.31 CPU seconds and the job allocated 13.13 GB of memory so far.
+2026-11-08 16:35:27.369 INFO   [51D64D\F9602A] Auto-routing pass #8 on board 'ecafb1ba8a8ded602286501e9e8c0555' was completed in 0.77 seconds with score 954.69 (7 unrouted and 0 violations), using 28.30 CPU seconds and the job allocated 13.59 GB of memory so far.
+2026-11-08 16:35:28.175 INFO   [51D64D\F9602A] Auto-routing pass #9 on board 'd0eae0c16b17b077f80e404caf35298d' was completed in 0.75 seconds with score 948.22 (8 unrouted and 0 violations), using 29.29 CPU seconds and the job allocated 14.14 GB of memory so far.
+2026-11-08 16:35:28.724 INFO   [51D64D\F9602A] Auto-routing pass #10 on board '971f37e921364fa96d58b095c2510f96' was completed in 0.50 seconds with score 954.69 (7 unrouted and 0 violations), using 29.29 CPU seconds and the job allocated 14.14 GB of memory so far.
+2026-11-08 16:35:29.241 INFO   [51D64D\F9602A] Auto-routing pass #11 on board '10f5ad12c10a02e23aa043477d627b3b' was completed in 0.46 seconds with score 948.22 (8 unrouted and 0 violations), using 30.28 CPU seconds and the job allocated 14.62 GB of memory so far.
+2026-11-08 16:35:29.309 INFO   [51D64D\F9602A] Last-mile rip-up removed 24 blocking trace(s) or via(s) around 8 remaining connection(s).
+2026-11-08 16:35:33.454 INFO   [51D64D\F9602A] Auto-routing pass #12 on board '71ee51232fb58ff520e7b04be70f1830' was completed in 4.11 seconds with score 954.69 (7 unrouted and 0 violations), using 34.22 CPU seconds and the job allocated 16.72 GB of memory so far.
+2026-11-08 16:35:34.053 INFO   [51D64D\F9602A] Auto-routing pass #13 on board '1ca8b513edac80eac988314addb9b6e6' was completed in 0.55 seconds with score 954.69 (7 unrouted and 0 violations), using 34.22 CPU seconds and the job allocated 16.72 GB of memory so far.
+2026-11-08 16:35:34.740 INFO   [51D64D\F9602A] Auto-routing pass #14 on board 'dad03c70a92d325eba615c7f07c2cd00' was completed in 0.64 seconds with score 954.69 (7 unrouted and 0 violations), using 35.21 CPU seconds and the job allocated 17.23 GB of memory so far.
+2026-11-08 16:35:35.413 INFO   [51D64D\F9602A] Auto-routing pass #15 on board 'f460c017bad903f5a1bc7f456c7af3d9' was completed in 0.62 seconds with score 961.17 (6 unrouted and 0 violations), using 36.19 CPU seconds and the job allocated 17.68 GB of memory so far.
+2026-11-08 16:35:35.945 INFO   [51D64D\F9602A] Auto-routing pass #16 on board '96de2468677772fdcfb79f5db7f4dc81' was completed in 0.48 seconds with score 961.17 (6 unrouted and 0 violations), using 36.19 CPU seconds and the job allocated 17.68 GB of memory so far.
+2026-11-08 16:35:36.277 INFO   [51D64D\F9602A] Auto-routing pass #17 on board '96de2468677772fdcfb79f5db7f4dc81' was completed in 0.31 seconds with score 954.69 (7 unrouted and 0 violations), using 37.17 CPU seconds and the job allocated 18.07 GB of memory so far.
+2026-11-08 16:35:36.801 INFO   [51D64D\F9602A] Auto-routing pass #18 on board '4fd731a4ed7dd5b4b9898600f999a299' was completed in 0.48 seconds with score 954.69 (7 unrouted and 0 violations), using 37.17 CPU seconds and the job allocated 18.07 GB of memory so far.
+2026-11-08 16:35:36.846 INFO   [51D64D\F9602A] Last-mile rip-up removed 24 blocking trace(s) or via(s) around 7 remaining connection(s).
+2026-11-08 16:35:40.545 INFO   [51D64D\F9602A] Auto-routing pass #19 on board '5fb4cee376506d5f21fbc51e9879a494' was completed in 3.66 seconds with score 954.69 (7 unrouted and 0 violations), using 41.10 CPU seconds and the job allocated 20.59 GB of memory so far.
+2026-11-08 16:35:41.084 INFO   [51D64D\F9602A] Auto-routing pass #20 on board '96de2468677772fdcfb79f5db7f4dc81' was completed in 0.00 seconds with score 961.17 (6 unrouted and 0 violations), using 41.10 CPU seconds and the job allocated 20.59 GB of memory so far.
+2026-11-08 16:35:41.382 INFO   [51D64D\F9602A] Auto-routing pass #21 on board '96de2468677772fdcfb79f5db7f4dc81' was completed in 0.28 seconds with score 954.69 (7 unrouted and 0 violations), using 42.08 CPU seconds and the job allocated 21.18 GB of memory so far.
+2026-11-08 16:35:41.853 INFO   [51D64D\F9602A] Auto-routing pass #22 on board '4fd731a4ed7dd5b4b9898600f999a299' was completed in 0.46 seconds with score 954.69 (7 unrouted and 0 violations), using 42.08 CPU seconds and the job allocated 21.18 GB of memory so far.
+2026-11-08 16:35:42.346 INFO   [51D64D\F9602A] Auto-routing pass #23 on board 'bb5bf8bce6278211f7392db95d45b3e7' was completed in 0.45 seconds with score 954.69 (7 unrouted and 0 violations), using 43.07 CPU seconds and the job allocated 21.76 GB of memory so far.
+2026-11-08 16:35:42.843 INFO   [51D64D\F9602A] Auto-routing pass #24 on board '2cfbb96c3b09e741f77d80c33c0a43d5' was completed in 0.45 seconds with score 961.17 (6 unrouted and 0 violations), using 43.07 CPU seconds and the job allocated 21.76 GB of memory so far.
+2026-11-08 16:35:43.151 INFO   [51D64D\F9602A] Auto-routing pass #25 on board '3343b14a83d8141cb9f3f30f5e546f6b' was completed in 0.27 seconds with score 961.17 (6 unrouted and 0 violations), using 43.07 CPU seconds and the job allocated 21.76 GB of memory so far.
+2026-11-08 16:35:43.186 INFO   [51D64D\F9602A] The router's best score (961.17) has not improved by more than 0.5 points since pass #15. Stopping the auto-router after 25 passes (6 items still unconnected).
+The following connections could not be routed -- please review your design (e.g. check pad clearances, trace width rules, and available routing space):
+  Net '/SW_RESET' (1 unrouted connection):
+    - R2-2  ->  SW1-1@1
+  Net '/D5' (3 unrouted connections):
+    - U1-9  ->  U5-6
+    - U4-29  ->  U5-6
+    - U2-17  ->  U4-29
+  Net '/RESET_H' (2 unrouted connections):
+    - U7-2  ->  U7-3
+    - U7-3  ->  U5-35
+2026-11-08 16:35:43.271 INFO   [51D64D\F9602A] Auto-routing stage completed: started with 138 unrouted nets, completed in 44.93 seconds, final score: 961.17 (6 unrouted and 0 violations), using 44.06 total CPU seconds, 22.32 GB total allocated, and 187.2 MB peak heap usage.
+2026-11-08 16:35:43.319 INFO   [51D64D\F9602A] Skipping optimization stage: the board has 6 unrouted connection(s) (optimizer only runs on completely routed boards).
+2026-11-08 16:35:43.337 INFO   [51D64D\F9602A] Job '51D64D\F9602A' finished with state: COMPLETED (elapsed: 45.20 seconds, finished at UTC: 2026-11-08T15:35:43.336247160Z).
+2026-11-08 16:35:43.363 INFO   Saving output file '/home/falken/_/wrk/ver/261108-retro-comp-andrew-codex-kicad/reports/routing/04-freerouting/cli-control/Z80_Simple_Computer.ses' (SES)...
+2026-11-08 16:35:43.364 INFO   Successfully saved output file '/home/falken/_/wrk/ver/261108-retro-comp-andrew-codex-kicad/reports/routing/04-freerouting/cli-control/Z80_Simple_Computer.ses' (35975 bytes).

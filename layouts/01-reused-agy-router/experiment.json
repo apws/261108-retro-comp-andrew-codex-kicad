@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "experiment_id": "01-reused-agy-router",
+  "method": "Reuse the attributed AGY router with fresh Codex placement",
+  "frozen": false,
+  "status": "fully-routed-verified",
+  "board_status": "routed",
+  "schematic_snapshot": {
+    "source": "design/Z80_Simple_Computer.kicad_sch",
+    "sha256": "f1a08e28cb32247addfa76974c82c4940699d3d99bdccb88e09733b92f3c4991",
+    "synced_at_utc": "2026-11-08T13:40:57.642223+00:00"
+  },
+  "placement": {
+    "board_sha256": "d054435baa298386f48a8b6e87d258052015624434147a24220acc5e8c61ad23",
+    "schematic_sha256": "f1a08e28cb32247addfa76974c82c4940699d3d99bdccb88e09733b92f3c4991",
+    "report": "reports/placement/placement.json",
+    "checkpoint": "checkpoints/01-codex-placed-unrouted",
+    "verification": "reports/placement/verification.json"
+  },
+  "routing": {
+    "completed_groups": [
+      "group1",
+      "group2",
+      "group3",
+      "group4",
+      "group5",
+      "group6",
+      "group7"
+    ],
+    "board_sha256": "563f82c9d30572d833fa4d84e3fd93e6de61c728e04e13624436fa6af3f0743c",
+    "report": "reports/routing/01-reused-agy-router/group7",
+    "track_segments": 1200,
+    "vias": 212,
+    "track_length_mm": 5413.942,
+    "layer_lengths_mm": {
+      "B.Cu": 2581.312,
+      "F.Cu": 2832.631
+    },
+    "verification": "reports/routing/verification.json",
+    "handover": "docs/261108-1535-DONE-routing-and-comparison.adoc",
+    "previews": "output/routing/01-reused-agy-router"
+  }
+}

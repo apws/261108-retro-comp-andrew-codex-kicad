@@ -1,0 +1,726 @@
+{
+  "schema_version": 1,
+  "revision": "codex-base-1",
+  "source": "reference/source/z80test.gif",
+  "components": [
+    {
+      "ref": "U1",
+      "lib_id": "CPU:Z84C00xxP",
+      "value": "Z84C00",
+      "footprint": "Package_DIP:DIP-40_W15.24mm",
+      "role": "CPU",
+      "pins": {
+        "30": "A0",
+        "31": "A1",
+        "32": "A2",
+        "33": "A3",
+        "34": "A4",
+        "35": "A5",
+        "36": "A6",
+        "37": "A7",
+        "38": "A8",
+        "39": "A9",
+        "40": "A10",
+        "1": "A11",
+        "2": "A12",
+        "3": "A13",
+        "4": "A14",
+        "5": "A15",
+        "14": "D0",
+        "15": "D1",
+        "12": "D2",
+        "8": "D3",
+        "7": "D4",
+        "9": "D5",
+        "10": "D6",
+        "13": "D7",
+        "6": "CLK",
+        "19": "~{MREQ}",
+        "20": "~{IORQ}",
+        "21": "~{RD}",
+        "22": "~{WR}",
+        "26": "~{RESET}",
+        "11": "+5V",
+        "29": "GND",
+        "16": "+5V",
+        "17": "+5V",
+        "24": "+5V",
+        "25": "+5V"
+      },
+      "no_connect": [
+        "18",
+        "23",
+        "27",
+        "28"
+      ],
+      "parent": "Z084000xP"
+    },
+    {
+      "ref": "U2",
+      "lib_id": "Memory_RAM:HM62256BLP",
+      "value": "62256",
+      "footprint": "Package_DIP:DIP-28_W15.24mm",
+      "role": "RAM 8000-FFFF",
+      "pins": {
+        "10": "A0",
+        "9": "A1",
+        "8": "A2",
+        "7": "A3",
+        "6": "A4",
+        "5": "A5",
+        "4": "A6",
+        "3": "A7",
+        "25": "A8",
+        "24": "A9",
+        "21": "A10",
+        "23": "A11",
+        "2": "A12",
+        "26": "A13",
+        "1": "A14",
+        "11": "D0",
+        "12": "D1",
+        "13": "D2",
+        "15": "D3",
+        "16": "D4",
+        "17": "D5",
+        "18": "D6",
+        "19": "D7",
+        "20": "~{RAMCS}",
+        "22": "~{RD}",
+        "27": "~{WR}",
+        "28": "+5V",
+        "14": "GND"
+      },
+      "no_connect": [],
+      "parent": "KM62256CLP"
+    },
+    {
+      "ref": "U3",
+      "lib_id": "Memory_EPROM:27C256",
+      "value": "27C256",
+      "footprint": "Package_DIP:DIP-28_W15.24mm",
+      "role": "ROM 0000-7FFF",
+      "pins": {
+        "10": "A0",
+        "9": "A1",
+        "8": "A2",
+        "7": "A3",
+        "6": "A4",
+        "5": "A5",
+        "4": "A6",
+        "3": "A7",
+        "25": "A8",
+        "24": "A9",
+        "21": "A10",
+        "23": "A11",
+        "2": "A12",
+        "26": "A13",
+        "27": "A14",
+        "11": "D0",
+        "12": "D1",
+        "13": "D2",
+        "15": "D3",
+        "16": "D4",
+        "17": "D5",
+        "18": "D6",
+        "19": "D7",
+        "20": "~{ROMCS}",
+        "22": "~{RD}",
+        "1": "+5V",
+        "28": "+5V",
+        "14": "GND"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "U4",
+      "lib_id": "Interface:82C55A",
+      "value": "82C55A",
+      "footprint": "Package_DIP:DIP-40_W15.24mm",
+      "role": "PIO 00-03 (mirrored)",
+      "pins": {
+        "34": "D0",
+        "33": "D1",
+        "32": "D2",
+        "31": "D3",
+        "30": "D4",
+        "29": "D5",
+        "28": "D6",
+        "27": "D7",
+        "4": "PA0",
+        "3": "PA1",
+        "2": "PA2",
+        "1": "PA3",
+        "40": "PA4",
+        "39": "PA5",
+        "38": "PA6",
+        "37": "PA7",
+        "18": "PB0",
+        "19": "PB1",
+        "20": "PB2",
+        "21": "PB3",
+        "22": "PB4",
+        "23": "PB5",
+        "24": "PB6",
+        "25": "PB7",
+        "14": "PC0",
+        "15": "PC1",
+        "16": "PC2",
+        "17": "PC3",
+        "13": "PC4",
+        "12": "PC5",
+        "11": "PC6",
+        "10": "PC7",
+        "9": "A0",
+        "8": "A1",
+        "5": "~{RD}",
+        "36": "~{WR}",
+        "6": "~{PIOCS}",
+        "35": "RESET_H",
+        "26": "+5V",
+        "7": "GND"
+      },
+      "no_connect": [],
+      "parent": "8255"
+    },
+    {
+      "ref": "U5",
+      "lib_id": "Interface_UART:16550",
+      "value": "TL16C550CN",
+      "footprint": "Package_DIP:DIP-40_W15.24mm",
+      "role": "UART 80-87 (mirrored)",
+      "pins": {
+        "1": "D0",
+        "2": "D1",
+        "3": "D2",
+        "4": "D3",
+        "5": "D4",
+        "6": "D5",
+        "7": "D6",
+        "8": "D7",
+        "28": "A0",
+        "27": "A1",
+        "26": "A2",
+        "12": "+5V",
+        "13": "+5V",
+        "14": "~{UARTCS}",
+        "16": "CLK_UART",
+        "18": "~{WR}",
+        "19": "GND",
+        "20": "GND",
+        "21": "~{RD}",
+        "22": "GND",
+        "25": "GND",
+        "35": "RESET_H",
+        "40": "+5V",
+        "15": "BAUDOUT",
+        "9": "BAUDOUT",
+        "10": "RX_TTL",
+        "11": "TX_TTL",
+        "33": "DTR_TTL",
+        "37": "DSR_TTL",
+        "36": "GND",
+        "38": "+5V",
+        "39": "+5V"
+      },
+      "no_connect": [
+        "17",
+        "23",
+        "24",
+        "29",
+        "30",
+        "31",
+        "32",
+        "34"
+      ],
+      "parent": null
+    },
+    {
+      "ref": "U6",
+      "lib_id": "Interface_UART:MAX232",
+      "value": "MAX232",
+      "footprint": "Package_DIP:DIP-16_W7.62mm",
+      "role": "RS-232 transceiver",
+      "pins": {
+        "1": "C1P",
+        "3": "C1M",
+        "4": "C2P",
+        "5": "C2M",
+        "2": "VS_PLUS",
+        "6": "VS_MINUS",
+        "16": "+5V",
+        "15": "GND",
+        "11": "TX_TTL",
+        "14": "TX_RS232",
+        "13": "RX_RS232",
+        "12": "RX_TTL",
+        "10": "DTR_TTL",
+        "7": "DTR_RS232",
+        "8": "DSR_RS232",
+        "9": "DSR_TTL"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "U7",
+      "lib_id": "74xx:74HC14",
+      "value": "74HCT14",
+      "footprint": "Package_DIP:DIP-14_W7.62mm",
+      "role": "Reset and address inversion",
+      "pins": {
+        "1": "RESET_RC",
+        "2": "RESET_H",
+        "3": "RESET_H",
+        "4": "~{RESET}",
+        "5": "A7",
+        "6": "~{A7}",
+        "9": "A15",
+        "8": "~{A15}",
+        "11": "GND",
+        "13": "GND",
+        "14": "+5V",
+        "7": "GND"
+      },
+      "no_connect": [
+        "10",
+        "12"
+      ],
+      "parent": null
+    },
+    {
+      "ref": "U8",
+      "lib_id": "74xx:74LS32",
+      "value": "74HCT32",
+      "footprint": "Package_DIP:DIP-14_W7.62mm",
+      "role": "Memory and I/O select",
+      "pins": {
+        "1": "~{IORQ}",
+        "2": "A7",
+        "3": "~{PIOCS}",
+        "4": "~{IORQ}",
+        "5": "~{A7}",
+        "6": "~{UARTCS}",
+        "9": "~{MREQ}",
+        "10": "A15",
+        "8": "~{ROMCS}",
+        "12": "~{MREQ}",
+        "13": "~{A15}",
+        "11": "~{RAMCS}",
+        "14": "+5V",
+        "7": "GND"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "Y1",
+      "lib_id": "Oscillator:CXO_DIP14",
+      "value": "4.0000MHz",
+      "footprint": "Oscillator:Oscillator_DIP-14",
+      "role": "CPU oscillator",
+      "pins": {
+        "1": "+5V",
+        "7": "GND",
+        "8": "CLK",
+        "14": "+5V"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "Y2",
+      "lib_id": "Oscillator:CXO_DIP8",
+      "value": "1.8432MHz",
+      "footprint": "Oscillator:Oscillator_DIP-8",
+      "role": "UART oscillator",
+      "pins": {
+        "1": "+5V",
+        "4": "GND",
+        "5": "CLK_UART",
+        "8": "+5V"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "R1",
+      "lib_id": "Device:R",
+      "value": "10k",
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal",
+      "role": "Reset pull-up",
+      "pins": {
+        "1": "+5V",
+        "2": "RESET_RC"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "R2",
+      "lib_id": "Device:R",
+      "value": "10",
+      "footprint": "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal",
+      "role": "Reset switch discharge limiter",
+      "pins": {
+        "1": "RESET_RC",
+        "2": "SW_RESET"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "C1",
+      "lib_id": "Device:C_Polarized",
+      "value": "1uF / 16V",
+      "footprint": "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm",
+      "role": "Reset timing (+ to RESET_RC)",
+      "pins": {
+        "1": "RESET_RC",
+        "2": "GND"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "SW1",
+      "lib_id": "Switch:SW_Push",
+      "value": "RESET",
+      "footprint": "Button_Switch_THT:SW_PUSH_6mm",
+      "role": "Reset pushbutton",
+      "pins": {
+        "1": "SW_RESET",
+        "2": "GND"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "C2",
+      "lib_id": "Device:C",
+      "value": "100nF",
+      "footprint": "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm",
+      "role": "Bypass U1",
+      "pins": {
+        "1": "+5V",
+        "2": "GND"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "C3",
+      "lib_id": "Device:C",
+      "value": "100nF",
+      "footprint": "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm",
+      "role": "Bypass U2",
+      "pins": {
+        "1": "+5V",
+        "2": "GND"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "C4",
+      "lib_id": "Device:C",
+      "value": "100nF",
+      "footprint": "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm",
+      "role": "Bypass U3",
+      "pins": {
+        "1": "+5V",
+        "2": "GND"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "C5",
+      "lib_id": "Device:C",
+      "value": "100nF",
+      "footprint": "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm",
+      "role": "Bypass U4",
+      "pins": {
+        "1": "+5V",
+        "2": "GND"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "C6",
+      "lib_id": "Device:C",
+      "value": "100nF",
+      "footprint": "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm",
+      "role": "Bypass U5",
+      "pins": {
+        "1": "+5V",
+        "2": "GND"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "C7",
+      "lib_id": "Device:C",
+      "value": "100nF",
+      "footprint": "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm",
+      "role": "Bypass U6",
+      "pins": {
+        "1": "+5V",
+        "2": "GND"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "C8",
+      "lib_id": "Device:C",
+      "value": "100nF",
+      "footprint": "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm",
+      "role": "Bypass U7",
+      "pins": {
+        "1": "+5V",
+        "2": "GND"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "C9",
+      "lib_id": "Device:C",
+      "value": "100nF",
+      "footprint": "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm",
+      "role": "Bypass U8",
+      "pins": {
+        "1": "+5V",
+        "2": "GND"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "C10",
+      "lib_id": "Device:C",
+      "value": "100nF",
+      "footprint": "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm",
+      "role": "Bypass Y1",
+      "pins": {
+        "1": "+5V",
+        "2": "GND"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "C11",
+      "lib_id": "Device:C",
+      "value": "100nF",
+      "footprint": "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm",
+      "role": "Bypass Y2",
+      "pins": {
+        "1": "+5V",
+        "2": "GND"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "C20",
+      "lib_id": "Device:C_Polarized",
+      "value": "1uF / 25V",
+      "footprint": "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm",
+      "role": "MAX232 C1 flying capacitor",
+      "pins": {
+        "1": "C1P",
+        "2": "C1M"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "C21",
+      "lib_id": "Device:C_Polarized",
+      "value": "1uF / 25V",
+      "footprint": "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm",
+      "role": "MAX232 C2 flying capacitor",
+      "pins": {
+        "1": "C2P",
+        "2": "C2M"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "C22",
+      "lib_id": "Device:C_Polarized",
+      "value": "1uF / 25V",
+      "footprint": "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm",
+      "role": "MAX232 supply bypass",
+      "pins": {
+        "1": "+5V",
+        "2": "GND"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "C23",
+      "lib_id": "Device:C_Polarized",
+      "value": "1uF / 25V",
+      "footprint": "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm",
+      "role": "MAX232 positive reservoir",
+      "pins": {
+        "1": "VS_PLUS",
+        "2": "GND"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "C24",
+      "lib_id": "Device:C_Polarized",
+      "value": "1uF / 25V",
+      "footprint": "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm",
+      "role": "MAX232 negative reservoir (+ to GND)",
+      "pins": {
+        "1": "GND",
+        "2": "VS_MINUS"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "J1",
+      "lib_id": "Connector:DE9_Socket",
+      "value": "RS-232 (DTE pins)",
+      "footprint": "Connector_Dsub:DSUB-9_Socket_Horizontal_P2.77x2.84mm_EdgePinOffset4.94mm_Housed_MountingHolesOffset4.94mm",
+      "role": "Female DE9; DTE signal assignment",
+      "pins": {
+        "2": "RX_RS232",
+        "3": "TX_RS232",
+        "4": "DTR_RS232",
+        "5": "GND",
+        "6": "DSR_RS232"
+      },
+      "no_connect": [
+        "1",
+        "7",
+        "8",
+        "9"
+      ],
+      "parent": null
+    },
+    {
+      "ref": "J2",
+      "lib_id": "Connector_Generic:Conn_01x08",
+      "value": "PA",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical",
+      "role": "PIO PA0-7; no power pins",
+      "pins": {
+        "1": "PA0",
+        "2": "PA1",
+        "3": "PA2",
+        "4": "PA3",
+        "5": "PA4",
+        "6": "PA5",
+        "7": "PA6",
+        "8": "PA7"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "J3",
+      "lib_id": "Connector_Generic:Conn_01x08",
+      "value": "PB",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical",
+      "role": "PIO PB0-7; no power pins",
+      "pins": {
+        "1": "PB0",
+        "2": "PB1",
+        "3": "PB2",
+        "4": "PB3",
+        "5": "PB4",
+        "6": "PB5",
+        "7": "PB6",
+        "8": "PB7"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "J4",
+      "lib_id": "Connector_Generic:Conn_01x08",
+      "value": "PC",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical",
+      "role": "PIO PC0-7; no power pins",
+      "pins": {
+        "1": "PC0",
+        "2": "PC1",
+        "3": "PC2",
+        "4": "PC3",
+        "5": "PC4",
+        "6": "PC5",
+        "7": "PC6",
+        "8": "PC7"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "J5",
+      "lib_id": "Connector:Screw_Terminal_01x02",
+      "value": "+5V INPUT",
+      "footprint": "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",
+      "role": "External regulated +5V; pin 1 positive",
+      "pins": {
+        "1": "+5V",
+        "2": "GND"
+      },
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "H1",
+      "lib_id": "Mechanical:MountingHole",
+      "value": "M3",
+      "footprint": "MountingHole:MountingHole_3.2mm_M3",
+      "role": "Eurocard mounting hole",
+      "pins": {},
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "H2",
+      "lib_id": "Mechanical:MountingHole",
+      "value": "M3",
+      "footprint": "MountingHole:MountingHole_3.2mm_M3",
+      "role": "Eurocard mounting hole",
+      "pins": {},
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "H3",
+      "lib_id": "Mechanical:MountingHole",
+      "value": "M3",
+      "footprint": "MountingHole:MountingHole_3.2mm_M3",
+      "role": "Eurocard mounting hole",
+      "pins": {},
+      "no_connect": [],
+      "parent": null
+    },
+    {
+      "ref": "H4",
+      "lib_id": "Mechanical:MountingHole",
+      "value": "M3",
+      "footprint": "MountingHole:MountingHole_3.2mm_M3",
+      "role": "Eurocard mounting hole",
+      "pins": {},
+      "no_connect": [],
+      "parent": null
+    }
+  ]
+}

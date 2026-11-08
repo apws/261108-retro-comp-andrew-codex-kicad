@@ -1,0 +1,13 @@
+= Organization scaffold verification
+:revdate: 2026-11-08
+
+The authoritative schematic is an inherited seed pending the source-GIF audit. These checks establish the project organization and copying behavior, not circuit correctness or a new board result.
+
+* All four experiment schematics are byte-identical to the authoritative seed. SHA-256: `25b702da0ea0a18928f3c939c3ac3d8a25fc37262cca222e464f71f2068cccef`.
+* Native KiCad XML netlists exported successfully from `design/` and `layouts/01-reused-agy-router/` using absolute paths. Connectivity, component values, and footprint assignments match: 38 components and 102 nets.
+* KiCad ERC with `--severity-error --exit-code-violations` returned success with zero reported errors. See link:design-erc-errors.json[the errors-only ERC report]. Warnings were not evaluated by that invocation.
+* The default synchronization status check reports every experiment current.
+* Temporary-fixture checks passed for initialization, preservation of independent project settings and PCB bytes, marking a board stale after circuit changes, refusal of locally edited snapshots before writing any selected layout, preservation of frozen snapshots, and refusal of KiCad lock files.
+* No PCB was created, routed, or checked in this organization step.
+
+The netlist XML exports are beside this note. Rerun the organization check with `python3 tools/sync_layouts.py --check` from the project root. The original baseline reports under `reports/` are separate from these scaffold checks.

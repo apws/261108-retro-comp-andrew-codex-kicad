@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "status": "codex-schematic-base-awaiting-hardware-validation",
+  "source": "reference/source/z80test.gif",
+  "seed_sha256": "25b702da0ea0a18928f3c939c3ac3d8a25fc37262cca222e464f71f2068cccef",
+  "note": "New Codex capture and layout; attributed low-level Grok/AGY serialization helpers.",
+  "circuit_spec": "design/circuit.json",
+  "generator": "tools/build_schematic.py",
+  "generated_sha256": "f1a08e28cb32247addfa76974c82c4940699d3d99bdccb88e09733b92f3c4991",
+  "seed_source": "reference/grok-agy/Z80_Simple_Computer.kicad_sch",
+  "audit_report": "reports/schematic/connectivity-audit.json",
+  "handover": "docs/261108-1438-SCHEMATIC-base.adoc"
+}

@@ -1,0 +1,31 @@
+= MAX232 beside the DE9
+:toc:
+:toclevels: 2
+
+The MAX232 sat in the chip row, and `U4` ended 0.6 mm from the right
+edge. KiCad was closed before this file was written.
+
+
+== The move
+
+`U6` and its capacitors moved left as a group. The pump capacitors
+`C20`, `C21` and `C24` now start at x = 12.1 mm, about 2 mm clear of
+the DE9 shell. `C23` is above that column, clear of `R2`. `C7` stayed
+above pin 16.
+
+The other seven DIP packages moved left by 9.5 mm, and their 100 nF
+capacitors moved with them. `U4` now ends at x = 149.9 mm, so about
+10 mm of the board is free on the right. The gap between `U6` and `U5`
+is 8.2 mm.
+
+`Y2` and `C11` moved with `U5`. Leaving the oscillator where it was
+would have parked it over `U1` and pushed `C6` into it.
+
+The DE9, the screw terminal, the headers, the holes, the reset parts
+and `Y1` stayed put. Courtyards do not overlap. There are still no
+signal tracks.
+
+
+== Opening it
+
+Open the project fresh. The file on disk has this shift.

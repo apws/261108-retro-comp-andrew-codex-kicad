@@ -1,0 +1,45 @@
+= PDF filenames: match the AsciiDoc source filename
+:title: {docname}
+:revdate: 2026-11-08
+:toc:
+
+== Requested convention
+
+When printing a note to PDF, use the source filename with only its extension changed:
+
+[source,text]
+----
+261108-1500-PLACEMENT-checkpoint.adoc
+261108-1500-PLACEMENT-checkpoint.pdf
+----
+
+Keep the readable document heading. The browser/print title can carry the filename independently.
+
+== Standard HTML conversion
+
+New project notes use this header attribute:
+
+[source,asciidoc]
+----
+:title: {docname}
+----
+
+Asciidoctor expands the source basename into the HTML `<title>` without changing the visible heading. This was checked with both the installed Ruby converter and the installed extension's Asciidoctor.js converter. See the https://docs.asciidoctor.org/asciidoc/latest/document/title/#title-attribute[official title-attribute documentation].
+
+== Installed browser-preview behavior
+
+The installed Chromium Asciidoctor.js Live Preview extension, version 4.1.0, sets the browser title using `doc.getDocumentTitle()`. A direct check with its converter showed that this returns the visible heading even when the separate `title` attribute is set. The standalone HTML converter correctly honors the separate attribute.
+
+The project-local link:../asciidoctorjs-crx-mixworx.js[Mixworx preview helper] therefore also derives the tab title from the decoded source URL filename, removing only the final AsciiDoc extension. It runs after rendering and again before printing. Spaces, Unicode names, and dots within the basename are retained; URL query strings and fragments are excluded. The existing modifier-key and heading formatting from the earlier project's helper is retained, with the filename logic added here. No installed extension code was modified.
+
+== One-time activation
+
+. Open the Asciidoctor.js Live Preview extension's options in Chromium.
+. In its custom JavaScript setting, choose this project's `asciidoctorjs-crx-mixworx.js`.
+. Select execution *after* rendering. Retain the existing stylesheet selection.
+. Reload the AsciiDoc note. Its browser tab should show `261108-1500-PLACEMENT-checkpoint` for the example above.
+. Print using Chromium's *Save as PDF*. Its suggested filename should have that basename and `.pdf`.
+
+The extension stores the selected script's contents; reselect it after changing the helper. The setting applies to other AsciiDoc previews using this extension too.
+
+Browser control was unavailable in this session, so the helper was not selected in the running browser and the actual Save as PDF dialog was not observed. Source conversion and helper behavior were checked locally. A system-level Print to File backend may choose its own default filename; this change supplies the browser document title rather than controlling every printer backend.

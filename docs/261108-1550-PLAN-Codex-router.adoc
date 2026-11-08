@@ -1,0 +1,25 @@
+= Variant 2: Codex octilinear router on the same placement
+:title: {docname}
+:revdate: 2026-11-08
+:toc:
+
+== Experiment
+
+Implement a different route planner in `layouts/02-codex-router/`, starting from the exact common placed/unrouted checkpoint. Preserve variant 1 and the original checkpoint. Do not move parts, change circuit connectivity, relax project rules, or add signal routing on the power planes.
+
+The proposed new planner uses eight-direction (horizontal, vertical and 45-degree) A* with the incoming direction included in the search state. It can therefore price bends explicitly, as well as distance, preferred layer direction and layer changes. Use a higher via penalty than variant 1 and grow each multi-pin connection from a nearest-pad pair. Assess the actual outcome; fewer vias or shorter copper is an objective, not an assured result.
+
+The search implementation will be new C++ code called by a Python KiCad wrapper. The already audited pad/track obstacle construction and native track/via writer from variant 1 will be reused with attribution. This isolates a meaningful route-planner change without claiming to independently reinvent the KiCad file-writing infrastructure.
+
+Diagonal moves must not cut blocked grid corners. Preserve conservative pad and drill protection and check the actual saved geometry using native KiCad. No post-hoc smoothing should silently cut across obstacles.
+
+== Verification and deliverables
+
+* Preserve the same circuit, footprint geometry, positions, board outline, four-layer assignment, track/via dimensions, project settings and two inner power planes.
+* Use the same seven net groups and sequence as variant 1.
+* Save candidate stages separately. Promote a stage only after native DRC/parity checks pass and its targeted nets are completely connected.
+* Keep failed attempts and report any algorithm or cost changes required to complete the route.
+* Run a final native check, independent saved-board verification, and visual review.
+* Export review images and write a timestamped comparison against variant 1 and the historical Grok/AGY board, including vias, copper length, route completion, and accurately scoped runtime.
+
+This is a board-specific experimental router. A successful Z80 route does not establish BGA escape, length/skew constraints or high-speed SI support. The future eight-layer module experiment remains separate.

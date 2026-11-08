@@ -1,0 +1,100 @@
+{
+  "status": "validated",
+  "transport": "mcp",
+  "input_board_sha256": "d054435baa298386f48a8b6e87d258052015624434147a24220acc5e8c61ad23",
+  "session_sha256": "b91f1e5c297efd6cf0ee96e031481f99d3ac86b9090bca29714e917e9d79309e",
+  "board_sha256": "b6dee44c7b67bdf70db3facfc25fff610467788adf50a349c93e23cc1e2d879d",
+  "unchanged_placement": true,
+  "outer_signal_layers_only": true,
+  "bounded_position_restorations": [
+    {
+      "reference": "H2",
+      "import_delta_nm": [
+        -35,
+        0
+      ]
+    },
+    {
+      "reference": "C1",
+      "import_delta_nm": [
+        -46,
+        0
+      ]
+    },
+    {
+      "reference": "H4",
+      "import_delta_nm": [
+        -35,
+        0
+      ]
+    },
+    {
+      "reference": "H3",
+      "import_delta_nm": [
+        -35,
+        0
+      ]
+    },
+    {
+      "reference": "U7",
+      "import_delta_nm": [
+        0,
+        1
+      ]
+    },
+    {
+      "reference": "C24",
+      "import_delta_nm": [
+        -46,
+        0
+      ]
+    },
+    {
+      "reference": "C23",
+      "import_delta_nm": [
+        -46,
+        0
+      ]
+    },
+    {
+      "reference": "C21",
+      "import_delta_nm": [
+        -46,
+        0
+      ]
+    },
+    {
+      "reference": "H1",
+      "import_delta_nm": [
+        -35,
+        0
+      ]
+    },
+    {
+      "reference": "C22",
+      "import_delta_nm": [
+        -46,
+        0
+      ]
+    },
+    {
+      "reference": "C20",
+      "import_delta_nm": [
+        -46,
+        0
+      ]
+    }
+  ],
+  "no_added_power_routes": true,
+  "dimensions_match": true,
+  "violations": 0,
+  "unconnected_items": 0,
+  "parity_issues": 0,
+  "track_segments": 585,
+  "vias": 12,
+  "track_length_mm": 4856.931,
+  "layer_lengths_mm": {
+    "B.Cu": 2347.264,
+    "F.Cu": 2509.666
+  }
+}

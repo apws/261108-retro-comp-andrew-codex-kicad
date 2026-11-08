@@ -1,0 +1,54 @@
+2026-11-08 16:38:59.788 INFO   Freerouting v2.5.0 (build-date: 2026-10-05)
+WARNING: Final field userProfileSettings in class app.freerouting.settings.GlobalSettings has been mutated reflectively by class com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$2 in unnamed module @78186a70 (file:/home/falken/_/wrk/ver/261108-retro-comp-andrew-codex-kicad/tools/.cache/freerouting/freerouting-2.5.0.jar)
+WARNING: Use --enable-final-field-mutation=ALL-UNNAMED to avoid a warning
+WARNING: Mutating final fields will be blocked in a future release unless final field mutation is enabled
+2026-11-08 16:39:00.096 INFO   Hardware: 12 CPU cores, 426 CPU score, 7952 MB RAM
+2026-11-08 16:39:00.116 WARN   GUI is disabled and you don't have a console available, so the only feedback from Freerouting is in the log.
+2026-11-08 16:39:01.557 INFO   [4F349D\98BB97] Loading board file 'Z80_Simple_Computer.dsn'...
+2026-11-08 16:39:01.715 INFO   Applied drill-hole clearance override: 200.0 um (2000 board units), 16 hole keepouts reclassified.
+2026-11-08 16:39:01.748 INFO   [4F349D\98BB97] Job '4F349D\98BB97' started at 2026-11-08T15:39:01.747886883Z.
+2026-11-08 16:39:01.943 INFO   [4F349D\98BB97] Pipeline thread limits: autorouter pass is single-threaded, optimizer.max_threads=1.
+2026-11-08 16:39:02.132 INFO   [4F349D\98BB97] Auto-routing stage started on board 'eefdcc7234dc9d01e7d6fc5c364d5878' with baseline score 220.06 for 138 unrouted items.
+2026-11-08 16:39:15.051 INFO   [4F349D\98BB97] Auto-routing pass #1 on board 'eefdcc7234dc9d01e7d6fc5c364d5878' was completed in 12.82 seconds with score 805.83 (30 unrouted and 0 violations), using 12.62 CPU seconds and the job allocated 5.96 GB of memory so far.
+2026-11-08 16:39:20.218 INFO   [4F349D\98BB97] Auto-routing pass #2 on board 'e1e09c5be91338fe0cf141fa82ab4e98' was completed in 5.12 seconds with score 883.50 (18 unrouted and 0 violations), using 17.54 CPU seconds and the job allocated 8.76 GB of memory so far.
+2026-11-08 16:39:23.762 INFO   [4F349D\98BB97] Auto-routing pass #3 on board '80eebc2c7446414b82f77a8f94445388' was completed in 3.49 seconds with score 941.75 (9 unrouted and 0 violations), using 20.51 CPU seconds and the job allocated 10.64 GB of memory so far.
+2026-11-08 16:39:24.736 INFO   [4F349D\98BB97] Auto-routing pass #4 on board '8df22786dee41183e5bdbeb79df47a3d' was completed in 0.93 seconds with score 948.22 (8 unrouted and 0 violations), using 21.49 CPU seconds and the job allocated 11.25 GB of memory so far.
+2026-11-08 16:39:25.788 INFO   [4F349D\98BB97] Auto-routing pass #5 on board '3d070f5510433be7d682b64a0faec348' was completed in 1.00 seconds with score 948.22 (8 unrouted and 0 violations), using 23.46 CPU seconds and the job allocated 12.39 GB of memory so far.
+2026-11-08 16:39:26.730 INFO   [4F349D\98BB97] Auto-routing pass #6 on board '9918f735ac21de0d224ccc46e367951a' was completed in 0.89 seconds with score 954.69 (7 unrouted and 0 violations), using 23.46 CPU seconds and the job allocated 12.39 GB of memory so far.
+2026-11-08 16:39:27.490 INFO   [4F349D\98BB97] Auto-routing pass #7 on board '2e3514d33a0d90c4d55e5a71cf582505' was completed in 0.71 seconds with score 954.69 (7 unrouted and 0 violations), using 24.45 CPU seconds and the job allocated 12.90 GB of memory so far.
+2026-11-08 16:39:28.281 INFO   [4F349D\98BB97] Auto-routing pass #8 on board 'ecafb1ba8a8ded602286501e9e8c0555' was completed in 0.73 seconds with score 954.69 (7 unrouted and 0 violations), using 25.44 CPU seconds and the job allocated 13.40 GB of memory so far.
+2026-11-08 16:39:29.117 INFO   [4F349D\98BB97] Auto-routing pass #9 on board 'd0eae0c16b17b077f80e404caf35298d' was completed in 0.78 seconds with score 948.22 (8 unrouted and 0 violations), using 26.43 CPU seconds and the job allocated 13.94 GB of memory so far.
+2026-11-08 16:39:29.682 INFO   [4F349D\98BB97] Auto-routing pass #10 on board '971f37e921364fa96d58b095c2510f96' was completed in 0.51 seconds with score 954.69 (7 unrouted and 0 violations), using 26.43 CPU seconds and the job allocated 13.94 GB of memory so far.
+2026-11-08 16:39:30.189 INFO   [4F349D\98BB97] Auto-routing pass #11 on board '10f5ad12c10a02e23aa043477d627b3b' was completed in 0.45 seconds with score 948.22 (8 unrouted and 0 violations), using 27.42 CPU seconds and the job allocated 14.43 GB of memory so far.
+2026-11-08 16:39:30.244 INFO   [4F349D\98BB97] Last-mile rip-up removed 24 blocking trace(s) or via(s) around 8 remaining connection(s).
+2026-11-08 16:39:34.570 INFO   [4F349D\98BB97] Auto-routing pass #12 on board '71ee51232fb58ff520e7b04be70f1830' was completed in 4.29 seconds with score 954.69 (7 unrouted and 0 violations), using 31.36 CPU seconds and the job allocated 16.48 GB of memory so far.
+2026-11-08 16:39:35.241 INFO   [4F349D\98BB97] Auto-routing pass #13 on board '1ca8b513edac80eac988314addb9b6e6' was completed in 0.61 seconds with score 954.69 (7 unrouted and 0 violations), using 32.35 CPU seconds and the job allocated 16.96 GB of memory so far.
+2026-11-08 16:39:35.868 INFO   [4F349D\98BB97] Auto-routing pass #14 on board 'dad03c70a92d325eba615c7f07c2cd00' was completed in 0.58 seconds with score 954.69 (7 unrouted and 0 violations), using 33.34 CPU seconds and the job allocated 17.45 GB of memory so far.
+2026-11-08 16:39:36.536 INFO   [4F349D\98BB97] Auto-routing pass #15 on board 'f460c017bad903f5a1bc7f456c7af3d9' was completed in 0.61 seconds with score 961.17 (6 unrouted and 0 violations), using 33.34 CPU seconds and the job allocated 17.45 GB of memory so far.
+2026-11-08 16:39:37.003 INFO   [4F349D\98BB97] Auto-routing pass #16 on board '96de2468677772fdcfb79f5db7f4dc81' was completed in 0.40 seconds with score 961.17 (6 unrouted and 0 violations), using 34.33 CPU seconds and the job allocated 17.90 GB of memory so far.
+2026-11-08 16:39:37.289 INFO   [4F349D\98BB97] Auto-routing pass #17 on board '96de2468677772fdcfb79f5db7f4dc81' was completed in 0.27 seconds with score 954.69 (7 unrouted and 0 violations), using 34.33 CPU seconds and the job allocated 17.90 GB of memory so far.
+2026-11-08 16:39:37.861 INFO   [4F349D\98BB97] Auto-routing pass #18 on board '4fd731a4ed7dd5b4b9898600f999a299' was completed in 0.53 seconds with score 954.69 (7 unrouted and 0 violations), using 35.31 CPU seconds and the job allocated 18.38 GB of memory so far.
+2026-11-08 16:39:37.914 INFO   [4F349D\98BB97] Last-mile rip-up removed 24 blocking trace(s) or via(s) around 7 remaining connection(s).
+2026-11-08 16:39:41.876 INFO   [4F349D\98BB97] Auto-routing pass #19 on board '5fb4cee376506d5f21fbc51e9879a494' was completed in 3.92 seconds with score 954.69 (7 unrouted and 0 violations), using 39.25 CPU seconds and the job allocated 20.81 GB of memory so far.
+2026-11-08 16:39:42.485 INFO   [4F349D\98BB97] Auto-routing pass #20 on board '96de2468677772fdcfb79f5db7f4dc81' was completed in 0.00 seconds with score 961.17 (6 unrouted and 0 violations), using 39.25 CPU seconds and the job allocated 20.81 GB of memory so far.
+2026-11-08 16:39:42.809 INFO   [4F349D\98BB97] Auto-routing pass #21 on board '96de2468677772fdcfb79f5db7f4dc81' was completed in 0.31 seconds with score 954.69 (7 unrouted and 0 violations), using 40.24 CPU seconds and the job allocated 21.29 GB of memory so far.
+2026-11-08 16:39:43.333 INFO   [4F349D\98BB97] Auto-routing pass #22 on board '4fd731a4ed7dd5b4b9898600f999a299' was completed in 0.50 seconds with score 954.69 (7 unrouted and 0 violations), using 40.24 CPU seconds and the job allocated 21.29 GB of memory so far.
+2026-11-08 16:39:43.822 INFO   [4F349D\98BB97] Auto-routing pass #23 on board 'bb5bf8bce6278211f7392db95d45b3e7' was completed in 0.44 seconds with score 954.69 (7 unrouted and 0 violations), using 41.22 CPU seconds and the job allocated 21.85 GB of memory so far.
+2026-11-08 16:39:44.316 INFO   [4F349D\98BB97] Auto-routing pass #24 on board '2cfbb96c3b09e741f77d80c33c0a43d5' was completed in 0.45 seconds with score 961.17 (6 unrouted and 0 violations), using 41.22 CPU seconds and the job allocated 21.85 GB of memory so far.
+2026-11-08 16:39:44.621 INFO   [4F349D\98BB97] Auto-routing pass #25 on board '3343b14a83d8141cb9f3f30f5e546f6b' was completed in 0.26 seconds with score 961.17 (6 unrouted and 0 violations), using 41.22 CPU seconds and the job allocated 21.85 GB of memory so far.
+2026-11-08 16:39:44.640 INFO   [4F349D\98BB97] The router's best score (961.17) has not improved by more than 0.5 points since pass #15. Stopping the auto-router after 25 passes (6 items still unconnected).
+The following connections could not be routed -- please review your design (e.g. check pad clearances, trace width rules, and available routing space):
+  Net '/SW_RESET' (1 unrouted connection):
+    - R2-2  ->  SW1-1@1
+  Net '/D5' (3 unrouted connections):
+    - U1-9  ->  U5-6
+    - U4-29  ->  U5-6
+    - U4-29  ->  U2-17
+  Net '/RESET_H' (2 unrouted connections):
+    - U7-3  ->  U7-2
+    - U5-35  ->  U7-3
+2026-11-08 16:39:44.723 INFO   [4F349D\98BB97] Auto-routing stage completed: started with 138 unrouted nets, completed in 42.75 seconds, final score: 961.17 (6 unrouted and 0 violations), using 41.22 total CPU seconds, 21.85 GB total allocated, and 208.1 MB peak heap usage.
+2026-11-08 16:39:44.771 INFO   [4F349D\98BB97] Skipping optimization stage: the board has 6 unrouted connection(s) (optimizer only runs on completely routed boards).
+2026-11-08 16:39:44.787 INFO   [4F349D\98BB97] Job '4F349D\98BB97' finished with state: COMPLETED (elapsed: 43.04 seconds, finished at UTC: 2026-11-08T15:39:44.786029271Z).
+2026-11-08 16:39:44.835 INFO   Saving output file '/home/falken/_/wrk/ver/261108-retro-comp-andrew-codex-kicad/reports/routing/04-freerouting/cli-control/Z80_Simple_Computer.ses' (SES)...
+2026-11-08 16:39:44.835 INFO   Successfully saved output file '/home/falken/_/wrk/ver/261108-retro-comp-andrew-codex-kicad/reports/routing/04-freerouting/cli-control/Z80_Simple_Computer.ses' (35975 bytes).

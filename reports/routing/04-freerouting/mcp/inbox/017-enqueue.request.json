@@ -1,0 +1,12 @@
+{
+  "method": "tools/call",
+  "params": {
+    "name": "enqueue_job",
+    "arguments": {
+      "body": {
+        "session_id": "76cd5532-3ea9-409f-afd4-8346f5ab9bbf",
+        "name": "Z80_Simple_Computer"
+      }
+    }
+  }
+}

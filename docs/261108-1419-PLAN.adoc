@@ -1,0 +1,183 @@
+= PLAN: Andrew's Z80 comparison and future 7xsys PCB experiments
+:title: {docname}
+:author: Falken and Ari / Codex
+:revdate: 2026-11-08
+:revnumber: 0.1
+:toc:
+:toclevels: 3
+:sectnums:
+
+== Purpose and agreed direction
+
+Demonstrate and review how Codex CLI handles a real KiCad workflow: source schematic interpretation, circuit capture, footprint assignment, placement, routing, verification, and useful handover artifacts.
+
+The first experiment is Andrew's simple Z80 computer, starting from the Thomas Scherrer GIF and comparing against the work previously performed with `grok-cli` and Google Antigravity (`agy`). The intended board is a 160 × 100 mm Eurocard, in a style comparable to that earlier work.
+
+The recommended first route is *option 1 below*: rebuild the schematic and placement with Codex, then reuse AGY's routing implementation. This keeps the routing algorithm constant while comparing Codex's design work. Reused code must retain clear attribution. This is a workflow comparison; it must not be described as an independently invented routing algorithm.
+
+Falken has also expressed interest in returning to a *FreeRouting experiment*. Keep it in the plan as a separate comparison, without making it a dependency of the first Z80 result.
+
+The longer-term interest is *small 51 × 51 mm boards using eight copper layers*, particularly modules for *7xsys / 7xmod / 7xmem*, with SMD and potentially BGA parts and higher-speed interfaces. The additional layers are intended to support good signal integrity. The suitable stackup and routing approach remain subjects for investigation, rather than conclusions from this Z80 exercise.
+
+== Sources and handover location
+
+[cols="1,3",options="header"]
+|===
+|Item |Location / meaning
+|Previous working project
+|`../../261103-reto-comp-andrew-grok-kicad/` relative to this document — preserve the existing work.
+|Reference snapshot
+|`../reference/grok-agy/` relative to this document: schematic, PCB, project, scripts, notes, screenshots, and Andrew's posted files. Its `libs` link points to the new project's shared vendored libraries.
+|Original source drawing
+|link:../reference/source/z80test.gif[Thomas Scherrer's original GIF], downloaded from `http://www.z80.info/gfx/z80test.gif`. A PNG rendering is beside it for inspection.
+|Andrew's prompt and brief
+|`../reference/grok-agy/as-posted/` and link:../reference/grok-agy/docs/261106-12%20Andrew's%20design%20brief.adoc[Andrew's design brief].
+|Earlier handover
+|link:../reference/grok-agy/docs/261106-18%20Handover%20to%20Google%20Antigravity%20and%20automated%20routing%20approach.adoc[Grok-to-AGY routing handover].
+|Libraries
+|`../libs/`, with project-local `fp-lib-table` and `sym-lib-table` in the project root.
+|Initial checks
+|`../reports/baseline-erc.json`, `baseline-drc.json`, and `baseline-netlist.xml`.
+|New implementation
+|The project root, `../tools/`, and `../output/`; no new Codex schematic, board, or routing exists at the time of this plan.
+|===
+
+The prior project reports a four-layer, through-hole board with ground and +5 V inner planes and signals on the outer layers. Andrew's earlier brief also contains requirements that differ from that implementation, including a double-sided board and a regulated input supply. Record the chosen comparison scope explicitly before implementation. The proposed first baseline follows the prior four-layer Eurocard with regulated +5 V supplied externally; it does not silently claim to satisfy the entire earlier brief.
+
+== The three KiCad workflow options
+
+=== Option 1 — Fresh schematic and placement, reuse AGY's router
+
+* Audit the GIF and independently specify the intended circuit and pin-to-net connectivity.
+* Build an understandable KiCad schematic and a new placement.
+* Use KiCad's `pcbnew` API and the reference `route_netgroup.py` Manhattan router, with any adaptations documented.
+* Keep board dimensions, stackup, and routing rules comparable, and list every intentional difference.
+* Compare schematic readability, placement, route completion, copper length, vias, and verification results.
+
+This is the preferred first experiment. The reference routing code is available locally, and holding it constant helps distinguish the effects of schematic and placement decisions. The code must first be inspected for assumptions about net names, coordinates, pad shapes, clearances, and board dimensions.
+
+AGY's staircase geometry is not by itself a reason to reject the route. Appearance should be recorded separately from connectivity, manufacturability, and electrical behavior. A clean DRC establishes neither correct circuit intent nor measured signal integrity.
+
+=== Option 2 — Codex implements its own router through pcbnew
+
+* Start with a local maze / A* router and an explicit obstacle model.
+* Consider bend penalties, layer preferences, via costs, multi-pin tree connections, and reproducible routing order.
+* Treat 45-degree routing or clearance-aware path simplification as optional, separately measured improvements.
+* Check the actual resulting copper after every geometric transformation; a visually smoother path must still preserve connectivity and clearance.
+* Compare against option 1 using the same placement and rules.
+
+This tests Codex's algorithm implementation as well as its KiCad integration. It has a larger development and validation burden. Completing a Z80 board would not establish readiness for dense BGA escape routing or timing-constrained interfaces.
+
+=== Option 3 — Operate KiCad's existing interactive router
+
+* Use KiCad's routing tools, including push-and-shove where appropriate.
+* Review access to native operations and the practical amount of UI interaction needed.
+* Keep a record of manual intervention, route changes, and cleanup effort.
+* Validate the saved native board with the same checks used for the scripted routes.
+
+This tests Codex operating an established CAD tool. Automation and reproducibility may differ from the scripted routes. Do not assume the interactive router is exposed through the installed Python API; confirm the available interface before choosing an automation method.
+
+== Additional experiment — FreeRouting
+
+Falken is interested in testing FreeRouting later, especially as preparation for more complex boards. The earlier suggestion to skip it applied to the immediate Z80 comparison, not to the longer-term research.
+
+* Start from the same unrouted placement and constraints as the local-router comparison.
+* Export a Specctra DSN through KiCad, route locally, import the session into a separate native KiCad board, and refill zones.
+* Pin the router version and record settings, runtime, and any intervention.
+* Verify what survives translation: layers, net classes, clearances, widths, keepouts, existing copper, and any special constraints.
+* Compare the imported result using native KiCad checks and the original intended netlist.
+
+No FreeRouting executable was installed or run for this task before this plan. No superiority or suitability claim is made here.
+
+== Candidate to investigate — tscircuit
+
+Falken recalls seeing an external tool or website recommended with the instruction _use tscircuit_. Record the name as a candidate, and identify the exact product or service during the later investigation.
+
+Questions for that investigation:
+
+* Does it capture circuits, place parts, route copper, or combine these operations?
+* Which operations run locally, and which use a hosted service?
+* What is the supported KiCad import/export workflow, and how editable is the exported native project?
+* Does it preserve constraints, footprints, and intended connectivity across the round trip?
+* What can be demonstrated for multilayer boards, BGA escapes, differential pairs, length constraints, reference planes, and vias?
+* What access, cost, licensing, and source-disclosure conditions would apply to our use?
+
+Evaluate a concrete board and exported artifacts. Marketing statements and a rendered board image are not evidence of a completed, verified route. Current capabilities have not been researched or established in this plan.
+
+== Execution sequence for the Z80 experiment
+
+. Preserve the source artifacts and complete the provenance inventory, including hashes and the earlier repository revision.
+. Audit the GIF against the earlier schematic. Write a pin-to-net specification and identify deliberate additions or substitutions, particularly the 27C256, memory decode, reset polarities, UART configuration, MAX232 capacitors, supply, and connectors.
+. Resolve discrepancies using the drawing and relevant component documentation. Check logical behavior as well as ERC: reset-vector ROM selection, memory and I/O decode, inactive inputs, and serial connections.
+. Capture the new schematic, assign footprints, and export the netlist and CSV BOM. Make the drawings useful for human review.
+. Produce a fresh Eurocard placement with suitable connector orientation, mechanical clearances, accessible controls, and local decoupling.
+. Save an unrouted checkpoint. Use option 1 for the first routing pass, documenting adaptations to the reference code.
+. Refill zones, run ERC and native PCB DRC, verify schematic/PCB parity, and inspect schematic and board exports visually.
+. Publish the local comparison report and reproducible artifacts. Keep unresolved findings visible.
+. Use the same unrouted checkpoint for optional option 2, option 3, and FreeRouting trials, preserving each result separately.
+
+The original brief's monitor ROM and the comparison with other historical computers are reference context. They are outside this schematic-and-PCB comparison unless explicitly brought into the implementation scope.
+
+== Comparison evidence and completion criteria
+
+[cols="1,3",options="header"]
+|===
+|Area |Evidence to keep
+|Circuit
+|Source-to-netlist audit, intentional differences, ERC results, decode checks, BOM, and footprint mapping.
+|Board
+|Dimensions, layer assignment, mechanical constraints, placement, decoupling locations, and clear previews.
+|Routing
+|Connected and unconnected counts, signal track length and width, via count, routing layers, runtime, settings, and manual changes.
+|Verification
+|Native DRC report, schematic parity, zone refill status, errors and warnings reported separately, and visual inspection notes.
+|Reproducibility
+|Tool versions, scripts, input and output hashes, build/routing commands, and an unrouted checkpoint.
+|Limits
+|Any unresolved circuit, fabrication, assembly, timing, or signal-integrity questions. Physical hardware validation is a distinct milestone.
+|===
+
+Initial baseline checks need a controlled rerun before comparison conclusions. The first ERC invocation reported library-resolution warnings. The first DRC invocation reported zero unconnected items but also silkscreen and library warnings, and emitted an assertion concerning a relative schematic path during parity checking. Rerun with absolute paths and working local library tables; do not promote that initial parity result into validated evidence. The original project's clean-copper claim and our independently verified result must be distinguished.
+
+A completed first result means an editable native schematic and routed Eurocard, a traceable netlist, reviewable previews, reproducible generation steps, and a report accounting for every remaining check finding. It does not mean that software has proved the hardware works.
+
+== Next project — 51 × 51 mm, eight-layer 7xsys / 7xmod / 7xmem module
+
+=== Consolidate Falken's existing specifications
+
+The requirements already exist in several places and are not yet a single formal document. A future task can find and consolidate them, preserving the source of each requirement and separating agreed decisions from proposals and open questions.
+
+Collect, where applicable:
+
+* Module purpose, interfaces, pin assignments, voltage domains, power budget, and startup behavior.
+* The 51 × 51 mm mechanical envelope, connector geometry, mounting, height restrictions, and any mating-board constraints.
+* Proposed ICs, packages, BGA pitch, component availability, and assembly assumptions.
+* Clock rates, signal edge rates, interface timing budgets, impedance requirements, and any length or skew limits.
+* Candidate fabricator stackups and feasible drill, via, clearance, copper, and assembly processes.
+
+Do not choose a module or invent missing specifications merely to create a routing benchmark.
+
+=== Evaluate routing approaches against the actual constraints
+
+Eight layers alone do not establish good SI. Plan the stackup around reference continuity, impedance, return paths, power distribution, and the selected fabrication process. For BGA parts, establish the escape geometry and whether ordinary through vias are sufficient or whether blind vias, microvias, or via-in-pad would be needed and available.
+
+Assess each candidate workflow using representative work:
+
+. A connector and a small SMD circuit to establish import/export and native editability.
+. A representative BGA escape section using the intended pitch and fabrication rules.
+. A representative constrained interface, including reference planes and its actual timing/impedance requirements.
+. The complete module once the specifications and tool limitations are understood.
+
+Compare native KiCad routing, local scripted approaches, FreeRouting, and tscircuit on the same input where practical. Keep placement, stackup, rule coverage, completion, cleanup effort, and electrical constraints explicit. More advanced commercial or other routing tools can be considered if the defined requirements justify investigating them.
+
+The best workflow for that future board is *not yet selected*. The Z80 exercise establishes the Codex-to-KiCad workflow and a comparison method; the denser, faster module requires its own evidence.
+
+== Status at this revision
+
+* Previous project located and reference material gathered in the new directory.
+* Original GIF downloaded and inspected.
+* Initial baseline reports and netlist saved; verification rerun remains pending.
+* Three workflow options recorded; option 1 is the proposed first implementation.
+* FreeRouting retained as a later experiment; tscircuit recorded for investigation.
+* Future 51 × 51 mm, eight-layer SMD/BGA module direction recorded, with specification consolidation as its first step.
+* No new Codex schematic, PCB, routing implementation, or fabrication output has been generated yet.

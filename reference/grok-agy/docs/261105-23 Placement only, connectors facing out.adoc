@@ -1,0 +1,47 @@
+= Placement only, connectors facing out
+:toc:
+:toclevels: 2
+
+The signal tracks were deleted. This pass places the parts again and
+does not route. The grid router in `tools/place_and_route.py` is not
+run. KiCad was closed while the file was written.
+
+
+== The DE9
+
+`J1` is the right-angle socket. On that footprint the plug is the +Y
+side, and the board edge belongs 4.94 mm outside the mounting holes.
+The first placement left the plug pointing up the board, with the whole
+shell inside the outline.
+
+It is now rotated so the plug points out of the left edge. Pin 1 is at
+(7.78, 55.54) mm. The courtyard runs from x = −7.1 mm to x = 10.1 mm,
+so about 7 mm of the shell is off the board, which is where the cable
+plugs in. Both shell holes are at x = 4.94 mm. They still have no net.
+
+
+== The screw terminal
+
+`J5` is the right-angle Phoenix block, pin 1 on `+5V` and pin 2 on
+`GND`. This pass turned the wire opening the wrong way. The correction
+is in
+link:261106-12%20Screw%20terminal%20holes%20facing%20out.adoc[Screw terminal holes facing out].
+
+
+== The rest
+
+The chips, headers, reset parts, oscillators, and capacitors are in the
+same places as the previous fit. Four M3 holes are 5 mm in from the
+corners. The outline is still 160 by 100 mm, 1.6 mm thick, parts on the
+top. Inner 1 is a ground plane and inner 2 is a `+5V` plane. Nothing
+else was routed.
+
+The check after placing: 38 footprints, no courtyard overlaps, no pad
+off the board except the two connector bodies that are supposed to
+cross the edge, and 0 tracks.
+
+
+== Opening it
+
+Open the project fresh. The file on disk has this placement. There is
+no signal copper to reload by mistake.

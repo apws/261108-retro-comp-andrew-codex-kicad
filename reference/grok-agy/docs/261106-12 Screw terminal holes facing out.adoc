@@ -1,0 +1,38 @@
+= Screw terminal holes facing out
+:toc:
+:toclevels: 2
+
+`J5` was turned 180 degrees the wrong way. The wire holes faced into
+the board, and the closed back of the Phoenix block sat on the right
+edge. KiCad was closed, then the footprint was turned and saved.
+
+
+== Which way the holes face
+
+On `TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal` the
+wire face is the footprint's +Y side. The STEP model ends at local
+y = +5.2 mm. In this pcbnew a positive angle sends that +Y side toward
+board +X, so +90 degrees sends the holes off the right edge.
+
+The earlier placement used −90 degrees and called the opening the −Y
+side. That put the holes toward the PIO headers.
+
+
+== Where it sits
+
+Pin 1 is at (156.8, 19.08) mm, angle +90. Pin 1 is still `+5V` and pin
+2 is still `GND`. Because the part turned around, pin 1 is now the
+lower pad and pin 2 is the upper one.
+
+The hole face is at x = 162 mm, 2 mm past the outline. The pads stay
+on the board: both centers are at x = 156.8 mm, so the copper ends
+about 1.9 mm inside the edge. The courtyard runs from x = 151.0 mm to
+x = 161.9 mm and from y = 10.9 mm to y = 22.2 mm. It does not meet the
+corner hole `H2` or the header `J4`. Nothing else was moved. There are
+still no signal tracks.
+
+
+== Opening it
+
+Open the project fresh. The file on disk has this turn. The 3D view
+should show the two wire holes past the right edge.

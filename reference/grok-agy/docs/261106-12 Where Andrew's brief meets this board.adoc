@@ -1,0 +1,120 @@
+= Where Andrew's brief meets this board
+:toc:
+:toclevels: 2
+
+Andrew's brief is in
+link:261106-12%20Andrew's%20design%20brief.adoc[Andrew's design brief].
+This note says where the repository is against those six stages, and
+what I recommend next. No files were changed except these notes. No
+tracks were added.
+
+The brief was written for a chatbot that could not run KiCad. This
+machine runs KiCad 10.0.7, and the board in the project is a real
+board, already placed and checked in the 3D view. The next work is
+routing that board in KiCad, one reviewable pass at a time. The grid
+script in `tools/place_and_route.py` stays unused. FreeRouting stays
+unused.
+
+
+== Stage by stage
+
+=== 1. Analysis
+
+Not written up. The sheet follows Thomas Scherrer's drawing: Z80, 32K
+RAM, 27C256 in place of the 27C512, 16C550, 82C55, MAX232, 4.0000 MHz
+and 1.8432 MHz. Mario Prato's board and Duodyne FirstZ80 were not used
+as sources here.
+
+Recommendation: do not reopen the feature set before the route. A
+comparison of the three machines belongs in the later write-up, once
+the copper is reviewable.
+
+=== 2. Project and schematic
+
+The project opens in KiCad 10. The sheet is A3. Symbols and footprints
+are the KiCad 10.0.7 parts, vendored under `libs/`, because this
+machine has no system libraries. ERC on the present sheet was clean.
+Every pin is on a net or marked not connected. Power symbols are on
+the rails.
+
+The sheet is arranged so the DIP-40 symbols fit the paper. It is not
+the left-to-right classroom order in the brief. There is no CSV BOM
+and no netlist checked into the repository. There is no 9–15 V input
+and no 5 V regulator. Power enters on the screw terminal, pin 1 `+5V`,
+pin 2 `GND`. That terminal was a choice made for this board.
+
+Recommendation: leave the sheet alone while routing. Do not run
+`tools/build_schematic.py`. A regulator is a schematic change, and it
+would move the placement. It is not part of the route.
+
+=== 3. PCB layout
+
+This is the open stage.
+
+The board is a 160 × 100 mm Eurocard, parts on the top, through-hole
+only. It has four copper layers. Inner 1 is a ground plane and inner 2
+is a `+5V` plane. The outline, the holes, the DE9 on the left edge and
+the screw terminal on the right edge are in place. The MAX232 group is
+beside the DE9. The other DIP packages are shifted left, with about
+10 mm of bare board to the right of `U4`. The 100 nF capacitors sit at
+the nearest free side of each package. The MAX232 pump capacitors sit
+on `U6`. There are no signal tracks. The first routing attempt used a
+0.25 mm grid and was removed because it shorted.
+
+Two lines in the brief do not match this board.
+
+The brief says double-sided. This board is four layers, which is the
+stack already agreed for the Eurocard. A two-layer board would be a
+new placement, not a routing pass. I recommend keeping the four layers
+and routing on them. Say if the copper must be stripped back to two
+layers instead.
+
+The brief asks for 0.2000 mm signal traces and power traces about
+0.60 mm. The project rules, taken from JLCPCB's 4-layer 1 oz process,
+allow 0.15 mm. A 0.20 mm track still passes between DIP pins, and two
+such tracks fit in that gap. I recommend 0.20 mm for signals. Power
+stays on the inner planes, so a 0.60 mm trace is only for a short stub
+that cannot reach a plane. Wire jumpers stay off the first pass. The
+four-layer stack should make them unnecessary. Silkscreen text has not
+been set horizontal. That is a later pass, after the tracks.
+
+`U1` and `U4` still have their 100 nF parts some distance from a
+mid-side supply pin, because a disc capacitor does not fit between the
+DIP bodies. That limit is already written down. I do not propose to
+move the chips again before the first tracks.
+
+=== 4. Monitor ROM
+
+Not started. No assembler source, no listing, no Intel HEX file.
+Recommendation: after a routed board has been looked at, not during
+the routing passes.
+
+=== 5. Documentation
+
+The repository has these AsciiDoc notes, linked from `readme.adoc`.
+It does not have the single Markdown theory document the brief asks
+for. Recommendation: keep adding a short note per step. The long
+theory document is the write-up after the monitor exists.
+
+=== 6. Packaging
+
+The project is already a public git repository. There is no zip
+archive. Recommendation: a zip is the last packaging step, not the
+next one.
+
+
+== How the routing should proceed
+
+One group of nets, then stop and look. KiCad has to be closed before
+the board file is written. If a lock file is present, the work stops
+and asks.
+
+The first group, when this is agreed, is the clocks and reset:
+`Y1` to the Z80 clock pin, `Y2` to the 16C550, and the reset net from
+the switch through `U7` to the CPU, the UART and the 82C55. Those nets
+are short, they prove the track width, and they do not commit the
+whole bus. The data bus, the address bus and the chip-selects come
+after that look, each as its own pass.
+
+Stage complete for this step: the brief is filed, and no copper was
+added.

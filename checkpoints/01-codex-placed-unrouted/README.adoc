@@ -1,0 +1,3 @@
+= Codex placed, unrouted checkpoint
+
+Preserve these files as the common input for routing comparisons. `checkpoint.json` records their hashes. Open `Z80_Simple_Computer.kicad_pro` to inspect the native snapshot. Signal routing is absent; two inner power planes are filled. Do not edit this checkpoint; copy it into the chosen experiment first.

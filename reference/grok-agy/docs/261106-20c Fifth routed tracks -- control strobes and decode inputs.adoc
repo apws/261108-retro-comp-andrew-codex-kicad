@@ -1,0 +1,57 @@
+= Fifth routed tracks -- control strobes and decode inputs
+:toc:
+:toclevels: 2
+
+This pass routes the fifth signal group: the system bus control strobes (`~{RD}`,
+`~{WR}`, `~{MREQ}`, `~{IORQ}`) and the primary address inputs into the decode
+logic (`A7` and `A15`).
+
+
+== What was routed
+
+Six nets (17 connections) were routed in this pass:
+
+[cols="1,2,3",options="header"]
+|===
+|Net |Nodes |Description
+
+|`/~{MREQ}`
+|`U1:19` -> `U8:9` -> `U8:12`
+|Memory request strobe from Z80 CPU to ROM and RAM decode gates on U8.
+
+|`/~{IORQ}`
+|`U1:20` -> `U8:1` -> `U8:4`
+|I/O request strobe from Z80 CPU to PIO and UART decode gates on U8.
+
+|`/A15`
+|`U1:5` -> `U7:9` -> `U8:10`
+|Address line 15 from Z80 CPU to inverter U7 pin 9 and OR gate U8 pin 10.
+
+|`/A7`
+|`U1:37` -> `U2:3` -> `U3:3` -> `U7:5` -> `U8:2`
+|Address line 7 from Z80 CPU to RAM U2, ROM U3, inverter U7 pin 5, and OR gate U8 pin 2.
+
+|`/~{RD}`
+|`U5:21` -> `U1:21` -> `U2:22` -> `U3:22` -> `U4:5`
+|Active-low read strobe across UART, CPU, RAM, ROM, and PIO.
+
+|`/~{WR}`
+|`U5:18` -> `U1:22` -> `U2:27` -> `U4:36`
+|Active-low write strobe across UART, CPU, RAM, and PIO (ROM has no write pin).
+|===
+
+
+== Verification and DRC
+
+The route was produced by `tools/route_netgroup.py --group group5`.
+Inner copper planes (In1.Cu `GND` and In2.Cu `+5V`) were refilled.
+
+DRC check with `kicad-cli pcb drc --schematic-parity`:
+
+* **0 clearance violations**
+* **0 shorting items**
+* **0 tracks crossing**
+* **0 dangling tracks**
+* **0 schematic parity issues**
+* Unconnected items dropped from 64 down to **47**.
+* Total tracks and vias on the board: **1295**.

@@ -1,0 +1,54 @@
+{
+  "status": "pass",
+  "native_kicad": "10.0.8",
+  "native_drc_completed_variants": 3,
+  "native_erc": 0,
+  "checks": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "tools/check_schematic.py"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "tools/sync_layouts.py",
+        "--check"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "tools/check_routing.py",
+        "--layout",
+        "01-reused-agy-router"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "tools/check_routing.py",
+        "--layout",
+        "02-codex-router"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "tools/check_freerouting.py"
+      ],
+      "returncode": 0
+    }
+  ],
+  "board_sha256": {
+    "layouts/01-reused-agy-router/Z80_Simple_Computer.kicad_pcb": "563f82c9d30572d833fa4d84e3fd93e6de61c728e04e13624436fa6af3f0743c",
+    "layouts/02-codex-router/Z80_Simple_Computer.kicad_pcb": "dcd3982165d72ebf877389beb5210a1d9d2f6f85096adea401f759050f64f422",
+    "layouts/03-kicad-interactive/Z80_Simple_Computer.kicad_pcb": "d054435baa298386f48a8b6e87d258052015624434147a24220acc5e8c61ad23",
+    "layouts/04-freerouting/Z80_Simple_Computer.kicad_pcb": "b6dee44c7b67bdf70db3facfc25fff610467788adf50a349c93e23cc1e2d879d"
+  }
+}

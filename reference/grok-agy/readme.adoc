@@ -1,0 +1,68 @@
+= Z80 simple computer
+:toc:
+:toclevels: 2
+
+The schematic is the rebuilt sheet. It opens, it uses stock KiCad 10.0.7 symbols, and the parts now sit inside the paper. The notes under `docs/` say how that was done.
+
+The PCB file in this directory is not the posted board. That file would not open, and it is kept unchanged in `as-posted/`. The project board is a new KiCad 10 board. What is on it now is the Eurocard outline, the parts placed on the top, four layers, the inner ground and +5V planes, and all signal tracks 100% routed. The DE9 plug hangs off the left edge. The screw-terminal holes hang off the right edge. The STEP models are in `libs/kicad-packages3D-10.0.7/`, and the board names them with `${KIPRJMOD}`, the project directory.
+
+The choices for this trial are in the plan. The sheet is A3, because the DIP-40 symbols do not fit A4. The board is a 160 by 100 mm Eurocard, four layers, a screw terminal for +5V, four M3 holes, and tracks written into the board file. FreeRouting was not used.
+
+Tooling timeline:
+
+* *Schematic rebuild, placement, and 3D modeling*: Conducted collaboratively using `grok-cli` (Grok 3 in terminal).
+* *Automated PCB routing*: Handed over to Google Antigravity (`agy`), using an in-tree Python Manhattan router (`tools/route_netgroup.py`) via KiCad's `pcbnew` Python API.
+
+Routing status:
+All signal net groups have been routed and verified via KiCad DRC with 0 clearance violations, 0 shorts, and 0 unconnected items (100% routed):
+
+. Group 1 (clocks and reset) is routed cleanly with 0 DRC errors.
+. Group 2 (MAX232 charge pump, DE9 serial, and UART TTL lines) is routed cleanly with 0 DRC errors.
+. Group 3 (Data bus D0-D7 across CPU, RAM, ROM, PIO, and UART) is routed cleanly with 0 DRC errors.
+. Group 4 (Lower address A0-A2 and chip-select decodes) is routed cleanly with 0 DRC errors.
+. Group 5 (Control strobes /RD, /WR, /MREQ, /IORQ and decode inputs A7, A15) is routed cleanly with 0 DRC errors.
+. Group 6 (Upper address bus A3-A6, A8-A14 across CPU, RAM, and ROM) is routed cleanly with 0 DRC errors.
+. Group 7 (UART BAUDOUT loop and PIO Port A, Port B, Port C headers J2, J3, J4) is routed cleanly with 0 DRC errors. Board unconnected items: 0.
+
+`tools/build_schematic.py` rewrites the schematic. If you move a part in KiCad and then run that script, the script wins. Either edit in KiCad and stop using the script, or change the script. Do not do both.
+
+Read these first:
+
+* link:docs/261103-what-went-wrong-and-how-to-do-it.adoc[Why the posted files are not a computer]
+* link:docs/261103-a-guide-for-andrew.adoc[Doing the sheet one step at a time]
+* link:docs/261104-00%20Chat%20transcript%20--%20fitting%20the%20symbols%20inside%20the%20frame.adoc[Fitting the symbols inside the frame]
+* link:docs/261104-01%20Plan%20--%20placing%20and%20routing%20the%20board.adoc[Plan for placing and routing the board]
+* link:docs/261104-02%20Chat%20transcript%20--%20the%20board%20plan%20and%20the%20public%20repo.adoc[The board plan, and the public repository]
+* link:docs/261105-22%20Placing%20the%20Eurocard%20and%20the%20first%20tracks.adoc[Placing the Eurocard, and the first tracks]
+* link:docs/261105-22%20JLCPCB%20rules%20for%20this%20board.adoc[JLCPCB rules for this board]
+* link:docs/261105-23%20Placement%20only,%20connectors%20facing%20out.adoc[Placement only, connectors facing out]
+* link:docs/261105-23%203D%20models%20for%20the%20footprints.adoc[3D models for the footprints]
+* link:docs/261106-12%20Screw%20terminal%20holes%20facing%20out.adoc[Screw terminal holes facing out]
+* link:docs/261106-12%20Capacitors%20beside%20the%20power%20pins.adoc[Capacitors beside the power pins]
+* link:docs/261106-12%20MAX232%20beside%20the%20DE9.adoc[MAX232 beside the DE9]
+* link:docs/261106-12%20Andrew's%20design%20brief.adoc[Andrew's design brief]
+* link:docs/261106-12%20Where%20Andrew's%20brief%20meets%20this%20board.adoc[Where Andrew's brief meets this board]
+* link:docs/261106-18%20Handover%20to%20Google%20Antigravity%20and%20automated%20routing%20approach.adoc[Handover to Google Antigravity and automated routing approach]
+* link:docs/261106-19%20First%20routed%20tracks%20--%20clocks%20and%20reset.adoc[First routed tracks -- clocks and reset]
+* link:docs/261106-19%20Second%20routed%20tracks%20--%20MAX232%20and%20DE9.adoc[Second routed tracks -- MAX232 and DE9]
+* link:docs/261106-20%20Third%20routed%20tracks%20--%20data%20bus%20D0-D7.adoc[Third routed tracks -- data bus D0-D7]
+* link:docs/261106-20%20Fourth%20routed%20tracks%20--%20lower%20address%20and%20chip%20selects.adoc[Fourth routed tracks -- lower address and chip selects]
+* link:docs/261106-20%20Fifth%20routed%20tracks%20--%20control%20strobes%20and%20decode%20inputs.adoc[Fifth routed tracks -- control strobes and decode inputs]
+* link:docs/261106-21%20Sixth%20routed%20tracks%20--%20upper%20address%20bus%20A3-A14.adoc[Sixth routed tracks -- upper address bus A3-A14]
+* link:docs/261106-21b%20Seventh%20routed%20tracks%20--%20peripheral%20IO%20and%20baudout.adoc[Seventh routed tracks -- peripheral IO and baudout]
+
+
+== Previewing these notes
+
+For a formatted view in Chrome or Chromium, install
+https://chromewebstore.google.com/detail/asciidoctorjs-live-previe/iaalpfgpbocpdfblpnhhgllgbdbchmia[Asciidoctor.js Live Preview].
+Enable *Allow access to file URLs* on the extension's details page, then open a local `.adoc` file.
+The https://docs.asciidoctor.org/browser-extension/install/[installation notes] also mention Edge. Edge has not been tried here.
+
+The two files in this directory are the Mixworx preview style used by the other local projects. Select them in the extension options:
+
+* link:asciidoctorjs-crx-mixworx.css[asciidoctorjs-crx-mixworx.css]: stylesheet for type, headings, tables, code, and print.
+* link:asciidoctorjs-crx-mixworx.js[asciidoctorjs-crx-mixworx.js]: run this *after the document has been rendered*. It marks modifier keys, splits a heading at the first prose colon, and puts anchor positions back after rendering.
+
+If the repository moves, or either file changes, select them again in the extension options.
+GitHub itself still shows the normal colon in a heading. The line break is only in this local preview.

@@ -1,0 +1,16 @@
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "protocolVersion": "2024-11-05",
+    "serverName": "Freerouting MCP",
+    "serverVersion": "2.5.0",
+    "serverInfo": {
+      "name": "Freerouting MCP",
+      "version": "2.5.0"
+    },
+    "capabilities": {
+      "tools": {}
+    }
+  }
+}

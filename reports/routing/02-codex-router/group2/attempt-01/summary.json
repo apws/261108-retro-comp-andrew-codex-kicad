@@ -1,0 +1,121 @@
+{
+  "status": "validated",
+  "group": "group2",
+  "attempt": 1,
+  "candidate": "reports/routing/02-codex-router/group2/attempt-01/Z80_Simple_Computer.kicad_pcb",
+  "utc": "2026-11-08T14:56:06.547692+00:00",
+  "failure": null,
+  "runtime_seconds": 14.01,
+  "input_board_sha256": "ae82ada5011c9562b9a4dc2eb0e3017fa7f1657b74841b5f775d60e9973b206c",
+  "output_board_sha256": "073144b11792f91d2eec1164e56b4cf25ef9ce1650b4b6498c795c4f45403067",
+  "schematic_sha256": "f1a08e28cb32247addfa76974c82c4940699d3d99bdccb88e09733b92f3c4991",
+  "settings_sha256": "e417b80f3a6edb662368f41d6b662231b4ab1264cf40ef54e9e5343878e8d285",
+  "planner_sha256": "4fab152c8096a9064260d9c3c1373a11bb66eb06e76c35c4f72d2775a3ee9816",
+  "wrapper_sha256": "89fd4469c270c2848897f7f4ba838166283f9d5f5d0cf51f9d668de609299afa",
+  "shared_geometry_and_writer_sha256": "02ed95ca09d8907d411115073883fb553409c88281384010cd189fd1d2bd4518",
+  "configuration": {
+    "via_cost": 3000,
+    "bend_cost": 180,
+    "straight_cost": 100,
+    "diagonal_cost": 146,
+    "nonpreferred_axis_extra_cost": 25,
+    "grid_mm": 0.1
+  },
+  "net_results": [
+    {
+      "net": "/C1P",
+      "pads": 2,
+      "expanded_states": 735,
+      "seconds": 0.754
+    },
+    {
+      "net": "/C1M",
+      "pads": 2,
+      "expanded_states": 3246,
+      "seconds": 0.74
+    },
+    {
+      "net": "/C2P",
+      "pads": 2,
+      "expanded_states": 983,
+      "seconds": 0.748
+    },
+    {
+      "net": "/C2M",
+      "pads": 2,
+      "expanded_states": 1070,
+      "seconds": 0.693
+    },
+    {
+      "net": "/VS_MINUS",
+      "pads": 2,
+      "expanded_states": 1478,
+      "seconds": 0.708
+    },
+    {
+      "net": "/VS_PLUS",
+      "pads": 2,
+      "expanded_states": 3141,
+      "seconds": 0.732
+    },
+    {
+      "net": "/DSR_RS232",
+      "pads": 2,
+      "expanded_states": 37411,
+      "seconds": 0.732
+    },
+    {
+      "net": "/DTR_RS232",
+      "pads": 2,
+      "expanded_states": 144913,
+      "seconds": 0.776
+    },
+    {
+      "net": "/RX_RS232",
+      "pads": 2,
+      "expanded_states": 29428,
+      "seconds": 0.735
+    },
+    {
+      "net": "/TX_RS232",
+      "pads": 2,
+      "expanded_states": 61988,
+      "seconds": 0.755
+    },
+    {
+      "net": "/TX_TTL",
+      "pads": 2,
+      "expanded_states": 31423,
+      "seconds": 0.765
+    },
+    {
+      "net": "/RX_TTL",
+      "pads": 2,
+      "expanded_states": 70550,
+      "seconds": 0.763
+    },
+    {
+      "net": "/DTR_TTL",
+      "pads": 2,
+      "expanded_states": 1279029,
+      "seconds": 1.153
+    },
+    {
+      "net": "/DSR_TTL",
+      "pads": 2,
+      "expanded_states": 1456026,
+      "seconds": 1.392
+    }
+  ],
+  "violations": 0,
+  "parity_issues": 0,
+  "target_net_unconnected_items": 0,
+  "remaining_unconnected_items": 113,
+  "track_segments": 90,
+  "vias": 3,
+  "track_length_mm": 610.924,
+  "layer_lengths_mm": {
+    "B.Cu": 176.933,
+    "F.Cu": 433.991
+  }
+}

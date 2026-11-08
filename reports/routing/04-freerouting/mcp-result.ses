@@ -1,0 +1,19 @@
+(session "Andrew Z80 local MCP comparison"
+  (base_design "Andrew Z80 local MCP comparison")
+  (placement
+    (resolution um 10)
+  )
+  (was_is
+  )
+  (routes 
+    (resolution um 10)
+    (parser
+      (host_cad "KiCad's Pcbnew")
+      (host_version "10.0.8")
+    )
+    (library_out 
+    )
+    (network_out 
+    )
+  )
+)

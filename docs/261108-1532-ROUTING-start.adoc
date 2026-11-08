@@ -1,0 +1,40 @@
+= Routing started: adapted AGY router on the Codex placement
+:title: {docname}
+:revdate: 2026-11-08
+:toc:
+
+== First checked group
+
+Clocks and reset are complete in `layouts/01-reused-agy-router/Z80_Simple_Computer.kicad_pcb`. Native KiCad DRC reports zero violations, zero schematic-parity issues, and zero remaining connections on those six nets. The other groups account for the remaining 127 unconnected items.
+
+The first group adds 51 track segments, 12 vias, and 323.291 mm of signal copper. Its recorded runtime, including obstacle construction, first-time helper compilation, zone refill and native DRC, is 9.15 seconds. These are measurements of this implementation, not a comparison with the earlier session's runtime.
+
+The checked native board, matching project/schematic, DRC and provenance are retained in link:../reports/routing/01-reused-agy-router/group1/summary.json[the group 1 checkpoint]. The original placed/unrouted checkpoint is unchanged.
+
+== Attribution and adaptations
+
+`tools/route_netgroup.py` is adapted from `reference/grok-agy/tools/route_netgroup.py`. It retains the 0.1 mm Manhattan grid, two outer signal layers, A* search, original directional costs and via penalty, growing multi-pin net tree, group ordering, and native track/via construction. This is the agreed router-reuse experiment.
+
+Adaptations for the new placement and workflow:
+
+* Pad obstacle calculations use each pad's actual orientation. Rectangles conservatively enclose rounded-rectangle pads, and oval pads use an oriented capsule calculation.
+* The currently routed net may enter its own pads. Foreign pads remain obstacles; the inherited fixed escape squares are no longer used to override the combined pad mask.
+* Vias remain excluded from component and mounting-hole drills, including holes on their own net. All vias explicitly span front to back.
+* An additional 0.02 mm raster tolerance enlarges obstacle masks. The project rules, 0.15 mm signal width/clearance and 0.70/0.30 mm vias, are unchanged.
+* Connected through-hole pads join both outer layers of the growing net tree.
+* `tools/manhattan_distance.cpp` computes the same minimum Manhattan distance to the net tree once per branch. Python then uses a lookup instead of scanning every goal at every search step. The search algorithm and metric are retained. The helper is built locally with `g++`; it requires no downloaded dependency.
+* Each group is written into its own project directory, with local libraries and absolute paths, and is checked by native KiCad DRC with schematic parity. It is promoted to the working PCB only if there are no violations, parity findings, or unconnected items on that group's nets.
+* Source hashes, settings, runtime, net names, copper metrics and DRC results are saved for each accepted group. Guards reject an active KiCad lock or unexpected changes to the working PCB or schematic.
+
+The exact distance helper was compared with the inherited Manhattan expression at sampled coordinates, including goal points and board corners. The first group provides the initial native-copper integration check. The adaptations are not a demonstration of general BGA or arbitrary-board routing support.
+
+== Continue or inspect
+
+[source,shell]
+----
+/usr/bin/python3 tools/route_netgroup.py --group all
+----
+
+Already validated groups are skipped. The sequence is clocks/reset, serial interface, data bus, lower address/decode, control strobes, upper address, and peripheral ports/baud loop. A rejected candidate stays in its group report directory and does not replace the last accepted working PCB.
+
+Completion will be recorded separately after the remaining groups, final verification, and visual review.

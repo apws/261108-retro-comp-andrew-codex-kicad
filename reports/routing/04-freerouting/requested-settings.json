@@ -1,0 +1,28 @@
+{
+  "autorouter": {
+    "enabled": true,
+    "max_passes": 30,
+    "max_threads": 1,
+    "ignore_net_classes": []
+  },
+  "fanout": {
+    "enabled": false
+  },
+  "optimizer": {
+    "enabled": true,
+    "max_passes": 10,
+    "max_threads": 1,
+    "improvement_threshold": 2.5
+  },
+  "automatic_neckdown": false,
+  "copper_to_edge_clearance_um": 200,
+  "hole_clearance_um": 200,
+  "clearance_tolerance_um": 0,
+  "strict_drc": true,
+  "plane_nets": [
+    "GND",
+    "+5V"
+  ],
+  "max_threads": 1,
+  "job_timeout": "00:05:00"
+}

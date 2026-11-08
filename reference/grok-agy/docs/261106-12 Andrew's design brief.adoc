@@ -1,0 +1,102 @@
+= Andrew's design brief
+:toc:
+:toclevels: 2
+
+This is the brief Andrew used with the web chatbot. It is kept here in
+full. The note beside it says which parts this repository has already
+done.
+
+link:261106-12%20Where%20Andrew's%20brief%20meets%20this%20board.adoc[Where Andrew's brief meets this board]
+
+
+== Goals
+
+Design a complete, constructible, through-hole-only simple Z80 computer
+that students can build and program. Combine the best aspects of these
+three classic designs:
+
+* Thomas Scherrer minimal Z80 system (http://www.z80.info/gfx/z80test.gif). Substitute 27C256 for the original 27C512 and adjust decoding accordingly. Thomas Scherrer's design uses a 16C550 UART and an 82C55 programmable peripheral interface for I/O.
+* Mario Prato small Z80 system (http://www.z80.info/z80_mp.htm).
+* Duodyne FirstZ80 V1.0 (https://github.com/lynchaj/duodyne/tree/main/!Development/FirstZ80%20V1.0).
+
+The result should be educationally clear, fully specified (no floating
+pins or undefined nets), and practical for classroom use.
+
+
+== Environment and constraints
+
+KiCad 9 and FreeRouting are not available in that chatbot environment.
+Create valid KiCad 9-style S-expression files (`.kicad_pro`,
+`.kicad_sch`, `.kicad_pcb`) that can later be opened in real KiCad 9.
+Do not attempt to install or run the real applications.
+
+* The PCB must be double-sided, at most 100 × 160 mm, horizontal, through-hole components only.
+* Power input: 9–15 V unregulated DC, regulated to 5 V.
+* CPU clock crystal: 4.0000 MHz. UART clock crystal: 1.8432 MHz.
+* Prefer standard KiCad library symbols and footprints, through-hole only.
+* Ignore any line that begins with `ignore:`.
+
+If any requirement is impossible or unclear under these constraints,
+state it explicitly and propose the closest practical alternative.
+
+
+== Required stages
+
+Execute in order, and label each section of the response.
+
+=== 1. Analysis
+
+* Summarize each of the three designs (strengths, weaknesses, memory map, I/O approach).
+* Produce a short comparison table.
+* Recommend the feature set for the educational board, and justify the choices.
+
+=== 2. Project and schematic
+
+* Create `.kicad_pro` and a clear `.kicad_sch` (A3 or a suitable page size).
+* Place components left to right: power and reset on the left, CPU, memory and decode in the middle, I/O and connectors on the right.
+* Label every component with its reference and a short function (for example `U1 CPU`, `U2 ROM`).
+* All components must have a symbol and a footprint. Prefer the standard KiCad libraries. Use the best fit, and note any exceptions.
+* Use a net label or a no-connect on every pin. Show power symbols.
+* Generate a netlist and a CSV BOM.
+* Note any simplifications made because the files are S-expressions.
+
+=== 3. PCB layout
+
+* Create `.kicad_pcb` matching the size and orientation constraints.
+* Place components with the same left-to-right logic. Keep the silkscreen readable, with horizontal text.
+* Use 0.2000 mm wide traces for signals.
+* Use wider traces for power, about three times the signal width.
+* Place decoupling capacitors as close to each IC `VCC` pin as possible.
+* Place the charge-pump capacitors as close to the connected MAX232 pins as possible.
+* Vertical or horizontal wire jumpers on the component side are allowed, where they make the routing simpler.
+* Provide representative routing and a GND zone. State that full autorouting would be finished in real KiCad.
+* Run a conceptual DRC checklist and list any remaining issues.
+
+=== 4. Monitor ROM
+
+* Write a well-commented Z80 assembler source, in TASM syntax, for a useful educational monitor.
+* It must include a serial console, memory examine and modify, registers, Go, Intel HEX load and save, and basic help.
+* Keep it structured so it assembles cleanly. Expand the features reasonably within the ROM size.
+* Generate a `monitor.lst` listing.
+* Assemble a `monitor.hex` file, Intel HEX, ready to program a 27C256 EPROM.
+
+=== 5. Documentation
+
+Produce a single thorough Markdown document, with a table of contents,
+covering theory of operation, design decisions, the memory and I/O maps,
+assembly notes, the monitor commands, and the known limitations of the
+S-expression simulation.
+
+=== 6. Packaging
+
+Put all files in a clear folder structure and create a zip archive.
+Provide the link to the zip.
+
+
+== Style and working preferences
+
+* Be precise and educational. Explain non-obvious design choices.
+* When something cannot be done perfectly as an S-expression, say so and show the best approximation.
+* Ask clarifying questions early if any requirement is ambiguous.
+* Prefer modular, readable output over a giant unreadable dump of every track.
+* At the end of each stage, give a short "Stage complete – key decisions" summary.

@@ -1,0 +1,66 @@
+= JLCPCB rules for this board
+:toc:
+:toclevels: 2
+
+The 0.25 mm grid in `tools/place_and_route.py` was not a factory rule.
+It was a shortcut in that script, and it closes the gap between DIP pins.
+These numbers are the ones to use if the Eurocard is ordered from JLCPCB.
+They come from the rigid-PCB table at https://jlcpcb.com/capabilities,
+read on 2026-11-05. The board is 4-layer FR-4, 1.6 mm, outer copper 1 oz.
+JLCPCB's default inner copper is 0.5 oz.
+
+
+== What JLCPCB publishes
+
+For a multilayer board with 1 oz outer copper:
+
+* Track and space, minimum: 0.09 mm / 0.09 mm (3.5 mil / 3.5 mil).
+  0.076 mm is listed only for a BGA fan-out. This board has no BGA.
+* Via, smallest listed: hole 0.15 mm, pad 0.25 mm.
+  The preferred smallest hole is 0.20 mm.
+  A hole of 0.20 mm or 0.25 mm with a pad smaller than 0.45 mm is an
+  extra-cost option, and so is a 0.15 mm hole.
+* The pad should be at least 0.10 mm larger than the hole, and 0.15 mm
+  larger is what they prefer.
+* Annular ring on a multilayer board, 1 oz: 0.20 mm recommended,
+  0.15 mm absolute minimum.
+* Via hole to via hole: 0.20 mm. Pad hole to pad hole: 0.45 mm.
+* Pad to track: 0.10 mm. Via hole to track: 0.20 mm.
+  A component hole to a track: 0.28 mm minimum, 0.35 mm recommended.
+* Inner via hole to copper: 0.20 mm.
+  Inner component-hole to copper: 0.30 mm.
+* Copper to a routed board edge: 0.20 mm.
+* Same-net track spacing, as published: 0.25 mm.
+* 160 by 100 mm is inside the 4-layer size limit. 1.6 mm is a standard
+  thickness.
+
+
+== What this project uses
+
+The factory minimum is 0.09 mm. The project is set a step above that,
+so two tracks still fit between the DIP pins and the board is not
+sitting on the etch limit.
+
+The DIP pads are 1.6 mm on a 2.54 mm pitch. The copper gap between two
+neighbouring pins is 0.94 mm.
+
+* One track of 0.15 mm, with 0.15 mm of clearance on each side, needs
+  0.45 mm.
+* Two such tracks need 0.75 mm.
+* Three need 1.05 mm, which does not fit.
+
+So the working rule is two tracks between pins, not zero and not four.
+
+In `Z80_Simple_Computer.kicad_pro`:
+
+* Default net class: track 0.15 mm, clearance 0.15 mm, via pad 0.70 mm,
+  via hole 0.30 mm. The ring is 0.20 mm, which is the recommended
+  annular ring, and this via is not in the extra-cost list.
+* Power net class: track 0.50 mm, clearance 0.20 mm. `+5V` and `GND`
+  stay on the inner planes. This class is for a track, if one is needed.
+* Board minimums follow the same track, clearance, via, and a 0.20 mm
+  copper-to-edge and hole-to-hole floor.
+
+The tracks already drawn were made with the old 0.25 mm grid. Those
+tracks were not deleted and were not rerouted. Reload the project so
+KiCad picks up the new net classes.

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "experiment_id": "02-codex-router",
+  "method": "Independent Codex router experiment",
+  "frozen": false,
+  "status": "fully-routed-verified",
+  "board_status": "routed",
+  "schematic_snapshot": {
+    "source": "design/Z80_Simple_Computer.kicad_sch",
+    "sha256": "f1a08e28cb32247addfa76974c82c4940699d3d99bdccb88e09733b92f3c4991",
+    "synced_at_utc": "2026-11-08T13:40:57.643553+00:00"
+  },
+  "placement": {
+    "checkpoint": "checkpoints/01-codex-placed-unrouted",
+    "board_sha256": "d054435baa298386f48a8b6e87d258052015624434147a24220acc5e8c61ad23"
+  },
+  "preserved_variant1_sha256": "563f82c9d30572d833fa4d84e3fd93e6de61c728e04e13624436fa6af3f0743c",
+  "routing": {
+    "completed_groups": [
+      "group1",
+      "group2",
+      "group3",
+      "group4",
+      "group5",
+      "group6",
+      "group7"
+    ],
+    "board_sha256": "dcd3982165d72ebf877389beb5210a1d9d2f6f85096adea401f759050f64f422",
+    "configuration": {
+      "via_cost": 3000,
+      "bend_cost": 180,
+      "straight_cost": 100,
+      "diagonal_cost": 146,
+      "nonpreferred_axis_extra_cost": 25,
+      "grid_mm": 0.1
+    },
+    "report": "reports/routing/02-codex-router/group7/attempt-01",
+    "track_segments": 787,
+    "vias": 129,
+    "track_length_mm": 4959.519,
+    "layer_lengths_mm": {
+      "B.Cu": 2347.765,
+      "F.Cu": 2611.755
+    },
+    "verification": "reports/routing/02-codex-router/verification.json",
+    "handover": "docs/261108-1601-DONE-Codex-router-comparison.adoc",
+    "previews": "output/routing/02-codex-router"
+  }
+}

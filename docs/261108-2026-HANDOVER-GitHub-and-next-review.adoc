@@ -1,0 +1,68 @@
+= GitHub snapshot and the next review with Andrew
+:title: {docname}
+:revdate: 2026-11-08
+:toc:
+
+== What is being saved
+
+Andrew, the routing comparison is ready to inspect. We have three completed boards on the same placed input: the adapted AGY Manhattan router, the Codex octilinear router, and official FreeRouting 2.5.0 through its local MCP interface. Their added signal-via counts are 212, 129 and 12 respectively. Their signal-copper lengths are 5,413.942 mm, 4,959.519 mm and 4,856.931 mm.
+
+This directory had no Git repository when Falken requested publication. Git was initialized on 2026-11-08. The initial snapshot preserves the existing schematic, placed checkpoint, three completed results, intermediate routing stages, unsuccessful attempts, source tools, previews and dated notes. It does not reconstruct a historical sequence of development commits. The earlier Grok/AGY repository remains separate at https://github.com/apws/261103-reto-comp-andrew-grok-kicad.
+
+Falken explicitly selected a public repository named `apws/261108-retro-comp-andrew-codex-kicad`. Its intended address is https://github.com/apws/261108-retro-comp-andrew-codex-kicad. The final chat handover records the verified push outcome and commit identity.
+
+== Checks before the snapshot
+
+Fresh native KiCad 10.0.8 reports are preserved in link:../reports/publication/261108-2026/[the publication check directory]. Each completed board returned zero DRC violations, zero unconnected items and zero schematic-parity issues. The authoritative schematic returned zero ERC findings. The original routing evidence remains unchanged.
+
+Independent project checks also cover circuit pin assignments, decoder truth tables, placement and rule preservation, board hashes, completed routing-stage hashes and synchronized schematic snapshots. This is static design verification, not hardware, timing or signal-integrity qualification.
+
+Variant 3 remains prepared and unrouted. The separate FreeRouting CLI controls still have six incomplete connections and are not presented as completed results. The historical Grok/AGY board uses a different placement and is contextual evidence rather than a controlled router comparison.
+
+== Opening and checking a clone
+
+Clone with Git so the relative `libs` symlinks are preserved. Open link:../layouts/04-freerouting/Z80_Simple_Computer.kicad_pro[the completed FreeRouting project] in KiCad 10. The required library subset and STEP models are included. Upstream library attribution remains in each `libs/*/README.txt`; provenance and adapted-code attribution remain with the project sources and notes.
+
+On a Linux system with KiCad's `pcbnew` Python bindings, use the Python interpreter that can import them. The following commands inspect the saved outputs; they do not reroute the boards. Some update their JSON verification reports.
+
+[source,shell]
+----
+/usr/bin/python3 tools/check_schematic.py
+/usr/bin/python3 tools/sync_layouts.py --check
+/usr/bin/python3 tools/check_routing.py --layout 01-reused-agy-router
+/usr/bin/python3 tools/check_routing.py --layout 02-codex-router
+----
+
+The FreeRouting checker also verifies the exact routing-engine JAR. The downloaded JAR is intentionally excluded from Git. Restore the pinned official release before running that checker:
+
+[source,shell]
+----
+mkdir -p tools/.cache/freerouting
+curl -fL --output tools/.cache/freerouting/freerouting-2.5.0.jar https://github.com/freerouting/freerouting/releases/download/v2.5.0/freerouting-2.5.0.jar
+echo 'f6f51bb02245e8e717f9359bd260cc9c5c0b1bc0acc8b7cb2cd5b8ffeb5de3c7  tools/.cache/freerouting/freerouting-2.5.0.jar' | sha256sum --check
+/usr/bin/python3 tools/check_freerouting.py
+----
+
+KiCad window-state files, Python bytecode, compiled router caches, engine runtime profiles and process IDs are ignored. Native project files, reports, DSN/SES results, MCP request/response evidence and diagnostic logs are retained. Historical logs contain the paths used during the original run; current Python tools derive their project root from their own location.
+
+Do not start a new routing run in the preserved evidence directories without first making a new experiment workspace. In particular, `tools/freerouting_mcp.py` refuses the saved `STOP` marker; removing it and reusing the old inbox is not a clean reproduction. The completed result can be reviewed without starting any server.
+
+== Next conversation with Andrew
+
+Andrew, which outcome would be most useful next?
+
+* A schematic review against your intended computer: confirm the address map, UART handshaking, connector pinout and power assumptions before changing any copper.
+* A build candidate: select one saved variant, review component availability, mechanics, decoupling and return paths, then prepare fabrication outputs as a separate milestone.
+* A harder routing experiment: consolidate Falken's 7xsys/7xmod/7xmem requirements and define one 51 x 51 mm module, its stackup and critical signals before testing dense SMD/BGA routing.
+
+For the current comparison, the immediate useful step is your circuit review. A clean DRC is evidence about the implemented design; your review confirms that it is the design you wanted.
+
+== Voice and preferred working style
+
+The recorded session/chat and the timestamped AsciiDoc notes preserve the development narrative. Falken (https://mixworx.net[mixworx.net]) supplied the Asciidoctor.js CSS/JavaScript rendering setup. The Git snapshot adds exact file identities and a shareable repository alongside those records.
+
+Falken asked for a warmer, more conversational exchange with Andrew and more active questions when a decision matters. Address Andrew directly when he is participating, state findings plainly, and ask focused questions rather than implying an answer on his behalf.
+
+The https://learn.chatgpt.com/docs/features/voice[official ChatGPT Voice documentation], checked on 2026-11-08, describes live conversation and user interruption of spoken responses. Availability depends on the app, account, rollout and workspace. This is separate from microphone dictation, which produces prompt text. No live voice or specific headset/speaker configuration was tested in this session, and no claim is made that this CLI session can hear ambient audio or deliberately interrupt a person speaking.
+
+Falken currently prefers text and silence, often while listening to retrocomputing videos. No voice session was started and no audio or microphone settings were changed.

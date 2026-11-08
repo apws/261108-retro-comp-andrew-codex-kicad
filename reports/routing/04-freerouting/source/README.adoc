@@ -1,0 +1,8 @@
+= FreeRouting source references
+:title: {docname}
+
+These unmodified Java files were retained while investigating the official FreeRouting 2.5.0 DSN parser and API. They are reference evidence; the experiment ran the official release JAR, not a modified build.
+
+Upstream: https://github.com/freerouting/freerouting/tree/v2.5.0
+
+The upstream GPL version 3 license text is preserved in link:LICENSE[LICENSE]. This notice applies to these third-party source references and does not assign a blanket license to the other project materials.

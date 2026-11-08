@@ -1,0 +1,16 @@
+{
+  "status": "placed-unrouted-checkpoint",
+  "source": "layouts/01-reused-agy-router",
+  "files_sha256": {
+    "Z80_Simple_Computer.kicad_pro": "e417b80f3a6edb662368f41d6b662231b4ab1264cf40ef54e9e5343878e8d285",
+    "Z80_Simple_Computer.kicad_sch": "f1a08e28cb32247addfa76974c82c4940699d3d99bdccb88e09733b92f3c4991",
+    "Z80_Simple_Computer.kicad_pcb": "d054435baa298386f48a8b6e87d258052015624434147a24220acc5e8c61ad23",
+    "fp-lib-table": "1111d22bd9a31d39c082edbde42fdc385d967d7b6ffe7598477f44d3e888fc09",
+    "sym-lib-table": "b095a1c55a736df7191d58d537af0f5301a70ea97b2a664b5d58f0fb643dfb5e"
+  },
+  "verification": "reports/placement/verification.json",
+  "signal_tracks": 0,
+  "vias": 0,
+  "expected_unconnected_items": 138,
+  "rule_scope": "Existing reference-compatible 0.15 mm signal width and clearance; inner GND/+5V planes; project settings pinned by hash."
+}

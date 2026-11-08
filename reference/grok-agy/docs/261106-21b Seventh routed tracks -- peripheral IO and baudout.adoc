@@ -1,0 +1,70 @@
+= Seventh routed tracks -- peripheral IO and baudout
+:toc:
+:toclevels: 2
+
+This pass routes the seventh and final signal group: the 82C55 PIO (`U4`) peripheral
+ports connecting to pin headers `J2` (Port A), `J3` (Port B), and `J4` (Port C),
+plus the local baud generator loop (`/BAUDOUT`) on UART `U5`.
+
+
+== What was routed
+
+Twenty-five nets (25 connections, 50 pins) were routed in this pass:
+
+[cols="1,2,3",options="header"]
+|===
+|Net |Nodes |Description
+
+|`/BAUDOUT`
+|`U5:9` -> `U5:15`
+|UART baud-rate generator output (`BAUDOUT`) looped back into receiver clock (`RCLK`).
+
+|`/PA0`..`/PA7`
+|`U4:4,3,2,1,40,39,38,37` -> `J2:1,2,3,4,5,6,7,8`
+|PIO Port A lines 0 through 7 to user pin header `J2`.
+
+|`/PB0`..`/PB7`
+|`U4:18,19,20,21,22,23,24,25` -> `J3:1,2,3,4,5,6,7,8`
+|PIO Port B lines 0 through 7 to user pin header `J3`.
+
+|`/PC0`..`/PC7`
+|`U4:14,15,16,17,13,12,11,10` -> `J4:1,2,3,4,5,6,7,8`
+|PIO Port C lines 0 through 7 to user pin header `J4`.
+|===
+
+
+== Verification and DRC
+
+The route was produced by `tools/route_netgroup.py --group group7`.
+Inner copper planes (In1.Cu `GND` and In2.Cu `+5V`) were refilled.
+
+DRC check with `kicad-cli pcb drc --schematic-parity`:
+
+* **0 clearance violations**
+* **0 shorting items**
+* **0 tracks crossing**
+* **0 dangling tracks**
+* **0 schematic parity issues**
+* **0 unconnected items (100% completion!)**
+* Total tracks and vias on the board: **1929**.
+
+
+== The "Weird" Sawtooth Pattern on B.Cu: Why It Occurs
+
+When inspecting the bottom layer (`B.Cu`) between the peripheral header pins (`J2`–`J4`),
+a distinctive serrated or "sawtooth" track pattern is visible:
+
+image::images/261106-21 bottom pcb sawtooth clearance hug -- Screenshot_20261106_2139.png[Sawtooth clearance hug between header pins on B.Cu,width=500]
+
+=== 1. Why does the router create this shape?
+* **Circular Keepout Boundaries**: Around every through-hole pad, KiCad enforces a circular keepout envelope:
+  `keepout_radius = pad_radius + clearance + (track_width / 2)`.
+  For standard header pins (0.85 mm radius) with 0.15 mm clearance and 0.15 mm track width, this creates a circular exclusion zone.
+* **Discrete 0.10 mm Orthogonal Grid**: The router (`tools/route_netgroup.py`) computes paths on a 0.10 mm discrete grid. When a continuous mathematical circle is projected onto a square grid, its boundary steps by exactly 1 grid cell (0.1 mm) at discrete intervals, forming a rasterized staircase.
+* **Euclidean Shortest-Path Hugging**: The A* pathfinder minimizes total path length. Squeezing a vertical track between two closely spaced header pins, the mathematically shortest legal path is to ride directly against the circular clearance boundary. Following the rasterized circle step-for-step produces the visible sawtooth wave.
+* **Manhattan Layer Biasing**: `B.Cu` is biased for vertical travel (penalty 1.0 for vertical, 3.0 for horizontal). The router prefers to stay on `B.Cu` rather than punch two vias to hop to `F.Cu` (via cost 8.0). It therefore negotiates the narrow bottleneck on `B.Cu` by hugging the pad clearance boundary.
+
+=== 2. Is it safe and reliable for manufacturing?
+* **Electrically Sound**: The track maintains uniform 0.15 mm width and strictly satisfies the $\ge 0.15$ mm clearance from the adjacent pad rings and vias. Because the 4-layer stack includes a solid +5V plane on `In2.Cu` immediately above `B.Cu` (~0.2 mm prepreg dielectric), return current loops are tightly coupled. At 4 MHz – 8 MHz Z80 signal frequencies, 0.1 mm jogs have zero measurable signal integrity impact.
+* **DFM / Etching**: Modern PCB fabricators (such as JLCPCB) use laser direct imaging (LDI) and automated optical inspection (AOI). The 0.15 mm tracks and clearances fully satisfy JLCPCB standard 4-layer capabilities without acid trap or etching concerns.
+* **DRC Verified**: Passes KiCad design rule checking with **0 errors, 0 shorts, and 0 clearance violations**.

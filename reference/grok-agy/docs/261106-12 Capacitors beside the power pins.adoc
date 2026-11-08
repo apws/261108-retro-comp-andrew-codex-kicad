@@ -1,0 +1,90 @@
+= Capacitors beside the power pins
+:toc:
+:toclevels: 2
+
+The 100 nF discs were in one row under the chips, and the 1 µF
+radials were in one row along the top. KiCad was closed. Only the
+capacitors moved. The reset capacitor `C1` stayed with `R1` and the
+switch, because it is the reset timer, from `RESET_RC` to `GND`.
+
+
+== What the schematic actually ties
+
+`C2` to `C11` are all straight from `+5V` to `GND`. The sheet draws
+them in one place and says one per package. There are ten packages:
+the eight chips and the two oscillators. Nothing in the netlist pins
+`C2` to `U1` by a private wire. The assignment below is the placement.
+
+The 1 µF parts are not a shared bank. `C20` is across the MAX232 `C1`
+pins, `C21` across `C2`, `C23` from `VS+` to `GND`, and `C24` from
+`GND` to `VS-` (the positive end of that capacitor is ground). `C22`
+is the only 1 µF from `+5V` straight to `GND`.
+
+
+== Where they sit now
+
+The discs are rotation 0. Pin 1 is `+5V`. Each one is outside the
+package courtyard, on the side nearest that package's supply pin.
+
+[cols="1,1,3",options="header"]
+|===
+|Capacitor |Package |Place
+
+|C7
+|U6 MAX232
+|Just above pin 16, the `VCC` pin. About 4 mm.
+
+|C6
+|U5 16C550
+|Just above pin 40. About 4 mm. `Y2` occupies the space directly over the chip.
+
+|C2
+|U1 Z80
+|Under the chip, in line with pin 11. The pin is mid-way along the side, so the cap is still 26 mm away.
+
+|C3
+|U2 RAM
+|Just above pin 28. About 4 mm.
+
+|C4
+|U3 ROM
+|Just above pin 28. About 4 mm. Pin 1 is also on `+5V`.
+
+|C8
+|U7 74HCT14
+|Just above pin 14. About 4 mm.
+
+|C9
+|U8 74HCT32
+|Just above pin 14. About 4 mm.
+
+|C5
+|U4 82C55
+|Under the chip, near pin 26. About 16 mm, because the pin is not at the bottom corner and the right edge is the board edge.
+
+|C10
+|Y1 4 MHz
+|Just above the supply pins. About 5 mm.
+
+|C11
+|Y2 1.8432 MHz
+|Just above the supply pins. About 5 mm. The right side of `Y2` is the ground pin.
+|===
+
+`C20`, `C21`, `C23` and `C24` are on the left side and just above `U6`,
+next to the pump pins. The nearest pad is 4 to 6 mm from its pin.
+`C22` is immediately left of the screw terminal.
+
+Courtyards do not overlap. Pad copper stays inside the outline. The
+inner planes were refilled. There are still no signal tracks.
+
+
+== What this does not fix
+
+A 5 mm disc does not fit in the 1.2 mm gap between the DIP bodies.
+`U1` and `U4` therefore still have their bypass at the near end of a
+long package, not beside the supply pin. On this four-layer board the
+inner planes carry `+5V` and `GND`, so the pin and the capacitor both
+meet a plane. The short loop the bypass wants is still the one beside
+the pin. Opening the row, or folding the chips into two rows, is a
+different placement. It was not done.

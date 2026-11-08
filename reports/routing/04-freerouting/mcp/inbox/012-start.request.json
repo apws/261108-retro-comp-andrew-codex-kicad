@@ -1,0 +1,11 @@
+{
+  "method": "tools/call",
+  "params": {
+    "name": "start_job",
+    "arguments": {
+      "path": {
+        "jobId": "1ce98439-f1e8-4306-8baf-bf7583881638"
+      }
+    }
+  }
+}

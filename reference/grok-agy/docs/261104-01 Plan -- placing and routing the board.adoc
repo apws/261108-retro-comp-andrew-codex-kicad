@@ -1,0 +1,171 @@
+= Plan for placing and routing the board
+:toc:
+:toclevels: 2
+
+This is the next step after the sheet was fitted and a new board was
+created from it. It is a plan, not a layout. Nothing here has been routed.
+
+
+== The generator is not the editor
+
+`tools/build_schematic.py` was the way the sheet was rebuilt, because the
+posted schematic had names and no symbol drawings, and this machine has
+no KiCad libraries installed. The script embeds the stock symbols and
+writes the whole sheet again.
+
+It is not a text editor for the conversation. Running it replaces the
+schematic, including any move made in KiCad. From here the sheet and the
+board are edited in KiCad. The script stays in the repository so the
+rebuild can be repeated, and it should not be run again unless that is
+the deliberate choice.
+
+The earlier passes also ran ahead without stopping to ask. That was the
+wrong pace. Each step below stops when the file can be opened and looked at.
+
+
+== The sheet is still A2
+
+The schematic paper is A2, 594 by 420 mm. The symbols are not small.
+KiCad draws them at a fixed size in millimetres. An A2 page, zoomed to
+fit a screen, makes those symbols look lost.
+
+A4 is 297 by 210 mm. US Letter is 279 by 216 mm. Changing the paper does
+not shrink the symbols. It only gives them a smaller page, so the same
+symbols have to sit closer together or they fall off the sheet. The
+present arrangement uses most of the A2 page, so it will not fit on A4
+until the parts are moved. The nets can stay as they are, because the
+sheet is joined by labels.
+
+A4 landscape is the one to try. Letter is only worth it if the sheet has
+to be printed on US paper. If the labels collide on A4, stop at A3
+rather than making the text smaller.
+
+Do that move in the schematic editor, then save. Do not do it by running
+the generator.
+
+
+== What the board is today
+
+`Z80_Simple_Computer.kicad_pcb` is a new KiCad 10 board. The posted file
+that does not open is still `as-posted/Z80_Simple_Computer.kicad_pcb`.
+
+Updating the new board from the schematic copied the 33 footprints onto
+it. That is not a placement. The large chips are about 18 mm apart, so
+the DIP-40 packages sit on top of each other, and the resistors and
+capacitors are stacked in columns. There is no board outline and there
+are no tracks.
+
+The drawing sheet inside that file says A4. That is the page the board
+is plotted on. It is not the size of the board.
+
+
+== What was decided
+
+These were asked from the list above and answered on 2026-11-04. They
+replace the earlier assumptions.
+
+[cols="2,2",options="header"]
+|===
+|Choice |Decision
+
+|Schematic paper
+|A4 landscape. Move the symbols in KiCad. Do not run the generator.
+
+|Copper layers
+|Four from the start. Front and back are signals. One inner layer is
+ground. The other inner layer is +5V.
+
+|Board size
+|Eurocard, 160 by 100 mm, 1.6 mm thick, parts on the top. The outline
+still waits until the footprints fit inside it.
+
+|Connectors
+|DE9 on a short edge. PIO headers on a long edge. Reset switch on an
+edge a finger can reach.
+
+|How +5V comes in
+|A screw terminal for +5V and GND, on the edge opposite the DE9. The
+schematic has no power connector, so this is its own sheet change
+before routing.
+
+|Mounting holes
+|Four M3 holes, one inside each corner, after the outline exists.
+
+|DE9 shell
+|Leave the shell pad unconnected.
+
+|Routing
+|KiCad's interactive router, after the placement has been looked at.
+Not FreeRouting.
+|===
+
+
+== How the board should be made
+
+Place the parts in the same groups as the sheet, with room to solder a
+DIP by hand.
+
+* Z80, its 4 MHz oscillator, and the reset parts.
+* RAM, ROM, and the two decode chips.
+* PIO and the three headers.
+* UART, its 1.8432 MHz oscillator, the MAX232, the charge-pump capacitors,
+  and the DE9.
+* One 100 nF capacitor beside the supply pins of each chip. On the sheet
+  those capacitors are drawn in a row. On the board they move next to the
+  package they belong to.
+
+Then see whether that placement fits the 160 by 100 mm Eurocard. If it
+does not, stop and say so. Do not quietly grow the board.
+
+The copper is four layers:
+
+* Front copper: signals.
+* Inner 1: ground, not cut up.
+* Inner 2: +5V.
+* Back copper: signals.
+
+Through-hole pads get thermal relief so they can be soldered. Check the
+result with DRC, including the comparison against the schematic. A clean
+DRC does not mean the board has been built or that it runs.
+
+
+== FreeRouting
+
+FreeRouting is a Java autorouter. It can take a Specctra DSN export from
+KiCad and write a session file of tracks back. It is not installed here.
+Java is installed, and it is a very new JDK, which FreeRouting releases
+often do not run on.
+
+There is no skill in this project that designs a board by running
+FreeRouting. The layout notes used on the other KiCad work say how to
+group parts, how to keep a board readable, and how to run DRC. They do
+not autoroute. Another repository has a short laboratory note for trying
+FreeRouting on a copy of a board. That is an experiment, and it has not
+been run on this Z80 board.
+
+Use it only after a placement is frozen, and only on a copy. Import the
+session, look at it, and run DRC. Do not treat the autorouter's tracks as
+accepted because the import succeeded. For this board the first routing
+attempt should be KiCad's own interactive router, where a bad track can
+be seen and ripped up.
+
+
+== Order of work
+
+Each step ends by opening the file. The next step does not start in the
+same breath.
+
+. In the schematic editor, set the paper to A4 landscape and move the
+  symbols until they sit inside the frame. Do not change the nets. Do not
+  run `tools/build_schematic.py`.
+. Add the screw terminal for +5V and GND on the sheet, then update the
+  board from the schematic. Look at the new footprint and stop.
+. Move the footprints into the groups above. Leave courtyards apart.
+  Decoupling capacitors sit next to their chips.
+. Draw the 160 by 100 mm outline and the four corner M3 holes.
+. Route the supplies first, then the rest, on the four-layer stack above.
+. Run DRC with the schematic check. Fix what it reports. Export a plot of
+  the copper and look at it.
+
+FreeRouting is not part of this pass. The board is still not a computer
+someone can power on.

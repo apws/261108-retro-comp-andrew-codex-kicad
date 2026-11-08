@@ -1,0 +1,56 @@
+= Andrew's Z80: Codex KiCad experiments
+:title: {docname}
+:toc:
+
+== Start here, Andrew
+
+This repository preserves three completed routing experiments on the same 160 x 100 mm, four-layer Z80 board placement. Open the FreeRouting project first for the most economical completed routing in this comparison, then compare the saved alternatives. The original GIF and Grok/AGY project are under `reference/`.
+
+[cols="2,1,1,3",options="header"]
+|===
+|Experiment |Added signal vias |Signal copper |KiCad project
+|1: adapted AGY Manhattan router |212 |5,413.942 mm |link:layouts/01-reused-agy-router/Z80_Simple_Computer.kicad_pro[Open variant 1]
+|2: Codex octilinear router |129 |4,959.519 mm |link:layouts/02-codex-router/Z80_Simple_Computer.kicad_pro[Open variant 2]
+|4: FreeRouting, local MCP |12 |4,856.931 mm |link:layouts/04-freerouting/Z80_Simple_Computer.kicad_pro[Open variant 4]
+|===
+
+All three completed boards passed fresh native ERC/DRC/connectivity/parity checks before the initial Git snapshot. Variant 3 is the prepared native interactive experiment and remains pending. These are design experiments; hardware and signal integrity have not been qualified. FreeRouting's separate CLI controls remained incomplete and are retained as evidence.
+
+The repository includes the required symbol, footprint and STEP library subset. Clone it with Git to preserve the relative library symlinks. The projects were checked with KiCad 10.0.8. See link:docs/261108-2026-HANDOVER-GitHub-and-next-review.adoc[publication checks, reproduction instructions and next review] for the handover.
+
+== Working notes
+
+The Asciidoctor.js CSS/JavaScript rendering setup is by Falken (https://mixworx.net[mixworx.net]). The local JavaScript helper also contains the filename-to-print-title adaptation described below.
+
+Name new AsciiDoc notes under `docs/` with a `YYMMDD-HHMM` prefix, followed by a descriptive title.
+
+New notes also use `:title: {docname}` for the HTML browser/print title. For Asciidoctor.js Live Preview, select this project's `asciidoctorjs-crx-mixworx.js` as the custom JavaScript, loaded *after* rendering, then reload the note. It retains the shared heading/key formatting and sets the tab title from the source filename, so Chromium's Save as PDF can suggest the matching `.pdf` name. See link:docs/261108-1513-DOCS-PDF-filenames.adoc[setup and verification].
+
+*Current result:* link:docs/261108-1641-DONE-FreeRouting-MCP-and-CLI.adoc[variant 4, official local FreeRouting MCP, is fully routed and verified], with 12 vias and 4,856.931 mm of signal copper. Final ERC, DRC, unconnected and parity counts are all zero. Open link:layouts/04-freerouting/Z80_Simple_Computer.kicad_pro[the FreeRouting KiCad project] or view link:output/routing/04-freerouting/signals.png[its routing] and link:output/routing/04-freerouting/3d-top.png[3D render]. Two CLI controls remained incomplete with six connections; they are recorded separately and were not promoted as finished results.
+
+link:docs/261108-1601-DONE-Codex-router-comparison.adoc[Variant 2, the Codex octilinear router], is preserved at 129 vias and 4,959.519 mm of signal copper, on the same placement/circuit/rules. Open link:layouts/02-codex-router/Z80_Simple_Computer.kicad_pro[its KiCad project] or link:output/routing/02-codex-router/signals.png[routing preview].
+
+link:docs/261108-1535-DONE-routing-and-comparison.adoc[Variant 1, the adapted AGY router], remains preserved and verified: 212 vias / 5,413.942 mm. Open link:layouts/01-reused-agy-router/Z80_Simple_Computer.kicad_pro[its KiCad project] or link:output/routing/01-reused-agy-router/signals.png[routing preview]. The historical Grok/AGY board remains available for context at 229 vias / 5,036.484 mm.
+
+The link:docs/261108-1507-RECOVERY-current-state.adoc[earlier recovery note] records the previous stopping point and conversation gap. Its schematic/placement milestone was followed by the completed routing above.
+
+Start with link:docs/261108-1419-PLAN.adoc[the experiment plan] and link:docs/261108-1422-PLAN-project-layouts.adoc[the agreed project organization].
+
+`design/Z80_Simple_Computer.kicad_pro` is the authoritative circuit project. It now contains the Codex A3 schematic base, generated from an explicit pin specification and checked against the source GIF and inherited netlist. See link:docs/261108-1438-SCHEMATIC-base.adoc[the schematic handover] and `design/provenance.json`.
+
+Open link:output/schematic/Z80_Simple_Computer.svg[the schematic preview] or link:output/schematic/Z80_Simple_Computer.png[the PNG rendering]. The native netlist and CSV BOM are in `output/schematic/`; ERC and connectivity reports are in `reports/schematic/`.
+
+`layouts/` contains four ordinary KiCad project folders for the AGY-router reuse, Codex-router, interactive-KiCad, and FreeRouting experiments. Each has its own project settings and a synchronized schematic. Variants 1, 2 and 4 now contain completed routed Eurocards. link:docs/261108-1613-PENDING-native-interactive.adoc[Variant 3 is prepared and remains unrouted] for a later native GUI/control session; its worksheet and initial checks are saved. The completed historical board remains under `reference/grok-agy/`.
+
+The link:docs/261108-1500-PLACEMENT-checkpoint.adoc[placement handover] includes a link:output/placement/3d-top.png[3D preview], verification and reproduction commands. `checkpoints/01-codex-placed-unrouted/` preserves the common routing input with file hashes. That untouched checkpoint has 138 expected unconnected items and no signal tracks; the working layout has since been fully routed. Each of the seven checked routing stages is preserved under `reports/routing/01-reused-agy-router/`.
+
+[source,shell]
+----
+python3 tools/sync_layouts.py --check
+python3 tools/sync_layouts.py --sync
+python3 tools/sync_layouts.py --sync --layout 01-reused-agy-router
+----
+
+Edit circuit connectivity in `design/`. Layout schematic snapshots are managed copies; the synchronizer refuses local edits. It preserves each existing layout project file and PCB. Set an experiment's `frozen` manifest flag to retain a historical schematic input. See the organization plan for library-link portability, board update requirements, and fair comparisons.
+
+The current capture uses `design/circuit.json` for pin assignments and `tools/build_schematic.py` for drawing geometry. Regeneration with `python3 tools/build_schematic.py --write` preserves deterministic component UUIDs and refuses unreviewed edits to the generated schematic. If adopting manual KiCad schematic editing, stop regeneration and maintain the `.kicad_sch` directly; synchronization still copies that authoritative file normally.

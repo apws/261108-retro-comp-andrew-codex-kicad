@@ -1,0 +1,73 @@
+{
+  "status": "validated",
+  "group": "group1",
+  "attempt": 1,
+  "candidate": "reports/routing/02-codex-router/group1/attempt-01/Z80_Simple_Computer.kicad_pcb",
+  "utc": "2026-11-08T14:55:16.685636+00:00",
+  "failure": null,
+  "runtime_seconds": 8.18,
+  "input_board_sha256": "d054435baa298386f48a8b6e87d258052015624434147a24220acc5e8c61ad23",
+  "output_board_sha256": "ae82ada5011c9562b9a4dc2eb0e3017fa7f1657b74841b5f775d60e9973b206c",
+  "schematic_sha256": "f1a08e28cb32247addfa76974c82c4940699d3d99bdccb88e09733b92f3c4991",
+  "settings_sha256": "e417b80f3a6edb662368f41d6b662231b4ab1264cf40ef54e9e5343878e8d285",
+  "planner_sha256": "4fab152c8096a9064260d9c3c1373a11bb66eb06e76c35c4f72d2775a3ee9816",
+  "wrapper_sha256": "89fd4469c270c2848897f7f4ba838166283f9d5f5d0cf51f9d668de609299afa",
+  "shared_geometry_and_writer_sha256": "02ed95ca09d8907d411115073883fb553409c88281384010cd189fd1d2bd4518",
+  "configuration": {
+    "via_cost": 3000,
+    "bend_cost": 180,
+    "straight_cost": 100,
+    "diagonal_cost": 146,
+    "nonpreferred_axis_extra_cost": 25,
+    "grid_mm": 0.1
+  },
+  "net_results": [
+    {
+      "net": "/CLK",
+      "pads": 2,
+      "expanded_states": 115788,
+      "seconds": 0.761
+    },
+    {
+      "net": "/CLK_UART",
+      "pads": 2,
+      "expanded_states": 26657,
+      "seconds": 0.747
+    },
+    {
+      "net": "/~{RESET}",
+      "pads": 2,
+      "expanded_states": 95892,
+      "seconds": 0.766
+    },
+    {
+      "net": "/SW_RESET",
+      "pads": 3,
+      "expanded_states": 8362,
+      "seconds": 0.774
+    },
+    {
+      "net": "/RESET_RC",
+      "pads": 4,
+      "expanded_states": 972574,
+      "seconds": 1.159
+    },
+    {
+      "net": "/RESET_H",
+      "pads": 4,
+      "expanded_states": 234101,
+      "seconds": 0.988
+    }
+  ],
+  "violations": 0,
+  "parity_issues": 0,
+  "target_net_unconnected_items": 0,
+  "remaining_unconnected_items": 127,
+  "track_segments": 35,
+  "vias": 0,
+  "track_length_mm": 260.619,
+  "layer_lengths_mm": {
+    "B.Cu": 84.104,
+    "F.Cu": 176.515
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "status": "rejected",
+  "group": "group6",
+  "attempt": 1,
+  "candidate": "reports/routing/02-codex-router/group6/attempt-01/Z80_Simple_Computer.kicad_pcb",
+  "utc": "2026-11-08T14:57:15.127189+00:00",
+  "failure": "Planner status -1; expanded 9532 states",
+  "runtime_seconds": 21.16,
+  "input_board_sha256": "b803bb3a149a53d2d0931fa0bcc6eead6b7c47f752de5ee904ad7031bfd14275",
+  "output_board_sha256": "31a357b854c04cf6ea835d703b77c7a668751a6800a2bc0abd9d2b8db2667b80",
+  "schematic_sha256": "f1a08e28cb32247addfa76974c82c4940699d3d99bdccb88e09733b92f3c4991",
+  "settings_sha256": "e417b80f3a6edb662368f41d6b662231b4ab1264cf40ef54e9e5343878e8d285",
+  "planner_sha256": "4fab152c8096a9064260d9c3c1373a11bb66eb06e76c35c4f72d2775a3ee9816",
+  "wrapper_sha256": "89fd4469c270c2848897f7f4ba838166283f9d5f5d0cf51f9d668de609299afa",
+  "shared_geometry_and_writer_sha256": "02ed95ca09d8907d411115073883fb553409c88281384010cd189fd1d2bd4518",
+  "configuration": {
+    "via_cost": 3000,
+    "bend_cost": 180,
+    "straight_cost": 100,
+    "diagonal_cost": 146,
+    "nonpreferred_axis_extra_cost": 25,
+    "grid_mm": 0.1
+  },
+  "net_results": [
+    {
+      "net": "/A3",
+      "pads": 3,
+      "expanded_states": 1539067,
+      "seconds": 1.406
+    },
+    {
+      "net": "/A4",
+      "pads": 3,
+      "expanded_states": 2571731,
+      "seconds": 1.727
+    },
+    {
+      "net": "/A5",
+      "pads": 3,
+      "expanded_states": 1715740,
+      "seconds": 1.76
+    },
+    {
+      "net": "/A6",
+      "pads": 3,
+      "expanded_states": 1734268,
+      "seconds": 1.629
+    },
+    {
+      "net": "/A8",
+      "pads": 3,
+      "expanded_states": 2333861,
+      "seconds": 1.819
+    },
+    {
+      "net": "/A9",
+      "pads": 3,
+      "expanded_states": 4125028,
+      "seconds": 2.376
+    },
+    {
+      "net": "/A10",
+      "pads": 3,
+      "expanded_states": 3192576,
+      "seconds": 1.849
+    },
+    {
+      "net": "/A11",
+      "pads": 3,
+      "expanded_states": 4857163,
+      "seconds": 2.551
+    }
+  ],
+  "violations": 0,
+  "parity_issues": 0,
+  "target_net_unconnected_items": 6,
+  "remaining_unconnected_items": 31,
+  "track_segments": 585,
+  "vias": 94,
+  "track_length_mm": 4085.358,
+  "layer_lengths_mm": {
+    "B.Cu": 1986.369,
+    "F.Cu": 2098.99
+  }
+}

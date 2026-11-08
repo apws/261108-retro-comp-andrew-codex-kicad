@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 3,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"status\": 200,\n  \"contentType\": \"application/json\",\n  \"body\": {\n    \"status\": \"OK\",\n    \"cpu_load\": 20.90,\n    \"ram_used\": 88,\n    \"ram_available\": 91,\n    \"storage_available\": 11430,\n    \"session_count\": 0\n  }\n}"
+      }
+    ],
+    "isError": false
+  }
+}

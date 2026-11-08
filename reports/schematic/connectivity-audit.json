@@ -1,0 +1,28 @@
+{
+  "status": "pass",
+  "components": 38,
+  "assigned_or_nc_pins": 301,
+  "truth_table_cases": 32,
+  "baseline_connectivity_differences": [
+    {
+      "ref": "U5",
+      "pin": "36",
+      "before": "unconnected-(U5-~{CTS}-Pad36)",
+      "after": "GND"
+    },
+    {
+      "ref": "U5",
+      "pin": "38",
+      "before": "unconnected-(U5-~{DCD}-Pad38)",
+      "after": "+5V"
+    },
+    {
+      "ref": "U5",
+      "pin": "39",
+      "before": "unconnected-(U5-~{RI}-Pad39)",
+      "after": "+5V"
+    }
+  ],
+  "schematic_sha256": "f1a08e28cb32247addfa76974c82c4940699d3d99bdccb88e09733b92f3c4991",
+  "note": "Static connectivity and combinational checks; not analog reset timing, bus timing, SI or hardware validation."
+}

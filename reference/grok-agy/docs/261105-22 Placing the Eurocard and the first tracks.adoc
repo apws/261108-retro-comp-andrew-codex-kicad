@@ -1,0 +1,122 @@
+= Placing the Eurocard, and the first tracks
+:toc:
+:toclevels: 2
+
+This is the pass that followed the plan in
+`261104-01 Plan -- placing and routing the board.adoc`.
+The sheet was already on A3. This pass added the power connector and the
+mounting holes, placed the parts on a 160 by 100 mm board, and drew the
+first signal tracks. The tracks are not a finished route.
+
+
+== The sheet
+
+A4 was the paper that was asked for. A DIP-40 symbol is about 100 mm
+tall, and it does not fit that page, so the sheet stayed on A3. The nets
+were not changed.
+
+Two things were still missing from the plan. `J5` is a two-pin screw
+terminal, value `PWR`, pin 1 on `+5V` and pin 2 on `GND`. It sits on the
+edge opposite the DE9. `H1` through `H4` are M3 mounting holes. They are
+on the board and out of the bill of materials. The stock KiCad 10.0.7
+symbol and footprint for each were vendored into `libs/`, the same way
+as the earlier parts.
+
+`tools/build_schematic.py` is still the writer of the sheet. It was run
+once for these five parts. Electrical rules check after that was 0
+errors and 0 warnings. A plot of the page kept every ink mark inside the
+frame. `C22` is still the extra 1 µF from `+5V` to `GND`.
+
+The DE9 shell pins are named `SH`. They have no symbol pin and no net.
+That is the decision from the plan: leave the shell unconnected.
+
+
+== One placement, stamped again each run
+
+The footprints go on the top of a 1.6 mm board. The outline is a 160 by
+100 mm rectangle. Four copper layers: front and back for signals, inner
+1 a solid ground plane, inner 2 a solid `+5V` plane. Through-hole pads
+use thermal relief. The script does not grow the outline.
+
+Pin 1 of a DIP footprint is not the middle of the body. The first stamp
+put pin 1 where the middle should have been, so the packages overlapped
+each other and a mounting hole. The offset from pin 1 to the courtyard
+centre was measured for each footprint and stored in
+`tools/place_and_route.py`. The reset switch, its two resistors, and its
+capacitor sit under the DE9, where a finger can reach the switch. The
+100 nF capacitors sit beside the chips they belong to, not in the row
+they have on the sheet.
+
+After that correction the check was: 38 footprints, no courtyard
+overlaps, no courtyard outside the outline. Those coordinates were not
+changed again. Each later run deletes the copper and stamps the same
+coordinates. It looks like a new placement only because the file is
+rewritten.
+
+
+== How the tracks were drawn
+
+There was no clicking in the KiCad router, and FreeRouting was not used.
+`tools/place_and_route.py` writes ordinary KiCad tracks and vias on the
+front and back. Tracks are 0.25 mm, the default clearance is 0.20 mm,
+and the Power net class clearance is 0.30 mm. Vias are 0.80 mm with a
+0.40 mm drill. `+5V` and `GND` are the planes, not tracks.
+
+The first drawing passes had three separate faults.
+
+The search gave up on the long nets once shorter tracks had filled the
+gap between two DIP rows. That gap is about a millimetre, which holds
+two or three tracks. The script does not rip a track up.
+
+When a net failed, the script was supposed to delete only that net's
+unfinished tracks. KiCad's Python binding returns a new wrapper every
+time the track list is read, so the comparison matched nothing and the
+script deleted every track, then saved. The board opened with parts, the
+two planes, and a ratsnest, and no signal tracks.
+
+The grid is 0.25 mm. A diagonal step is 0.35 mm from centre to centre.
+Two 0.25 mm tracks on that diagonal have about 0.10 mm of space between
+them, and the rule is 0.20 mm. Vias were also dropped at a corner
+without the track that should have reached them, so KiCad reported the
+ends as dangling. A design-rules check of that file reported 951
+violations, 157 unconnected items, and 2 schematic-parity warnings.
+
+The switch footprint has two pads for pin 1 and two for pin 2. The
+assignment kept only one of each, so `SW1` was missing `/SW_RESET` and
+`GND`. Both pads are on those nets now. The parity warnings are gone.
+
+
+== What is on the board now
+
+The file `Z80_Simple_Computer.kicad_pcb` in the project directory is
+this pass. It is not the posted file. The posted file is still in
+`as-posted/`.
+
+Counted from the saved board: 38 footprints, 1337 track segments, 171
+vias, copper on 45 signal nets. Thirty-four signal nets have no track.
+`kicad-cli pcb drc`, including the schematic comparison, reported 28
+violations and 61 unconnected items, and 0 schematic-parity issues.
+The 28 violations are 22 shorts between different nets, 5 clearance
+misses, and one place where two vias of the same net sit on top of each
+other. The only numbered pads left without a net are the two `J1` shell
+pads.
+
+These nets are still airwires:
+
+`/D3`, `/D5`, `/D6`, `/D7`, `/A2`, `/A4`, `/A5`, `/A6`, `/A8`, `/A9`,
+`/A10`, `/A11`, `/A12`, `/A13`, `/A14`, `/A15`, `/~{WR}`, `/CLK`,
+`/~{RESET}`, `/~{RAMCS}`, `/~{ROMCS}`, `/~{PIOCS}`, `/~{UARTCS}`,
+`/PC5`, `/PC6`, `/PC7`, `/PB1`, `/PA0`, `/PA1`, `/PA2`, `/PA3`,
+`/TX_TTL`, `/RX_TTL`, `/BAUDOUT`.
+
+A short is a wrong connection. This file must not be treated as a
+routed board, and it must not be sent for manufacture. A clean
+design-rules check does not mean the computer runs. This check is not
+clean.
+
+
+== Opening it
+
+KiCad was closed while the file was written. Open the project and load
+the board fresh. If a window was left open from earlier, it still holds
+the previous copy.

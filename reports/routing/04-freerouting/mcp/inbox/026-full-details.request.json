@@ -1,0 +1,14 @@
+{
+  "method": "tools/call",
+  "params": {
+    "name": "get_job_details",
+    "arguments": {
+      "path": {
+        "jobId": "6d89ec53-5e06-4f14-a74a-41c83dca06a6"
+      },
+      "query": {
+        "compact": false
+      }
+    }
+  }
+}

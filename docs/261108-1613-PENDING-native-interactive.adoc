@@ -1,0 +1,34 @@
+= Variant 3 prepared: native interactive KiCad routing pending
+:title: {docname}
+:revdate: 2026-11-08
+:toc:
+
+== Prepared input
+
+link:../layouts/03-kicad-interactive/Z80_Simple_Computer.kicad_pro[The native interactive experiment project] now contains an exact copy of the common placed/unrouted PCB and its matching schematic/settings. The completed variants 1 and 2 remain unchanged.
+
+The initial native checks report zero geometry/silkscreen violations, zero schematic-parity issues, zero ERC findings, and the expected 138 unconnected items. There are no signal tracks or vias. See link:../reports/routing/03-kicad-interactive/preparation.json[preparation evidence] and link:../reports/routing/03-kicad-interactive/baseline-drc.json[baseline DRC].
+
+link:../reports/routing/03-kicad-interactive/route-worksheet.csv[The routing worksheet] lists all 79 signal nets in the same seven groups, with 217 physical pad entries and their board coordinates. Repeated physical switch pads are listed separately. The two power nets use the existing inner planes.
+
+== Access limitation and user decision
+
+The current session exposes no native desktop-control surface. The installed KiCad 10.0.8 CLI has DRC/export/import/render/upgrade commands but no interactive routing command, and the installed `pcbnew` module does not expose the native router's start/move/fix operations. The documented IPC board interface inspected during this task did not establish a usable programmatic push-and-shove routing entry point. A plugin-directory search found no suitable KiCad integration in this session.
+
+This is a limitation of the inspected interfaces and current session, not a claim that KiCad cannot route the board or that no third-party bridge exists. Drawing tracks through `pcbnew` would not constitute the native interactive experiment.
+
+Falken selected: keep variant 3 pending and proceed to FreeRouting. He may later try a Linux Codex GUI session for the native interactive work. Desktop-control availability still needs verification there; a GUI client alone is not evidence of native router automation.
+
+== Suggested native routing setup
+
+Open the project above in KiCad. Retain the common footprint placement and circuit. Use the Route Tracks tool, normally hotkey `X`, and the interactive router's Shove mode. Keep DRC enforcement enabled and use only F.Cu/B.Cu for signal tracks, with 0.15 mm track width and 0.70/0.30 mm through vias. Preserve In1.Cu GND and In2.Cu +5 V zones and the existing project clearances. Record any router settings, manual interventions, actual elapsed work and route-order changes.
+
+Begin with clocks/reset and use the worksheet's groups for review checkpoints. Save separately after each stage, refill zones and run native DRC/parity checks before comparing results. Remaining connections are expected during intermediate stages; a final comparison needs zero unconnected items and an independently checked saved board. Do not overwrite the common checkpoint or either completed variant.
+
+The https://docs.kicad.org/10.0/en/pcbnew/pcbnew.html#routing-tracks-and-vias[KiCad routing documentation] describes the interactive tools and modes. The https://docs.kicad.org/kicad-python/board.html[documented IPC board interface] is distinct from adding arbitrary native tracks through the older Python bindings.
+
+No routing has been performed in this experiment. No route-quality or runtime result is claimed.
+
+== Linux GUI retry
+
+link:261108-1658-PENDING-native-interactive-Linux-GUI-retry.adoc[The retry from the Linux GUI app] confirmed that native window control is still unavailable in this session. The official Linux preview documentation currently lists Computer Use as unsupported. The prepared board hash remains identical to the common checkpoint; variant 3 remains pending.

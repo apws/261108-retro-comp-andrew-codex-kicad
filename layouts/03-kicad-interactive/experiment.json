@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "experiment_id": "03-kicad-interactive",
+  "method": "KiCad interactive routing experiment",
+  "frozen": false,
+  "status": "pending-native-ui-control",
+  "board_status": "placed-unrouted",
+  "schematic_snapshot": {
+    "source": "design/Z80_Simple_Computer.kicad_sch",
+    "sha256": "f1a08e28cb32247addfa76974c82c4940699d3d99bdccb88e09733b92f3c4991",
+    "synced_at_utc": "2026-11-08T13:40:57.644723+00:00"
+  },
+  "placement": {
+    "checkpoint": "checkpoints/01-codex-placed-unrouted",
+    "board_sha256": "d054435baa298386f48a8b6e87d258052015624434147a24220acc5e8c61ad23"
+  },
+  "preserved_variants": {
+    "01-reused-agy-router": {
+      "Z80_Simple_Computer.kicad_pro": "e417b80f3a6edb662368f41d6b662231b4ab1264cf40ef54e9e5343878e8d285",
+      "Z80_Simple_Computer.kicad_sch": "f1a08e28cb32247addfa76974c82c4940699d3d99bdccb88e09733b92f3c4991",
+      "Z80_Simple_Computer.kicad_pcb": "563f82c9d30572d833fa4d84e3fd93e6de61c728e04e13624436fa6af3f0743c"
+    },
+    "02-codex-router": {
+      "Z80_Simple_Computer.kicad_pro": "e417b80f3a6edb662368f41d6b662231b4ab1264cf40ef54e9e5343878e8d285",
+      "Z80_Simple_Computer.kicad_sch": "f1a08e28cb32247addfa76974c82c4940699d3d99bdccb88e09733b92f3c4991",
+      "Z80_Simple_Computer.kicad_pcb": "dcd3982165d72ebf877389beb5210a1d9d2f6f85096adea401f759050f64f422"
+    }
+  },
+  "handover": "docs/261108-1613-PENDING-native-interactive.adoc"
+}

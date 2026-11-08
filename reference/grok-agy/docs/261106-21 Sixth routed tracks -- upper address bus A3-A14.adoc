@@ -1,0 +1,91 @@
+= Sixth routed tracks -- upper address bus A3-A14
+:toc:
+:toclevels: 2
+
+This pass routes the sixth signal group: the remaining upper address bus lines
+(`A3`, `A4`, `A5`, `A6`, `A8`, `A9`, `A10`, `A11`, `A12`, `A13`, `A14`) interconnecting
+the Z80 CPU (`U1`), SRAM (`U2`), and ROM (`U3`).
+
+
+== What was routed
+
+Eleven nets (22 connections, 33 pins) were routed in this pass:
+
+[cols="1,2,3",options="header"]
+|===
+|Net |Nodes |Description
+
+|`/A3`
+|`U1:33` -> `U2:7` -> `U3:7`
+|Address line 3 across CPU, RAM, and ROM.
+
+|`/A4`
+|`U1:34` -> `U2:6` -> `U3:6`
+|Address line 4 across CPU, RAM, and ROM.
+
+|`/A5`
+|`U1:35` -> `U2:5` -> `U3:5`
+|Address line 5 across CPU, RAM, and ROM.
+
+|`/A6`
+|`U1:36` -> `U2:4` -> `U3:4`
+|Address line 6 across CPU, RAM, and ROM.
+
+|`/A8`
+|`U1:38` -> `U2:25` -> `U3:25`
+|Address line 8 across CPU, RAM, and ROM.
+
+|`/A9`
+|`U1:39` -> `U2:24` -> `U3:24`
+|Address line 9 across CPU, RAM, and ROM.
+
+|`/A10`
+|`U1:40` -> `U2:21` -> `U3:21`
+|Address line 10 across CPU, RAM, and ROM.
+
+|`/A11`
+|`U1:1` -> `U2:23` -> `U3:23`
+|Address line 11 across CPU, RAM, and ROM.
+
+|`/A12`
+|`U1:2` -> `U2:2` -> `U3:2`
+|Address line 12 across CPU, RAM, and ROM.
+
+|`/A13`
+|`U1:3` -> `U2:26` -> `U3:26`
+|Address line 13 across CPU, RAM, and ROM.
+
+|`/A14`
+|`U1:4` -> `U2:1` -> `U3:1`
+|Address line 14 across CPU, RAM, and ROM.
+|===
+
+
+== Router Enhancement: Roundrect Pin 1 Clearance
+
+KiCad uses `PAD_SHAPE_ROUNDRECT` (shape enum value 4) for Pin 1 on dual-in-line
+IC footprints. Previous router passes checked `pad.GetShape() == pcbnew.PAD_SHAPE_RECT`
+(value 1), falling back to circular radius approximation for roundrect pads.
+Because square/roundrect pads extend further along the diagonal corners
+($\sqrt{0.8^2 + 0.8^2} \approx 1.131$ mm vs $0.80$ mm along axis), tracks shaving past
+the corner of Pin 1 on `U3` caused a netclass clearance violation.
+
+`tools/route_netgroup.py` was enhanced to treat `PAD_SHAPE_ROUNDRECT` identically
+to rectangular pads for exact Chebyshev box distance calculation, preventing any
+diagonal corner encroachment.
+
+
+== Verification and DRC
+
+The route was produced by `tools/route_netgroup.py --group group6`.
+Inner copper planes (In1.Cu `GND` and In2.Cu `+5V`) were refilled.
+
+DRC check with `kicad-cli pcb drc --schematic-parity`:
+
+* **0 clearance violations**
+* **0 shorting items**
+* **0 tracks crossing**
+* **0 dangling tracks**
+* **0 schematic parity issues**
+* Unconnected items dropped from 47 down to **25**.
+* Total tracks and vias on the board: **1644**.

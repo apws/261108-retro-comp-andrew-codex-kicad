@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 7,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"status\": 200,\n  \"contentType\": \"application/json\",\n  \"body\": {\n    \"message\": \"Successfully uploaded input from file: /home/falken/_/wrk/ver/261108-retro-comp-andrew-codex-kicad/reports/routing/04-freerouting/Z80_Simple_Computer.dsn\"\n  }\n}"
+      }
+    ],
+    "isError": false
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "status": "placed-unrouted-checks-pass",
+  "components": 38,
+  "checked_schematic_pins": 301,
+  "board_size_mm": [
+    160,
+    100
+  ],
+  "copper_layers": 4,
+  "tracks_and_vias": 0,
+  "filled_power_planes": 2,
+  "models": 34,
+  "geometry_and_silkscreen_violations": 0,
+  "schematic_parity_issues": 0,
+  "expected_unconnected_items": 138,
+  "bypass_supply_pad_distances_mm": {
+    "C2": 2.889,
+    "C3": 2.88,
+    "C4": 2.88,
+    "C5": 2.881,
+    "C6": 3.092,
+    "C7": 3.187,
+    "C8": 3.385,
+    "C9": 2.688,
+    "C10": 4.692,
+    "C11": 4.694
+  },
+  "board_sha256": "d054435baa298386f48a8b6e87d258052015624434147a24220acc5e8c61ad23",
+  "schematic_sha256": "f1a08e28cb32247addfa76974c82c4940699d3d99bdccb88e09733b92f3c4991",
+  "project_settings_sha256": "e417b80f3a6edb662368f41d6b662231b4ab1264cf40ef54e9e5343878e8d285",
+  "limitation": "Unrouted checkpoint; not a completed or fabrication-ready board."
+}
