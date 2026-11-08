@@ -9,13 +9,15 @@ Andrew, the routing comparison is ready to inspect. We have three completed boar
 
 This directory had no Git repository when Falken requested publication. Git was initialized on 2026-11-08. The initial snapshot preserves the existing schematic, placed checkpoint, three completed results, intermediate routing stages, unsuccessful attempts, source tools, previews and dated notes. It does not reconstruct a historical sequence of development commits. The earlier Grok/AGY repository remains separate at https://github.com/apws/261103-reto-comp-andrew-grok-kicad.
 
-Falken explicitly selected a public repository named `apws/261108-retro-comp-andrew-codex-kicad`. Its intended address is https://github.com/apws/261108-retro-comp-andrew-codex-kicad. The final chat handover records the verified push outcome and commit identity.
+Falken explicitly selected a public repository named `apws/261108-retro-comp-andrew-codex-kicad`. It was created at https://github.com/apws/261108-retro-comp-andrew-codex-kicad and the initial snapshot `8d5d852eed6e52f9f82a4ab8cf1e1d8d641d4a3c` was pushed to `main`. GitHub's repository API confirmed public visibility. The final chat handover records the final pushed commit identity after adding the clone evidence.
 
 == Checks before the snapshot
 
 Fresh native KiCad 10.0.8 reports are preserved in link:../reports/publication/261108-2026/[the publication check directory]. Each completed board returned zero DRC violations, zero unconnected items and zero schematic-parity issues. The authoritative schematic returned zero ERC findings. The original routing evidence remains unchanged.
 
 Independent project checks also cover circuit pin assignments, decoder truth tables, placement and rule preservation, board hashes, completed routing-stage hashes and synchronized schematic snapshots. This is static design verification, not hardware, timing or signal-integrity qualification.
+
+A separate local Git clone of the initial snapshot, made with `--no-hardlinks`, confirmed all 25 relative library links resolve, all four saved board hashes match, and all schematic snapshots remain current. With no downloaded engine cache present, the clone's FreeRouting board passed fresh native DRC/parity/connectivity checks and its authoritative schematic passed ERC. See link:../reports/publication/261108-2026/clone-verification.json[clone verification], link:../reports/publication/261108-2026/clone-drc.json[clone DRC] and link:../reports/publication/261108-2026/clone-erc.json[clone ERC]. This checks checkout portability; it does not rerun an autorouter.
 
 Variant 3 remains prepared and unrouted. The separate FreeRouting CLI controls still have six incomplete connections and are not presented as completed results. The historical Grok/AGY board uses a different placement and is contextual evidence rather than a controlled router comparison.
 
