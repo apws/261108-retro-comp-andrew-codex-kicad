@@ -9,6 +9,7 @@ reports/routing/*/cache/
 *.lck
 ~*.lck
 *-backups/
+.history/
 
 # Owned process IDs and engine runtime profiles are not experiment evidence.
 reports/routing/04-freerouting/mcp/owned-pid

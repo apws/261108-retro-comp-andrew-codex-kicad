@@ -1,0 +1,83 @@
+= Engineering intent, collaboration and small testable steps
+:title: {docname}
+:revdate: 2026-11-09
+:toc:
+:leveloffset: +1
+
+Conversation export from the message beginning “261109-16 hi Ari pls,” through the request to create this file, inclusive. User wording is retained, including informal spelling and names. Assistant formatting is adapted to AsciiDoc. The two progress messages are included; tool results, system messages and ambient browser metadata are omitted.
+
+== 1. Falken: describing our interaction
+
+[quote,Falken]
+____
+261109-16 hi Ari pls, is somehow possible to describe as simple as possible our interaction in this chat? I fear that Andrew while working inside codex-cli probably wastes lot of tokens to direct it in too much details HOW to do some things at say "assembly level" down to details how he wants codex to work, but instead we here use simplest approach, where I only had some WISH, so WHAT I need to do from you (peek into grok/agy work and create own schema, then create variants of routing, and YOU then decide HOW these wishes will be realized, what tools to use, what to test, etc ... user/engineer in codex terminal simply only need to say that he wants, and you, the assistant (there was used by someone also term "intern" - here I would be more careful by selection of wording, haha ...) will just do that your best way ... sure, expert at keyboard may provide his own constraints, preferences ... say, placement of part on schematic, placement of chips on board (I feel you will be okay with ugly hand-made drawing take by mobile and pasted for you...) ... and thats ALL ... I simply feel he (and not only one, sure) cant imagine how deeply smart and educated are you in that our particular domain - sure, with some mistakes involved too ... thats normal ... "ideal" workers/employees exist only in "utopic totalitarian movies", probably ...
+____
+
+== 2. Ari: progress message
+
+I’ll turn this into a short explanation Andrew can reuse, grounded in what we actually did here: you supplied the engineering intent, I worked out the methods, and we reviewed the results together.
+
+== 3. Ari: engineering delegation
+
+Yes, Falken 🙂 I’d describe our approach as *engineering delegation*:
+
+[quote]
+____
+*Tell the assistant what result you need, provide the relevant sources and important constraints, and let it work out the implementation. Review the result together and steer where necessary.*
+____
+
+For Andrew, our session could be summarized like this:
+
+[quote]
+____
+“Inspect the previous Grok/AGY work and the original schematic. Create your own KiCad version, then compare several routing approaches. Preserve the alternatives, check the results and document what you did.”
+____
+
+You didn’t have to specify the Python architecture, routing algorithms, export commands or validation scripts. I investigated and selected those as the work developed.
+
+Your engineering input remained valuable: *Eurocard dimensions, a single A3 sheet, preferred component placement, readable wiring, and which experiments mattered.* An annotated phone photo of a rough layout can also communicate that intent; uncertain dimensions or connections still need clarification.
+
+Detailed instructions are useful when they express a real requirement or hard-earned knowledge. There is usually no need to prescribe every operation merely to get the work started. This agrees with https://learn.chatgpt.com/docs/prompting#prompting-codex[OpenAI’s prompting guidance], which emphasizes the desired behaviour, context, constraints and verification.
+
+I’d call my role a *technical collaborator*. You provide purpose and engineering judgment; I contribute investigation, implementation and checks. Both contributions remain reviewable—and both can contain mistakes. Our schematic cleanup was a practical example of catching and correcting them together 🙂
+
+== 4. Falken: voice, experience and a free-flowing working style
+
+[quote,Falken]
+____
+tnx, ... I even tried to activate voice here, but it seems without microphone its not possible? I expected possibility to "talk about that repo" and just describe the interaction used to achieve results also by voice ...) ... you know Andrew is deep expert in that electronics/schematic/pcb domain, but he is also in senior age, as many others in retro groups, huge experience with detailed things and quite understandably not grasping easily things what are happening especially since 2026+ with rise of agentic design tools ... I completelly understand that, but he is probably only small tiny step from AHA-moment, how to cooperate with you too ....
+
+I checked yours "prompting guidance", but I must admit, I am talking to you with more punk style, more wordy and unstructured (torturing you semi-intentionally how you understand my long sentences ... you know, its my flow of mind transcribed here ... but, generally, its about small self-contained/testable steps also... ya??
+____
+
+== 5. Ari: progress message
+
+I’ll check the microphone requirement. And yes—your free-flowing style has worked here: we’ve turned the broad wishes into small results you could inspect and test, without needing a formal prompt each time.
+
+== 6. Ari: small, self-contained and testable steps
+
+Yes, Falken 🙂 *Small, self-contained, testable steps describe our workflow well.* Your “punk style” is compatible with that.
+
+You can think aloud, add context, make jokes and change direction. My job is to extract the request, track the constraints and clarify consequential ambiguities. If something is essential, a simple *“must keep…”* helps make it unmistakable.
+
+Our steps were understandable outcomes: create the schematic, compare routing variants, make a wired drawing, then review the human corrections. Each produced something you could inspect. You didn’t need to prescribe the implementation.
+
+For Andrew, a useful first experiment could be:
+
+[quote]
+____
+“This serial section is difficult to read. Improve its placement and wiring on one A3 sheet. Preserve every connection and component value. Show what changed and verify the result.”
+____
+
+His experience gives him the judgment to assess the result and spot what matters. The unfamiliar part may simply be discovering how much investigation and execution he can delegate.
+
+About voice: discussing an existing Codex task is supported where Voice is available, but the documented desktop setup requests microphone access. *I couldn’t verify a microphone-free, speaker-only startup mode*, so I wouldn’t promise that it works in this app. https://learn.chatgpt.com/docs/features/voice[Official voice guidance]
+
+And your narrative still serves an engineering purpose: it explains _why_ you want something, which often helps more than a long sequence of commands 🙂
+
+== 7. Falken: request for this downloadable AsciiDoc
+
+[quote,Falken]
+____
+okay, thanks, pls make adoc to download (as we are now in gui codex) from this chat since "261109-16 hi Ari pls," ... including this "prompt" (I quite hate this term, you know it)) .. sure, connecting full headset is enough, but I am rather writing here, while listening retro computing  youtube videos in background )) thanks, Lyra
+____
