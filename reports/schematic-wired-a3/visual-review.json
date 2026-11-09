@@ -1,0 +1,14 @@
+{
+  "status": "visually-reviewed",
+  "pdf_pages": 1,
+  "pdf_paper": "A3 landscape",
+  "rendered_with": "Poppler pdftoppm",
+  "reviewed": "Full page, bus breakouts, PIO header fields, reset/decode, MAX232 polarity, sheet margins and title block",
+  "deterministic_regeneration": true,
+  "files_sha256": {
+    "schematics/02-wired-a3/Z80_Simple_Computer.kicad_sch": "9683a3f53fd056b74df58b9a9705947373c673e83071937b020f0dc3362e2559",
+    "output/pdf/Z80_Simple_Computer-wired-A3.pdf": "9a3e4ad0de6ea03ef8513325da8c6158c51e244f36d148e091162cdb4790d650",
+    "output/schematic-wired-a3/Z80_Simple_Computer.svg": "8e069db397db0615e3c79b985f21deaa0bdc215954a8978c770eaad1ebc8f21a",
+    "output/schematic-wired-a3/Z80_Simple_Computer.png": "8a49d1c3d2b4a57e8403721fdbbb3e3028f9a9bf47decf5cd2959b6893d64080"
+  }
+}

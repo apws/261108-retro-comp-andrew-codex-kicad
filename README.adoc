@@ -2,6 +2,8 @@
 :title: {docname}
 :toc:
 
+*2026-11-09:* A separate link:schematics/02-wired-a3/Z80_Simple_Computer.kicad_pro[wired single-A3 schematic] is now available, with link:output/pdf/Z80_Simple_Computer-wired-A3.pdf[PDF] and link:output/schematic-wired-a3/Z80_Simple_Computer.png[PNG] previews. It preserves all 301 pin assignments, passes ERC, and retains the original schematic and completed board variants unchanged. See link:docs/261109-1528-SCHEMATIC-wired-A3.adoc[the drawing handover].
+
 == Start here, Andrew
 
 This repository preserves three completed routing experiments on the same 160 x 100 mm, four-layer Z80 board placement. Open the FreeRouting project first for the most economical completed routing in this comparison, then compare the saved alternatives. The original GIF and Grok/AGY project are under `reference/`.

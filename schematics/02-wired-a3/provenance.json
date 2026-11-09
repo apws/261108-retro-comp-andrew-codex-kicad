@@ -1,0 +1,184 @@
+{
+  "status": "wired-verified",
+  "circuit_source": "design/circuit.json",
+  "generator": "tools/build_wired_schematic.py",
+  "circuit_spec_sha256": "35409352154bc7300257527ec37fec0844dbfe8f03cbd39416cacd7f095ad752",
+  "source_schematic_sha256": "f1a08e28cb32247addfa76974c82c4940699d3d99bdccb88e09733b92f3c4991",
+  "placement_method": "Explicit functional placement; constrained orthogonal scalar-wire planner",
+  "generated_sha256": "9683a3f53fd056b74df58b9a9705947373c673e83071937b020f0dc3362e2559",
+  "wire_segments": 531,
+  "bus_segments": 20,
+  "bus_entries": 95,
+  "component_count": 38,
+  "routes": [
+    {
+      "net": "C1P",
+      "grid_steps": 21
+    },
+    {
+      "net": "C1M",
+      "grid_steps": 21
+    },
+    {
+      "net": "C2P",
+      "grid_steps": 17
+    },
+    {
+      "net": "C2M",
+      "grid_steps": 17
+    },
+    {
+      "net": "VS_PLUS",
+      "grid_steps": 29
+    },
+    {
+      "net": "VS_MINUS",
+      "grid_steps": 24
+    },
+    {
+      "net": "BAUDOUT",
+      "grid_steps": 4
+    },
+    {
+      "net": "RESET_RC",
+      "grid_steps": 12
+    },
+    {
+      "net": "RESET_RC",
+      "grid_steps": 14
+    },
+    {
+      "net": "RESET_RC",
+      "grid_steps": 7
+    },
+    {
+      "net": "SW_RESET",
+      "grid_steps": 15
+    },
+    {
+      "net": "~{A15}",
+      "grid_steps": 19
+    },
+    {
+      "net": "~{A7}",
+      "grid_steps": 20
+    },
+    {
+      "net": "CLK",
+      "grid_steps": 102
+    },
+    {
+      "net": "CLK_UART",
+      "grid_steps": 87
+    },
+    {
+      "net": "TX_RS232",
+      "grid_steps": 53
+    },
+    {
+      "net": "RX_RS232",
+      "grid_steps": 37
+    },
+    {
+      "net": "DTR_RS232",
+      "grid_steps": 56
+    },
+    {
+      "net": "DSR_RS232",
+      "grid_steps": 39
+    },
+    {
+      "net": "TX_TTL",
+      "grid_steps": 156
+    },
+    {
+      "net": "RX_TTL",
+      "grid_steps": 174
+    },
+    {
+      "net": "DTR_TTL",
+      "grid_steps": 218
+    },
+    {
+      "net": "DSR_TTL",
+      "grid_steps": 236
+    },
+    {
+      "net": "~{ROMCS}",
+      "grid_steps": 109
+    },
+    {
+      "net": "~{RAMCS}",
+      "grid_steps": 73
+    },
+    {
+      "net": "~{PIOCS}",
+      "grid_steps": 140
+    },
+    {
+      "net": "~{UARTCS}",
+      "grid_steps": 216
+    },
+    {
+      "net": "~{MREQ}",
+      "grid_steps": 181
+    },
+    {
+      "net": "~{MREQ}",
+      "grid_steps": 22
+    },
+    {
+      "net": "~{IORQ}",
+      "grid_steps": 217
+    },
+    {
+      "net": "~{IORQ}",
+      "grid_steps": 22
+    },
+    {
+      "net": "~{RD}",
+      "grid_steps": 112
+    },
+    {
+      "net": "~{RD}",
+      "grid_steps": 81
+    },
+    {
+      "net": "~{RD}",
+      "grid_steps": 54
+    },
+    {
+      "net": "~{RD}",
+      "grid_steps": 145
+    },
+    {
+      "net": "~{WR}",
+      "grid_steps": 224
+    },
+    {
+      "net": "~{WR}",
+      "grid_steps": 51
+    },
+    {
+      "net": "~{WR}",
+      "grid_steps": 163
+    },
+    {
+      "net": "RESET_H",
+      "grid_steps": 136
+    },
+    {
+      "net": "RESET_H",
+      "grid_steps": 183
+    },
+    {
+      "net": "RESET_H",
+      "grid_steps": 10
+    },
+    {
+      "net": "~{RESET}",
+      "grid_steps": 118
+    }
+  ],
+  "verification": "reports/schematic-wired-a3/verification.json"
+}

@@ -1,0 +1,49 @@
+= Separate wired schematic on one A3 sheet
+:title: {docname}
+:revdate: 2026-11-09
+:toc:
+
+== Result and files
+
+Falken requested a separate wired version of the existing label-oriented schematic, retaining a single A3 sheet. The new link:../schematics/02-wired-a3/Z80_Simple_Computer.kicad_pro[KiCad project] contains that drawing. Open its link:../output/pdf/Z80_Simple_Computer-wired-A3.pdf[A3 PDF], link:../output/schematic-wired-a3/Z80_Simple_Computer.svg[vector preview] or link:../output/schematic-wired-a3/Z80_Simple_Computer.png[PNG preview].
+
+The sheet contains 38 component references, 531 wire segments, 20 bus segments and 95 bus entries. It preserves the same values, footprints, references and all 301 exported pin assignments as the accepted base. Native KiCad 10.0.8 ERC reports zero findings. This is another drawing of the existing circuit; it adds no new board routing or hardware qualification.
+
+The existing `design/` schematic, common placed checkpoint and all four PCB variants retain their checked hashes. The new drawing lives under `schematics/`, outside the managed layout schematic snapshots. It has its own ordinary project file, library tables and relative library link. The existing board projects continue to use their existing schematics.
+
+== Placement and wiring approach
+
+The functional placement is explicit and chosen for this circuit. CPU, ROM, RAM, PIO and UART occupy the upper row. Address and data have distinct continuous bus backbones, with individually named wire breakouts and genuine native bus entries. Memory address banks face their local address branches. The PIO's PA, PB and PC headers sit directly beside its output banks, providing 24 short parallel pin-to-pin connections.
+
+Reset and address decoding occupy the lower left and middle. The two oscillators sit near the signals they serve. MAX232, its capacitors and the DE9 connector form the lower-right serial section. The bypass capacitors share visible supply rails along the bottom, with their associated ICs listed above them. Standard supply ports retain the global +5V and GND connections.
+
+The new generator combines that explicit placement with a small direction-aware orthogonal A* drawing planner on a 1.27 mm schematic grid. It reserves symbol bodies and pin approaches, penalizes bends and crossings, and connects local scalar nets before shared control nets. Crossings remain straight and unjoined; branches on a net get explicit junctions. Unused escape-stub tails are removed, and wire segments split at real pins and joins. This planner draws schematic wires; it is separate from the PCB routing experiments and does not use FreeRouting.
+
+The method is a combination of geometric constraints and visual iteration. There is no general automatic schematic placer here. Initial renders and native checks exposed bus crossings near labels, pin endpoints hidden inside long wire segments and a few redundant stub tails. Those issues were corrected, then the native netlist and ERC were rerun. Header fields were moved beside their connectors to keep them clear of the adjacent port bank.
+
+The original GIF was used as circuit context, as it was for the accepted base. This pass uses its own placement. Falken also suggested that a closer redraw of the GIF would be acceptable as an optional follow-up; that additional drawing has not been made.
+
+== Independent verification
+
+link:../reports/schematic-wired-a3/verification.json[The verification report] checks the KiCad-exported netlist against the accepted base, including every assigned and no-connect pin, component value and footprint. link:../reports/schematic-wired-a3/erc.json[The native ERC report] contains zero findings, with the existing project rules retained.
+
+The checker also reads the saved wire and bus geometry independently of the drawing planner. All 55 scalar signal nets have continuous physical drawing paths when net labels are ignored. All 95 address/data pin breakouts reach the appropriate connected bus, covering 24 member nets. Address and data remain separate bus components. Labels on wires therefore serve as readable names rather than hiding missing scalar connections. Native KiCad still uses member labels to identify bus signals, as described in the https://docs.kicad.org/10.0/en/eeschema/eeschema.html#buses[official bus documentation].
+
+The PDF was exported by KiCad, confirmed to contain one landscape A3 page, rendered with Poppler and visually inspected. The SVG and PNG previews were also checked. This validates the drawing and static connectivity; it does not test analog reset timing, digital bus timing or fabricated hardware.
+
+== Reproduction
+
+Run these commands from the repository root with KiCad 10 available. The generator writes only the separate variant and refuses to overwrite a modified generated schematic. Keep KiCad closed for regeneration.
+
+[source,shell]
+----
+/usr/bin/python3 tools/build_wired_schematic.py --write
+kicad-cli sch export netlist --format kicadxml --output output/schematic-wired-a3/Z80_Simple_Computer.xml schematics/02-wired-a3/Z80_Simple_Computer.kicad_sch
+kicad-cli sch erc --format json --severity-all --exit-code-violations --output reports/schematic-wired-a3/erc.json schematics/02-wired-a3/Z80_Simple_Computer.kicad_sch
+/usr/bin/python3 tools/check_wired_schematic.py
+kicad-cli sch export svg --output output/schematic-wired-a3/ schematics/02-wired-a3/Z80_Simple_Computer.kicad_sch
+kicad-cli sch export pdf --output output/pdf/Z80_Simple_Computer-wired-A3.pdf schematics/02-wired-a3/Z80_Simple_Computer.kicad_sch
+rsvg-convert -w 3200 -o output/schematic-wired-a3/Z80_Simple_Computer.png output/schematic-wired-a3/Z80_Simple_Computer.svg
+----
+
+Historical and layout-specific projects retain their own unchanged input files. Do not copy this drawing into the completed PCB experiments as part of reproducing it. For manual schematic development, adopt the separate KiCad file and stop using its generator, or make the intended edits in the generator and revalidate.
