@@ -1,0 +1,52 @@
+{
+  "toolchain": [
+    {
+      "command": [
+        "kicad-cli",
+        "--version"
+      ],
+      "output": "10.0.8"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "--version"
+      ],
+      "output": "Python 3.14.9"
+    },
+    {
+      "command": [
+        "g++",
+        "--version"
+      ],
+      "output": "g++ (GCC) 16.2.1 20260810\nCopyright (C) 2026 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
+    },
+    {
+      "command": [
+        "java",
+        "-version"
+      ],
+      "output": "openjdk version \"27.0.1.0.3\" 2026-10-24\nOpenJDK Runtime Environment (build 27.0.1.0.3)\nOpenJDK 64-Bit Server VM (build 27.0.1.0.3, mixed mode, sharing)"
+    }
+  ],
+  "freerouting_jar_sha256": "f6f51bb02245e8e717f9359bd260cc9c5c0b1bc0acc8b7cb2cd5b8ffeb5de3c7",
+  "tool_source_sha256": {
+    "tools/prepare_firstz80.py": "287417e4af1cc7d067485b48bc7cb2ea0c6c13212f0c094fa77d543498414a09",
+    "tools/run_firstz80_freerouting.py": "337f870c0ba354aaf2a798cd5855c745840d9c317559bda4442ca2207e1e4037",
+    "tools/firstz80_router.cpp": "515e8c563934935f3fa8b2cbc0108a0ab50347655e5f8382d9a6759dc0b8eaa0",
+    "tools/route_firstz80.py": "7e4527e684de852f08a691f3cb2311ed0fe32a7e9029bdc70f2fbf4b53b7157e",
+    "tools/firstz80_validation.py": "f38a441a86cc151125e6b3e92e7d99720d294e03ebf4a768b64d8c9d85c49895",
+    "tools/import_firstz80_freerouting.py": "37d4d09f032c545d384b959d051281eb232d0abda995899cf528168b62f1c86f",
+    "tools/complete_firstz80_grid.py": "5ed8a014ce620df9827290cb3fb17e7173eade122663435173654f39ef1f275a",
+    "tools/export_firstz80.py": "2755b9d9cdf2e1306ca9fa0223db8153a096b6da25c179f90d729a40824611d7",
+    "tools/check_firstz80.py": "59e998ded97c857fe1a042cc1dccba5e1dc28854d2c7b4a1b2143147f7b9f776",
+    "tools/refine_firstz80_octilinear.py": "7f37b63ce30418092b819281c3624c8ad77f12952b602a5925d92691889d57a6",
+    "tools/build_schematic_7805.py": "28bf65d9c61deda5effc3476cc926f3cce58bcd0bca3835fcf5e7447540a9fc5",
+    "tools/check_schematic_7805.py": "968207d60e17729da1087610c2dc19488e712f67b17cba2df4f9f29c278f3249",
+    "tools/cleanup_wired_readability.py": "d5bf8e22e97d80ae8ee8417a18bdcf66be8f293ea581eff4495dc2ccac6a022f",
+    "tools/check_schematic_pin_clearance.py": "178d2c046022d89570954a3836e39f6e0baec8462c7b7c8e55ef65bc6f06cfd0",
+    "tools/octilinear_router.cpp": "4fab152c8096a9064260d9c3c1373a11bb66eb06e76c35c4f72d2775a3ee9816",
+    "tools/route_netgroup.py": "02ed95ca09d8907d411115073883fb553409c88281384010cd189fd1d2bd4518"
+  },
+  "note": "Final tool source snapshot; native routing UUIDs may differ on a fresh run. Per-attempt settings/orders/results are retained separately."
+}

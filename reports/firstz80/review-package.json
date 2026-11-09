@@ -1,0 +1,46 @@
+{
+  "status": "complete-with-explicit-octilinear-hybrid",
+  "schematic_reports": {
+    "reports/schematic-wired-a3/verification.json": "f76ab8ccae904a95995bdd5a9e7fe6a0ddf73ea00075de0abb96b25b4e50ed2e",
+    "reports/schematic-7805/verification.json": "8b1d9f731bb98815e4ced53fb0b2d44fd0ad15b37b1257f39ced20a0dad6fc64",
+    "reports/firstz80/verification.json": "70b5c45981324e7ea7c89b4a90e1816d58ea5aa3872f3b7c02c1e26aeb16882e"
+  },
+  "pdfs": [
+    {
+      "path": "output/pdf/Z80_Simple_Computer-wired-A3.pdf",
+      "sha256": "83db46e13dc3cb842b4c9bfab2d5845243dd550e86ce4c63b2cb54f8572b5984",
+      "pages": 1
+    },
+    {
+      "path": "output/pdf/schematic-7805.pdf",
+      "sha256": "6e0633051c2ba59cadf288ff17f2e683f05436dce25224c09d1866c044e266d9",
+      "pages": 1
+    }
+  ],
+  "comparison_preview": {
+    "path": "output/firstz80/comparison.png",
+    "sha256": "3153550ce522a026145b9b9bb0ffafd2e1746040b0bd5b1ace6805304e7b4055"
+  },
+  "checked_document_links": 48,
+  "documents": {
+    "docs/261109-2306-REVIEW-Mark-schematic-readability.adoc": "6371bf9acdab9c15fc677a2f2d02e7bfe58a78a8133a63aa2799b32f7fe4562a",
+    "docs/261109-2317-PLAN-FirstZ80-fixed-placement-comparison.adoc": "8cf2d970fca02553a993c510f7d64f04c2de10101729870a316887bdb5a098c1",
+    "docs/261110-0001-DONE-schematic-7805-and-readable-wiring.adoc": "334a33b3e1b1b3b67f64d6818e2dee58db380da2435ff5942c8c96ed1bcc5317",
+    "docs/261110-0004-DONE-FirstZ80-fixed-placement-routing.adoc": "73c693314a79344d68f1d14340bb504796b728baaca42904b5faed6b9ff8961f",
+    "firstz80/README.adoc": "dab35cab9437cc0f2a7a5645d86517bccbf50589744e5edb632c0843e8c52f2a",
+    "reference/firstz80/README.adoc": "b5f8a2e8afbdb124c63dc8980d4688e365f2c4375c76e304c3abc1183ab3afa2",
+    "schematics/03-schematic-7805/README.adoc": "f2e504a2e5b085738649e1ee368bd56885d4e817430fe29fe440764f576f98df"
+  },
+  "firstz80_boards": {
+    "01-manhattan": "5dce86ba98d13083af67f93c0f5bacdb09af59d197c81e16797dd67c9a0aa5e4",
+    "02-octilinear": "d1f9a9760694a4d8c44febd18cbc1d30b8b870276fe6fa6298e2949e25a57054",
+    "03-freerouting": "f4e66e174c8e62f0a65a0d0656b22f51f6144a52be67e697011748c6ce3dff45"
+  },
+  "caveats": [
+    "Direct eight-direction A* attempts incomplete; completed second board is an orthogonal-seed/45-degree-refinement hybrid.",
+    "Completed FreeRouting job disabled optimization; one documented native hole-clearance correction.",
+    "Historical schematic retains 47 warnings and zero errors.",
+    "Static design checks; hardware, thermal behaviour and SI not qualified."
+  ],
+  "local_mcp_service_stopped": true
+}

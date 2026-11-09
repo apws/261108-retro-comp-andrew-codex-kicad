@@ -1,0 +1,161 @@
+{"net": "/D07", "pads": 5, "width_mm": 0.25, "seconds": 0.732, "expanded": 174167}
+{"net": "/~{RTS-TTL}", "pads": 3, "width_mm": 0.25, "seconds": 0.354, "expanded": 51558}
+{"net": "Net-(U7-CS0)", "pads": 4, "width_mm": 0.25, "seconds": 0.534, "expanded": 248976}
+{"net": "/D02", "pads": 5, "width_mm": 0.25, "seconds": 0.814, "expanded": 484968}
+{"net": "/PA4", "pads": 2, "width_mm": 0.25, "seconds": 0.817, "expanded": 1603959}
+{"net": "/PA5", "pads": 2, "width_mm": 0.25, "seconds": 0.719, "expanded": 1229592}
+{"net": "/RX-TTL", "pads": 4, "width_mm": 0.25, "seconds": 0.914, "expanded": 1199818}
+{"net": "/~{WR}", "pads": 5, "width_mm": 0.25, "seconds": 1.06, "expanded": 1093010}
+{"net": "Net-(D7-K)", "pads": 2, "width_mm": 0.25, "seconds": 0.702, "expanded": 1528545}
+{"net": "/D03", "pads": 5, "width_mm": 0.25, "seconds": 0.979, "expanded": 1030788}
+{"net": "/A12", "pads": 3, "width_mm": 0.25, "seconds": 0.329, "expanded": 43810}
+{"net": "/A14", "pads": 3, "width_mm": 0.25, "seconds": 0.449, "expanded": 231632}
+{"net": "/PB6", "pads": 2, "width_mm": 0.25, "seconds": 0.395, "expanded": 285948}
+{"net": "VCC", "pads": 39, "width_mm": 1.0, "seconds": 7.197, "expanded": 1393215}
+{"net": "Net-(U7-RCLK)", "pads": 2, "width_mm": 0.25, "seconds": 0.169, "expanded": 69124}
+{"net": "/D04", "pads": 5, "width_mm": 0.25, "seconds": 1.018, "expanded": 1331445}
+{"net": "/D05", "pads": 5, "width_mm": 0.25, "seconds": 0.912, "expanded": 879817}
+{"net": "/D06", "pads": 5, "width_mm": 0.25, "seconds": 1.006, "expanded": 905517}
+{"net": "/A01", "pads": 5, "width_mm": 0.25, "seconds": 0.889, "expanded": 603489}
+{"net": "/PB3", "pads": 2, "width_mm": 0.25, "seconds": 0.693, "expanded": 1180004}
+{"net": "/A00", "pads": 5, "width_mm": 0.25, "seconds": 1.316, "expanded": 2122389}
+{"net": "/A02", "pads": 4, "width_mm": 0.25, "seconds": 1.028, "expanded": 1465020}
+{"net": "/A05", "pads": 3, "width_mm": 0.25, "seconds": 0.304, "expanded": 14911}
+{"net": "/PB1", "pads": 2, "width_mm": 0.25, "seconds": 0.846, "expanded": 1765804}
+{"net": "/PB2", "pads": 2, "width_mm": 0.25, "seconds": 0.891, "expanded": 1714153}
+{"net": "/PB4", "pads": 2, "width_mm": 0.25, "seconds": 0.873, "expanded": 1615977}
+{"net": "/PB5", "pads": 2, "width_mm": 0.25, "seconds": 0.737, "expanded": 1418270}
+{"net": "/PC2", "pads": 2, "width_mm": 0.25, "seconds": 1.112, "expanded": 2464932}
+{"net": "/PC3", "pads": 2, "width_mm": 0.25, "seconds": 1.084, "expanded": 2434411}
+{"net": "/PC6", "pads": 2, "width_mm": 0.25, "seconds": 1.085, "expanded": 2682483}
+{"net": "/A03", "pads": 3, "width_mm": 0.25, "seconds": 0.275, "expanded": 14889}
+{"net": "/A04", "pads": 3, "width_mm": 0.25, "seconds": 0.326, "expanded": 132017}
+{"net": "/A06", "pads": 3, "width_mm": 0.25, "seconds": 0.284, "expanded": 15027}
+{"net": "/A08", "pads": 3, "width_mm": 0.25, "seconds": 0.353, "expanded": 103090}
+{"net": "/A09", "pads": 3, "width_mm": 0.25, "seconds": 0.371, "expanded": 219765}
+{"net": "/A10", "pads": 3, "width_mm": 0.25, "seconds": 0.42, "expanded": 305538}
+{"net": "/A11", "pads": 3, "width_mm": 0.25, "seconds": 0.762, "expanded": 1254237}
+{"net": "/A13", "pads": 3, "width_mm": 0.25, "seconds": 0.575, "expanded": 764684}
+{"net": "/PA6", "pads": 2, "width_mm": 0.25, "seconds": 1.279, "expanded": 2431789}
+{"net": "/PA7", "pads": 2, "width_mm": 0.25, "seconds": 1.39, "expanded": 2762114}
+{"net": "/PB7", "pads": 2, "width_mm": 0.25, "seconds": 0.095, "expanded": 0}
+{"net": "/PC0", "pads": 2, "width_mm": 0.25, "seconds": 0.913, "expanded": 2095898}
+{"net": "/PC1", "pads": 2, "width_mm": 0.25, "seconds": 0.954, "expanded": 2172910}
+{"net": "/PC4", "pads": 2, "width_mm": 0.25, "seconds": 1.74, "expanded": 3426547}
+{"net": "/PC5", "pads": 2, "width_mm": 0.25, "seconds": 1.371, "expanded": 2431747}
+{"net": "/PC7", "pads": 2, "width_mm": 0.25, "seconds": 2.432, "expanded": 4845202}
+{"net": "/9VDC", "pads": 4, "width_mm": 1.0, "seconds": 0.563, "expanded": 26879}
+{"net": "/VI", "pads": 3, "width_mm": 1.0, "seconds": 0.376, "expanded": 4801}
+{"net": "/VCC_PP", "pads": 2, "width_mm": 1.0, "seconds": 0.13, "expanded": 571}
+{"net": "GND", "pads": 44, "width_mm": 1.0, "seconds": 0.199, "expanded": 26}
+{"net": "/CLK-CPU", "pads": 2, "width_mm": 0.25, "seconds": 0.423, "expanded": 490149}
+{"net": "/CLK-UART", "pads": 2, "width_mm": 0.25, "seconds": 0.232, "expanded": 190807}
+{"net": "/RESET", "pads": 4, "width_mm": 0.25, "seconds": 0.995, "expanded": 1777666}
+{"net": "/~{RESET}", "pads": 2, "width_mm": 0.25, "seconds": 0.259, "expanded": 177755}
+{"net": "/RX", "pads": 2, "width_mm": 0.25, "seconds": 0.242, "expanded": 147130}
+{"net": "/TX", "pads": 2, "width_mm": 0.25, "seconds": 0.237, "expanded": 100087}
+{"net": "/TX-TTL", "pads": 4, "width_mm": 0.25, "seconds": 0.334, "expanded": 278320}
+{"net": "/~{CS-PPI}", "pads": 3, "width_mm": 0.25, "seconds": 4.488, "expanded": 0}
+{"net": "/~{CS-RAM}", "pads": 3, "width_mm": 0.25, "seconds": 0.407, "expanded": 215066}
+{"net": "/~{CS-ROM}", "pads": 3, "width_mm": 0.25, "seconds": 1.646, "expanded": 3846041}
+{"net": "/~{CS-UART}", "pads": 3, "width_mm": 0.25, "seconds": 0.855, "expanded": 1431365}
+{"net": "/~{CTS-TTL}", "pads": 3, "width_mm": 0.25, "seconds": 0.388, "expanded": 280226}
+{"net": "/~{CTS}", "pads": 2, "width_mm": 0.25, "seconds": 0.201, "expanded": 35788}
+{"net": "/~{IORQ}", "pads": 3, "width_mm": 0.25, "seconds": 0.393, "expanded": 357879}
+{"net": "/~{MREQ}", "pads": 3, "width_mm": 0.25, "seconds": 0.627, "expanded": 971900}
+{"net": "/~{OUT1}", "pads": 2, "width_mm": 0.25, "seconds": 0.379, "expanded": 615543}
+{"net": "/~{OUT2}", "pads": 2, "width_mm": 0.25, "seconds": 0.377, "expanded": 600889}
+{"net": "/~{RD}", "pads": 5, "width_mm": 0.25, "seconds": 1.658, "expanded": 3215675}
+{"net": "/~{RTS}", "pads": 2, "width_mm": 0.25, "seconds": 0.265, "expanded": 316307}
+{"net": "Net-(C1-Pad1)", "pads": 4, "width_mm": 0.25, "seconds": 1.18, "expanded": 2156503}
+{"net": "Net-(D1-K)", "pads": 2, "width_mm": 0.25, "seconds": 0.147, "expanded": 88252}
+{"net": "Net-(D2-K)", "pads": 2, "width_mm": 0.25, "seconds": 0.144, "expanded": 53839}
+{"net": "Net-(D3-K)", "pads": 2, "width_mm": 0.25, "seconds": 0.142, "expanded": 55820}
+{"net": "Net-(D4-K)", "pads": 2, "width_mm": 0.25, "seconds": 2.047, "expanded": 6007551}
+{"net": "Net-(D5-K)", "pads": 2, "width_mm": 0.25, "seconds": 1.233, "expanded": 3514527}
+{"net": "Net-(D6-K)", "pads": 2, "width_mm": 0.25, "seconds": 0.13, "expanded": 12101}
+{"net": "Net-(D8-K)", "pads": 2, "width_mm": 0.25, "seconds": 0.137, "expanded": 50283}
+{"net": "Net-(D9-K)", "pads": 2, "width_mm": 0.25, "seconds": 0.14, "expanded": 51814}
+{"net": "Net-(R4-Pad2)", "pads": 3, "width_mm": 0.25, "seconds": 0.247, "expanded": 74863}
+{"net": "Net-(U1-Pad6)", "pads": 2, "width_mm": 0.25, "seconds": 0.127, "expanded": 5931}
+{"net": "Net-(U1-Pad8)", "pads": 2, "width_mm": 0.25, "seconds": 0.153, "expanded": 33434}
+{"net": "Net-(U2-~{BUSACK})", "pads": 5, "width_mm": 0.25, "seconds": 0.451, "expanded": 50859}
+{"net": "Net-(U7-~{DCD})", "pads": 3, "width_mm": 0.25, "seconds": 0.459, "expanded": 541391}
+{"net": "Net-(U8-C1+)", "pads": 2, "width_mm": 0.25, "seconds": 0.106, "expanded": 5354}
+{"net": "Net-(U8-C1-)", "pads": 2, "width_mm": 0.25, "seconds": 0.104, "expanded": 1010}
+{"net": "Net-(U8-C2+)", "pads": 2, "width_mm": 0.25, "seconds": 0.104, "expanded": 356}
+{"net": "Net-(U8-C2-)", "pads": 2, "width_mm": 0.25, "seconds": 0.101, "expanded": 671}
+{"net": "Net-(U8-VS+)", "pads": 2, "width_mm": 0.25, "seconds": 0.141, "expanded": 55414}
+{"net": "Net-(U8-VS-)", "pads": 2, "width_mm": 0.25, "seconds": 0.103, "expanded": 1266}
+{"net": "/D00", "pads": 5, "width_mm": 0.25, "seconds": 2.718, "expanded": 7126319}
+{"net": "/D01", "pads": 5, "width_mm": 0.25, "seconds": 0.721, "expanded": 1562277}
+{"net": "/A07", "pads": 5, "width_mm": 0.25, "seconds": 1.494, "expanded": 3297658}
+{"net": "/A15", "pads": 3, "width_mm": 0.25, "seconds": 1.002, "expanded": 2207341}
+{"net": "/PA0", "pads": 2, "width_mm": 0.25, "seconds": 1.206, "expanded": 3290174}
+{"net": "/PA1", "pads": 2, "width_mm": 0.25, "seconds": 1.235, "expanded": 2969331}
+{"net": "/PA2", "pads": 2, "width_mm": 0.25, "seconds": 1.679, "expanded": 4452677}
+{"net": "/PA3", "pads": 2, "width_mm": 0.25, "seconds": 1.857, "expanded": 5014057}
+{"net": "/PB0", "pads": 2, "width_mm": 0.25, "seconds": 0.106, "expanded": 0}
+23:57:54: Debug: Adding duplicate image handler for 'PNG file'
+23:57:54: Debug: Adding duplicate image handler for 'JPEG file'
+23:57:54: Debug: Adding duplicate image handler for 'TIFF file'
+23:57:54: Debug: Adding duplicate image handler for 'GIF file'
+23:57:54: Debug: Adding duplicate image handler for 'PNM file'
+23:57:54: Debug: Adding duplicate image handler for 'PCX file'
+23:57:54: Debug: Adding duplicate image handler for 'IFF file'
+23:57:54: Debug: Adding duplicate image handler for 'Windows icon file'
+23:57:54: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:57:54: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:57:54: Debug: Adding duplicate image handler for 'TGA file'
+23:57:54: Debug: Adding duplicate image handler for 'XPM file'
+{
+  "method": "octilinear",
+  "status": "rejected",
+  "runtime_seconds": 175.868,
+  "failures": [
+    {
+      "net": "/PB7",
+      "error": "planner status -1; expanded 37422",
+      "unrouted_pads": 1
+    },
+    {
+      "net": "GND",
+      "error": "planner status -1; expanded 65670",
+      "unrouted_pads": 42
+    },
+    {
+      "net": "/TX-TTL",
+      "error": "planner status -1; expanded 24290",
+      "unrouted_pads": 2
+    },
+    {
+      "net": "/~{CS-PPI}",
+      "error": "planner status -2; expanded 15000001",
+      "unrouted_pads": 2
+    },
+    {
+      "net": "/D01",
+      "error": "planner status -1; expanded 18712",
+      "unrouted_pads": 3
+    },
+    {
+      "net": "/PB0",
+      "error": "planner status -1; expanded 140226",
+      "unrouted_pads": 1
+    }
+  ],
+  "violations": 0,
+  "unconnected": 51,
+  "parity": 0,
+  "geometry_unchanged": true,
+  "reserved_future_front_pad_escapes": false,
+  "via_cost": 3000,
+  "board_sha256": "86cfd7c5eb3e554b4cbf08d91a835abe7fdc4a72aafe9c112b3de2b052c9fae5",
+  "track_segments": 1197,
+  "vias": 215,
+  "track_length_mm": 6886.387,
+  "layer_lengths_mm": {
+    "F.Cu": 3803.008,
+    "B.Cu": 3083.378
+  }
+}

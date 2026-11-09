@@ -1,0 +1,10 @@
+{
+  "method": "tools/call",
+  "params": {
+    "name": "upload_job_input_from_local_file",
+    "arguments": {
+      "jobId": "9bce213b-6156-448f-bba3-539d665ab012",
+      "filePath": "/home/falken/_/wrk/ver/261108-retro-comp-andrew-codex-kicad/reports/firstz80/03-freerouting/FirstZ80.dsn"
+    }
+  }
+}

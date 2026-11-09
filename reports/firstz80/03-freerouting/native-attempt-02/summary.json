@@ -1,0 +1,25 @@
+{
+  "status": "validated",
+  "transport": "official-local-MCP",
+  "optimizer_enabled": false,
+  "violations": 0,
+  "unconnected": 0,
+  "parity": 0,
+  "placement_and_pad_geometry_unchanged": true,
+  "bounded_import_rounding_restored": [],
+  "checkpoint_sha256": {
+    "FirstZ80.kicad_sch": "786716d3bc418bf198092ef25c052e0e1244e1759ccfbc1deba8427e0a118206",
+    "FirstZ80.kicad_pcb": "9388b78e6601f2aae93b3893dd3356a0551251cfe701d67c898155127841026d",
+    "FirstZ80.kicad_pro": "dcd9620b7bc1a0e7742e5093f7f46c45d4b201b08c0c6780c75856ff5229cad1"
+  },
+  "session_sha256": "9e93c5866bfccb8956e1c1e8819d73cd97fd0467c17303179c2bce6fbb3df03b",
+  "board_sha256": "f4e66e174c8e62f0a65a0d0656b22f51f6144a52be67e697011748c6ce3dff45",
+  "track_segments": 1531,
+  "vias": 77,
+  "track_length_mm": 7987.677,
+  "layer_lengths_mm": {
+    "F.Cu": 4696.977,
+    "B.Cu": 3290.7
+  },
+  "post_import_hole_clearance_repair": true
+}

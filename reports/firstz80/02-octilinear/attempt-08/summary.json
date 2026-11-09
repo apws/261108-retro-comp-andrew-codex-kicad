@@ -1,0 +1,824 @@
+{
+  "method": "octilinear",
+  "status": "rejected",
+  "runtime_seconds": 192.178,
+  "failures": [
+    {
+      "net": "/D05",
+      "error": "planner status -2; expanded 15000001",
+      "unrouted_pads": 4
+    },
+    {
+      "net": "/D00",
+      "error": "planner status -2; expanded 15000001",
+      "unrouted_pads": 4
+    }
+  ],
+  "order": [
+    "/PB7",
+    "GND",
+    "/TX-TTL",
+    "/~{CS-PPI}",
+    "/D01",
+    "/PB0",
+    "/D07",
+    "/~{RTS-TTL}",
+    "Net-(U7-CS0)",
+    "/D02",
+    "/PA4",
+    "/PA5",
+    "/RX-TTL",
+    "/~{WR}",
+    "Net-(D7-K)",
+    "/D03",
+    "/A12",
+    "/A14",
+    "/PB6",
+    "VCC",
+    "Net-(U7-RCLK)",
+    "/D04",
+    "/D05",
+    "/D06",
+    "/A01",
+    "/PB3",
+    "/A00",
+    "/A02",
+    "/A05",
+    "/PB1",
+    "/PB2",
+    "/PB4",
+    "/PB5",
+    "/PC2",
+    "/PC3",
+    "/PC6",
+    "/A03",
+    "/A04",
+    "/A06",
+    "/A08",
+    "/A09",
+    "/A10",
+    "/A11",
+    "/A13",
+    "/PA6",
+    "/PA7",
+    "/PC0",
+    "/PC1",
+    "/PC4",
+    "/PC5",
+    "/PC7",
+    "/9VDC",
+    "/VI",
+    "/VCC_PP",
+    "/CLK-CPU",
+    "/CLK-UART",
+    "/RESET",
+    "/~{RESET}",
+    "/RX",
+    "/TX",
+    "/~{CS-RAM}",
+    "/~{CS-ROM}",
+    "/~{CS-UART}",
+    "/~{CTS-TTL}",
+    "/~{CTS}",
+    "/~{IORQ}",
+    "/~{MREQ}",
+    "/~{OUT1}",
+    "/~{OUT2}",
+    "/~{RD}",
+    "/~{RTS}",
+    "Net-(C1-Pad1)",
+    "Net-(D1-K)",
+    "Net-(D2-K)",
+    "Net-(D3-K)",
+    "Net-(D4-K)",
+    "Net-(D5-K)",
+    "Net-(D6-K)",
+    "Net-(D8-K)",
+    "Net-(D9-K)",
+    "Net-(R4-Pad2)",
+    "Net-(U1-Pad6)",
+    "Net-(U1-Pad8)",
+    "Net-(U2-~{BUSACK})",
+    "Net-(U7-~{DCD})",
+    "Net-(U8-C1+)",
+    "Net-(U8-C1-)",
+    "Net-(U8-C2+)",
+    "Net-(U8-C2-)",
+    "Net-(U8-VS+)",
+    "Net-(U8-VS-)",
+    "/D00",
+    "/A07",
+    "/A15",
+    "/PA0",
+    "/PA1",
+    "/PA2",
+    "/PA3"
+  ],
+  "net_results": [
+    {
+      "net": "/PB7",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.364,
+      "expanded": 283185
+    },
+    {
+      "net": "GND",
+      "pads": 44,
+      "width_mm": 1.0,
+      "seconds": 8.006,
+      "expanded": 1513559
+    },
+    {
+      "net": "/TX-TTL",
+      "pads": 4,
+      "width_mm": 0.25,
+      "seconds": 0.823,
+      "expanded": 888317
+    },
+    {
+      "net": "/~{CS-PPI}",
+      "pads": 3,
+      "width_mm": 0.25,
+      "seconds": 0.452,
+      "expanded": 106159
+    },
+    {
+      "net": "/D01",
+      "pads": 5,
+      "width_mm": 0.25,
+      "seconds": 0.761,
+      "expanded": 296185
+    },
+    {
+      "net": "/PB0",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.414,
+      "expanded": 466660
+    },
+    {
+      "net": "/D07",
+      "pads": 5,
+      "width_mm": 0.25,
+      "seconds": 0.74,
+      "expanded": 277376
+    },
+    {
+      "net": "/~{RTS-TTL}",
+      "pads": 3,
+      "width_mm": 0.25,
+      "seconds": 0.378,
+      "expanded": 265521
+    },
+    {
+      "net": "Net-(U7-CS0)",
+      "pads": 4,
+      "width_mm": 0.25,
+      "seconds": 0.513,
+      "expanded": 214308
+    },
+    {
+      "net": "/D02",
+      "pads": 5,
+      "width_mm": 0.25,
+      "seconds": 0.706,
+      "expanded": 329885
+    },
+    {
+      "net": "/PA4",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.724,
+      "expanded": 1544213
+    },
+    {
+      "net": "/PA5",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.94,
+      "expanded": 2126507
+    },
+    {
+      "net": "/RX-TTL",
+      "pads": 4,
+      "width_mm": 0.25,
+      "seconds": 0.719,
+      "expanded": 679046
+    },
+    {
+      "net": "/~{WR}",
+      "pads": 5,
+      "width_mm": 0.25,
+      "seconds": 1.219,
+      "expanded": 500423
+    },
+    {
+      "net": "Net-(D7-K)",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.495,
+      "expanded": 904486
+    },
+    {
+      "net": "/D03",
+      "pads": 5,
+      "width_mm": 0.25,
+      "seconds": 0.933,
+      "expanded": 1197669
+    },
+    {
+      "net": "/A12",
+      "pads": 3,
+      "width_mm": 0.25,
+      "seconds": 0.3,
+      "expanded": 43810
+    },
+    {
+      "net": "/A14",
+      "pads": 3,
+      "width_mm": 0.25,
+      "seconds": 0.345,
+      "expanded": 231632
+    },
+    {
+      "net": "/PB6",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.443,
+      "expanded": 686770
+    },
+    {
+      "net": "VCC",
+      "pads": 39,
+      "width_mm": 1.0,
+      "seconds": 6.96,
+      "expanded": 1856068
+    },
+    {
+      "net": "Net-(U7-RCLK)",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.142,
+      "expanded": 30555
+    },
+    {
+      "net": "/D04",
+      "pads": 5,
+      "width_mm": 0.25,
+      "seconds": 1.221,
+      "expanded": 1934803
+    },
+    {
+      "net": "/D05",
+      "pads": 5,
+      "width_mm": 0.25,
+      "seconds": 4.539,
+      "expanded": 0
+    },
+    {
+      "net": "/D06",
+      "pads": 5,
+      "width_mm": 0.25,
+      "seconds": 0.771,
+      "expanded": 610985
+    },
+    {
+      "net": "/A01",
+      "pads": 5,
+      "width_mm": 0.25,
+      "seconds": 1.119,
+      "expanded": 1736840
+    },
+    {
+      "net": "/PB3",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.36,
+      "expanded": 332274
+    },
+    {
+      "net": "/A00",
+      "pads": 5,
+      "width_mm": 0.25,
+      "seconds": 1.568,
+      "expanded": 3217416
+    },
+    {
+      "net": "/A02",
+      "pads": 4,
+      "width_mm": 0.25,
+      "seconds": 1.731,
+      "expanded": 4271488
+    },
+    {
+      "net": "/A05",
+      "pads": 3,
+      "width_mm": 0.25,
+      "seconds": 0.268,
+      "expanded": 14911
+    },
+    {
+      "net": "/PB1",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.715,
+      "expanded": 1476058
+    },
+    {
+      "net": "/PB2",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.633,
+      "expanded": 1307748
+    },
+    {
+      "net": "/PB4",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.397,
+      "expanded": 346765
+    },
+    {
+      "net": "/PB5",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.488,
+      "expanded": 616559
+    },
+    {
+      "net": "/PC2",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 1.026,
+      "expanded": 2326557
+    },
+    {
+      "net": "/PC3",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 1.464,
+      "expanded": 3521620
+    },
+    {
+      "net": "/PC6",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 1.49,
+      "expanded": 4100106
+    },
+    {
+      "net": "/A03",
+      "pads": 3,
+      "width_mm": 0.25,
+      "seconds": 0.243,
+      "expanded": 14889
+    },
+    {
+      "net": "/A04",
+      "pads": 3,
+      "width_mm": 0.25,
+      "seconds": 0.287,
+      "expanded": 132017
+    },
+    {
+      "net": "/A06",
+      "pads": 3,
+      "width_mm": 0.25,
+      "seconds": 0.254,
+      "expanded": 15027
+    },
+    {
+      "net": "/A08",
+      "pads": 3,
+      "width_mm": 0.25,
+      "seconds": 0.341,
+      "expanded": 103090
+    },
+    {
+      "net": "/A09",
+      "pads": 3,
+      "width_mm": 0.25,
+      "seconds": 0.368,
+      "expanded": 219765
+    },
+    {
+      "net": "/A10",
+      "pads": 3,
+      "width_mm": 0.25,
+      "seconds": 0.403,
+      "expanded": 307393
+    },
+    {
+      "net": "/A11",
+      "pads": 3,
+      "width_mm": 0.25,
+      "seconds": 0.738,
+      "expanded": 1287975
+    },
+    {
+      "net": "/A13",
+      "pads": 3,
+      "width_mm": 0.25,
+      "seconds": 0.541,
+      "expanded": 764684
+    },
+    {
+      "net": "/PA6",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 1.13,
+      "expanded": 2206119
+    },
+    {
+      "net": "/PA7",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 1.33,
+      "expanded": 2913126
+    },
+    {
+      "net": "/PC0",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 1.279,
+      "expanded": 3247682
+    },
+    {
+      "net": "/PC1",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 2.175,
+      "expanded": 5544716
+    },
+    {
+      "net": "/PC4",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 2.14,
+      "expanded": 5436146
+    },
+    {
+      "net": "/PC5",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 3.062,
+      "expanded": 7096637
+    },
+    {
+      "net": "/PC7",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 2.033,
+      "expanded": 4921091
+    },
+    {
+      "net": "/9VDC",
+      "pads": 4,
+      "width_mm": 1.0,
+      "seconds": 0.438,
+      "expanded": 26804
+    },
+    {
+      "net": "/VI",
+      "pads": 3,
+      "width_mm": 1.0,
+      "seconds": 0.295,
+      "expanded": 15815
+    },
+    {
+      "net": "/VCC_PP",
+      "pads": 2,
+      "width_mm": 1.0,
+      "seconds": 0.13,
+      "expanded": 13984
+    },
+    {
+      "net": "/CLK-CPU",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.567,
+      "expanded": 1065170
+    },
+    {
+      "net": "/CLK-UART",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.276,
+      "expanded": 377552
+    },
+    {
+      "net": "/RESET",
+      "pads": 4,
+      "width_mm": 0.25,
+      "seconds": 1.511,
+      "expanded": 3312951
+    },
+    {
+      "net": "/~{RESET}",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.367,
+      "expanded": 550994
+    },
+    {
+      "net": "/RX",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.228,
+      "expanded": 94628
+    },
+    {
+      "net": "/TX",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.236,
+      "expanded": 115457
+    },
+    {
+      "net": "/~{CS-RAM}",
+      "pads": 3,
+      "width_mm": 0.25,
+      "seconds": 0.455,
+      "expanded": 430695
+    },
+    {
+      "net": "/~{CS-ROM}",
+      "pads": 3,
+      "width_mm": 0.25,
+      "seconds": 1.361,
+      "expanded": 3593790
+    },
+    {
+      "net": "/~{CS-UART}",
+      "pads": 3,
+      "width_mm": 0.25,
+      "seconds": 1.426,
+      "expanded": 3542803
+    },
+    {
+      "net": "/~{CTS-TTL}",
+      "pads": 3,
+      "width_mm": 0.25,
+      "seconds": 0.474,
+      "expanded": 595963
+    },
+    {
+      "net": "/~{CTS}",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.248,
+      "expanded": 271801
+    },
+    {
+      "net": "/~{IORQ}",
+      "pads": 3,
+      "width_mm": 0.25,
+      "seconds": 0.439,
+      "expanded": 622211
+    },
+    {
+      "net": "/~{MREQ}",
+      "pads": 3,
+      "width_mm": 0.25,
+      "seconds": 0.58,
+      "expanded": 1072655
+    },
+    {
+      "net": "/~{OUT1}",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.746,
+      "expanded": 1942633
+    },
+    {
+      "net": "/~{OUT2}",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.616,
+      "expanded": 1414813
+    },
+    {
+      "net": "/~{RD}",
+      "pads": 5,
+      "width_mm": 0.25,
+      "seconds": 3.219,
+      "expanded": 8134554
+    },
+    {
+      "net": "/~{RTS}",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.413,
+      "expanded": 683430
+    },
+    {
+      "net": "Net-(C1-Pad1)",
+      "pads": 4,
+      "width_mm": 0.25,
+      "seconds": 1.367,
+      "expanded": 2986789
+    },
+    {
+      "net": "Net-(D1-K)",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.188,
+      "expanded": 106020
+    },
+    {
+      "net": "Net-(D2-K)",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.169,
+      "expanded": 73333
+    },
+    {
+      "net": "Net-(D3-K)",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.176,
+      "expanded": 67979
+    },
+    {
+      "net": "Net-(D4-K)",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 2.851,
+      "expanded": 7390729
+    },
+    {
+      "net": "Net-(D5-K)",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 1.557,
+      "expanded": 4126658
+    },
+    {
+      "net": "Net-(D6-K)",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.146,
+      "expanded": 12343
+    },
+    {
+      "net": "Net-(D8-K)",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.181,
+      "expanded": 117705
+    },
+    {
+      "net": "Net-(D9-K)",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.163,
+      "expanded": 51714
+    },
+    {
+      "net": "Net-(R4-Pad2)",
+      "pads": 3,
+      "width_mm": 0.25,
+      "seconds": 0.331,
+      "expanded": 147204
+    },
+    {
+      "net": "Net-(U1-Pad6)",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.244,
+      "expanded": 139578
+    },
+    {
+      "net": "Net-(U1-Pad8)",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.231,
+      "expanded": 82099
+    },
+    {
+      "net": "Net-(U2-~{BUSACK})",
+      "pads": 5,
+      "width_mm": 0.25,
+      "seconds": 0.566,
+      "expanded": 50723
+    },
+    {
+      "net": "Net-(U7-~{DCD})",
+      "pads": 3,
+      "width_mm": 0.25,
+      "seconds": 0.82,
+      "expanded": 1816571
+    },
+    {
+      "net": "Net-(U8-C1+)",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.112,
+      "expanded": 5354
+    },
+    {
+      "net": "Net-(U8-C1-)",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.108,
+      "expanded": 1010
+    },
+    {
+      "net": "Net-(U8-C2+)",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.113,
+      "expanded": 356
+    },
+    {
+      "net": "Net-(U8-C2-)",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.113,
+      "expanded": 669
+    },
+    {
+      "net": "Net-(U8-VS+)",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.159,
+      "expanded": 107850
+    },
+    {
+      "net": "Net-(U8-VS-)",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 0.672,
+      "expanded": 1714971
+    },
+    {
+      "net": "/D00",
+      "pads": 5,
+      "width_mm": 0.25,
+      "seconds": 3.804,
+      "expanded": 0
+    },
+    {
+      "net": "/A07",
+      "pads": 5,
+      "width_mm": 0.25,
+      "seconds": 1.565,
+      "expanded": 3187461
+    },
+    {
+      "net": "/A15",
+      "pads": 3,
+      "width_mm": 0.25,
+      "seconds": 1.412,
+      "expanded": 3338264
+    },
+    {
+      "net": "/PA0",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 1.818,
+      "expanded": 4563517
+    },
+    {
+      "net": "/PA1",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 1.989,
+      "expanded": 5014812
+    },
+    {
+      "net": "/PA2",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 1.901,
+      "expanded": 4761464
+    },
+    {
+      "net": "/PA3",
+      "pads": 2,
+      "width_mm": 0.25,
+      "seconds": 1.891,
+      "expanded": 4830192
+    }
+  ],
+  "violations": 0,
+  "unconnected": 8,
+  "parity": 0,
+  "geometry_unchanged": true,
+  "reserved_future_front_pad_escapes": false,
+  "via_cost": 3000,
+  "checkpoint_sha256": {
+    "FirstZ80.kicad_sch": "786716d3bc418bf198092ef25c052e0e1244e1759ccfbc1deba8427e0a118206",
+    "FirstZ80.kicad_pcb": "9388b78e6601f2aae93b3893dd3356a0551251cfe701d67c898155127841026d",
+    "FirstZ80.kicad_pro": "dcd9620b7bc1a0e7742e5093f7f46c45d4b201b08c0c6780c75856ff5229cad1"
+  },
+  "board_sha256": "8cf651c41961c8085cd0b958c2604119a095618971fa7d53be1b0862ad8b3d42",
+  "track_segments": 1522,
+  "vias": 292,
+  "track_length_mm": 8137.585,
+  "layer_lengths_mm": {
+    "F.Cu": 4409.961,
+    "B.Cu": 3727.625
+  }
+}

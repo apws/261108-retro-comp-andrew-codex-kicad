@@ -1,0 +1,145 @@
+{
+  "status": "pass",
+  "source_commit": "66a5a63fd8338d12c115bc2bee5dff2f435afae4",
+  "checkpoint_sha256": {
+    "FirstZ80.kicad_sch": "786716d3bc418bf198092ef25c052e0e1244e1759ccfbc1deba8427e0a118206",
+    "FirstZ80.kicad_pcb": "9388b78e6601f2aae93b3893dd3356a0551251cfe701d67c898155127841026d",
+    "FirstZ80.kicad_pro": "dcd9620b7bc1a0e7742e5093f7f46c45d4b201b08c0c6780c75856ff5229cad1"
+  },
+  "library_sha256": {
+    "libs/FirstZ80.kicad_sym": "c320d9e4a59bf957f46fd63cb15dd74660b253f0c1ce885847feab2e8e115b04",
+    "libs/FirstZ80.pretty/Connector_BarrelJack__BarrelJack_Horizontal.kicad_mod": "7a5684b23213fe321b39b4c05768ead543c86acb0ef944ee8589bf9159ebbdaa",
+    "libs/FirstZ80.pretty/Package_DIP__DIP-14_W7.62mm_Socket_LongPads.kicad_mod": "1c9f26a68f5f9021ada6b286b188c9eb1b10ca118f80e12ba76b39209d9a5ea8",
+    "libs/FirstZ80.pretty/Package_DIP__DIP-16_W7.62mm_Socket_LongPads.kicad_mod": "360b404fb6cec430d1f2d67812cbe114c02c80945e6b5324eff0750f0a2acd0f",
+    "libs/FirstZ80.pretty/Connector_IDC__IDC-Header_2x13_P2.54mm_Horizontal.kicad_mod": "cced32852a047aeec2ca3ebddda1f6d814dc9f2fdeef5e9fcb42a2abc083a231",
+    "libs/FirstZ80.pretty/Button_Switch_THT__SW_PUSH_6mm.kicad_mod": "1c7cf59fe059b7da0f58b09fcf99986775a8e0db7691e4c054653c9d97f1b465",
+    "libs/FirstZ80.pretty/Connector_PinHeader_2.54mm__PinHeader_1x06_P2.54mm_Horizontal.kicad_mod": "199f36870530abfad9765a9730fe4f88959da83719c4297a760b490110b41d5b",
+    "libs/FirstZ80.pretty/Connector_Dsub__DSUB-9_Male_Horizontal_P2.77x2.84mm_EdgePinOffset4.94mm_Housed_MountingHolesOffset7.48mm.kicad_mod": "e0c669dc170a24da8d3851059db77c0bb8bcb264f48823c10f75911aff380158",
+    "libs/FirstZ80.pretty/Oscillator__Oscillator_DIP-14.kicad_mod": "7c97f4ff5c5b3b41cd2aec0714e00e73244bea9ddd1919cda83d143f07055327",
+    "libs/FirstZ80.pretty/Capacitor_THT__C_Disc_D5.0mm_W2.5mm_P5.00mm.kicad_mod": "32d1f2ef2ca9a6082453c60bede8b33394ae7fd63cc64c6ca1a2f849ad8696d8",
+    "libs/FirstZ80.pretty/Diode_THT__D_DO-41_SOD81_P10.16mm_Horizontal.kicad_mod": "b3dbfdefd8e6085e7c76fac7d3ac1bc95bd9d98f0db71d271022a3848cf4263c",
+    "libs/FirstZ80.pretty/TerminalBlock_Phoenix__TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.kicad_mod": "e04c7f6975115749294a0d3ae3c8b982b9cc404c7bdaf4326a27d50a08b94f1a",
+    "libs/FirstZ80.pretty/Connector_PinHeader_2.54mm__PinHeader_1x03_P2.54mm_Vertical.kicad_mod": "b76fee294d89e10194ff81557721ce883eab4537a6fd58b281ecbbf282ea5467",
+    "libs/FirstZ80.pretty/Package_DIP__DIP-40_W15.24mm_Socket_LongPads.kicad_mod": "ba7080e6d3c9a47036c335d8195c3d47290941e2d57b8085a04f83f981bcae3e",
+    "libs/FirstZ80.pretty/Connector_PinHeader_2.54mm__PinHeader_1x01_P2.54mm_Vertical.kicad_mod": "b0d47b123525bcfd25a6a8d90fbcd901bee50628ce1b1dc766635436357cf5c0",
+    "libs/FirstZ80.pretty/LED_THT__LED_D3.0mm.kicad_mod": "50c8db95600b1dd1d904a796d5499aab8b33a24e4e98033ce0668013aaae2b68",
+    "libs/FirstZ80.pretty/Package_DIP__DIP-28_W15.24mm_Socket_LongPads.kicad_mod": "cf979cbfb28e75b2114bebd4ceae9c6ea03e8a3d5739c34827a98f47c7023561",
+    "libs/FirstZ80.pretty/Resistor_THT__R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.kicad_mod": "22f7ac29618b7777dc85f14f8b9ddf32b91a706ab6e1a3fb38b288d33e06429a",
+    "libs/FirstZ80.pretty/Package_TO_SOT_THT__TO-220-3_Horizontal_TabDown.kicad_mod": "f31e137e25b0f3199427f1e96a23c1ada492902b89bc29d9b23cc5ebdff494ee",
+    "libs/FirstZ80.pretty/Capacitor_THT__CP_Radial_D5.0mm_P2.50mm.kicad_mod": "f19baf88ee3b2a7b29dc50097676770d9c75f0e96f5b6c2e5043146236144a8a"
+  },
+  "historical_reference_metrics": {
+    "track_segments": 1463,
+    "vias": 33,
+    "track_length_mm": 7639.221,
+    "layer_lengths_mm": {
+      "F.Cu": 4344.922,
+      "B.Cu": 3294.298
+    }
+  },
+  "results": {
+    "01-manhattan": {
+      "status": "pass",
+      "components": 63,
+      "pin_assignments": 371,
+      "placement_pad_geometry_outline_and_circuit_unchanged": true,
+      "source_copper_reused": false,
+      "violations": 0,
+      "unconnected": 0,
+      "schematic_parity": 0,
+      "copper_layers": 2,
+      "zones": 0,
+      "widths_mm": {
+        "0.25": 2031,
+        "1.0": 322
+      },
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.8,
+      "via_drill_mm": 0.4,
+      "hole_clearance_mm": 0.25,
+      "inherited_schematic_warnings": 47,
+      "inherited_schematic_warning_types": {
+        "unconnected_wire_endpoint": 42,
+        "same_local_global_label": 2,
+        "endpoint_off_grid": 3
+      },
+      "board_sha256": "5dce86ba98d13083af67f93c0f5bacdb09af59d197c81e16797dd67c9a0aa5e4",
+      "track_segments": 2353,
+      "vias": 424,
+      "track_length_mm": 8613.255,
+      "layer_lengths_mm": {
+        "F.Cu": 5247.922,
+        "B.Cu": 3365.334
+      }
+    },
+    "02-octilinear": {
+      "status": "pass",
+      "components": 63,
+      "pin_assignments": 371,
+      "placement_pad_geometry_outline_and_circuit_unchanged": true,
+      "source_copper_reused": false,
+      "violations": 0,
+      "unconnected": 0,
+      "schematic_parity": 0,
+      "copper_layers": 2,
+      "zones": 0,
+      "widths_mm": {
+        "0.25": 2178,
+        "1.0": 335
+      },
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.8,
+      "via_drill_mm": 0.4,
+      "hole_clearance_mm": 0.25,
+      "inherited_schematic_warnings": 47,
+      "inherited_schematic_warning_types": {
+        "unconnected_wire_endpoint": 42,
+        "same_local_global_label": 2,
+        "endpoint_off_grid": 3
+      },
+      "board_sha256": "d1f9a9760694a4d8c44febd18cbc1d30b8b870276fe6fa6298e2949e25a57054",
+      "track_segments": 2513,
+      "vias": 424,
+      "track_length_mm": 8590.527,
+      "layer_lengths_mm": {
+        "F.Cu": 5233.511,
+        "B.Cu": 3357.016
+      }
+    },
+    "03-freerouting": {
+      "status": "pass",
+      "components": 63,
+      "pin_assignments": 371,
+      "placement_pad_geometry_outline_and_circuit_unchanged": true,
+      "source_copper_reused": false,
+      "violations": 0,
+      "unconnected": 0,
+      "schematic_parity": 0,
+      "copper_layers": 2,
+      "zones": 0,
+      "widths_mm": {
+        "0.25": 1237,
+        "1.0": 294
+      },
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.8,
+      "via_drill_mm": 0.4,
+      "hole_clearance_mm": 0.25,
+      "inherited_schematic_warnings": 47,
+      "inherited_schematic_warning_types": {
+        "unconnected_wire_endpoint": 42,
+        "same_local_global_label": 2,
+        "endpoint_off_grid": 3
+      },
+      "board_sha256": "f4e66e174c8e62f0a65a0d0656b22f51f6144a52be67e697011748c6ce3dff45",
+      "track_segments": 1531,
+      "vias": 77,
+      "track_length_mm": 7987.677,
+      "layer_lengths_mm": {
+        "F.Cu": 4696.977,
+        "B.Cu": 3290.7
+      }
+    }
+  },
+  "scope": "Fixed placement/rules comparison; inherited circuit choices retained, no hardware, thermal or SI qualification."
+}

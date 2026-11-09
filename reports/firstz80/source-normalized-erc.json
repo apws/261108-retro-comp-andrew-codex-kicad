@@ -1,0 +1,759 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-09T23:55:50",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.8",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/0cef9633-55fc-43b8-b454-4a6324c9e790",
+            "violations": [
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 13.97 mm",
+                            "pos": {
+                                "x": 104.14,
+                                "y": 220.98
+                            },
+                            "uuid": "80f0dfa5-9985-47b6-9816-4a42d7991282"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 13.97 mm",
+                            "pos": {
+                                "x": 104.14,
+                                "y": 223.52
+                            },
+                            "uuid": "f8466021-ec0a-4c04-82ae-39c017f59235"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Local and global labels have same name",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR04 Hidden pin 1 [VCC, Power input, Line]",
+                            "pos": {
+                                "x": 135.89,
+                                "y": 170.18
+                            },
+                            "uuid": "16b79e47-4d34-4d07-8002-2b1928f4009c"
+                        },
+                        {
+                            "description": "Label 'VCC'",
+                            "pos": {
+                                "x": 307.34,
+                                "y": 119.38
+                            },
+                            "uuid": "780a91a3-50c2-482f-87ce-2b01cbc36ecd"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "same_local_global_label"
+                },
+                {
+                    "description": "Local and global labels have same name",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR09 Hidden pin 1 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 215.9,
+                                "y": 251.46
+                            },
+                            "uuid": "038bfeb1-890e-4fcc-87e8-916184b34b8c"
+                        },
+                        {
+                            "description": "Label 'GND'",
+                            "pos": {
+                                "x": 318.77,
+                                "y": 107.95
+                            },
+                            "uuid": "0437df3f-3155-412f-8a27-7d25cb2bd2c1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "same_local_global_label"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 294.64,
+                                "y": 77.47
+                            },
+                            "uuid": "15e4d8f5-74e2-4cbf-87c4-dbd40dbc14d8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 294.64,
+                                "y": 80.01
+                            },
+                            "uuid": "c306e0ff-ab5b-44bc-b62c-4cbb8e43fa4f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 294.64,
+                                "y": 82.55
+                            },
+                            "uuid": "62353319-28db-4725-9f7f-9c064c1c0dfa"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 294.64,
+                                "y": 85.09
+                            },
+                            "uuid": "f12020a5-a588-4e68-9b67-331928988e74"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 294.64,
+                                "y": 87.63
+                            },
+                            "uuid": "ba30cb2f-f7ae-409e-ab3d-18969879c2b3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 294.64,
+                                "y": 90.17
+                            },
+                            "uuid": "5757e579-f09f-4a1b-baee-bae057aed472"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 294.64,
+                                "y": 92.71
+                            },
+                            "uuid": "b3a3de16-da63-4bda-a09e-e6ba09ed93e0"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 294.64,
+                                "y": 95.25
+                            },
+                            "uuid": "b69aec89-a815-4bc3-813e-2a4577c4f27f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 294.64,
+                                "y": 97.79
+                            },
+                            "uuid": "c6e3f535-652a-4afc-bc66-5c92f2eeaf61"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 294.64,
+                                "y": 100.33
+                            },
+                            "uuid": "88cc8186-851d-4eba-8572-25f781f73794"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 294.64,
+                                "y": 102.87
+                            },
+                            "uuid": "29cb84a7-0547-4012-a153-eede0f5a86a8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 294.64,
+                                "y": 105.41
+                            },
+                            "uuid": "2c412f56-af12-4f32-b6dc-2e2f5c010378"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 306.07,
+                                "y": 119.38
+                            },
+                            "uuid": "045f4465-82cf-4738-990a-8ebf0e2cb231"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 306.07,
+                                "y": 124.46
+                            },
+                            "uuid": "2730250a-37cc-47d4-8f45-bbd4687868de"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 317.5,
+                                "y": 77.47
+                            },
+                            "uuid": "b239865d-01db-45d7-a463-e5ede6aef1d9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 317.5,
+                                "y": 80.01
+                            },
+                            "uuid": "b8916bf8-14b5-4de3-b6f6-bf55df088ed9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 317.5,
+                                "y": 82.55
+                            },
+                            "uuid": "4f37d042-3338-4b76-9cc0-e081f0279853"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 317.5,
+                                "y": 85.09
+                            },
+                            "uuid": "4385123c-ada5-4a24-96ad-8d8e6784aea2"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 317.5,
+                                "y": 87.63
+                            },
+                            "uuid": "27aff59d-9e8d-48bc-8a67-a4986310675f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 317.5,
+                                "y": 90.17
+                            },
+                            "uuid": "8e094bce-4c67-45e9-9429-8ad301874b3d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 317.5,
+                                "y": 92.71
+                            },
+                            "uuid": "28991d8b-fec7-4ee7-be10-581dd6e7c2dd"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 317.5,
+                                "y": 95.25
+                            },
+                            "uuid": "028697aa-4d68-4b2b-8fb9-f3bd242c9e5b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 317.5,
+                                "y": 97.79
+                            },
+                            "uuid": "5b9379cf-9ec3-4d48-98ec-01ceabe007b3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 317.5,
+                                "y": 100.33
+                            },
+                            "uuid": "774bb8dc-0dff-4219-82c8-486a71538481"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 317.5,
+                                "y": 102.87
+                            },
+                            "uuid": "5864b762-af42-4bf8-9950-f220a0be19cc"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 317.5,
+                                "y": 105.41
+                            },
+                            "uuid": "9e54e244-3393-4a25-84a8-065f60773dc6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 10.16 mm",
+                            "pos": {
+                                "x": 317.5,
+                                "y": 107.95
+                            },
+                            "uuid": "6c5bace8-1062-467d-b2bd-d6a62e6cc582"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 8.89 mm",
+                            "pos": {
+                                "x": 379.73,
+                                "y": 173.99
+                            },
+                            "uuid": "a58109b7-e835-48e2-9f0a-52eb839d1443"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 8.89 mm",
+                            "pos": {
+                                "x": 379.73,
+                                "y": 179.07
+                            },
+                            "uuid": "4269c2bf-9002-415f-b57e-a62da38c4bee"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Symbol pin or wire end off connection grid",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 8.103 mm",
+                            "pos": {
+                                "x": 424.18,
+                                "y": 351.79
+                            },
+                            "uuid": "031deeff-37e7-436a-b00b-95e23a2c2b58"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "endpoint_off_grid"
+                },
+                {
+                    "description": "Symbol pin or wire end off connection grid",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 7.137 mm",
+                            "pos": {
+                                "x": 439.9033,
+                                "y": 351.79
+                            },
+                            "uuid": "39e7b921-17ef-40c9-9a14-d24547f87591"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "endpoint_off_grid"
+                },
+                {
+                    "description": "Symbol pin or wire end off connection grid",
+                    "items": [
+                        {
+                            "description": "Symbol D10 Pin 1 [K, Passive, Line]",
+                            "pos": {
+                                "x": 439.9033,
+                                "y": 351.79
+                            },
+                            "uuid": "d50b9f5c-bb99-4aa3-b828-17af248e50bc"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "endpoint_off_grid"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 30.48 mm",
+                            "pos": {
+                                "x": 433.07,
+                                "y": 246.38
+                            },
+                            "uuid": "16d0862d-4521-41da-b8dc-9f976befc658"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 33.02 mm",
+                            "pos": {
+                                "x": 430.53,
+                                "y": 248.92
+                            },
+                            "uuid": "154e711d-272d-4767-b37e-55c9a0ee966e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 35.56 mm",
+                            "pos": {
+                                "x": 427.99,
+                                "y": 251.46
+                            },
+                            "uuid": "49c8f28a-d726-4091-a420-066d0e72a613"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 38.10 mm",
+                            "pos": {
+                                "x": 425.45,
+                                "y": 254.0
+                            },
+                            "uuid": "4036f1f7-07c7-4a81-8e3c-46dc4f912900"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 8.89 mm",
+                            "pos": {
+                                "x": 468.63,
+                                "y": 323.85
+                            },
+                            "uuid": "5d65578d-c5fd-4b1e-89c6-9528dceca7dc"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 8.89 mm",
+                            "pos": {
+                                "x": 478.79,
+                                "y": 237.49
+                            },
+                            "uuid": "e75c9502-c48d-4ef2-9bc9-f9dc4bd32035"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 8.89 mm",
+                            "pos": {
+                                "x": 478.79,
+                                "y": 245.11
+                            },
+                            "uuid": "7c1efe1c-4139-4910-8306-62a8a01ed67c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 8.89 mm",
+                            "pos": {
+                                "x": 478.79,
+                                "y": 247.65
+                            },
+                            "uuid": "52a031dd-ddbc-4ec4-bb47-ab718d0430c9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 8.89 mm",
+                            "pos": {
+                                "x": 478.79,
+                                "y": 250.19
+                            },
+                            "uuid": "4fb6fe35-6959-4f37-b137-bf989d8cfb27"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 8.89 mm",
+                            "pos": {
+                                "x": 478.79,
+                                "y": 252.73
+                            },
+                            "uuid": "9b744c3d-3d19-4bf8-a9cd-e964752d338f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Horizontal Wire, length 8.89 mm",
+                            "pos": {
+                                "x": 488.95,
+                                "y": 323.85
+                            },
+                            "uuid": "7d0cd403-07be-4095-bb5b-c1c010027f7e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                }
+            ]
+        }
+    ],
+    "source": "FirstZ80.kicad_sch"
+}

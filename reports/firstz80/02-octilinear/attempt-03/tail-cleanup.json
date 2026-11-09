@@ -1,0 +1,7 @@
+{
+  "removed_track_uuids": [
+    "3b50ff98-22e8-431c-aaca-068dd8bb6292",
+    "895bfca8-8f14-493d-848b-2e10ed1a0081"
+  ],
+  "reason": "Native DRC dangling ends; connectivity is rechecked after removal."
+}

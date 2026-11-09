@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 4,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"status\": 200,\n  \"contentType\": \"application/json\",\n  \"body\": {\n    \"id\": \"9bce213b-6156-448f-bba3-539d665ab012\",\n    \"created_at\": \"2026-11-09T22:22:25.306710606Z\",\n    \"short_name\": \"9BCE21\",\n    \"name\": \"FirstZ80\",\n    \"state\": \"QUEUED\",\n    \"stage\": \"IDLE\",\n    \"priority\": \"NORMAL\",\n    \"session_id\": \"b3beb20a-7455-440a-9f1c-f2f47e9cb9e2\",\n    \"user_id\": \"5be0ff4a-bc10-4117-aab1-dd37e58eb4f1\",\n    \"router_settings\": {\n      \"autorouter\": {},\n      \"fanout\": {},\n      \"optimizer\": {},\n      \"scoring\": {},\n      \"router_scoring\": {},\n      \"optimizer_scoring\": {}\n    },\n    \"drc_settings\": {\n      \"include_warnings\": true,\n      \"include_errors\": true,\n      \"clearance_tolerance_um\": 1.00\n    },\n    \"resource_usage\": {\n      \"cpu_time\": 0.00,\n      \"max_memory\": 0.00,\n      \"peak_memory\": 0.00,\n      \"io_read\": 0.00,\n      \"io_written\": 0.00\n    },\n    \"isCancelledByUser\": false,\n    \"current_pass\": 0\n  }\n}"
+      }
+    ],
+    "isError": false
+  }
+}

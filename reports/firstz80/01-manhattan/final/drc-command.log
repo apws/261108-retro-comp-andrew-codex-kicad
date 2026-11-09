@@ -1,0 +1,16 @@
+Found 0 violations
+Found 0 unconnected items
+Found 0 schematic parity issues
+Saved DRC Report to /home/falken/_/wrk/ver/261108-retro-comp-andrew-codex-kicad/reports/firstz80/01-manhattan/final/drc.json
+00:03:03: Debug: Adding duplicate image handler for 'PNG file'
+00:03:03: Debug: Adding duplicate image handler for 'JPEG file'
+00:03:03: Debug: Adding duplicate image handler for 'TIFF file'
+00:03:03: Debug: Adding duplicate image handler for 'GIF file'
+00:03:03: Debug: Adding duplicate image handler for 'PNM file'
+00:03:03: Debug: Adding duplicate image handler for 'PCX file'
+00:03:03: Debug: Adding duplicate image handler for 'IFF file'
+00:03:03: Debug: Adding duplicate image handler for 'Windows icon file'
+00:03:03: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:03:03: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:03:03: Debug: Adding duplicate image handler for 'TGA file'
+00:03:03: Debug: Adding duplicate image handler for 'XPM file'

@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 84,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"status\": 200,\n  \"contentType\": \"application/json\",\n  \"body\": {\n    \"id\": \"dddcba05-4cbb-480f-b4ad-cf235bdbe6f3\",\n    \"session_id\": \"b3beb20a-7455-440a-9f1c-f2f47e9cb9e2\",\n    \"short_name\": \"DDDCBA\",\n    \"name\": \"FirstZ80\",\n    \"state\": \"RUNNING\",\n    \"stage\": \"ROUTING\",\n    \"current_pass\": 7,\n    \"started_at\": \"2026-11-09T22:33:20.410499436Z\",\n    \"duration_seconds\": 92.204,\n    \"statistics\": {\n      \"total_nets\": 118,\n      \"unrouted_connections\": 12,\n      \"clearance_violations\": 0,\n      \"normalized_score\": 937.5\n    },\n    \"resource_usage\": {\n      \"cpu_time_seconds\": 90.51059,\n      \"peak_memory_mb\": 697.9415\n    }\n  }\n}"
+      }
+    ],
+    "isError": false
+  }
+}

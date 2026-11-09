@@ -1,0 +1,22 @@
+= FirstZ80 fixed-placement routing comparison
+:title: {docname}
+:toc:
+
+This separate comparison uses Andrew Lynch's pictured January 2024 FirstZ80: 63 footprints, 371 pin assignments, 160 x 100 mm, two copper layers. The original placement and pad geometry are preserved exactly. All historical copper was removed from the common checkpoint before new routing.
+
+[cols="2,1,1,3",options="header"]
+|===
+|Result |Vias |Copper length, mm |Open
+|Historical supplied routing |33 |7,639.221 |link:reference-normalized/FirstZ80.kicad_pro[Reference]
+|Manhattan |424 |8,613.255 |link:layouts/01-manhattan/FirstZ80.kicad_pro[Manhattan]
+|Octilinear hybrid |424 |8,590.527 |link:layouts/02-octilinear/FirstZ80.kicad_pro[Hybrid]
+|FreeRouting + native hole-clearance correction |77 |7,987.677 |link:layouts/03-freerouting/FirstZ80.kicad_pro[FreeRouting]
+|===
+
+All three new boards pass native DRC/parity/connectivity with zero findings. The hybrid uses a fresh Manhattan seed plus 160 checked 45-degree corner refinements. Direct eight-direction A* trials remained incomplete. FreeRouting's completed MCP run disabled optimization after an earlier timeout and needed one recorded 0.06 mm ground-track detour near the regulator mounting hole.
+
+Read link:../docs/261110-0004-DONE-FirstZ80-fixed-placement-routing.adoc[the complete results and limitations], view link:../output/firstz80/comparison.png[the comparison overview], or inspect link:../reports/firstz80/verification.json[verification]. The normalized reference is for comparing with the recovered source; raw files and attribution remain in link:../reference/firstz80/README.adoc[reference/firstz80].
+
+Clone with Git to preserve relative library symlinks. Native symbols and footprints are portable snapshots. The old footprints still reference optional legacy 3D models through `KICAD6_3DMODEL_DIR`; those additional models are not bundled in this comparison. The supplied JPG remains the historical placement render. The new previews are native 2D copper/placement exports.
+
+Run `/usr/bin/python3 tools/check_firstz80.py` from the repository root for the full static board verification. The inherited reference schematic's 47 warnings are documented separately; zero PCB DRC is not a claim of zero schematic warnings or verified hardware operation.

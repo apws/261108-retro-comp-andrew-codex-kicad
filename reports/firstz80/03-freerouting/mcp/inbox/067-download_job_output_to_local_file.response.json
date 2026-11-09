@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": 69,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"status\": 400,\n  \"contentType\": \"application/json\",\n  \"body\": {\n    \"error\": \"The job is in state 'TIMED_OUT' and has no valid output.\"\n  }\n}"
+      }
+    ],
+    "isError": true
+  }
+}

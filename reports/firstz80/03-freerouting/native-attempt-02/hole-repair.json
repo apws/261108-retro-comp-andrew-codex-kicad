@@ -1,0 +1,48 @@
+{
+  "reason": {
+    "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.2102 mm)",
+    "items": [
+      {
+        "description": "Track [GND] on F.Cu, length 14.6650 mm",
+        "pos": {
+          "x": 132.5281,
+          "y": 66.1198
+        },
+        "uuid": "89c6d9d9-ed9b-442b-ac93-bf4e5f1b097c"
+      },
+      {
+        "description": "NPTH pad of U9",
+        "pos": {
+          "x": 124.905,
+          "y": 68.58
+        },
+        "uuid": "e827b3b3-c6c5-46c0-8e2d-e671424466cc"
+      }
+    ],
+    "severity": "error",
+    "type": "hole_clearance"
+  },
+  "offset_mm": [
+    0,
+    -0.06
+  ],
+  "new_path_mm": [
+    [
+      132.5281,
+      66.1198
+    ],
+    [
+      132.5281,
+      66.0598
+    ],
+    [
+      117.8631,
+      66.0598
+    ],
+    [
+      117.8631,
+      66.1198
+    ]
+  ],
+  "scope": "Post-import track correction; no placement or rule changes."
+}

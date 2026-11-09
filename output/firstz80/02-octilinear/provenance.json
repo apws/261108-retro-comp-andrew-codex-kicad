@@ -1,0 +1,12 @@
+{
+  "board": "firstz80/layouts/02-octilinear/FirstZ80.kicad_pcb",
+  "board_sha256": "d1f9a9760694a4d8c44febd18cbc1d30b8b870276fe6fa6298e2949e25a57054",
+  "bottom_view": "Mirrored, viewed from underside.",
+  "track_segments": 2513,
+  "vias": 424,
+  "track_length_mm": 8590.527,
+  "layer_lengths_mm": {
+    "F.Cu": 5233.511,
+    "B.Cu": 3357.016
+  }
+}

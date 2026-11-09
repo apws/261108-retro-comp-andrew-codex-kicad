@@ -183,12 +183,14 @@
   "verification": "reports/schematic-wired-a3/verification.json",
   "ownership": "human-edited",
   "manual_review": {
-    "schematic_sha256": "b5ab1a59ff58a9e4e2632a093ed8b1fc5d4799a8a48e9c9ada20fd35b38152fd",
+    "schematic_sha256": "53064f333e54348b7e521ad3d2d471a48df3e99bff61f2227304fda2844dd127",
     "project_sha256": "2b2f3c7cb103185836cb472b83a4829c504ae7c4693d2607dc4d57f27f95e0ef",
     "original_generated_sha256": "9683a3f53fd056b74df58b9a9705947373c673e83071937b020f0dc3362e2559",
     "note": "Validated manually edited schematic; generator overwrite guard stays active.",
     "baseline_commit": "1184700",
     "human_input_snapshot": "reports/schematic-wired-a3/human-review-261109-1549/as-edited",
-    "review_note": "docs/261109-1549-REVIEW-human-schematic-corrections.adoc"
+    "review_note": "docs/261109-1549-REVIEW-human-schematic-corrections.adoc",
+    "readability_review": "docs/261109-2306-REVIEW-Mark-schematic-readability.adoc",
+    "readability_cleanup": "reports/schematic-wired-a3/cleanup-261109-2330"
   }
 }

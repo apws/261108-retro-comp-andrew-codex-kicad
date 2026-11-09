@@ -1,0 +1,17 @@
+Found 0 violations
+Found 0 unconnected items
+Found 0 schematic parity issues
+Saved DRC Report to /home/falken/_/wrk/ver/261108-retro-comp-andrew-codex-kicad/reports/firstz80/02-octilinear/refinement-92/drc-01.json
+00:02:34: Debug: Adding duplicate image handler for 'PNG file'
+00:02:34: Debug: Adding duplicate image handler for 'JPEG file'
+00:02:34: Debug: Adding duplicate image handler for 'TIFF file'
+00:02:34: Debug: Adding duplicate image handler for 'GIF file'
+00:02:34: Debug: Adding duplicate image handler for 'PNM file'
+00:02:34: Debug: Adding duplicate image handler for 'PCX file'
+00:02:34: Debug: Adding duplicate image handler for 'IFF file'
+00:02:34: Debug: Adding duplicate image handler for 'Windows icon file'
+00:02:34: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:02:34: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:02:34: Debug: Adding duplicate image handler for 'TGA file'
+00:02:34: Debug: Adding duplicate image handler for 'XPM file'
+00:02:35: Error: Failed to remove lock file '/tmp/org.kicad.kicad/instances/kicad-cli-10.0' (error 2: No such file or directory)

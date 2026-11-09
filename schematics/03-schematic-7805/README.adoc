@@ -1,0 +1,14 @@
+= Own wired A3 schematic with a 7805 supply
+:title: {docname}
+
+Open link:schematic-7805.kicad_pro[schematic-7805] or view its link:../../output/pdf/schematic-7805.pdf[PDF] and link:../../output/schematic-7805/schematic-7805.png[PNG]. This is a separate extension of our cleaned, human-edited drawing. The earlier circuit and completed four-layer boards remain separate.
+
+The PSU adds U9 LM7805, D1 1N5819, J6 nominal 9 V centre-positive barrel input, C30 input bypass and C31/C32 reservoirs. J5's original +5V/GND pin assignments remain, but J5 is labelled *+5V OUTPUT* in this variant. The regulator drives the +5V rail; its former +5V PWR_FLAG was removed. D1's anode faces the raw input and its cathode faces U9 pin 1; U9 pin 2 is GND and pin 3 is +5V. C31/C32 positive terminals face their positive rails.
+
+All 301 existing pin assignments remain. Six components add 14 assignments, giving 44 components including the existing four mounting holes, and 315 assignments in total. Native ERC, annotation checks, exact expected netlist-delta checks and the pin-stroke clearance audit pass. Reports are under link:../../reports/schematic-7805/verification.json[reports/schematic-7805].
+
+The current placement and circuit are design experiments. Regulator dissipation, input dropout, external loads and thermal management still require a load budget and physical verification; adding a 7805 does not establish an unrestricted 9-15 V operating range. The chosen pin numbering follows https://www.ti.com/lit/ds/symlink/lm7800.pdf[TI's LM7805 family data].
+
+`PSU.kicad_sym` is a native-upgraded local subset of the historical reference's standard PSU symbols. Its footprint links use the portable FirstZ80 snapshot. Our PSU drawing coordinates are independent of Andrew's schematic placement.
+
+The FirstZ80 routing comparison uses Andrew's full historical circuit, including his EEPROM, LEDs and connectors. This smaller extension of our own circuit is not substituted for that board's schematic.

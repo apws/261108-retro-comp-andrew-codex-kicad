@@ -1,0 +1,11 @@
+{
+  "method": "tools/call",
+  "params": {
+    "name": "get_effective_settings",
+    "arguments": {
+      "path": {
+        "jobId": "9bce213b-6156-448f-bba3-539d665ab012"
+      }
+    }
+  }
+}

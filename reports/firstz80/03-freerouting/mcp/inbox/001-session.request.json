@@ -1,0 +1,7 @@
+{
+  "method": "tools/call",
+  "params": {
+    "name": "create_session",
+    "arguments": {}
+  }
+}

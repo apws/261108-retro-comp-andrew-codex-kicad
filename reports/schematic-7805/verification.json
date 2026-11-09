@@ -1,0 +1,22 @@
+{
+  "status": "pass",
+  "components": 44,
+  "pin_assignments": 315,
+  "original_pin_assignments_preserved": 301,
+  "added_pin_assignments": 14,
+  "erc_findings": 0,
+  "pin_stroke_crossings": 0,
+  "unique_unit_annotations": true,
+  "project_rules_unchanged": true,
+  "diode_anode": "/VIN_9V",
+  "diode_cathode": "/VIN_PROTECTED",
+  "regulator_pins": {
+    "1": "/VIN_PROTECTED",
+    "2": "GND",
+    "3": "+5V"
+  },
+  "original_J5_supply_pins_preserved": true,
+  "J5_function": "Regulated +5V output/test connector in this PSU variant.",
+  "schematic_sha256": "a2db0fe1886d4e494c016c58df46e8bc41c6d45bc86cb61cc7e6cf0fccb9e400",
+  "scope": "Static electrical and drawing checks; no hardware, thermal or reset timing qualification."
+}

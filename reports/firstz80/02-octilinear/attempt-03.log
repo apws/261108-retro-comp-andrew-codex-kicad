@@ -1,0 +1,144 @@
+{"net": "/A00", "pads": 5, "width_mm": 0.25, "seconds": 0.601, "expanded": 124254}
+{"net": "/A02", "pads": 4, "width_mm": 0.25, "seconds": 0.775, "expanded": 910194}
+{"net": "/A05", "pads": 3, "width_mm": 0.25, "seconds": 0.28, "expanded": 14911}
+{"net": "/PB1", "pads": 2, "width_mm": 0.25, "seconds": 0.474, "expanded": 430721}
+{"net": "/PB2", "pads": 2, "width_mm": 0.25, "seconds": 0.45, "expanded": 409541}
+{"net": "/PB4", "pads": 2, "width_mm": 0.25, "seconds": 0.573, "expanded": 1076308}
+{"net": "/PB5", "pads": 2, "width_mm": 0.25, "seconds": 0.472, "expanded": 768404}
+{"net": "/PC2", "pads": 2, "width_mm": 0.25, "seconds": 0.354, "expanded": 116565}
+{"net": "/PC3", "pads": 2, "width_mm": 0.25, "seconds": 0.327, "expanded": 3978}
+{"net": "/PC6", "pads": 2, "width_mm": 0.25, "seconds": 0.783, "expanded": 1623235}
+{"net": "/A03", "pads": 3, "width_mm": 0.25, "seconds": 0.296, "expanded": 14889}
+{"net": "/A04", "pads": 3, "width_mm": 0.25, "seconds": 0.278, "expanded": 98908}
+{"net": "/A06", "pads": 3, "width_mm": 0.25, "seconds": 0.252, "expanded": 17190}
+{"net": "/A08", "pads": 3, "width_mm": 0.25, "seconds": 0.322, "expanded": 153540}
+{"net": "/A09", "pads": 3, "width_mm": 0.25, "seconds": 0.355, "expanded": 225475}
+{"net": "/A10", "pads": 3, "width_mm": 0.25, "seconds": 0.407, "expanded": 350606}
+{"net": "/A11", "pads": 3, "width_mm": 0.25, "seconds": 0.684, "expanded": 1356835}
+{"net": "/A13", "pads": 3, "width_mm": 0.25, "seconds": 0.372, "expanded": 134991}
+{"net": "/PA6", "pads": 2, "width_mm": 0.25, "seconds": 0.89, "expanded": 2092362}
+{"net": "/PA7", "pads": 2, "width_mm": 0.25, "seconds": 0.731, "expanded": 1625379}
+{"net": "/PB7", "pads": 2, "width_mm": 0.25, "seconds": 0.442, "expanded": 746480}
+{"net": "/PC0", "pads": 2, "width_mm": 0.25, "seconds": 0.433, "expanded": 535703}
+{"net": "/PC1", "pads": 2, "width_mm": 0.25, "seconds": 0.46, "expanded": 650182}
+{"net": "/PC4", "pads": 2, "width_mm": 0.25, "seconds": 0.616, "expanded": 1245649}
+{"net": "/PC5", "pads": 2, "width_mm": 0.25, "seconds": 0.913, "expanded": 2339680}
+{"net": "/PC7", "pads": 2, "width_mm": 0.25, "seconds": 0.615, "expanded": 879301}
+{"net": "/9VDC", "pads": 4, "width_mm": 1.0, "seconds": 0.48, "expanded": 26879}
+{"net": "/VI", "pads": 3, "width_mm": 1.0, "seconds": 0.317, "expanded": 4801}
+{"net": "/VCC_PP", "pads": 2, "width_mm": 1.0, "seconds": 0.13, "expanded": 571}
+{"net": "VCC", "pads": 39, "width_mm": 1.0, "seconds": 7.401, "expanded": 2387195}
+{"net": "GND", "pads": 44, "width_mm": 1.0, "seconds": 8.044, "expanded": 2238956}
+{"net": "/CLK-CPU", "pads": 2, "width_mm": 0.25, "seconds": 0.357, "expanded": 302282}
+{"net": "/CLK-UART", "pads": 2, "width_mm": 0.25, "seconds": 0.263, "expanded": 385361}
+{"net": "/RESET", "pads": 4, "width_mm": 0.25, "seconds": 0.66, "expanded": 812621}
+{"net": "/~{RESET}", "pads": 2, "width_mm": 0.25, "seconds": 0.264, "expanded": 214538}
+{"net": "Net-(U7-RCLK)", "pads": 2, "width_mm": 0.25, "seconds": 0.209, "expanded": 297590}
+{"net": "/RX", "pads": 2, "width_mm": 0.25, "seconds": 0.251, "expanded": 185494}
+{"net": "/RX-TTL", "pads": 4, "width_mm": 0.25, "seconds": 0.891, "expanded": 1155011}
+{"net": "/TX", "pads": 2, "width_mm": 0.25, "seconds": 0.234, "expanded": 66980}
+{"net": "/TX-TTL", "pads": 4, "width_mm": 0.25, "seconds": 1.047, "expanded": 1865615}
+{"net": "/~{CS-PPI}", "pads": 3, "width_mm": 0.25, "seconds": 0.549, "expanded": 651242}
+{"net": "/~{CS-RAM}", "pads": 3, "width_mm": 0.25, "seconds": 0.485, "expanded": 597187}
+{"net": "/~{CS-ROM}", "pads": 3, "width_mm": 0.25, "seconds": 0.907, "expanded": 1995759}
+{"net": "/~{CS-UART}", "pads": 3, "width_mm": 0.25, "seconds": 0.584, "expanded": 793978}
+{"net": "/~{CTS-TTL}", "pads": 3, "width_mm": 0.25, "seconds": 0.577, "expanded": 898632}
+{"net": "/~{CTS}", "pads": 2, "width_mm": 0.25, "seconds": 0.191, "expanded": 23781}
+{"net": "/~{IORQ}", "pads": 3, "width_mm": 0.25, "seconds": 0.457, "expanded": 444139}
+{"net": "/~{MREQ}", "pads": 3, "width_mm": 0.25, "seconds": 0.636, "expanded": 1225794}
+{"net": "/~{OUT1}", "pads": 2, "width_mm": 0.25, "seconds": 0.358, "expanded": 634249}
+{"net": "/~{OUT2}", "pads": 2, "width_mm": 0.25, "seconds": 0.559, "expanded": 1377035}
+{"net": "/~{RD}", "pads": 5, "width_mm": 0.25, "seconds": 1.084, "expanded": 1511152}
+{"net": "/~{RTS-TTL}", "pads": 3, "width_mm": 0.25, "seconds": 0.348, "expanded": 186188}
+{"net": "/~{RTS}", "pads": 2, "width_mm": 0.25, "seconds": 0.237, "expanded": 289140}
+{"net": "/~{WR}", "pads": 5, "width_mm": 0.25, "seconds": 1.618, "expanded": 3267583}
+{"net": "Net-(C1-Pad1)", "pads": 4, "width_mm": 0.25, "seconds": 1.519, "expanded": 3814841}
+{"net": "Net-(D1-K)", "pads": 2, "width_mm": 0.25, "seconds": 0.142, "expanded": 71171}
+{"net": "Net-(D2-K)", "pads": 2, "width_mm": 0.25, "seconds": 0.14, "expanded": 73333}
+{"net": "Net-(D3-K)", "pads": 2, "width_mm": 0.25, "seconds": 0.135, "expanded": 50198}
+{"net": "Net-(D4-K)", "pads": 2, "width_mm": 0.25, "seconds": 0.4, "expanded": 574698}
+{"net": "Net-(D5-K)", "pads": 2, "width_mm": 0.25, "seconds": 0.67, "expanded": 1719247}
+{"net": "Net-(D6-K)", "pads": 2, "width_mm": 0.25, "seconds": 0.12, "expanded": 12345}
+{"net": "Net-(D7-K)", "pads": 2, "width_mm": 0.25, "seconds": 0.827, "expanded": 2156400}
+{"net": "Net-(D8-K)", "pads": 2, "width_mm": 0.25, "seconds": 0.137, "expanded": 51656}
+{"net": "Net-(D9-K)", "pads": 2, "width_mm": 0.25, "seconds": 0.138, "expanded": 50513}
+{"net": "Net-(R4-Pad2)", "pads": 3, "width_mm": 0.25, "seconds": 0.229, "expanded": 17961}
+{"net": "Net-(U1-Pad6)", "pads": 2, "width_mm": 0.25, "seconds": 0.145, "expanded": 36673}
+{"net": "Net-(U1-Pad8)", "pads": 2, "width_mm": 0.25, "seconds": 0.156, "expanded": 65957}
+{"net": "Net-(U2-~{BUSACK})", "pads": 5, "width_mm": 0.25, "seconds": 0.441, "expanded": 50404}
+{"net": "Net-(U7-CS0)", "pads": 4, "width_mm": 0.25, "seconds": 1.652, "expanded": 4619921}
+{"net": "Net-(U7-~{DCD})", "pads": 3, "width_mm": 0.25, "seconds": 1.6, "expanded": 4705251}
+{"net": "Net-(U8-C1+)", "pads": 2, "width_mm": 0.25, "seconds": 0.107, "expanded": 5354}
+{"net": "Net-(U8-C1-)", "pads": 2, "width_mm": 0.25, "seconds": 0.104, "expanded": 1010}
+{"net": "Net-(U8-C2+)", "pads": 2, "width_mm": 0.25, "seconds": 0.102, "expanded": 356}
+{"net": "Net-(U8-C2-)", "pads": 2, "width_mm": 0.25, "seconds": 0.094, "expanded": 430}
+{"net": "Net-(U8-VS+)", "pads": 2, "width_mm": 0.25, "seconds": 0.162, "expanded": 111665}
+{"net": "Net-(U8-VS-)", "pads": 2, "width_mm": 0.25, "seconds": 0.104, "expanded": 1329}
+{"net": "/D00", "pads": 5, "width_mm": 0.25, "seconds": 0.787, "expanded": 643701}
+{"net": "/D01", "pads": 5, "width_mm": 0.25, "seconds": 1.614, "expanded": 3638842}
+{"net": "/D02", "pads": 5, "width_mm": 0.25, "seconds": 1.78, "expanded": 4356135}
+{"net": "/D03", "pads": 5, "width_mm": 0.25, "seconds": 2.37, "expanded": 6126612}
+{"net": "/D04", "pads": 5, "width_mm": 0.25, "seconds": 4.055, "expanded": 11858882}
+{"net": "/D05", "pads": 5, "width_mm": 0.25, "seconds": 4.141, "expanded": 12441992}
+{"net": "/D06", "pads": 5, "width_mm": 0.25, "seconds": 4.47, "expanded": 13218039}
+{"net": "/D07", "pads": 5, "width_mm": 0.25, "seconds": 0.098, "expanded": 0}
+{"net": "/A01", "pads": 5, "width_mm": 0.25, "seconds": 0.593, "expanded": 208465}
+{"net": "/A07", "pads": 5, "width_mm": 0.25, "seconds": 1.966, "expanded": 4870643}
+{"net": "/A12", "pads": 3, "width_mm": 0.25, "seconds": 0.404, "expanded": 423326}
+{"net": "/A14", "pads": 3, "width_mm": 0.25, "seconds": 0.438, "expanded": 556648}
+{"net": "/A15", "pads": 3, "width_mm": 0.25, "seconds": 1.497, "expanded": 3974516}
+{"net": "/PA0", "pads": 2, "width_mm": 0.25, "seconds": 1.518, "expanded": 4439953}
+{"net": "/PA1", "pads": 2, "width_mm": 0.25, "seconds": 1.794, "expanded": 5519203}
+{"net": "/PA2", "pads": 2, "width_mm": 0.25, "seconds": 1.788, "expanded": 5315926}
+{"net": "/PA3", "pads": 2, "width_mm": 0.25, "seconds": 1.85, "expanded": 5573686}
+{"net": "/PA4", "pads": 2, "width_mm": 0.25, "seconds": 1.599, "expanded": 4836690}
+{"net": "/PA5", "pads": 2, "width_mm": 0.25, "seconds": 1.828, "expanded": 5459819}
+{"net": "/PB0", "pads": 2, "width_mm": 0.25, "seconds": 0.926, "expanded": 2387478}
+{"net": "/PB3", "pads": 2, "width_mm": 0.25, "seconds": 3.102, "expanded": 0}
+{"net": "/PB6", "pads": 2, "width_mm": 0.25, "seconds": 0.451, "expanded": 475902}
+23:45:26: Debug: Adding duplicate image handler for 'PNG file'
+23:45:26: Debug: Adding duplicate image handler for 'JPEG file'
+23:45:26: Debug: Adding duplicate image handler for 'TIFF file'
+23:45:26: Debug: Adding duplicate image handler for 'GIF file'
+23:45:26: Debug: Adding duplicate image handler for 'PNM file'
+23:45:26: Debug: Adding duplicate image handler for 'PCX file'
+23:45:26: Debug: Adding duplicate image handler for 'IFF file'
+23:45:26: Debug: Adding duplicate image handler for 'Windows icon file'
+23:45:26: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:45:26: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:45:26: Debug: Adding duplicate image handler for 'TGA file'
+23:45:26: Debug: Adding duplicate image handler for 'XPM file'
+{
+  "method": "octilinear",
+  "status": "rejected",
+  "runtime_seconds": 180.352,
+  "failures": [
+    {
+      "net": "/D07",
+      "error": "planner status -1; expanded 110672",
+      "unrouted_pads": 4
+    },
+    {
+      "net": "/A01",
+      "error": "planner status -1; expanded 328998",
+      "unrouted_pads": 1
+    },
+    {
+      "net": "/PB3",
+      "error": "planner status -1; expanded 13440332",
+      "unrouted_pads": 1
+    }
+  ],
+  "violations": 0,
+  "unconnected": 6,
+  "parity": 0,
+  "geometry_unchanged": true,
+  "board_sha256": "1b065a3219f63900e65adf3ac313dca6df527895cd6265aa9703d790816aa375",
+  "track_segments": 1572,
+  "vias": 325,
+  "track_length_mm": 8556.397,
+  "layer_lengths_mm": {
+    "F.Cu": 4718.7,
+    "B.Cu": 3837.697
+  }
+}

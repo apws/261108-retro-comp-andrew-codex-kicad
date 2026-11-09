@@ -2,9 +2,13 @@
 :title: {docname}
 :toc:
 
+*2026-11-10:* The link:schematics/03-schematic-7805/schematic-7805.kicad_pro[separate 7805 supply schematic] and link:docs/261110-0001-DONE-schematic-7805-and-readable-wiring.adoc[wired-drawing readability cleanup] are complete. The new link:firstz80/README.adoc[FirstZ80 comparison] preserves Andrew's exact historical placement in three checked outputs: Manhattan, an explicitly labelled octilinear hybrid, and FreeRouting with a recorded native clearance correction. See link:docs/261110-0004-DONE-FirstZ80-fixed-placement-routing.adoc[the results, source differences and limitations] or link:output/firstz80/comparison.png[the comparison overview]. This is a separate two-layer series from the earlier four-layer experiments below.
+
 *2026-11-09:* A separate link:schematics/02-wired-a3/Z80_Simple_Computer.kicad_pro[wired single-A3 schematic] is now available, with link:output/pdf/Z80_Simple_Computer-wired-A3.pdf[PDF] and link:output/schematic-wired-a3/Z80_Simple_Computer.png[PNG] previews. It preserves all 301 pin assignments, passes ERC, and retains the original schematic and completed board variants unchanged. See link:docs/261109-1528-SCHEMATIC-wired-A3.adoc[the drawing handover].
 
 Falken's subsequent presentation refinements are retained in this human-edited version. See link:docs/261109-1549-REVIEW-human-schematic-corrections.adoc[the human-corrections review], including two unintended wiring changes repaired, six label anchors reattached and compact reminders for later sessions. The current result again matches all 301 original pin assignments with zero ERC findings.
+
+link:docs/261109-2306-REVIEW-Mark-schematic-readability.adoc[Mark's subsequent readability review] preserves his feedback verbatim, confirms the connected but ambiguous PPI reset-pin approach, and records text/pin clearance lessons for our own drawing style. Fresh ERC and all 301 pin assignments still pass; this review does not change the schematic or resume PCB routing.
 
 == Start here, Andrew
 

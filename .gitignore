@@ -17,3 +17,6 @@ reports/routing/04-freerouting/server-state/
 reports/routing/04-freerouting/cli-state/
 reports/routing/04-freerouting/cli-control/state/
 reports/routing/04-freerouting/setup-attempts/*/state/
+reports/firstz80/*/attempt-*/cache/
+reports/firstz80/03-freerouting/mcp/owned-pid
+reports/firstz80/03-freerouting/server-state/

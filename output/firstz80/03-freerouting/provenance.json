@@ -1,0 +1,12 @@
+{
+  "board": "firstz80/layouts/03-freerouting/FirstZ80.kicad_pcb",
+  "board_sha256": "f4e66e174c8e62f0a65a0d0656b22f51f6144a52be67e697011748c6ce3dff45",
+  "bottom_view": "Mirrored, viewed from underside.",
+  "track_segments": 1531,
+  "vias": 77,
+  "track_length_mm": 7987.677,
+  "layer_lengths_mm": {
+    "F.Cu": 4696.977,
+    "B.Cu": 3290.7
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "id": "dddcba05-4cbb-480f-b4ad-cf235bdbe6f3",
+  "created_at": "2026-11-09T22:33:18.992116379Z",
+  "short_name": "DDDCBA",
+  "name": "FirstZ80",
+  "started_at": "2026-11-09T22:33:20.410499436Z",
+  "finished_at": "2026-11-09T22:35:38.689479809Z",
+  "state": "COMPLETED",
+  "stage": "IDLE",
+  "priority": "NORMAL",
+  "session_id": "b3beb20a-7455-440a-9f1c-f2f47e9cb9e2",
+  "user_id": "5be0ff4a-bc10-4117-aab1-dd37e58eb4f1",
+  "input": {
+    "size": 94576,
+    "crc32": 2272839614,
+    "format": "DSN",
+    "statistics": {
+      "board": {},
+      "layers": {
+        "total_count": 4
+      },
+      "items": {},
+      "components": {
+        "total_count": 23
+      },
+      "pads": {},
+      "nets": {
+        "total_count": 119,
+        "class_count": 2
+      },
+      "connections": {},
+      "traces": {
+        "total_count": 0
+      },
+      "bends": {},
+      "vias": {
+        "total_count": 3
+      },
+      "clearance_violations": {
+        "pre_existing_count": 0,
+        "unfixable_count": 0,
+        "router_introduced_count": 0
+      },
+      "difficulty": {},
+      "bounds": {},
+      "fanout": {
+        "total_smd_pins": 0,
+        "pins_to_escape": 0,
+        "escaped_count": 0
+      }
+    },
+    "filename": "FirstZ80.dsn",
+    "path": ""
+  },
+  "output": {
+    "size": 112526,
+    "crc32": 2804225583,
+    "format": "SES",
+    "statistics": {
+      "board": {},
+      "layers": {
+        "total_count": 2
+      },
+      "items": {},
+      "components": {
+        "total_count": 19
+      },
+      "pads": {},
+      "nets": {
+        "total_count": 99
+      },
+      "connections": {},
+      "traces": {
+        "total_count": 625
+      },
+      "bends": {},
+      "vias": {
+        "total_count": 77
+      },
+      "clearance_violations": {
+        "pre_existing_count": 0,
+        "unfixable_count": 0,
+        "router_introduced_count": 0
+      },
+      "difficulty": {},
+      "bounds": {},
+      "fanout": {
+        "total_smd_pins": 0,
+        "pins_to_escape": 0,
+        "escaped_count": 0
+      }
+    },
+    "filename": "FirstZ80.ses",
+    "path": ""
+  },
+  "router_settings": {
+    "autorouter": {
+      "enabled": true,
+      "algorithm": "freerouting-router",
+      "max_passes": 100,
+      "max_items": 2147483647,
+      "max_threads": 1,
+      "save_intermediate_stages": false,
+      "ignore_net_classes": []
+    },
+    "fanout": {
+      "enabled": false,
+      "max_passes": 20,
+      "max_items": 2147483647,
+      "max_milliseconds_per_pin": 10000,
+      "ripup_allowed": true,
+      "min_escape_length_mm": 2.5,
+      "max_escape_length_mm": 4.5,
+      "start_via_diameter_mm": 0.25,
+      "end_via_diameter_mm": 0.25,
+      "pin_sorting_order": "outer_first",
+      "fallback_to_board_vias": true
+    },
+    "copper_to_edge_clearance_um": 200.0,
+    "hole_clearance_um": 250.0,
+    "clearance_tolerance_um": 0.0,
+    "plane_nets": [],
+    "plane_as_obstacle": false,
+    "neck_width_um": 0.0,
+    "strict_drc": true,
+    "job_timeout": "00:10:00",
+    "validation_warnings": [],
+    "trace_pull_tight_accuracy": 500,
+    "allowed_via_types": true,
+    "automatic_neckdown": false,
+    "optimizer": {
+      "enabled": false,
+      "algorithm": "freerouting-optimizer",
+      "max_passes": 20,
+      "max_items": 2147483647,
+      "max_threads": 1,
+      "improvement_threshold": 1.0,
+      "enable_preflight_guards": true,
+      "max_consecutive_failures": 50,
+      "max_consecutive_failures_pass1": 12,
+      "additional_ripup_cost_factor_at_start": 10,
+      "trace_ripup_cost_factor": 0.6,
+      "max_autoroute_passes": 6
+    },
+    "scoring": {
+      "default_preferred_direction_trace_cost": 1.0,
+      "default_undesired_direction_trace_cost": 1.0,
+      "via_costs": 50,
+      "plane_via_costs": 5,
+      "start_ripup_costs": 100,
+      "default_bend_cost": 0.0,
+      "unrouted_net_penalty": 5000000.0,
+      "clearance_violation_penalty": 1000000.0,
+      "bend_penalty": 10.0
+    },
+    "router_scoring": {
+      "version": "V2_CONTINUOUS",
+      "unrouted_connection_weight": 1000.0,
+      "unrouted_free_fraction": 0.5,
+      "unrouted_first_half_weight": 333.33,
+      "unrouted_second_half_weight": 666.67,
+      "clearance_violation_count_weight": 25.0,
+      "clearance_violation_depth_weight": 300.0,
+      "clearance_violation_depth_scale": 1000.0
+    },
+    "optimizer_scoring": {
+      "version": "V2_LOWER_BOUND",
+      "excess_wire_length_weight": 1000.0,
+      "excess_via_weight": 2000.0,
+      "excess_bend_weight": 500.0,
+      "length_floor": 1.0,
+      "difficulty_scale_floor": 1.0
+    },
+    "max_threads": 1,
+    "layers": [
+      {
+        "routable": true,
+        "preferred_direction_horizontal": true,
+        "bend_cost": 0.0,
+        "preferred_direction_trace_cost": 1.0,
+        "undesired_direction_trace_cost": 2.5
+      },
+      {
+        "routable": true,
+        "preferred_direction_horizontal": false,
+        "bend_cost": 0.0,
+        "preferred_direction_trace_cost": 1.0,
+        "undesired_direction_trace_cost": 2.5
+      }
+    ]
+  },
+  "drc_settings": {
+    "include_warnings": true,
+    "include_errors": true,
+    "clearance_tolerance_um": 0.0
+  },
+  "resource_usage": {
+    "cpu_time": 135.79,
+    "max_memory": 77470.88,
+    "peak_memory": 697.94,
+    "io_read": 0.0,
+    "io_written": 0.0
+  },
+  "isCancelledByUser": false,
+  "current_pass": 26
+}

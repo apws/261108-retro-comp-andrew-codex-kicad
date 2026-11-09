@@ -1,0 +1,36 @@
+{
+  "method": "tools/call",
+  "params": {
+    "name": "update_job_settings",
+    "arguments": {
+      "path": {
+        "jobId": "dddcba05-4cbb-480f-b4ad-cf235bdbe6f3"
+      },
+      "body": {
+        "autorouter": {
+          "enabled": true,
+          "max_passes": 100,
+          "max_threads": 1,
+          "ignore_net_classes": []
+        },
+        "fanout": {
+          "enabled": false
+        },
+        "optimizer": {
+          "enabled": false,
+          "max_passes": 20,
+          "max_threads": 1,
+          "improvement_threshold": 1.0
+        },
+        "automatic_neckdown": false,
+        "copper_to_edge_clearance_um": 200,
+        "hole_clearance_um": 250,
+        "clearance_tolerance_um": 0,
+        "strict_drc": true,
+        "plane_nets": [],
+        "max_threads": 1,
+        "job_timeout": "00:10:00"
+      }
+    }
+  }
+}

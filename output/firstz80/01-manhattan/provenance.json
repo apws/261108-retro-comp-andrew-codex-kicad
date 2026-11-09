@@ -1,0 +1,12 @@
+{
+  "board": "firstz80/layouts/01-manhattan/FirstZ80.kicad_pcb",
+  "board_sha256": "5dce86ba98d13083af67f93c0f5bacdb09af59d197c81e16797dd67c9a0aa5e4",
+  "bottom_view": "Mirrored, viewed from underside.",
+  "track_segments": 2353,
+  "vias": 424,
+  "track_length_mm": 8613.255,
+  "layer_lengths_mm": {
+    "F.Cu": 5247.922,
+    "B.Cu": 3365.334
+  }
+}

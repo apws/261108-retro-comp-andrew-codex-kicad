@@ -1,0 +1,88 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-09T23:34:08",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "PTH inside courtyard",
+            "key": "pth_inside_courtyard"
+        },
+        {
+            "description": "NPTH inside courtyard",
+            "key": "npth_inside_courtyard"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.8",
+    "schematic_parity": [],
+    "source": "FirstZ80.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 1 [/A11] of U2",
+                    "pos": {
+                        "x": 68.805,
+                        "y": 87.635
+                    },
+                    "uuid": "84f3dbb6-aace-404b-bd9f-cb052d045496"
+                },
+                {
+                    "description": "PTH pad 23 [/A11] of U6",
+                    "pos": {
+                        "x": 104.365,
+                        "y": 100.315
+                    },
+                    "uuid": "ed93c8cc-9989-4829-8d9f-caaebb61b4aa"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 23 [/A11] of U6",
+                    "pos": {
+                        "x": 104.365,
+                        "y": 100.315
+                    },
+                    "uuid": "ed93c8cc-9989-4829-8d9f-caaebb61b4aa"
+                },
+                {
+                    "description": "PTH pad 23 [/A11] of U4",
+                    "pos": {
+                        "x": 124.685,
+                        "y": 100.34
+                    },
+                    "uuid": "f5741eff-ac50-447f-8a3d-814f061c8c12"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": []
+}

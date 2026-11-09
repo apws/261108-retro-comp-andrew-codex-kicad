@@ -1,0 +1,63 @@
+= Readable wiring cleanup and the separate 7805 supply schematic
+:title: {docname}
+:revdate: 2026-11-10
+:toc:
+
+== Result
+
+Our own wired A3 drawing has been cleaned up in place, retaining Falken's non-power component positions, values, footprints and capacitor refinements. A separate link:../schematics/03-schematic-7805/schematic-7805.kicad_pro[schematic-7805 project] extends that drawing with a protected nominal 9 V input and regulated +5 V supply. Neither drawing copies Andrew's schematic arrangement. The authoritative circuit in `design/` and the earlier four PCB projects remain intact.
+
+View the link:../output/pdf/Z80_Simple_Computer-wired-A3.pdf[cleaned original wired PDF] or the link:../output/pdf/schematic-7805.pdf[PSU variant PDF]. The corresponding link:../output/schematic-wired-a3/Z80_Simple_Computer.png[original PNG] and link:../output/schematic-7805/schematic-7805.png[PSU PNG] are also refreshed.
+
+== Mark's review implemented
+
+Mark's original words remain verbatim in link:261109-2306-REVIEW-Mark-schematic-readability.adoc[the review note]. The specific PPI reset-pin ambiguity was electrical drawing geometry, not a missing net connection. Its inward wire continuation has been replaced with one outward approach; the real reset branch now has an explicit dot in open wire space.
+
+The cleanup also moves the CPU read path outside its address-label corridor, clears the clock and control routes from component pin graphics, relocates crowded control labels, separates the oscillator supply annotation from CPU ground, and gives the MAX232 TTL/RS-232 signals distinct readable lanes. All non-power symbol/unit positions, component values and footprints in the original wired variant are preserved, including Falken's capacitor placement. Supply-port positions and selected fields were adjusted where needed for clarity.
+
+An independent pin-stroke geometry audit reports *134 wire/pin-stroke intersections before cleanup and zero afterwards*. Multiple pins can be crossed by one bad wire, so 134 is an intersection count, not 134 independent nets or electrical faults. The separate six-anchor finding in Mark's review was a narrower check for two wire directions meeting directly at a pin.
+
+The new audit checks actual visible component pin geometry, including the diode's rotation in the PSU variant. It is not a claim of exhaustive text/font collision detection. Enlarged SVG/PDF inspection remains part of the review.
+
+== Electrical checks
+
+[cols="2,1,1",options="header"]
+|===
+|Check |Cleaned original drawing |Separate PSU drawing
+|Components, including mounting holes |38 |44
+|Pin/net assignments |301 |315
+|Native ERC findings, all severities |0 |0
+|Wire intersections with component pin strokes |0 |0
+|Original 301 assignments preserved |Yes |Yes
+|Additional supply assignments |None |14, explicitly checked
+|===
+
+The original drawing also retains all 55 continuously drawn scalar signal nets and 95 correctly named address/data bus breakouts. Its project rules are unchanged. The PSU variant retains those existing connections and uses a separate expected-delta check; its project settings remain equal to the cleaned original.
+
+The exact pre-cleanup human-edited input is saved in link:../reports/schematic-wired-a3/cleanup-261109-2330/before/[the before snapshot]. See link:../reports/schematic-wired-a3/verification.json[original-drawing verification], link:../reports/schematic-wired-a3/cleanup-261109-2330/placement-preservation.json[placement preservation], link:../reports/schematic-wired-a3/cleanup-261109-2330/pin-clearance.json[pin clearance] and link:../reports/schematic-7805/verification.json[PSU verification]. The original generator's overwrite guard remains active.
+
+== The supply extension
+
+[cols="1,3",options="header"]
+|===
+|Part |Purpose
+|J6 |Nominal 9 V centre-positive barrel input; sleeve and mounting pin are GND.
+|D1, 1N5819 |Series reverse-polarity protection. Anode is `/VIN_9V`; cathode is `/VIN_PROTECTED`.
+|U9, LM7805 |Pin 1 protected input, pin 2 GND, pin 3 regulated +5 V.
+|C30, 100 nF |Raw-input bypass.
+|C31, 10 uF / 25 V |Protected-input reservoir; positive terminal faces the protected input.
+|C32, 10 uF / 16 V |Output reservoir; positive terminal faces +5 V.
+|J5 |Its existing +5V/GND pins are preserved, but its label is now *+5V OUTPUT* in this variant. J6 is the power input for the regulator experiment.
+|===
+
+The former +5 V PWR_FLAG was removed because U9 now drives that rail. The raw/protected input flags describe externally supplied power; they are not physical components. The original regulated-input variant remains available separately.
+
+Pin numbering was checked against https://www.ti.com/lit/ds/symlink/lm7800.pdf[TI's LM7805 family data]. Static checks do not establish a load/current rating, adequate heatsinking or an unrestricted 9-15 V input range. Regulator loss depends on input voltage, diode drop and load current; thermal and hardware verification remain outside this routing experiment.
+
+== Rechecking and future edits
+
+Use `tools/check_wired_schematic.py` for the original 301-assignment drawing after fresh native ERC/netlist exports. Use `tools/check_schematic_7805.py` for the 315-assignment supply variant after its own fresh exports. `tools/check_schematic_pin_clearance.py` adds an independent visual-geometry gate to both.
+
+The local cleanup tool edits selected objects in the preserved human drawing; it does not call the original schematic generator. The PSU builder refuses to overwrite an existing schematic. Preserve manual edits before any future repair, retain explicit expected circuit deltas, and inspect the final rendered sheet. A circuit being machine-readable is only one part of making it easy for another engineer to read.
+
+The FirstZ80 PCB experiments use Andrew's *full historical circuit*, including his 7805, EEPROM, LEDs, TTL connector and single IDC PPI connector. Our smaller PSU extension is a separate schematic experiment and is not silently substituted for that circuit.

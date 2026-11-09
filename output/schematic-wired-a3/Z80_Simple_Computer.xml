@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/home/falken/_/wrk/ver/261108-retro-comp-andrew-codex-kicad/schematics/02-wired-a3/Z80_Simple_Computer.kicad_sch</source>
-    <date>2026-11-09T15:56:03</date>
+    <date>2026-11-09T23:54:08</date>
     <tool>Eeschema 10.0.8</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -1085,7 +1085,7 @@
       <property name="ki_keywords" value="HCMOS not inverter"/>
       <property name="ki_fp_filters" value="DIP*W7.62mm*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>f0f01146-7fa0-5f6b-92e6-6772e421bd0f 5d69401e-6523-56f2-8c9f-a41c459120f1 dee9d7d9-7898-5527-aa40-36f6f67abd47 ce6e06bf-a1e4-54b0-8512-bcfcabdb3638 206e33c3-3217-5513-bc8b-9fb2760f7b36 a2cf2162-c4ee-5f63-82b4-89bf26848f41 02405c1a-932d-5858-a4ed-b52728b95b47</tstamps>
+      <tstamps>ce6e06bf-a1e4-54b0-8512-bcfcabdb3638 5d69401e-6523-56f2-8c9f-a41c459120f1 206e33c3-3217-5513-bc8b-9fb2760f7b36 f0f01146-7fa0-5f6b-92e6-6772e421bd0f dee9d7d9-7898-5527-aa40-36f6f67abd47 a2cf2162-c4ee-5f63-82b4-89bf26848f41 02405c1a-932d-5858-a4ed-b52728b95b47</tstamps>
       <units>
         <unit name="A">
           <pins>
@@ -1146,7 +1146,7 @@
       <property name="ki_keywords" value="TTL Or2"/>
       <property name="ki_fp_filters" value="DIP?14*"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>6068abaa-59a6-52c9-91ee-6d98e6f1dad1 7e285b1a-b3cc-5d5b-a506-04e8445f052c b2b49d96-e12f-5803-a8ca-8def53dd03e7 d0b05483-d8a0-5044-9fa9-e318f44858b3 2ea93ef9-7299-5be3-a8b5-67bf9d96b549</tstamps>
+      <tstamps>6068abaa-59a6-52c9-91ee-6d98e6f1dad1 7e285b1a-b3cc-5d5b-a506-04e8445f052c d0b05483-d8a0-5044-9fa9-e318f44858b3 b2b49d96-e12f-5803-a8ca-8def53dd03e7 2ea93ef9-7299-5be3-a8b5-67bf9d96b549</tstamps>
       <units>
         <unit name="A">
           <pins>

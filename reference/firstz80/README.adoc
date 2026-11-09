@@ -1,0 +1,14 @@
+= Historical FirstZ80 source provenance
+:title: {docname}
+
+Falken saved the Reddit printout and PCB WEBP under `../source/`. Those existing files led to https://www.reddit.com/r/homebrewcomputer/comments/19bka92/simple_homebrew_computer_for_beginners/[Andrew Lynch's Reddit discussion] and its linked FirstZ80 design in `lynchaj/duodyne`.
+
+The files under `66a5a63/` were recovered from https://github.com/lynchaj/duodyne/tree/66a5a63fd8338d12c115bc2bee5dff2f435afae4/%21Development/FirstZ80[commit 66a5a63fd8338d12c115bc2bee5dff2f435afae4], dated 2024-01-21 UTC. Its supplied `FirstZ80.jpg` visually matches the PCB render Falken saved. This freezes the historical pictured design rather than Andrew's present work or later FirstZ80 revisions.
+
+Native source schematic, PCB and project bytes are preserved. The `.rules` file was re-fetched as base64 to preserve its exact trailing bytes and checked against Git blob `a7289f8bca0e4cce4406dd638d0430c4c84f2c10`. That Specctra/FreeRouting-style file is evidence of a routing-tool workflow; it does not establish which individual tracks were placed manually.
+
+The source hashes, proven net-name bijection and unchanged geometry are recorded in link:../../firstz80/checkpoint/checkpoint.json[the new comparison checkpoint]. The independent normalized copy is under `../../firstz80/reference-normalized/`; it must not replace these historical source files.
+
+`UPSTREAM-LICENSE-current.txt` preserves the repository's currently available BSD 3-Clause license, carrying a 2026 lynchaj copyright notice. It was not found at this historical commit and must not be described as a license file shipped in the 2024 snapshot. The inherited KiCad library artwork also retains the applicable KiCad library licensing context; see the existing vendored library notices. Preserve Andrew's attribution when redistributing the reference and derived placement.
+
+No claim of original placement authorship or hardware qualification is made for this comparison.

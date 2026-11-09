@@ -1,0 +1,7 @@
+{
+  "schematic": "schematics/03-schematic-7805/schematic-7805.kicad_sch",
+  "checked_component_pin_strokes": 315,
+  "wire_pin_stroke_intersections": 0,
+  "findings": [],
+  "scope": "Geometry of non-power-symbol pin strokes. Text and complete symbol-body clearance also require rendered review."
+}

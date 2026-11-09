@@ -1,0 +1,40 @@
+{
+  "source": "schematics/02-wired-a3",
+  "source_sha256": "53064f333e54348b7e521ad3d2d471a48df3e99bff61f2227304fda2844dd127",
+  "expected_added_pin_assignments": {
+    "U9": {
+      "1": "/VIN_PROTECTED",
+      "2": "GND",
+      "3": "+5V"
+    },
+    "D1": {
+      "1": "/VIN_PROTECTED",
+      "2": "/VIN_9V"
+    },
+    "J6": {
+      "1": "/VIN_9V",
+      "2": "GND",
+      "MP": "GND"
+    },
+    "C30": {
+      "1": "/VIN_9V",
+      "2": "GND"
+    },
+    "C31": {
+      "1": "/VIN_PROTECTED",
+      "2": "GND"
+    },
+    "C32": {
+      "1": "+5V",
+      "2": "GND"
+    }
+  },
+  "expected_changed_component_values": {
+    "J5": "+5V OUTPUT"
+  },
+  "removed_power_symbols": [
+    "#FLG01",
+    "#PWR045"
+  ],
+  "source_circuit_pin_assignments_preserved": true
+}

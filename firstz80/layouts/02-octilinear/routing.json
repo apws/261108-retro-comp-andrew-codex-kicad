@@ -1,0 +1,31 @@
+{
+  "status": "validated",
+  "method": "octilinear-hybrid",
+  "algorithm": "Fresh Manhattan A* seed, then native-DRC-gated 45-degree corner refinement",
+  "direct_eight_direction_attempts_completed": false,
+  "seed_report": "reports/firstz80/02-octilinear/attempt-92",
+  "seed_board_sha256": "169803e26a40df7072cedad787a369489e3dae0c175af9f082bd5dc7c7053a2a",
+  "seed_routing_seconds": 136.928,
+  "refinement_seconds": 1.808,
+  "accepted_corners": 160,
+  "rejected_corner_proposals": 0,
+  "vias_preserved_from_own_seed": true,
+  "source_copper_reused": false,
+  "placement_and_pad_geometry_unchanged": true,
+  "violations": 0,
+  "unconnected": 0,
+  "parity": 0,
+  "checkpoint_sha256": {
+    "FirstZ80.kicad_sch": "786716d3bc418bf198092ef25c052e0e1244e1759ccfbc1deba8427e0a118206",
+    "FirstZ80.kicad_pcb": "9388b78e6601f2aae93b3893dd3356a0551251cfe701d67c898155127841026d",
+    "FirstZ80.kicad_pro": "dcd9620b7bc1a0e7742e5093f7f46c45d4b201b08c0c6780c75856ff5229cad1"
+  },
+  "board_sha256": "d1f9a9760694a4d8c44febd18cbc1d30b8b870276fe6fa6298e2949e25a57054",
+  "track_segments": 2513,
+  "vias": 424,
+  "track_length_mm": 8590.527,
+  "layer_lengths_mm": {
+    "F.Cu": 5233.511,
+    "B.Cu": 3357.016
+  }
+}

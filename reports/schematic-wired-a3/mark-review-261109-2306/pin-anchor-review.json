@@ -1,0 +1,347 @@
+{
+  "schematic_sha256": "b5ab1a59ff58a9e4e2632a093ed8b1fc5d4799a8a48e9c9ada20fd35b38152fd",
+  "native_erc_violations": 0,
+  "native_pin_assignments": 301,
+  "native_netlist_exact_match": true,
+  "components_unchanged": true,
+  "ppi_reset": {
+    "ref": "U4",
+    "pin": "35",
+    "name": "RESET",
+    "at_mm": [
+      224.79,
+      60.96
+    ],
+    "wire_directions": [
+      "L",
+      "R"
+    ],
+    "explicit_dot": false,
+    "wires": [
+      {
+        "uuid": "052068f2-2eb7-5626-bed4-fce82cdc3a39",
+        "ends_mm": [
+          [
+            222.25,
+            60.96
+          ],
+          [
+            224.79,
+            60.96
+          ]
+        ]
+      },
+      {
+        "uuid": "85c493c6-480e-58ef-8f2f-f5f577c27736",
+        "ends_mm": [
+          [
+            224.79,
+            60.96
+          ],
+          [
+            227.33,
+            60.96
+          ]
+        ]
+      }
+    ]
+  },
+  "ppi_reset_net": "/RESET_H",
+  "ppi_reset_net_pins": [
+    [
+      "U4",
+      "35"
+    ],
+    [
+      "U5",
+      "35"
+    ],
+    [
+      "U7",
+      "2"
+    ],
+    [
+      "U7",
+      "3"
+    ]
+  ],
+  "interpretation": "Six anchors have collinear left/right wire continuations over drawn symbol pins. This is not six missing electrical connections. All six are also present in the original machine drawing.",
+  "pin_anchors_with_multiple_wire_directions": [
+    {
+      "ref": "U5",
+      "pin": "16",
+      "name": "XIN",
+      "at_mm": [
+        326.39,
+        99.06
+      ],
+      "wire_directions": [
+        "L",
+        "R"
+      ],
+      "explicit_dot": false,
+      "wires": [
+        {
+          "uuid": "a605f407-6c2f-5e00-b802-10199454f112",
+          "ends_mm": [
+            [
+              323.85,
+              99.06
+            ],
+            [
+              326.39,
+              99.06
+            ]
+          ]
+        },
+        {
+          "uuid": "cb8a43a2-ef53-5b36-9fd7-2132626886d2",
+          "ends_mm": [
+            [
+              326.39,
+              99.06
+            ],
+            [
+              327.66,
+              99.06
+            ]
+          ]
+        }
+      ],
+      "original_machine_drawing_wire_directions": [
+        "L",
+        "R"
+      ]
+    },
+    {
+      "ref": "U4",
+      "pin": "6",
+      "name": "~{CS}",
+      "at_mm": [
+        224.79,
+        68.58
+      ],
+      "wire_directions": [
+        "L",
+        "R"
+      ],
+      "explicit_dot": false,
+      "wires": [
+        {
+          "uuid": "a61edcd8-ac72-5d49-8aaf-c15504f98691",
+          "ends_mm": [
+            [
+              224.79,
+              68.58
+            ],
+            [
+              226.06,
+              68.58
+            ]
+          ]
+        },
+        {
+          "uuid": "aa2fb397-4c6b-5f9c-9da7-de00d6c5ff23",
+          "ends_mm": [
+            [
+              222.25,
+              68.58
+            ],
+            [
+              224.79,
+              68.58
+            ]
+          ]
+        }
+      ],
+      "original_machine_drawing_wire_directions": [
+        "L",
+        "R"
+      ]
+    },
+    {
+      "ref": "U4",
+      "pin": "35",
+      "name": "RESET",
+      "at_mm": [
+        224.79,
+        60.96
+      ],
+      "wire_directions": [
+        "L",
+        "R"
+      ],
+      "explicit_dot": false,
+      "wires": [
+        {
+          "uuid": "052068f2-2eb7-5626-bed4-fce82cdc3a39",
+          "ends_mm": [
+            [
+              222.25,
+              60.96
+            ],
+            [
+              224.79,
+              60.96
+            ]
+          ]
+        },
+        {
+          "uuid": "85c493c6-480e-58ef-8f2f-f5f577c27736",
+          "ends_mm": [
+            [
+              224.79,
+              60.96
+            ],
+            [
+              227.33,
+              60.96
+            ]
+          ]
+        }
+      ],
+      "original_machine_drawing_wire_directions": [
+        "L",
+        "R"
+      ]
+    },
+    {
+      "ref": "U8",
+      "pin": "9",
+      "name": "",
+      "at_mm": [
+        167.64,
+        158.75
+      ],
+      "wire_directions": [
+        "L",
+        "R"
+      ],
+      "explicit_dot": false,
+      "wires": [
+        {
+          "uuid": "e198e936-759c-587e-9498-643ff6ed3b89",
+          "ends_mm": [
+            [
+              24.13,
+              158.75
+            ],
+            [
+              167.64,
+              158.75
+            ]
+          ]
+        },
+        {
+          "uuid": "ec557bc2-c08f-5dd4-92c7-0e3cce2b61cd",
+          "ends_mm": [
+            [
+              167.64,
+              158.75
+            ],
+            [
+              168.91,
+              158.75
+            ]
+          ]
+        }
+      ],
+      "original_machine_drawing_wire_directions": [
+        "L",
+        "R"
+      ]
+    },
+    {
+      "ref": "U8",
+      "pin": "1",
+      "name": "",
+      "at_mm": [
+        167.64,
+        201.93
+      ],
+      "wire_directions": [
+        "L",
+        "R"
+      ],
+      "explicit_dot": false,
+      "wires": [
+        {
+          "uuid": "a8aa3ab5-0801-57c9-a512-36c7bc3186d3",
+          "ends_mm": [
+            [
+              95.25,
+              201.93
+            ],
+            [
+              167.64,
+              201.93
+            ]
+          ]
+        },
+        {
+          "uuid": "e07194f3-400b-5fe0-8116-f149077bdb57",
+          "ends_mm": [
+            [
+              167.64,
+              201.93
+            ],
+            [
+              168.91,
+              201.93
+            ]
+          ]
+        }
+      ],
+      "original_machine_drawing_wire_directions": [
+        "L",
+        "R"
+      ]
+    },
+    {
+      "ref": "U3",
+      "pin": "20",
+      "name": "~{CE}",
+      "at_mm": [
+        101.6,
+        106.68
+      ],
+      "wire_directions": [
+        "L",
+        "R"
+      ],
+      "explicit_dot": false,
+      "wires": [
+        {
+          "uuid": "adf80735-e7d4-5cda-ab79-7da6c2bfd257",
+          "ends_mm": [
+            [
+              101.6,
+              106.68
+            ],
+            [
+              102.87,
+              106.68
+            ]
+          ]
+        },
+        {
+          "uuid": "b9a08cc7-cc4c-5788-abda-8ea129854f94",
+          "ends_mm": [
+            [
+              99.06,
+              106.68
+            ],
+            [
+              101.6,
+              106.68
+            ]
+          ]
+        }
+      ],
+      "original_machine_drawing_wire_directions": [
+        "L",
+        "R"
+      ]
+    }
+  ]
+}
