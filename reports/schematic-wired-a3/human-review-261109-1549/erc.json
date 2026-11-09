@@ -1,0 +1,219 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-09T15:50:44",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.8",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/83e47536-9ecc-5375-8fab-ffad80dbd252",
+            "violations": [
+                {
+                    "description": "Label not connected",
+                    "items": [
+                        {
+                            "description": "Label 'TX_RS232'",
+                            "pos": {
+                                "x": 344.17,
+                                "y": 218.44
+                            },
+                            "uuid": "fdc37211-62ee-584a-83fe-9cf3d21dc7b3"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "label_dangling"
+                },
+                {
+                    "description": "Label not connected",
+                    "items": [
+                        {
+                            "description": "Label 'DTR_RS232'",
+                            "pos": {
+                                "x": 344.17,
+                                "y": 223.52
+                            },
+                            "uuid": "95524411-2064-589f-a174-69693ed09e69"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "label_dangling"
+                },
+                {
+                    "description": "Label not connected",
+                    "items": [
+                        {
+                            "description": "Label 'RX_RS232'",
+                            "pos": {
+                                "x": 344.17,
+                                "y": 231.14
+                            },
+                            "uuid": "8a93a45d-ae91-5751-9d48-d4ab4516c0c5"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "label_dangling"
+                },
+                {
+                    "description": "Label not connected",
+                    "items": [
+                        {
+                            "description": "Label 'DSR_RS232'",
+                            "pos": {
+                                "x": 344.17,
+                                "y": 234.95
+                            },
+                            "uuid": "039e5d0e-40ad-51a5-b8e5-fca4ad075a2d"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "label_dangling"
+                },
+                {
+                    "description": "Pin not connected",
+                    "items": [
+                        {
+                            "description": "Symbol C24 Pin 2 [Passive, Line]",
+                            "pos": {
+                                "x": 355.6,
+                                "y": 222.25
+                            },
+                            "uuid": "f6e09464-1724-5ec8-8df7-20912739eabb"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_connected"
+                },
+                {
+                    "description": "Pins of type Output and Power output are connected",
+                    "items": [
+                        {
+                            "description": "Symbol U5 Pin 33 [~{DTR}, Output, Line]",
+                            "pos": {
+                                "x": 377.19,
+                                "y": 81.28
+                            },
+                            "uuid": "20727949-9c96-5c1e-8091-2a815dbc74bf"
+                        },
+                        {
+                            "description": "Symbol #FLG01 Pin 1 [Power output, Line]",
+                            "pos": {
+                                "x": 378.46,
+                                "y": 35.56
+                            },
+                            "uuid": "2987e149-73e9-5584-a41f-e27f4804c5eb"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_to_pin"
+                },
+                {
+                    "description": "Label not connected",
+                    "items": [
+                        {
+                            "description": "Label 'RX_TTL'",
+                            "pos": {
+                                "x": 377.19,
+                                "y": 97.79
+                            },
+                            "uuid": "34a28700-be73-5a59-852c-0d280f6c2722"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "label_dangling"
+                },
+                {
+                    "description": "Label not connected",
+                    "items": [
+                        {
+                            "description": "Label 'TX_TTL'",
+                            "pos": {
+                                "x": 377.19,
+                                "y": 104.14
+                            },
+                            "uuid": "3bfb5b9d-b7cd-533c-971c-46e6807a13cb"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "label_dangling"
+                },
+                {
+                    "description": "Unconnected wire endpoint",
+                    "items": [
+                        {
+                            "description": "Vertical Wire, length 11.43 mm",
+                            "pos": {
+                                "x": 342.9,
+                                "y": 213.36
+                            },
+                            "uuid": "5c3d027b-2747-53e8-b16a-accbc9c25d66"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "unconnected_wire_endpoint"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Label 'VS_MINUS'",
+                            "pos": {
+                                "x": 344.17,
+                                "y": 213.36
+                            },
+                            "uuid": "e0fc7362-f2f4-5a09-9e73-c93e6f926f4f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Both +5V and DTR_TTL are attached to the same items; +5V will be used in the netlist",
+                    "items": [
+                        {
+                            "description": "Symbol #PWR010 Pin 1 [Power input, Line]",
+                            "pos": {
+                                "x": 27.94,
+                                "y": 96.52
+                            },
+                            "uuid": "568721d6-078b-5ee2-bd60-a3b395c46d99"
+                        },
+                        {
+                            "description": "Label 'DTR_TTL'",
+                            "pos": {
+                                "x": 379.73,
+                                "y": 81.28
+                            },
+                            "uuid": "fe36fc36-bbd9-553b-be9a-145256e65ddb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "multiple_net_names"
+                }
+            ]
+        }
+    ],
+    "source": "Z80_Simple_Computer.kicad_sch"
+}

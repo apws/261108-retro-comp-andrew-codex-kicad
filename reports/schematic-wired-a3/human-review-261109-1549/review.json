@@ -1,0 +1,109 @@
+{
+  "status": "repaired-and-verified",
+  "baseline_commit": "1184700",
+  "as_edited_errors": 8,
+  "as_edited_warnings": 3,
+  "as_edited_pin_net_differences": [
+    {
+      "reference": "C24",
+      "pin": "2",
+      "before": "/VS_MINUS",
+      "as_edited": "unconnected-(C24-Pad2)"
+    },
+    {
+      "reference": "J1",
+      "pin": "2",
+      "before": "/RX_RS232",
+      "as_edited": "Net-(U6-R1IN)"
+    },
+    {
+      "reference": "J1",
+      "pin": "3",
+      "before": "/TX_RS232",
+      "as_edited": "Net-(U6-T1OUT)"
+    },
+    {
+      "reference": "J1",
+      "pin": "4",
+      "before": "/DTR_RS232",
+      "as_edited": "Net-(U6-T2OUT)"
+    },
+    {
+      "reference": "J1",
+      "pin": "6",
+      "before": "/DSR_RS232",
+      "as_edited": "Net-(U6-R2IN)"
+    },
+    {
+      "reference": "U5",
+      "pin": "10",
+      "before": "/RX_TTL",
+      "as_edited": "Net-(U5-SIN)"
+    },
+    {
+      "reference": "U5",
+      "pin": "11",
+      "before": "/TX_TTL",
+      "as_edited": "Net-(U5-SOUT)"
+    },
+    {
+      "reference": "U5",
+      "pin": "33",
+      "before": "/DTR_TTL",
+      "as_edited": "+5V"
+    },
+    {
+      "reference": "U6",
+      "pin": "10",
+      "before": "/DTR_TTL",
+      "as_edited": "+5V"
+    },
+    {
+      "reference": "U6",
+      "pin": "11",
+      "before": "/TX_TTL",
+      "as_edited": "Net-(U5-SOUT)"
+    },
+    {
+      "reference": "U6",
+      "pin": "12",
+      "before": "/RX_TTL",
+      "as_edited": "Net-(U5-SIN)"
+    },
+    {
+      "reference": "U6",
+      "pin": "13",
+      "before": "/RX_RS232",
+      "as_edited": "Net-(U6-R1IN)"
+    },
+    {
+      "reference": "U6",
+      "pin": "14",
+      "before": "/TX_RS232",
+      "as_edited": "Net-(U6-T1OUT)"
+    },
+    {
+      "reference": "U6",
+      "pin": "7",
+      "before": "/DTR_RS232",
+      "as_edited": "Net-(U6-T2OUT)"
+    },
+    {
+      "reference": "U6",
+      "pin": "8",
+      "before": "/DSR_RS232",
+      "as_edited": "Net-(U6-R2IN)"
+    }
+  ],
+  "repaired_pin_net_differences": 0,
+  "checked_pin_assignments": 301,
+  "repaired_erc_findings": 0,
+  "human_placement_preserved": true,
+  "generated_overwrite_guard_retained": true,
+  "repair_objects": {
+    "wires_modified": 4,
+    "labels_reattached": 6,
+    "redundant_junctions_removed": 2
+  },
+  "review_note": "docs/261109-1549-REVIEW-human-schematic-corrections.adoc"
+}

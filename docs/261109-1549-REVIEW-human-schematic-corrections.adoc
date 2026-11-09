@@ -1,0 +1,88 @@
+= Falken's schematic corrections and the human review
+:title: {docname}
+:revdate: 2026-11-09
+:toc:
+
+== Outcome
+
+Falken reviewed the single-A3 wired schematic committed by Codex as `1184700`, adjusted its presentation in KiCad and requested a comparison and electrical recheck. The human-edited layout is retained, with minimal repairs to two unintended wiring changes and six detached net labels.
+
+The current link:../schematics/02-wired-a3/Z80_Simple_Computer.kicad_pro[KiCad project] is now a verified *human-edited* schematic. Its link:../output/pdf/Z80_Simple_Computer-wired-A3.pdf[PDF] and link:../output/schematic-wired-a3/Z80_Simple_Computer.png[PNG preview] show the repaired result. All 301 pin assignments again match the committed circuit, component values and footprints are unchanged, and ERC has zero findings. All 55 scalar signal nets retain continuous drawn paths; all 95 address/data breakouts reach their correct buses. The original authoritative schematic and all four PCB variants are unchanged.
+
+== The human corrections retained
+
+[cols="1,3",options="header"]
+|===
+|Area |Observed correction retained
+|Power input |J5 and its associated +5V source symbols/flag were moved to the top-right area, giving the supply input its own clear location.
+|CPU oscillator |Y1 and its supply symbols were moved closer to the CPU; its reference/value positions were adjusted to keep the frequency readable.
+|Reset |SW1 and its ground connection were moved upward and left, shortening the visible reset-switch arrangement.
+|Unused inverter units |U7E and U7F, including their ground connections and fields, were moved upward away from the bypass-row caption.
+|MAX232 capacitors |C20 was brought closer to U6; C22 was moved down/left; C23 and C24 were moved left. Their reference/value fields were adjusted for the surrounding wires.
+|Supply stubs |Several power and ground symbols were brought closer to their pins. These moves are retained after checking their actual net membership.
+|Signal paths |Local wire paths were tidied, including the RAM/control and serial areas. The post-repair netlist confirms the intended circuit is preserved.
+|Labels and fields |J1's reference and several supply labels were repositioned. Clock and serial signal labels were adjusted; six detached serial labels were subsequently reattached as described below.
+|Section heading |The reset/clock/decode heading was moved from the area below the bus toward the reset circuitry.
+|===
+
+Nine non-power symbol/unit instances changed position: Y1, SW1, J5, C20, C22, C23, C24 and the two unused U7 units. No component reference, value or footprint was changed. The full coordinate comparison is in link:../reports/schematic-wired-a3/human-review-261109-1549/semantic-diff.json[the semantic difference report].
+
+== Save-format differences are not all human design changes
+
+KiCad rewrote the generated compact S-expressions into its native multi-line format: the schematic grew from 989 to 23,693 lines before repairs. The saved wire count changed from 531 to 380, while the bus and entry counts stayed at 20 and 95. Collinear wire consolidation and serialization make raw line/segment counts unsuitable for deciding whether connectivity changed.
+
+The saved file also records 69 previously left-justified local labels with 180-degree orientation. Their text stayed the same; only eight label anchors changed position in the comparison. These saved orientation differences are recorded without assuming that Falken manually rotated every label.
+
+The project file acquired four metadata changes: IPC2581 schematic revision `W1`, the top-level sheet UUID, the root sheet UUID and the root sheet name. The checker compares every other project setting against the original. ERC policies, exclusions, netclasses and board rules were not relaxed.
+
+== Electrical findings and minimal repairs
+
+The exact input supplied for review is preserved as link:../reports/schematic-wired-a3/human-review-261109-1549/as-edited/Z80_Simple_Computer.kicad_pro[the as-edited project], with file hashes. Its link:../reports/schematic-wired-a3/human-review-261109-1549/erc.json[initial ERC report] contained eight errors and three warnings. Its native netlist still contained 301 pin assignments, but 15 pin-to-net names differed from the committed baseline. Twelve of those differences were name losses on six still-wired serial signals; three reflected actual wiring changes.
+
+[cols="1,2,3",options="header"]
+|===
+|Finding |Effect |Repair
+|C22 supply joined DTR_TTL |Moving the supply bypass into the serial routing connected U5 pin 33 and U6 pin 10 to +5V. ERC identified an output-to-power-output connection and competing net names. |Kept C22 in its new position. Rerouted its short +5V feed on a separate path at x=394.97 mm and removed the two now-redundant junction dots on the DTR route.
+|C24 pin 2 disconnected |C24's negative terminal was no longer connected to `VS_MINUS`. The upper end of the moved wire met the interior of another segment without a valid saved join. |Moved the end of that short path onto the existing `VS_MINUS` endpoint at (344.17, 213.36) mm. C24 remains at Falken's new position, with pin 1 at GND and pin 2 at VS_MINUS.
+|Six detached serial labels |`TX_TTL`, `RX_TTL`, `TX_RS232`, `RX_RS232`, `DTR_RS232` and `DSR_RS232` had anchors off their wires. The direct signal wires still existed, but the exported names became autogenerated. |Placed the labels on the corresponding continuous runs, with spacing that keeps the names clear of adjacent pins and paths. No new label-only signal connections were introduced.
+|===
+
+The repair changed four wire objects, six label objects and removed two redundant junction objects. It did not regenerate the drawing or reset Falken's presentation changes. link:../reports/schematic-wired-a3/human-review-261109-1549/repairs.json[The repair log] records the exact objects and coordinates.
+
+The repaired link:../reports/schematic-wired-a3/human-review-261109-1549/repaired-erc.json[ERC report] contains zero findings. Its link:../reports/schematic-wired-a3/human-review-261109-1549/repaired-netlist.xml[native netlist] matches the committed pin-to-net mapping exactly. link:../reports/schematic-wired-a3/verification.json[The independent check] additionally verifies drawn scalar paths, bus breakouts, values, footprints and preservation of the existing boards. The PDF was re-exported, rendered with Poppler and visually reviewed after the repairs.
+
+== What the label attachment means
+
+A KiCad net label is an electrical object. Its anchor must touch the intended wire or pin; the nearby text alone does not establish a connection. Matching attached labels can connect physically separate wire groups. Moving a label away from a direct pin-to-pin wire can merely remove a useful name, whereas moving a label that provides the only link can break the circuit.
+
+A crossing, a T-join and a wire endpoint also need different treatment. A dot should represent a real join; a plain crossing should remain unjoined. Native ERC and netlist comparison distinguish an attractive-looking path from a correctly connected one.
+
+The original GIF leaves most address/data connections implicit and visibly draws the scalar support signals. This wired variant makes the A/D groups explicit with native buses and named entries. Standard supply symbols remain appropriate. Its purpose is readable engineering communication as well as a correct machine-readable netlist. Falken emphasized that this visual work is a craft, not a competition with the original drawing or a prerequisite for every future PCB experiment.
+
+== Compact reminders for the next session
+
+* Preserve the human-edited file. Do not rerun the original drawing generator over it or replace `generated_sha256` with a human-edit hash. The provenance now records a separate manual-review hash; the original overwrite guard remains active.
+* Before a review or repair, preserve the saved input and its hashes. Use committed `1184700` for the original machine drawing; the as-edited snapshot above records Falken's first cleanup.
+* Compare symbols, coordinates and native netlists. Do not interpret KiCad's large formatting diff or fewer collinear segments as thousands of intentional edits or missing wires.
+* Check the actual label anchor after every label move. Text may look adjacent while its connection is absent. Keep names on spacious runs rather than between tightly spaced pin numbers and wire corners.
+* Recheck moved supply branches against signal wires. Here C22 must connect +5V to GND, and C24 must connect GND at pin 1 to VS_MINUS at pin 2; DTR_TTL must remain a signal between U5.33 and U6.10.
+* Run native ERC with all severities and export a fresh netlist after visual edits. Compare all 301 pin assignments and all values/footprints for this unchanged-circuit experiment. Do not suppress findings to make a cosmetic revision pass.
+* Keep the independent drawn-path checks: 55 continuous scalar signal nets and 95 correct bus breakouts in the current circuit. Permit labels on the interior of a native merged wire without falsely treating them as detached.
+* Refresh SVG, PNG and PDF only after validation, then inspect the actual render. Keep readable spacing and avoid replacing human refinements with an automatic re-layout.
+* Keep the label-oriented authoritative circuit and completed PCB experiments intact. Do not propagate the human drawing into their frozen schematic snapshots.
+* New AsciiDoc notes use `YYMMDD-HHMM` and `:title: {docname}`. Preserve Falken / https://mixworx.net[mixworx.net] rendering conventions. Commit only the reviewed task files; leave unrelated PDFs and editor history alone.
+
+The project link:../AGENTS.md[AGENTS.md] points future coding sessions to these reminders.
+
+== Rechecking later edits
+
+Export the current netlist and ERC report first. A previously reviewed version can be rechecked with the final command below. For a newly edited version, use `--accept-manual` only as part of an intentional review; it records the current hashes only after all checks pass.
+
+[source,shell]
+----
+kicad-cli sch export netlist --format kicadxml --output output/schematic-wired-a3/Z80_Simple_Computer.xml schematics/02-wired-a3/Z80_Simple_Computer.kicad_sch
+kicad-cli sch erc --format json --severity-all --exit-code-violations --output reports/schematic-wired-a3/erc.json schematics/02-wired-a3/Z80_Simple_Computer.kicad_sch
+/usr/bin/python3 tools/check_wired_schematic.py
+----
+
+These are static electrical/drawing checks. They do not qualify hardware, reset timing or signal integrity.

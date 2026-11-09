@@ -4,7 +4,9 @@
 Run native KiCad ERC and netlist export before this command. Scalar path checks
 ignore net labels: actual wire geometry must connect all pins on each signal.
 """
+import argparse
 import collections
+import copy
 import hashlib
 import json
 import re
@@ -71,6 +73,10 @@ def graph(segments, connections):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--accept-manual', action='store_true',
+                        help='record the current manually edited drawing after all checks pass')
+    args = parser.parse_args()
     path = VARIANT / (NAME + '.kicad_sch')
     tree = k.parse(path.read_text())
     assert k.atom(k.kid(tree, 'paper')[1]) == 'A3'
@@ -115,6 +121,17 @@ def main():
         entries.append((a, (a[0] + delta[0], a[1] + delta[1])))
     wg = graph(wires, all_points | junctions | {a for a, b in entries})
     bg = graph(buses, junctions | {b for a, b in entries})
+    def wire_groups_at(p):
+        # KiCad may merge collinear runs across label anchors when saving.
+        # Locate such a label on its segment without using it to join wires.
+        if p in wg:
+            return {wg[p]}
+        return {wg[a] for a, b in wires if
+                min(a[0], b[0]) <= p[0] <= max(a[0], b[0]) and
+                min(a[1], b[1]) <= p[1] <= max(a[1], b[1]) and
+                (a[0] == b[0] == p[0] or a[1] == b[1] == p[1])}
+    member_labels = [(name, wire_groups_at(p)) for name, p in labels
+                     if re.fullmatch('[AD][0-9]+', name)]
     by_net = collections.defaultdict(list)
     for key, name in actual_pins.items():
         by_net[name].append(key)
@@ -135,7 +152,7 @@ def main():
                 hits = [(a, b) for a, b in entries if a in wg and wg[a] == wg[p]]
                 assert hits and all(bg.get(b) == bus_roots[bus_name] for a, b in hits), key
                 # The member name must be present on the physical breakout.
-                assert any(name == bare and q in wg and wg[q] == wg[p] for name, q in labels), key
+                assert any(name == bare and groups == {wg[p]} for name, groups in member_labels), key
             bus_members[bare] = len(keys)
         else:
             assert all(pins[key] in wg for key in keys), (net, keys)
@@ -149,9 +166,23 @@ def main():
         assert digest(ROOT / name) == expected, f'Existing board changed: {name}'
     cp = json.loads((ROOT / 'checkpoints/01-codex-placed-unrouted/checkpoint.json').read_text())
     assert digest(ROOT / 'design' / (NAME + '.kicad_sch')) == cp['files_sha256'][NAME + '.kicad_sch']
-    assert digest(VARIANT / (NAME + '.kicad_pro')) == cp['files_sha256'][NAME + '.kicad_pro']
+    base_project = json.loads((ROOT / 'checkpoints/01-codex-placed-unrouted' / (NAME + '.kicad_pro')).read_text())
+    project_path = VARIANT / (NAME + '.kicad_pro')
+    project = json.loads(project_path.read_text())
+    protected = copy.deepcopy(project)
+    # Native Eeschema records the root sheet and revision on save. These four
+    # metadata leaves are unrelated to ERC, netclasses or board design rules.
+    protected['board']['ipc2581']['sch_revision'] = base_project['board']['ipc2581']['sch_revision']
+    protected['schematic']['top_level_sheets'][0]['uuid'] = base_project['schematic']['top_level_sheets'][0]['uuid']
+    protected['sheets'][0][0] = base_project['sheets'][0][0]
+    protected['sheets'][0][1] = base_project['sheets'][0][1]
+    assert protected == base_project, 'Project rules/settings changed beyond save metadata'
     meta = json.loads((VARIANT / 'provenance.json').read_text())
-    assert meta['generated_sha256'] == digest(path)
+    manual = digest(path) != meta['generated_sha256']
+    if manual and not args.accept_manual:
+        record = meta.get('manual_review', {})
+        assert record.get('schematic_sha256') == digest(path), 'Human edits require review with --accept-manual'
+        assert record.get('project_sha256') == digest(project_path), 'Project changed after human review'
     assert meta['circuit_spec_sha256'] == digest(ROOT / 'design/circuit.json')
     assert meta['source_schematic_sha256'] == digest(ROOT / 'design' / (NAME + '.kicad_sch'))
     result = dict(status='pass', paper='A3', sheets=1,
@@ -163,10 +194,20 @@ def main():
                   separate_address_and_data_bus_components=True,
                   source_schematic_and_all_four_pcb_variants_unchanged=True,
                   schematic_sha256=digest(path),
+                  project_sha256=digest(project_path),
+                  project_rules_unchanged=True,
+                  drawing_ownership='human-edited' if manual else 'generated',
                   scalar_path_pin_counts=scalar, bus_member_pin_counts=bus_members,
                   scope='Drawing/connectivity verification; no new hardware or timing qualification.')
     (REPORT / 'verification.json').write_text(json.dumps(result, indent=2) + '\n')
-    meta.update(status='wired-verified',verification='reports/schematic-wired-a3/verification.json')
+    meta.update(status='human-reviewed-verified' if manual else 'wired-verified',
+                verification='reports/schematic-wired-a3/verification.json')
+    if manual:
+        review = dict(meta.get('manual_review', {}))
+        review.update(schematic_sha256=digest(path), project_sha256=digest(project_path),
+                      original_generated_sha256=meta['generated_sha256'],
+                      note='Validated manually edited schematic; generator overwrite guard stays active.')
+        meta.update(ownership='human-edited', manual_review=review)
     (VARIANT / 'provenance.json').write_text(json.dumps(meta,indent=2)+'\n')
     print(json.dumps(result, indent=2))
 

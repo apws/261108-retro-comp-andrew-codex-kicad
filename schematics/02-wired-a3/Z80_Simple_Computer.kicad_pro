@@ -260,7 +260,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": ""
+      "sch_revision": "W1"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -719,7 +719,7 @@
       {
         "filename": "Z80_Simple_Computer.kicad_sch",
         "name": "Z80_Simple_Computer",
-        "uuid": "00000000-0000-0000-0000-000000000000"
+        "uuid": "83e47536-9ecc-5375-8fab-ffad80dbd252"
       }
     ],
     "used_designators": "",
@@ -728,8 +728,8 @@
   },
   "sheets": [
     [
-      "e3a4b5c6-d7e8-4f9a-0b1c-2d3e4f5a6b7c",
-      "Root"
+      "83e47536-9ecc-5375-8fab-ffad80dbd252",
+      "Z80_Simple_Computer"
     ]
   ],
   "text_variables": {},

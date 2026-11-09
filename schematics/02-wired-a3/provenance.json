@@ -1,5 +1,5 @@
 {
-  "status": "wired-verified",
+  "status": "human-reviewed-verified",
   "circuit_source": "design/circuit.json",
   "generator": "tools/build_wired_schematic.py",
   "circuit_spec_sha256": "35409352154bc7300257527ec37fec0844dbfe8f03cbd39416cacd7f095ad752",
@@ -180,5 +180,15 @@
       "grid_steps": 118
     }
   ],
-  "verification": "reports/schematic-wired-a3/verification.json"
+  "verification": "reports/schematic-wired-a3/verification.json",
+  "ownership": "human-edited",
+  "manual_review": {
+    "schematic_sha256": "b5ab1a59ff58a9e4e2632a093ed8b1fc5d4799a8a48e9c9ada20fd35b38152fd",
+    "project_sha256": "2b2f3c7cb103185836cb472b83a4829c504ae7c4693d2607dc4d57f27f95e0ef",
+    "original_generated_sha256": "9683a3f53fd056b74df58b9a9705947373c673e83071937b020f0dc3362e2559",
+    "note": "Validated manually edited schematic; generator overwrite guard stays active.",
+    "baseline_commit": "1184700",
+    "human_input_snapshot": "reports/schematic-wired-a3/human-review-261109-1549/as-edited",
+    "review_note": "docs/261109-1549-REVIEW-human-schematic-corrections.adoc"
+  }
 }

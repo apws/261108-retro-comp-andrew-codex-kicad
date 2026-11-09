@@ -3,6 +3,8 @@
 :revdate: 2026-11-09
 :toc:
 
+*Later human review:* Falken refined this drawing in KiCad. The current file is human-edited and has been revalidated after minimal repairs. See link:261109-1549-REVIEW-human-schematic-corrections.adoc[the correction review and next-session reminders]. The generator commands below describe the initial machine drawing and must not be used to replace the adopted human-edited file.
+
 == Result and files
 
 Falken requested a separate wired version of the existing label-oriented schematic, retaining a single A3 sheet. The new link:../schematics/02-wired-a3/Z80_Simple_Computer.kicad_pro[KiCad project] contains that drawing. Open its link:../output/pdf/Z80_Simple_Computer-wired-A3.pdf[A3 PDF], link:../output/schematic-wired-a3/Z80_Simple_Computer.svg[vector preview] or link:../output/schematic-wired-a3/Z80_Simple_Computer.png[PNG preview].

@@ -1,0 +1,10 @@
+{
+  "status": "human-input-before-repairs",
+  "baseline_commit": "1184700",
+  "files_sha256": {
+    "Z80_Simple_Computer.kicad_sch": "b503ed67f199e83a22f39adfc079fe1b44f974255f9491841bf087663f28c799",
+    "Z80_Simple_Computer.kicad_pro": "2b2f3c7cb103185836cb472b83a4829c504ae7c4693d2607dc4d57f27f95e0ef",
+    "sym-lib-table": "b095a1c55a736df7191d58d537af0f5301a70ea97b2a664b5d58f0fb643dfb5e",
+    "fp-lib-table": "1111d22bd9a31d39c082edbde42fdc385d967d7b6ffe7598477f44d3e888fc09"
+  }
+}

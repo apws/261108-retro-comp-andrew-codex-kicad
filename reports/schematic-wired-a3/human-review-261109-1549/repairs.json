@@ -1,0 +1,78 @@
+{
+  "input_sha256": "b503ed67f199e83a22f39adfc079fe1b44f974255f9491841bf087663f28c799",
+  "output_sha256": "b5ab1a59ff58a9e4e2632a093ed8b1fc5d4799a8a48e9c9ada20fd35b38152fd",
+  "changes": [
+    {
+      "uuid": "3ba178de-e93b-44fb-b7ca-1fdb4e7ea734",
+      "kind": "junction",
+      "action": "remove redundant junction after separating C22 supply",
+      "before": "(junction (at 386.08 182.88) (diameter 0) (color 0 0 0 0) (uuid \"3ba178de-e93b-44fb-b7ca-1fdb4e7ea734\"))"
+    },
+    {
+      "uuid": "55b802f7-5dff-4609-88b8-8aea382a18f4",
+      "kind": "junction",
+      "action": "remove redundant junction after separating C22 supply",
+      "before": "(junction (at 386.08 172.72) (diameter 0) (color 0 0 0 0) (uuid \"55b802f7-5dff-4609-88b8-8aea382a18f4\"))"
+    },
+    {
+      "uuid": "46d00702-b7a4-407a-b4ab-71524be1ae99",
+      "kind": "wire",
+      "before": "(wire (pts (xy 386.08 186.69) (xy 386.08 182.88)) (stroke (width 0) (type default)) (uuid \"46d00702-b7a4-407a-b4ab-71524be1ae99\"))",
+      "after": "(wire (pts (xy 386.08 186.69) (xy 394.97 186.69)) (stroke (width 0) (type default)) (uuid \"46d00702-b7a4-407a-b4ab-71524be1ae99\"))"
+    },
+    {
+      "uuid": "5c3d027b-2747-53e8-b16a-accbc9c25d66",
+      "kind": "wire",
+      "before": "(wire (pts (xy 342.9 213.36) (xy 342.9 224.79)) (stroke (width 0) (type default)) (uuid \"5c3d027b-2747-53e8-b16a-accbc9c25d66\"))",
+      "after": "(wire (pts (xy 344.17 213.36) (xy 344.17 224.79)) (stroke (width 0) (type default)) (uuid \"5c3d027b-2747-53e8-b16a-accbc9c25d66\"))"
+    },
+    {
+      "uuid": "7386e6b9-7a29-4744-be11-a2e07447fba5",
+      "kind": "wire",
+      "before": "(wire (pts (xy 394.97 172.72) (xy 386.08 172.72)) (stroke (width 0) (type default)) (uuid \"7386e6b9-7a29-4744-be11-a2e07447fba5\"))",
+      "after": "(wire (pts (xy 394.97 172.72) (xy 394.97 186.69)) (stroke (width 0) (type default)) (uuid \"7386e6b9-7a29-4744-be11-a2e07447fba5\"))"
+    },
+    {
+      "uuid": "a68153e0-78f2-5c0b-ae90-874f420f138f",
+      "kind": "wire",
+      "before": "(wire (pts (xy 342.9 224.79) (xy 355.6 224.79)) (stroke (width 0) (type default)) (uuid \"a68153e0-78f2-5c0b-ae90-874f420f138f\"))",
+      "after": "(wire (pts (xy 344.17 224.79) (xy 355.6 224.79)) (stroke (width 0) (type default)) (uuid \"a68153e0-78f2-5c0b-ae90-874f420f138f\"))"
+    },
+    {
+      "uuid": "039e5d0e-40ad-51a5-b8e5-fca4ad075a2d",
+      "kind": "label",
+      "before": "(label \"DSR_RS232\" (at 344.17 234.95 0) (effects (font (size 0.95 0.95)) (justify left bottom)) (uuid \"039e5d0e-40ad-51a5-b8e5-fca4ad075a2d\"))",
+      "after": "(label \"DSR_RS232\" (at 344.17 236.22 0) (effects (font (size 0.95 0.95)) (justify left bottom)) (uuid \"039e5d0e-40ad-51a5-b8e5-fca4ad075a2d\"))"
+    },
+    {
+      "uuid": "34a28700-be73-5a59-852c-0d280f6c2722",
+      "kind": "label",
+      "before": "(label \"RX_TTL\" (at 377.19 97.79 0) (effects (font (size 0.95 0.95)) (justify left bottom)) (uuid \"34a28700-be73-5a59-852c-0d280f6c2722\"))",
+      "after": "(label \"RX_TTL\" (at 332.74 180.34 0) (effects (font (size 0.95 0.95)) (justify left bottom)) (uuid \"34a28700-be73-5a59-852c-0d280f6c2722\"))"
+    },
+    {
+      "uuid": "3bfb5b9d-b7cd-533c-971c-46e6807a13cb",
+      "kind": "label",
+      "before": "(label \"TX_TTL\" (at 377.19 104.14 0) (effects (font (size 0.95 0.95)) (justify left bottom)) (uuid \"3bfb5b9d-b7cd-533c-971c-46e6807a13cb\"))",
+      "after": "(label \"TX_TTL\" (at 332.74 177.8 0) (effects (font (size 0.95 0.95)) (justify left bottom)) (uuid \"3bfb5b9d-b7cd-533c-971c-46e6807a13cb\"))"
+    },
+    {
+      "uuid": "8a93a45d-ae91-5751-9d48-d4ab4516c0c5",
+      "kind": "label",
+      "before": "(label \"RX_RS232\" (at 344.17 231.14 0) (effects (font (size 0.95 0.95)) (justify left bottom)) (uuid \"8a93a45d-ae91-5751-9d48-d4ab4516c0c5\"))",
+      "after": "(label \"RX_RS232\" (at 351.79 232.41 0) (effects (font (size 0.95 0.95)) (justify left bottom)) (uuid \"8a93a45d-ae91-5751-9d48-d4ab4516c0c5\"))"
+    },
+    {
+      "uuid": "95524411-2064-589f-a174-69693ed09e69",
+      "kind": "label",
+      "before": "(label \"DTR_RS232\" (at 344.17 223.52 0) (effects (font (size 0.95 0.95)) (justify left bottom)) (uuid \"95524411-2064-589f-a174-69693ed09e69\"))",
+      "after": "(label \"DTR_RS232\" (at 344.17 228.6 0) (effects (font (size 0.95 0.95)) (justify left bottom)) (uuid \"95524411-2064-589f-a174-69693ed09e69\"))"
+    },
+    {
+      "uuid": "fdc37211-62ee-584a-83fe-9cf3d21dc7b3",
+      "kind": "label",
+      "before": "(label \"TX_RS232\" (at 344.17 218.44 0) (effects (font (size 0.95 0.95)) (justify left bottom)) (uuid \"fdc37211-62ee-584a-83fe-9cf3d21dc7b3\"))",
+      "after": "(label \"TX_RS232\" (at 364.49 237.49 0) (effects (font (size 0.95 0.95)) (justify left bottom)) (uuid \"fdc37211-62ee-584a-83fe-9cf3d21dc7b3\"))"
+    }
+  ]
+}
