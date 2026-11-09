@@ -1,0 +1,37 @@
+{
+  "board_sha256": {
+    "01-manhattan": "5dce86ba98d13083af67f93c0f5bacdb09af59d197c81e16797dd67c9a0aa5e4",
+    "02-octilinear": "d1f9a9760694a4d8c44febd18cbc1d30b8b870276fe6fa6298e2949e25a57054"
+  },
+  "accepted_corner_index": 3,
+  "corner": {
+    "layer": "B.Cu",
+    "net": "/A00",
+    "point": [
+      106000000,
+      116800000
+    ],
+    "tracks": [
+      "6fd709bf-1628-43bc-a8ca-383fb7bf2ff1",
+      "c1bd9227-7683-44b5-a214-c74832f2922b"
+    ],
+    "ends": [
+      [
+        106000000,
+        116300000
+      ],
+      [
+        105500000,
+        116800000
+      ]
+    ],
+    "cut_nm": 500000
+  },
+  "view_bounds_mm": [
+    103.8,
+    114.6,
+    108.2,
+    119.0
+  ],
+  "note": "Native copper geometry; component pads omitted; orange dashed circle is annotation only."
+}

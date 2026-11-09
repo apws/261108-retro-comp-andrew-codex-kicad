@@ -38,7 +38,7 @@
     "tools/firstz80_validation.py": "f38a441a86cc151125e6b3e92e7d99720d294e03ebf4a768b64d8c9d85c49895",
     "tools/import_firstz80_freerouting.py": "37d4d09f032c545d384b959d051281eb232d0abda995899cf528168b62f1c86f",
     "tools/complete_firstz80_grid.py": "5ed8a014ce620df9827290cb3fb17e7173eade122663435173654f39ef1f275a",
-    "tools/export_firstz80.py": "2755b9d9cdf2e1306ca9fa0223db8153a096b6da25c179f90d729a40824611d7",
+    "tools/export_firstz80.py": "a3b042c5573db255452fca3209d46d7d7cf27f2c3096e421661fc30279495365",
     "tools/check_firstz80.py": "59e998ded97c857fe1a042cc1dccba5e1dc28854d2c7b4a1b2143147f7b9f776",
     "tools/refine_firstz80_octilinear.py": "7f37b63ce30418092b819281c3624c8ad77f12952b602a5925d92691889d57a6",
     "tools/build_schematic_7805.py": "28bf65d9c61deda5effc3476cc926f3cce58bcd0bca3835fcf5e7447540a9fc5",
@@ -46,7 +46,8 @@
     "tools/cleanup_wired_readability.py": "d5bf8e22e97d80ae8ee8417a18bdcf66be8f293ea581eff4495dc2ccac6a022f",
     "tools/check_schematic_pin_clearance.py": "178d2c046022d89570954a3836e39f6e0baec8462c7b7c8e55ef65bc6f06cfd0",
     "tools/octilinear_router.cpp": "4fab152c8096a9064260d9c3c1373a11bb66eb06e76c35c4f72d2775a3ee9816",
-    "tools/route_netgroup.py": "02ed95ca09d8907d411115073883fb553409c88281384010cd189fd1d2bd4518"
+    "tools/route_netgroup.py": "02ed95ca09d8907d411115073883fb553409c88281384010cd189fd1d2bd4518",
+    "tools/show_firstz80_corner.py": "7a037c9c7ef6569c1b089d74b1d13accb2445051bd82cdca04e172199142ff08"
   },
   "note": "Final tool source snapshot; native routing UUIDs may differ on a fresh run. Per-attempt settings/orders/results are retained separately."
 }

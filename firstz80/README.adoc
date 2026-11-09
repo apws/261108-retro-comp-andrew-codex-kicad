@@ -7,13 +7,17 @@ This separate comparison uses Andrew Lynch's pictured January 2024 FirstZ80: 63 
 [cols="2,1,1,3",options="header"]
 |===
 |Result |Vias |Copper length, mm |Open
-|Historical supplied routing |33 |7,639.221 |link:reference-normalized/FirstZ80.kicad_pro[Reference]
+|Historical FreeRouting result |33 |7,639.221 |link:reference-normalized/FirstZ80.kicad_pro[Reference]
 |Manhattan |424 |8,613.255 |link:layouts/01-manhattan/FirstZ80.kicad_pro[Manhattan]
 |Octilinear hybrid |424 |8,590.527 |link:layouts/02-octilinear/FirstZ80.kicad_pro[Hybrid]
 |FreeRouting + native hole-clearance correction |77 |7,987.677 |link:layouts/03-freerouting/FirstZ80.kicad_pro[FreeRouting]
 |===
 
 All three new boards pass native DRC/parity/connectivity with zero findings. The hybrid uses a fresh Manhattan seed plus 160 checked 45-degree corner refinements. Direct eight-direction A* trials remained incomplete. FreeRouting's completed MCP run disabled optimization after an earlier timeout and needed one recorded 0.06 mm ground-track detour near the regulator mounting hole.
+
+The Manhattan and hybrid boards look almost the same because their routing topology and 424 vias are the same. The hybrid only trims 160 corners, by 0.1-0.5 mm per leg; 73 of those cuts are just 0.1 mm. See link:../output/firstz80/octilinear-corner-detail.png[the enlarged native-track comparison]. Its diagonals are real, but this is a small geometric refinement, not a separately optimized octilinear topology.
+
+Falken confirmed after reviewing the comparison that the historical board was also routed with FreeRouting. Its exact engine version, settings and optimization history are not established here; our new completed run disabled optimization. The difference between 33 and 77 vias does not by itself establish a version-to-version regression.
 
 Read link:../docs/261110-0004-DONE-FirstZ80-fixed-placement-routing.adoc[the complete results and limitations], view link:../output/firstz80/comparison.png[the comparison overview], or inspect link:../reports/firstz80/verification.json[verification]. The normalized reference is for comparing with the recovered source; raw files and attribution remain in link:../reference/firstz80/README.adoc[reference/firstz80].
 

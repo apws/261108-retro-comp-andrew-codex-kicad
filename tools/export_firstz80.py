@@ -13,8 +13,8 @@ def run(command):
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--partial',action='store_true');a=p.parse_args()
-    for method in ('reference-normalized','01-manhattan','02-octilinear','03-freerouting'):
+    p=argparse.ArgumentParser();p.add_argument('--partial',action='store_true');p.add_argument('--overview-only',action='store_true');a=p.parse_args()
+    for method in (()if a.overview_only else('reference-normalized','01-manhattan','02-octilinear','03-freerouting')):
         folder=BASE/method if method=='reference-normalized'else BASE/'layouts'/method
         if method!='reference-normalized'and not(folder/'routing.json').exists():
             assert a.partial,'An experiment is not yet validated';continue
@@ -37,7 +37,7 @@ def main():
         except OSError:font=ImageFont.load_default(size=28)
         panel_w=1200;panel_h=810;margin=24
         sheet=Image.new('RGB',(panel_w*2+margin*3,panel_h*2+margin*3+60),'white');draw=ImageDraw.Draw(sheet)
-        for i,(method,title)in enumerate([('reference-normalized','Historical reference'),('01-manhattan','Manhattan A*'),('02-octilinear','Octilinear hybrid'),('03-freerouting','FreeRouting + native DRC correction')]):
+        for i,(method,title)in enumerate([('reference-normalized','Historical FreeRouting'),('01-manhattan','Manhattan A*'),('02-octilinear','Hybrid: Manhattan + 45-degree trims'),('03-freerouting','FreeRouting + native DRC correction')]):
             out=ROOT/'output/firstz80'/method;data=json.loads((out/'provenance.json').read_text())
             x=margin+(i%2)*(panel_w+margin);y=margin+(i//2)*(panel_h+margin)
             draw.text((x,y),title,fill='#202020',font=font)

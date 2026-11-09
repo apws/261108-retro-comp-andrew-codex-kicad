@@ -16,7 +16,7 @@ Our own cleaned A3 schematic and separate 7805 extension are described in link:2
 [cols="2,1,1,1,3",options="header"]
 |===
 |Result |Vias |Track segments |All-net copper, mm |Project
-|Historical supplied routing |33 |1,463 |7,639.221 |link:../firstz80/reference-normalized/FirstZ80.kicad_pro[Normalized historical reference]
+|Historical FreeRouting result |33 |1,463 |7,639.221 |link:../firstz80/reference-normalized/FirstZ80.kicad_pro[Normalized historical reference]
 |Manhattan A* |424 |2,353 |8,613.255 |link:../firstz80/layouts/01-manhattan/FirstZ80.kicad_pro[Manhattan project]
 |Octilinear hybrid |424 |2,513 |8,590.527 |link:../firstz80/layouts/02-octilinear/FirstZ80.kicad_pro[Hybrid project]
 |FreeRouting local MCP, with native DRC correction |77 |1,531 |7,987.677 |link:../firstz80/layouts/03-freerouting/FirstZ80.kicad_pro[FreeRouting project]
@@ -36,7 +36,7 @@ The source's `FirstZ80.jpg` visually matches the saved WEBP. Its native footprin
 
 The board uses an orderly column arrangement of upright DIPs: CPU, EEPROM, RAM, PPI and UART, with MAX232 at the upper right. Supply parts are grouped at the upper left, serial connectors at the right edge, the PPI IDC at the lower right and clocks/decode/reset below the main ICs. This differs from our earlier horizontal DIP arrangement. It is another example of placing functional groups neatly first and then making the routing fit.
 
-The source includes a Specctra/FreeRouting-style `.rules` file, so the supplied tracks are called the historical reference. Their presence does not prove that every track was hand-routed. Raw source bytes and attribution remain under link:../reference/firstz80/README.adoc[reference/firstz80].
+Falken confirmed after reviewing the comparison that the historical PCB was also routed with FreeRouting, consistent with its supplied Specctra/FreeRouting-style `.rules` file. It is therefore labelled the historical FreeRouting result. Its exact engine version, settings and optimization history remain unestablished; it must not be treated as an equal-settings comparison with our optimization-disabled 2.5.0 run. Raw source bytes and attribution remain under link:../reference/firstz80/README.adoc[reference/firstz80].
 
 == Circuit and connector discrepancies
 
@@ -60,6 +60,8 @@ Exact net membership was compared by (reference,pin) sets before conversion. A b
 Manhattan uses orthogonal A* with the earlier directional cost model and a native accelerator. Its third candidate completed the board. The accepted routing stage took 138.553 seconds; all three Manhattan trials totalled 461.444 seconds. Compiler startup and other setup are not a calibrated benchmark.
 
 Ten direct octilinear A* candidates were incomplete, including changes of net priority, via cost and reserved future-pad escapes. Simply putting failed nets first moved the congestion elsewhere. None was promoted. A separate fresh orthogonal seed was then computed from the same empty checkpoint, in 136.928 seconds; the published Manhattan PCB was not loaded as its input. A native-DRC-gated pass replaced 160 eligible right-angle corners with 45-degree diagonals in 1.808 seconds. All proposed corners in that pass passed. This is a conservative routing/refinement pipeline with the seed's vias preserved, not a successful independent eight-direction router.
+
+The full-board Manhattan and hybrid previews consequently look almost identical. Cuts per leg are 0.1 mm (73 corners), 0.2 mm (19), 0.3 mm (8), 0.4 mm (47) and 0.5 mm (13). The diagonals are short, and much of the orthogonal geometry remains. The total length reduction is only 0.264%, with no via reduction. The link:../output/firstz80/octilinear-corner-detail.png[enlarged native-track detail] shows one 0.5 mm cut on each leg, forming a 0.707 mm diagonal. This is a limited corner refinement; it must not be described as an independently optimized octilinear topology.
 
 FreeRouting 2.5.0 used its official local MCP interface. The first job reported zero remaining connections but stalled during optimization and timed out without valid output. A second job with optimization disabled completed in 138.278 seconds. The transport worked; these observations do not establish a general MCP-versus-CLI algorithm difference. No CLI control was run for this new comparison.
 

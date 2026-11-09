@@ -19,16 +19,16 @@
   ],
   "comparison_preview": {
     "path": "output/firstz80/comparison.png",
-    "sha256": "3153550ce522a026145b9b9bb0ffafd2e1746040b0bd5b1ace6805304e7b4055"
+    "sha256": "26317d1b9db496300501d8167aa27b22ceac2d3c169e3579b6a398dab477e1d8"
   },
-  "checked_document_links": 48,
+  "checked_document_links": 50,
   "documents": {
     "docs/261109-2306-REVIEW-Mark-schematic-readability.adoc": "6371bf9acdab9c15fc677a2f2d02e7bfe58a78a8133a63aa2799b32f7fe4562a",
     "docs/261109-2317-PLAN-FirstZ80-fixed-placement-comparison.adoc": "8cf2d970fca02553a993c510f7d64f04c2de10101729870a316887bdb5a098c1",
     "docs/261110-0001-DONE-schematic-7805-and-readable-wiring.adoc": "334a33b3e1b1b3b67f64d6818e2dee58db380da2435ff5942c8c96ed1bcc5317",
-    "docs/261110-0004-DONE-FirstZ80-fixed-placement-routing.adoc": "73c693314a79344d68f1d14340bb504796b728baaca42904b5faed6b9ff8961f",
-    "firstz80/README.adoc": "dab35cab9437cc0f2a7a5645d86517bccbf50589744e5edb632c0843e8c52f2a",
-    "reference/firstz80/README.adoc": "b5f8a2e8afbdb124c63dc8980d4688e365f2c4375c76e304c3abc1183ab3afa2",
+    "docs/261110-0004-DONE-FirstZ80-fixed-placement-routing.adoc": "3f7974a19552b16cc2d6905303bf4e40c5d3a16f94e29cec4f80110af404e81d",
+    "firstz80/README.adoc": "dfd3eb5cffb9bce1820811552a29ad43495d4688f7a28dea994b9b332b0c7b70",
+    "reference/firstz80/README.adoc": "2169d3a0dbe77c4587997f3588cbad41ddc3cf7ee68b1430858e399e34ba3531",
     "schematics/03-schematic-7805/README.adoc": "f2e504a2e5b085738649e1ee368bd56885d4e817430fe29fe440764f576f98df"
   },
   "firstz80_boards": {
@@ -42,5 +42,11 @@
     "Historical schematic retains 47 warnings and zero errors.",
     "Static design checks; hardware, thermal behaviour and SI not qualified."
   ],
-  "local_mcp_service_stopped": true
+  "local_mcp_service_stopped": true,
+  "hybrid_corner_detail": {
+    "octilinear-corner-detail.svg": "e6b8731e329815f7f3d2a8f92659d3eba30550c5cbc816d835ce581f031047bf",
+    "octilinear-corner-detail.png": "fe9f6c83f6a7809196fc2ac4f271d074aac96711a7aeb47585bdd3a2d4418e83",
+    "octilinear-corner-detail.json": "360fca7c599f7a862e18a15e223062919daaad1352abe4f4c3c9aa724fc28edb"
+  },
+  "source_routing_provenance": "Falken confirmed the historical PCB was also routed with FreeRouting; exact version/settings/optimization history unknown."
 }
